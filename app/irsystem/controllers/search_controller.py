@@ -1,9 +1,15 @@
-from . import *  
+from . import *
 from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 
-project_name = "Ilan's Cool Project Template"
-net_id = "Ilan Filonenko: if56"
+project_name = "SquadUp"
+net_ids = [
+           "Sherry Xie: zx53" ,
+           "Jesse Phillip: jop23",
+           "Kelly Fam: kjf63",
+           "Trevor Jamison: tj222",
+           "Boonakij Palipatana: bap93"
+          ]
 
 @irsystem.route('/', methods=['GET'])
 def search():
@@ -14,7 +20,7 @@ def search():
 	else:
 		output_message = "Your search: " + query
 		data = range(5)
-	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+	return render_template('search.html', name=project_name, netids=net_ids, output_message=output_message, data=data)
 
 
 
