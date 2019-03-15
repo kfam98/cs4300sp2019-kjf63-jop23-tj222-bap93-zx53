@@ -5,7 +5,7 @@ from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 project_name = "SquadUp"
 net_ids = [
            "Sherry Xie: zx53" ,
-           "Jesse Phillip: jop23",
+           "Jesse Phillips: jop23",
            "Kelly Fam: kjf63",
            "Trevor Jamison: tj222",
            "Boonakij Palipatana: bap93"
