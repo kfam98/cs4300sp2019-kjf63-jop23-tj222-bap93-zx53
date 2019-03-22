@@ -477,7 +477,12 @@ Gallade,165,45,95,68,475,65,115,110,psychic,fighting,4,0
 Probopass,55,60,145,60,476,75,150,40,rock,steel,4,0
 Dusknoir,100,45,135,45,477,65,135,45,ghost,,4,0
 Froslass,80,75,70,70,478,80,70,110,ice,ghost,4,0
-Rotom,65,45,107,50,479,105,107,86,electric,ghost,4,0
+Rotom,50,45,77,50,479,95,77,91,electric,ghost,4,0
+Rotom-Wash,65,45,107,50,479,105,107,86,electric,water,4,0
+Rotom-Fan,65,45,107,50,479,105,107,86,electric,flying,4,0
+Rotom-Heat,65,45,107,50,479,105,107,86,electric,fire,4,0
+Rotom-Mow,65,45,107,50,479,105,107,86,electric,grass,4,0
+Rotom-Frost,65,45,107,50,479,105,107,86,electric,ice,4,0
 Uxie,75,3,130,75,480,75,130,95,psychic,,4,1
 Mesprit,105,3,105,80,481,105,105,80,psychic,,4,1
 Azelf,125,3,70,75,482,125,70,115,psychic,,4,1
