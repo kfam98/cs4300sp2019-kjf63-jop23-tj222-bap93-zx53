@@ -17,6 +17,19 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # DB
 db = SQLAlchemy(app)
 
+POSTGRES = {
+    'user': 'admin',
+    'pw': '',
+    'db': 'postgres',
+    'host': 'localhost',
+    'port': '5432',
+}
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%(user)s:\
+%(pw)s@%(host)s:%(port)s/%(db)s' % POSTGRES
+db.init_app(app)
+
+
 # Import + Register Blueprints
 from app.accounts import accounts as accounts
 app.register_blueprint(accounts)
