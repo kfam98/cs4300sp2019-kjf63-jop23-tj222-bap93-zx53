@@ -58,7 +58,7 @@ class Pokemon():
         self.sp_attack = sp_att
         self.sp_defense = sp_def
         self.gen = gen
-        self.capture_rate = round(capture_rate/255, 1)
+        self.capture_rate = round((100 * capture_rate/3)/255 , 1)
         self.abilities = abilities
         self.type1 = type1
         self.type2 = type2
