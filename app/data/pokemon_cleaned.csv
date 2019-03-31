@@ -777,7 +777,7 @@ Palossand,75,60,110,85,770,100,75,35,ghost,ground,7,0
 Pyukumuku,60,60,130,55,771,30,130,5,water,,7,0
 Type: Null,95,3,95,95,772,95,95,59,normal,,7,0
 Silvally,95,3,95,95,773,95,95,95,normal,,7,0
-Minior,100,30 (Meteorite)255 (Core),60,60,774,100,60,120,rock,flying,7,0
+Minior,100,255,60,60,774,100,60,120,rock,flying,7,0
 Komala,115,45,65,65,775,75,95,65,normal,,7,0
 Turtonator,78,70,135,60,776,91,85,36,fire,dragon,7,0
 Togedemaru,98,180,63,65,777,40,73,96,electric,steel,7,0
