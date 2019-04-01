@@ -1,7 +1,9 @@
 import csv
 import ast
 
-
+types = ['bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'flying',
+         'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock',
+         'steel', 'water']
 
 class Pokemon():
     
@@ -22,13 +24,16 @@ class Pokemon():
         type1: The primary type of the pokemon [string]
         type2: The secondary type of the pokemon [string or None]
         is_legendary: Whether this pokemon is a legendary or not [bool]
+        weaknesses: Types this pokemon is weak to [set of strings]
+        resistances: Types this pokemon resists [set of strings]
+        immunities: Types this pokemon is immune to [set of strings]
     
     """
     
     
     
     def __init__(self, name, pkdex_num, att, defs, hp, spd, sp_att, sp_def,
-                 gen, capture_rate, type1, type2 = None, is_legendary = False, abilities = []):
+                 gen, capture_rate, type1, type2 = None, is_legendary = False):
         """ Initializer for the Pokemon class
         
         Parameters:
@@ -42,7 +47,6 @@ class Pokemon():
         sp_def: The special defense stat of the pokemon [int]
         gen: The generation of the pokemon [int]
         capture_rate: the capture rate of the pokemon (out of 255) [int]
-        abilities: The abilities the pokemon could have [list of strings]
         type1: The primary type of the pokemon [string]
         type2: The secondary type of the pokemon [string or None]
         is_legendary: Whether this pokemon is a legendary or not [bool]
@@ -59,10 +63,13 @@ class Pokemon():
         self.sp_defense = sp_def
         self.gen = gen
         self.capture_rate = round((100 * capture_rate/3)/255 , 1)
-        self.abilities = abilities
+        self.abilities = []
         self.type1 = type1
         self.type2 = type2
         self.is_legendary = is_legendary
+        self.weaknesses = []
+        self.resistances = []
+        self.immunities = []
         
         
     def get_base_total(self):
@@ -125,15 +132,52 @@ def generate_instances():
                 name = row[30]
                 abilities = ast.literal_eval(row[0])
                 result[name].abilities = abilities
-            
+                
+                
+                matchups = row[1:19]
+                for i in range(len(matchups)):
+                    if float(matchups[i]) > 1.0:
+                        result[name].weaknesses.append(types[i])
+                    elif float(matchups[i]) == 0:
+                        result[name].immunities.append(types[i])
+                    elif float(matchups[i]) < 1.0:
+                        result[name].resistances.append(types[i])
+               
             line_count += 1
             
     return result
         
+def generateTypeChart():
+    """ Returns the overall Pokemon type chart as a dictionary.
+    
+    The key k represents the attacking type, and the value is a list of numbers.
+    For any value v in the list at position x, it means that type k is v times as
+    effective towards type types[x], where types is the global variable of types. """
+    
+    result = {}
+    
+    with open("app/data/chart.csv", newline = '') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter = ',')
+        line_count = 0
+        for row in csv_reader:
+            if line_count != 0:
+                result[row[0].lower()] = list(map(float,row[1:]))
+                
+            line_count += 1
+            
+        return result
+  
+  
+    
+# Global variable with type chart   
+type_chart = generateTypeChart()   
 
 
-if __name__ == "__main__":
-    print(generate_instances())
+#if __name__ == "__main__":
+    #print(generate_instances())
+    # for i in range(len(types)):
+    #     print('Dark is ' + str(type_chart['dark'][i]) + ' times effective towards ' + types[i] )
+
     
         
         
