@@ -32,6 +32,7 @@ for replay_name in directory:
                     
                 p_name = p_name.replace("|item", "")
                 p_name = p_name.replace("|", "")
+                p_name = p_name.replace("-*", "")
                 p1_team.append(p_name)
                 
             elif 'p2' in entry:
@@ -42,6 +43,7 @@ for replay_name in directory:
                     
                 p_name = p_name.replace("|item", "")
                 p_name = p_name.replace("|", "")
+                p_name = p_name.replace("-*", "")
                 p2_team.append(p_name)
                 
         won_ind = data.find('won the battle')
@@ -93,10 +95,10 @@ for replay_name in directory:
         
             
     
-with open('rp_file', 'w') as fout:
+with open('rp_file.json', 'w') as fout:
     json.dump(results, fout)
     
-with open('pkmn_weights', 'w') as fout1:
+with open('pkmn_weights.json', 'w') as fout1:
     json.dump(pkmn_weights_dict, fout1)
     
 print("Finished extracting data")

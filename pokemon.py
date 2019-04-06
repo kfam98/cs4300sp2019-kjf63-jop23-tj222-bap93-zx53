@@ -1,5 +1,6 @@
 import csv
 import ast
+import json
 
 types = ['bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'flying',
          'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock',
@@ -166,12 +167,20 @@ def generateTypeChart():
             line_count += 1
             
         return result
+    
+def generatePkmnWeights():
+    """ Returns the pokemon weights generated from Pokemon showdown replays """
+    
+    with open("app/data/replays_html/pkmn_weights.json", newline = '') as json_file:
+        result = json.load(json_file)
+        
+    return result
   
   
     
 # Global variable with type chart   
 type_chart = generateTypeChart()   
-
+pkmn_weights = generatePkmnWeights()
 
 #if __name__ == "__main__":
     #print(generate_instances())
