@@ -45,18 +45,18 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses, socialWeight):
 
 def fillRestOfTeam(currentTeam, wantLegendary, generations, playstyle, minCaptureRate, blacklist, pokemonDictionary, socialWeights):
     """
-    Updates the currentTeam variable to fill out to six pokemon
-    
+    Updates and returns the currentTeam variable to fill out to six pokemon
+
     Note -- should we simply ignore the other teams and go for the best balanced?
 
+    currentTeam - List<string> - list of pokemon names that are currently on the team
     wantLegendary - Bool - True if allowed to pick legendary pokemon, false if not
-    blacklist - list<string> - string of pokemon names not allowed to be on the team.
-    minCaptureRate - float - minimum capture rate that the player willing to endure
     generations - List<ints> - List of integers representing the generations allowed to be chosen from
-
-    pokemonDictionary - dict<pName,pObj> - where pName is the string name of the pokemon and the pObj is the pokemone object associated with that pokemon.
-
-
+    playstyle - String - string from constants that denotes he playstyle the player has chosen
+    minCaptureRate - float - minimum capture rate that the player willing to endure
+    blacklist - List<string> - string of pokemon names not allowed to be on the team
+    pokemonDictionary - dict<pName,pObj> - where pName is the string name of the pokemon and the pObj is the pokemone object associated with that pokemon
+    pokemonDictionary - dict<pName,w> - where pName is the string name of the pokemon and the corresponding social weight as an int
     """
 
     pDict = pokemonDictionary
@@ -95,3 +95,5 @@ def fillRestOfTeam(currentTeam, wantLegendary, generations, playstyle, minCaptur
         rankings = sorted(rankings, lambda x: x[1], reverse = True)
 
         currentTeam += rankings[0][0]
+    
+    return currentTeam
