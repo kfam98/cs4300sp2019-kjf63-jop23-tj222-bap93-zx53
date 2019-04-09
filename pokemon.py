@@ -1,10 +1,7 @@
 import csv
 import ast
 import json
-
-types = ['bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'flying',
-         'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock',
-         'steel', 'water']
+import * from constants
 
 class Pokemon():
     
