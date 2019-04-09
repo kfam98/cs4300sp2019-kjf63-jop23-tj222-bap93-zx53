@@ -90,7 +90,7 @@ def fillRestOfTeam(currentTeam, wantLegendary, generations, playstyle, minCaptur
             elif pObj.capture_rate < minCaptureRate:
                 pass
             else:
-                rankings.append(pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses, socialWeights[pObj.name])))
+                rankings.append(pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses, socialWeights[pObj.name]))
 
         rankings = sorted(rankings, lambda x: x[1], reverse = True)
 
