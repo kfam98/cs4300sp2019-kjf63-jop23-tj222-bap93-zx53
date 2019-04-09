@@ -1,7 +1,7 @@
 import csv
 import ast
 import json
-import * from constants
+from constants import * 
 
 class Pokemon():
     

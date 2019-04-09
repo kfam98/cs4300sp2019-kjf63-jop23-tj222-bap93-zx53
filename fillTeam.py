@@ -1,4 +1,4 @@
-import * from constants
+from constants import * 
 import pokemon
 
 def rankPokemon(pObj, playstyle, currentTeamWeaknesses, socialWeight):
