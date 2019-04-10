@@ -135,11 +135,11 @@ def generate_instances():
                 matchups = row[1:19]
                 for i in range(len(matchups)):
                     if float(matchups[i]) > 1.0:
-                        result[name].weaknesses.append(types[i])
+                        result[name].weaknesses.append(PTYPES[i])
                     elif float(matchups[i]) == 0:
-                        result[name].immunities.append(types[i])
+                        result[name].immunities.append(PTYPES[i])
                     elif float(matchups[i]) < 1.0:
-                        result[name].resistances.append(types[i])
+                        result[name].resistances.append(PTYPES[i])
                
             line_count += 1
             
