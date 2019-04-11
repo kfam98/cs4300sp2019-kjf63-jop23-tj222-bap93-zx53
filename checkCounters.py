@@ -30,9 +30,10 @@ def checkCounters(user_team, user_moves, opponent_team, all_pokemon, moves):
 
     uncountered = opponent_team.copy()
 
-    for opp in opponent_team: 
+    for i in range(len(opponent_team)): 
+        opp = opponent_team[i]
         # get opponent pokemon weaknesses 
-        opp_weak = opponents[opp].weaknesses
+        opp_weak = opponents[i].weaknesses
 
         # iterate through all of user's pokemon
         for pkmn in user_team: 

@@ -7,7 +7,8 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
 
     pObj - Pokemon Object - pokemon object of the pokemon to rank
     playstyle - String - string from constants that denotes he playstyle the player has chosen
-    currentTeamWeaknesses - dict<pType,numWeak> - pType type of pokemon and the corresponding number of pokemon weak to that specific type 
+    currentTeamWeaknesses - dict<pType,numWeak> - pType type of pokemon and the corresponding 
+        number of pokemon weak to that specific type 
     socialWeight - int - the social weight to consider when ranking the pokemon
     """
     #determine weakness multipliers for the pokemon
