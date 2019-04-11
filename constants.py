@@ -2,6 +2,15 @@
 MOVES = "moves"
 NATURE = "nature"
 
+#Branching factors
+BRANCH1 = 100
+BRANCH2 = 50
+BRANCH3 = 25
+BRANCH4 = 12
+BRANCH5 = 2#6
+BRANCH6 = 3
+
+
 #Pokemon Types
 BUG = 'bug'
 DARK = 'dark'

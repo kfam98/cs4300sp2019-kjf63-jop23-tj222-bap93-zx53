@@ -98,11 +98,6 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
                 tmp.append(pName)
                 currentTeams.append(tmp)
 
-    
-    for team in finishedTeams:
-        print(str(team) + "\n")
-
-
     return finishedTeams
 
 if __name__ == '__main__':
