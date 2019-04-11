@@ -5,28 +5,27 @@ from constants import *
 # Want to find pokemon to add to current team that counter the rest of the opponent's team
 
 
-def generateScore(pkmn, playstyle, pkmn_weights):
+def generateScore(pkmn, playstyle):
     """ Returns a score for the pkmn to be used for ranking, based on the playstyle
     
     Parameters:
     pkmn: The Pokemon instance [pokemon.Pokemon instance]
-    playstyle: One of "balanced", "defensive" or "glass-cannon"
-    pkmn_weights: Dictionary of pokemon social weights [dict of ints]
-    
+    playstyle: One of "balanced", "defensive" or "glass-cannon"    
     """
     atk = PLAYSTYLES[playstyle][ATTACK]
     defs = PLAYSTYLES[playstyle][DEFENSE]
     sp_atk = PLAYSTYLES[playstyle][SPATTACK]
     sp_def = PLAYSTYLES[playstyle][SPDEFENSE]
     spd = PLAYSTYLES[playstyle][SPEED]
-    hp = PLAYSTYLES[playstyle][HP]
-   
-    # The '4' can be changed depending on how we want to scale down the social factor.
-    # Will probably make this more sophisticated
-    social_weight = pkmn_weights[pkmn.name]/4
+    hp = PLAYSTYLES[playstyle][HEALTH]
+
     
-    score = (pkmn.attack * atk + pkmn.defense * defs + pkmn.sp_attack * sp_atk + pkmn.sp_defense * sp_def +
-             pkmn.hp * hpp + pkmn.speed * spd + social_weight)
+    score = (pkmn.attack * atk + 
+            pkmn.defense * defs + 
+            pkmn.sp_attack * sp_atk + 
+            pkmn.sp_defense * sp_def +
+            pkmn.hp * hp +
+            pkmn.speed * spd)
     return score
         
         
@@ -52,13 +51,13 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
     # all_pokemon dictionary should be in app.py
     filtered_pkmn = []
     for pkmn in all_pokemon:
-        if (pkmn not in current_team and pkmn.gen in generations and
-            pkmn.is_legendary == want_legendary and pkmn.capture_rate >= minimum_capture_rate):
-                filtered_pkmn.append(all_pokemon(pkmn))
+        if (pkmn not in current_team and all_pokemon[pkmn].gen in generations and
+            all_pokemon[pkmn].is_legendary == want_legendary and all_pokemon[pkmn].capture_rate >= minimum_capture_rate):
+                filtered_pkmn.append(all_pokemon[pkmn])
                     
     for target_name in uncountered_opponent_team:
         
-        if len(current_team < 6):
+        if len(current_team) < 6:
             
             # Get the pokemon instance of this Pokemon name
         
@@ -68,16 +67,18 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
             # Retrieve Pokemon that expose these weaknesses and satisfy the filters
             counters = []
             for pkmn_inst in filtered_pkmn:
-                if (all_pokemon[pkmn].type1 in weaknesses or all_pokemon[pkmn].type2 in weaknesses):
+                if (pkmn_inst.type1 in weaknesses or pkmn_inst.type2 in weaknesses):
                     counters.append(pkmn_inst)
                     
             # Need to rank the possible counters in order to retrieve the best one.
             # Will probably use lambda function in conjunction with the generateScore function.
             
-            ranked_counters = sorted(counters, key = lambda pk : generateScore(pk), reverse = True)
+            ranked_counters = sorted(counters, key = lambda pk : generateScore(pk, playstyle), reverse = True)
             
             # Add best counter to current team
             current_team.append(ranked_counters[0].name)
+
+    return [current_team]
         
 
     

@@ -1,3 +1,7 @@
+#Returning/Incoming Dictionary keys
+MOVES = "moves"
+NATURE = "nature"
+
 #Pokemon Types
 BUG = 'bug'
 DARK = 'dark'
