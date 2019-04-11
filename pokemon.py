@@ -172,12 +172,29 @@ def generatePkmnWeights():
         result = json.load(json_file)
         
     return result
-  
-  
+
+def generateMoves():
+    """ Returns a dictionary where each key is a string identifying a specific
+        Pokemon, and its value is a string list of all moves which can be 
+        learned by that Pokemon. """
+
+    with open("app/data/movedata.json", newline = '') as json_file: 
+        result = json.load(json_file)
+    return result
+
+def generateMoveTypes():
+    """ Returns a dictionary where each key is a string identifying a specific
+        move, and its value is the type of the move. """
+
+    with open("app/data/movetypedata.json", newline = '') as json_file: 
+        result = json.load(json_file)
+    return result
     
 # Global variable with type chart   
 type_chart = generateTypeChart()   
 pkmn_weights = generatePkmnWeights()
+pkmn_moves = generateMoves()
+move_types = generateMoveTypes()
 
 #if __name__ == "__main__":
     #print(generate_instances())
