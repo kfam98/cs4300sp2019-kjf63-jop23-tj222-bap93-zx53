@@ -1,3 +1,6 @@
+import pokemon 
+from constants import * 
+
 def checkCounters(user_team, user_moves, opponent_team, all_pokemon, moves): 
     """ 
     Checks if any of the Pokemon on the user input team serve as counters to any
