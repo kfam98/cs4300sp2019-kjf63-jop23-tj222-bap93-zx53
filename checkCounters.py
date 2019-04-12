@@ -48,6 +48,7 @@ def checkCounters(user_team, user_moves, opponent_team, all_pokemon, mvtypes):
 
     uncountered = opponent_team.copy()
 
+
     for i in range(len(opponent_team)): 
         opp = opponent_team[i]
         # get opponent pokemon weaknesses 
@@ -57,10 +58,10 @@ def checkCounters(user_team, user_moves, opponent_team, all_pokemon, mvtypes):
         for j in range(len(user_team)): 
 
             # no need to go through any of this if opponent already countered
-            if opp not in uncountered: 
+            if opp in uncountered: 
 
                 # check if any user pokemon move types counter opponent type 
-                moves = user_moves[team[j]]
+                moves = user_moves[team[j].name]
                 mvtypes = [mvtypes[mv] for mv in moves]
                 movecounter = not set(opp_weak).isdisjoint(set(mvtypes))
 
@@ -73,6 +74,7 @@ def checkCounters(user_team, user_moves, opponent_team, all_pokemon, mvtypes):
                 else: 
                     pkmn_type = team[j].type1
                     typecounter = pkmn_type in opp_weak
+
 
                     if typecounter or movecounter: 
                         uncountered.remove(opp)

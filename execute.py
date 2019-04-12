@@ -47,6 +47,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         #for now simply dont worry about it
         return myTeam
 
+    print(currentMoves)
+
     uncounteredOpps = sherry.checkCounters(
         currentTeamNames, 
         currentMoves, 
@@ -54,6 +56,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pokedex,
         pokeMoves
     )
+    
+    print(uncounteredOpps)
 
     possibleTeams = jesse.findCounters(
         currentTeamNames, 
@@ -111,7 +115,7 @@ def determineBranchFactor(curTeam):
 if __name__ == '__main__':
     generateResults(
         {"Squirtle": {MOVES:[],NATURE:None},"Charmander": {MOVES:[],NATURE:None}} ,
-        {},
+        {"Charmander", "Dragonite"},
         False,
         [1,2,3,4,5,6,7],
         BALANCED,
