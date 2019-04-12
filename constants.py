@@ -21,7 +21,46 @@ NUMLOSINGTEAMS = 3
 NUMTEAMSRETURN = 5
 
 #Leagues
+UBER = "UBER"
 OU = "OU"
+UUBL = "UUBL"
+UU = "UU"
+RUBL = "RUBL"
+RU = "RU"
+NUBL = "NUBL"
+PUBL = "PUBL"
+PU = "PU"
+LC = "LC"
+NFE = "NFE"
+
+LEAGUERANKS = [
+    UBER,
+    OU,
+    UUBL,
+    UU,
+    RUBL,
+    RU,
+    NUBL,
+    PUBL,   
+    PU,
+    LC,
+    NFE
+]
+
+RANKSTOWINLOSEFILES = [
+    UBER,
+    "./app/data/replays_html/rp_file.json",
+    UUBL,
+    UU,
+    RUBL,
+    RU,
+    NUBL,
+    PUBL,   
+    PU,
+    LC,
+    NFE
+
+]
 
 #Pokemon Types
 BUG = 'bug'

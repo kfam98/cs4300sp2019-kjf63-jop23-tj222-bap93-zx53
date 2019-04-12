@@ -1,13 +1,13 @@
 import fillTeam as trevor
 import findCounters as jesse
 import checkCounters as sherry
-import cosineSims as t2
+import sims as t2
 import pokemon
 from constants import *
 
 ##Note - check for extremes like stupid high minimum capture rate or no gens allowed.
 
-def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league = "OU",pokedex = None,pokeMoves = None):
+def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league = OU,pokedex = None,pokeMoves = None):
     """
     Return list of dictionaries, where each dictionary is a proposed team.
 
