@@ -80,7 +80,8 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
             # Need to rank the possible counters in order to retrieve the best one.
             
             ranked_counters = sorted(counters, key = lambda pk : generateScore(pk, playstyle), reverse = True)
-            best_counters = ranked_counters[:branch_factor]
+            cutoff = min(branch_factor,len(counters))
+            best_counters = ranked_counters[:cutoff]
             # Generate possible teams with best counters
              
             count += 1

@@ -55,8 +55,6 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pokeMoves
     )
 
-    print(uncounteredOpps)
-
     possibleTeams = jesse.findCounters(
         currentTeamNames, 
         uncounteredOpps, 
@@ -64,10 +62,9 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         gens,
         pStyle, 
         minCapRate, 
-        pokedex
+        pokedex,
+        branchFactor
     )
-
-    print(possibleTeams)
 
     allPossibleTeams = trevor.fillRestOfTeam(
         possibleTeams, 
@@ -83,7 +80,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     topTeams = t2.scoreTeams(
         allPossibleTeams,
         oppTeamNames,
-        league
+        pokedex,
+        league,
     )
 
     for team in topTeams:

@@ -4,11 +4,14 @@ NATURE = "nature"
 
 #Branching factors
 BRANCH1 = 100
-BRANCH2 = 50
-BRANCH3 = 25
-BRANCH4 = 12
-BRANCH5 = 6
-BRANCH6 = 3
+BRANCH2 = 25
+BRANCH3 = 10
+BRANCH4 = 8
+BRANCH5 = 5
+BRANCH6 = 4
+
+#Total Number of Pokemon
+TOTALPOKEMON= 808
 
 #Empty pokemon, serves as an empty pokemon or empty spot in the team.
 EMPTY = "empty"
@@ -16,9 +19,6 @@ EMPTY = "empty"
 #Number losing teams to consider on similarity, and number of teams to return to front end.
 NUMLOSINGTEAMS = 3
 NUMTEAMSRETURN = 5
-
-#Number of pokemon to return for each uncountered opponent Pokemon
-NUMCOUNTERPKMN = 7
 
 #Leagues
 OU = "OU"

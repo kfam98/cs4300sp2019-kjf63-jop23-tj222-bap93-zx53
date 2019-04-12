@@ -3,6 +3,8 @@ import pokemon
 import json
 import numpy as np
 
+count = 0
+
 def loadBattleData(level):
     """
     Returns loaded data associated with the league levels, or none if associated with no league data.
@@ -23,15 +25,33 @@ def loadBattleData(level):
     
     return None
 
+def teamToArray(team, pokedex):
+    arr = np.zeros(TOTALPOKEMON)
+    for name in team:
+        if name == EMPTY:
+            arr[0] += 1
+        else:
+            try:
+                arr[pokedex[name].pokedex_num]+=1  
+            except:
+                global count
+                count+=1
+                print("I hate Jesse: "+str(count))
+    return arr
 
-def scoreTeams(curTeams, oppTeam, level):
+
+def scoreTeams(curTeams, oppTeam, pokedex, level):
     battleData = loadBattleData(level)
+
+    if battleData == None:
+        cutoff = min(len(curTeams),NUMTEAMSRETURN)
+        return curTeams[:cutoff]
 
     if len(oppTeam) < 6:
         for x in range(6-len(oppTeam)):
             oppTeam.append(EMPTY)
     
-    oppTeam = np.array(oppTeam)
+    oppTeam = teamToArray(oppTeam, pokedex)
 
     #create dictionary from losers team to the team that beat them.
     loserDict = {}  
@@ -45,13 +65,12 @@ def scoreTeams(curTeams, oppTeam, level):
             loser = d["p1_team"]
 
         if str(loser) in loserDict:
-            loserDict[str(loser)].append(winner)
+            loserDict[str(loser)].append(teamToArray(winner,pokedex))
         else:
             #new to dictonary
-            loserDict[str(loser)] = [winner]
+            loserDict[str(loser)] = [teamToArray(winner,pokedex)]
 
-            #Fix dot product of strings -- later problem
-            sims.append((loser, np.dot(oppTeam,np.array(loser)) ))
+            sims.append((loser, np.dot(oppTeam, teamToArray(loser,pokedex)) ))
 
     
     sims = sorted(sims, key = lambda x : x[1], reverse = True)
@@ -67,18 +86,16 @@ def scoreTeams(curTeams, oppTeam, level):
 
     results = []
     for team in curTeams:
-        t = np.array(team)
+        t = teamToArray(team,pokedex)
         score = 0
         for winner in winnersComp:
-            w = np.array(w)
-            score+= np.dot(t,w)
+            score+= np.dot(t,winner)
         results.append((team,score))
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
     cutoff = min(len(results),NUMTEAMSRETURN)
-    results[:cutoff]
+    print("cutoff to be returned is: "+str(cutoff))
+    results = results[:cutoff]
 
     return [result[0] for result in results]
-
-
