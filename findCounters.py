@@ -1,4 +1,7 @@
 from constants import *
+import pokemon
+pokedex = pokemon.generate_instances()
+
 # At this stage, we should know which of the opponent's Pokemon are not countered
 # by any of the current team
 
@@ -31,7 +34,7 @@ def generateScore(pkmn, playstyle):
         
     
 
-def findCounters(current_team, uncountered_opponent_team, want_legendary, generations, playstyle, minimum_capture_rate, pkmn_dict):
+def findCounters(current_team, uncountered_opponent_team, want_legendary, generations, playstyle, minimum_capture_rate, pkmn_dict, branch_factor):
     """ Updates the current_team with pokemon to counter each of the Pokemon in the
     uncountered_opponent_team.
     
@@ -43,42 +46,57 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
     playstyle: One of "balanced", "defensive" or "glass cannon"
     minimum_capture_rate: The minimum capture rate wanted [float]
     pkmn_dict: Dictionary of all Pokemon instances
+    branch_factor: the branching factor [int]
     
     Note: if no opponent team was specified, then uncountered_opponent_team should be empty.
     """
     all_pokemon = pkmn_dict
     # Filter the list of all Pokemon to satisfy the given filters
-    # all_pokemon dictionary should be in app.py
+
     filtered_pkmn = []
     for pkmn in all_pokemon:
         if (pkmn not in current_team and all_pokemon[pkmn].gen in generations and
             all_pokemon[pkmn].is_legendary == want_legendary and all_pokemon[pkmn].capture_rate >= minimum_capture_rate):
                 filtered_pkmn.append(all_pokemon[pkmn])
-                    
+       
+    possible_teams = [current_team]
+    count = 0
     for target_name in uncountered_opponent_team:
-        
-        if len(current_team) < 6:
+ 
             
+        if len(possible_teams[0]) < 6:  
             # Get the pokemon instance of this Pokemon name
         
             target = all_pokemon[target_name]
             weaknesses = target.weaknesses
             
             # Retrieve Pokemon that expose these weaknesses and satisfy the filters
+            
             counters = []
             for pkmn_inst in filtered_pkmn:
                 if (pkmn_inst.type1 in weaknesses or pkmn_inst.type2 in weaknesses):
                     counters.append(pkmn_inst)
                     
             # Need to rank the possible counters in order to retrieve the best one.
-            # Will probably use lambda function in conjunction with the generateScore function.
             
             ranked_counters = sorted(counters, key = lambda pk : generateScore(pk, playstyle), reverse = True)
-            
-            # Add best counter to current team
-            current_team.append(ranked_counters[0].name)
+            best_counters = ranked_counters[:branch_factor]
+            # Generate possible teams with best counters
+             
+            count += 1
+            new_teams = []
+            for team in possible_teams:
+                for counter in best_counters:
+                    new_teams.append(team + [counter.name])
+              
+            possible_teams = new_teams  
+                    
+    
+    return possible_teams
 
-    return [current_team]
+
+if __name__ == '__main__':
+    print(findCounters(['Charizard'], ['Pikachu', 'Blastoise'], False, [1,2,3,4,5,6,7], BALANCED, 0, pokedex, BRANCH1))
         
 
     

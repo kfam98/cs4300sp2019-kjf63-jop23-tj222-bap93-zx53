@@ -17,6 +17,9 @@ EMPTY = "empty"
 NUMLOSINGTEAMS = 3
 NUMTEAMSRETURN = 5
 
+#Number of pokemon to return for each uncountered opponent Pokemon
+NUMCOUNTERPKMN = 7
+
 #Leagues
 OU = "OU"
 
