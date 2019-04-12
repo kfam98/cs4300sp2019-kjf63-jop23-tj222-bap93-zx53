@@ -1,7 +1,8 @@
 import fillTeam as trevor
 import findCounters as jesse
 import checkCounters as sherry
-import sims as t2
+import sims as team
+import movesetsAndFormat as team2
 import pokemon
 from constants import *
 
@@ -40,14 +41,11 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     ##May need to change inputs into the proper backend global vars, a translation
 
     branchFactor = determineBranchFactor(currentTeamNames)
-    print(branchFactor)
 
     if branchFactor == None:
         #avoid algorithm -- call to fill the natures and moves. -- format correctly aft.
         #for now simply dont worry about it
         return myTeam
-
-    print(currentMoves)
 
     uncounteredOpps = sherry.checkCounters(
         currentTeamNames, 
@@ -57,8 +55,6 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pokeMoves
     )
     
-    print(uncounteredOpps)
-
     possibleTeams = jesse.findCounters(
         currentTeamNames, 
         uncounteredOpps, 
@@ -81,18 +77,18 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         branchFactor
     )
 
-    topTeams = t2.scoreTeams(
+    topTeams = team.scoreTeams(
         allPossibleTeams,
         oppTeamNames,
         pokedex,
         league,
     )
 
-    for team in topTeams:
-        print(team)
+    return team2.fillAndFormat(
+        topTeams,
+        myTeam
+    )
       
-
-    
 
 def determineBranchFactor(curTeam):
     currentMems = len(curTeam)
@@ -113,7 +109,7 @@ def determineBranchFactor(curTeam):
         
 
 if __name__ == '__main__':
-    generateResults(
+    r = generateResults(
         {"Squirtle": {MOVES:[],NATURE:None},"Charmander": {MOVES:[],NATURE:None}} ,
         {"Charmander", "Dragonite"},
         False,
@@ -121,3 +117,8 @@ if __name__ == '__main__':
         BALANCED,
         0.0
         )
+
+    for team in r:
+        print(team)
+        print("--------------")
+

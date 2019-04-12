@@ -62,6 +62,8 @@ RANKSTOWINLOSEFILES = [
 
 ]
 
+PATHTOMOVES = "./app/data/PokemonToMovesets.json"
+
 #Pokemon Types
 BUG = 'bug'
 DARK = 'dark'
