@@ -7,9 +7,18 @@ BRANCH1 = 100
 BRANCH2 = 50
 BRANCH3 = 25
 BRANCH4 = 12
-BRANCH5 = 2#6
+BRANCH5 = 6
 BRANCH6 = 3
 
+#Empty pokemon, serves as an empty pokemon or empty spot in the team.
+EMPTY = "empty"
+
+#Number losing teams to consider on similarity, and number of teams to return to front end.
+NUMLOSINGTEAMS = 3
+NUMTEAMSRETURN = 5
+
+#Leagues
+OU = "OU"
 
 #Pokemon Types
 BUG = 'bug'

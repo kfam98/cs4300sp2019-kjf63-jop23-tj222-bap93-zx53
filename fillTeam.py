@@ -75,8 +75,7 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
                 for pType in pObj.weaknesses:
                         teamWeaknesses[pType] += 1
             
-            ## rankings - List<strin,score>
-            rankings = []
+            toRank = []
             for pKey in pDict:
                 pObj = pDict[pKey]
                 #if not in blacklist or on current team.
@@ -89,11 +88,26 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
                 elif pObj.capture_rate < minCaptureRate:
                     pass
                 else:
-                    rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses)))
+                    toRank.append(pObj)
+
+            #if due to constraints, there is no pokemon that can go in then 
+            #fill the team with emptys and consider done.
+            if len(toRank) == 0:
+                for x in range(6-len(team)):
+                    team.append(EMPTY)
+                finishedTeams.append(team)
+
+            ## rankings - List<strin,score>
+            rankings = []
+            for pObj in toRank:
+                rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses)))
 
             rankings = sorted(rankings, key = lambda x : x[1], reverse = True)
 
-            for pName,_ in rankings[:branchFactor]:
+            #compensate for not having enough pokemon to meet branching factor
+            bFactor = min(len(rankings),branchFactor)
+
+            for pName,_ in rankings[:bFactor]:
                 tmp = team[:]
                 tmp.append(pName)
                 currentTeams.append(tmp)
