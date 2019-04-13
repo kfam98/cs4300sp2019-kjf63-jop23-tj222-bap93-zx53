@@ -31,7 +31,7 @@ class Pokemon():
     
     
     def __init__(self, name, pkdex_num, att, defs, hp, spd, sp_att, sp_def,
-                 gen, capture_rate, type1, type2 = None, is_legendary = False):
+                 gen, capture_rate, type1, type2 = None, is_legendary = False,):
         """ Initializer for the Pokemon class
         
         Parameters:
@@ -48,6 +48,7 @@ class Pokemon():
         type1: The primary type of the pokemon [string]
         type2: The secondary type of the pokemon [string or None]
         is_legendary: Whether this pokemon is a legendary or not [bool]
+        tier: The competitive tier of the pokemon [string]
         
         """
         
@@ -68,6 +69,7 @@ class Pokemon():
         self.weaknesses = []
         self.resistances = []
         self.immunities = []
+        self.tier = ""
         
         
     def get_base_total(self):
@@ -143,6 +145,13 @@ def generate_instances():
                
             line_count += 1
             
+    
+    with open("app/data/pokemon_tiers.json", newline = '') as json_file:
+        tier_dict = json.load(json_file)
+        
+    for pkmn_name in result:
+        result[pkmn_name].tier = tier_dict[pkmn_name]
+            
     return result
         
 def generateTypeChart():
@@ -196,8 +205,8 @@ pkmn_weights = generatePkmnWeights()
 pkmn_moves = generateMoves()
 move_types = generateMoveTypes()
 
-#if __name__ == "__main__":
-    #print(generate_instances())
+if __name__ == "__main__":
+    print(generate_instances())
     # for i in range(len(types)):
     #     print('Dark is ' + str(type_chart['dark'][i]) + ' times effective towards ' + types[i] )
 
