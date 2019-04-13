@@ -1,4 +1,4 @@
-natures = { "hardy":0,
+{ "hardy":0,
  "bold":1,
 "modest":2,
 "calm":3,
