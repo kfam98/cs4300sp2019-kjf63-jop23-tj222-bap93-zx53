@@ -37,7 +37,7 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
     )
 
 
-def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptureRate, blacklist, pokemonDictionary, branchFactor):
+def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptureRate, pokemonDictionary, branchFactor,league):
     """
     Updates and returns the currentTeam variable to fill out to six pokemon
 
@@ -48,9 +48,9 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
     generations - List<ints> - List of integers representing the generations allowed to be chosen from
     playstyle - String - string from constants that denotes he playstyle the player has chosen
     minCaptureRate - float - minimum capture rate that the player willing to endure
-    blacklist - List<string> - string of pokemon names not allowed to be on the team
     pokemonDictionary - dict<pName,pObj> - where pName is the string name of the pokemon and the pObj is the pokemone object associated with that pokemon
     branchFactor - int - number of different pokemon we should put when building variations.
+    league - one of the defined constants for league ranks
     """
 
     pDict = pokemonDictionary
@@ -79,13 +79,15 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
             for pKey in pDict:
                 pObj = pDict[pKey]
                 #if not in blacklist or on current team.
-                if (pObj.name in team) or (pObj.name in blacklist):
+                if (pObj.name in team):
                     pass
                 elif pObj.is_legendary and (not wantLegendary):
                     pass
                 elif not pObj.gen in generations:
                     pass
                 elif pObj.capture_rate < minCaptureRate:
+                    pass
+                elif not pObj.tier in LEAGUERANKS[LEAGUERANKS.index(league):]:
                     pass
                 else:
                     toRank.append(pObj)
