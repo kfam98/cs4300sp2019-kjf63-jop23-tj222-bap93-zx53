@@ -174,13 +174,6 @@ def generateTypeChart():
             
         return result
     
-def generatePkmnWeights():
-    """ Returns the pokemon weights generated from Pokemon showdown replays """
-    
-    with open("app/data/replays_html/pkmn_weights.json", newline = '') as json_file:
-        result = json.load(json_file)
-        
-    return result
 
 def generateMoves():
     """ Returns a dictionary where each key is a string identifying a specific
@@ -201,7 +194,6 @@ def generateMoveTypes():
     
 # Global variable with type chart   
 type_chart = generateTypeChart()   
-pkmn_weights = generatePkmnWeights()
 pkmn_moves = generateMoves()
 move_types = generateMoveTypes()
 

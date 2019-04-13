@@ -32,12 +32,7 @@ def teamToArray(team, pokedex):
         if name == EMPTY:
             arr[0] += 1
         else:
-            try:
-                arr[pokedex[name].pokedex_num]+=1  
-            except:
-                global count
-                count+=1
-                #print("I hate Jesse: "+str(count))
+            arr[pokedex[name].pokedex_num]+=1  
     return arr
 
 
