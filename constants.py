@@ -51,16 +51,17 @@ LEAGUERANKS = [
 
 RANKSTOWINLOSEFILES = [
     UBER,
-    "./app/data/replays_html/rp_file.json",
+    "./app/data/replays_html/rp_file_ou.json",
     UUBL,
-    UU,
+    "./app/data/replays_html/rp_file_uu.json",
     RUBL,
-    RU,
+    "./app/data/replays_html/rp_file_ru.json",
     NUBL,
+    "./app/data/replays_html/rp_file_nu.json",
     PUBL,   
-    PU,
-    LC,
-    NFE
+    "./app/data/replays_html/rp_file_pu.json",
+    "./app/data/replays_html/rp_file_lc.json",
+    "./app/data/replays_html/rp_file_nfe.json"
 
 ]
 

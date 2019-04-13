@@ -57,7 +57,11 @@ for replay_name in directory:
         ind6 = data.find('|', data.find('player|p2')+8)
         p2_name = data[ind6+1:data.find('|', ind6+1)]
         
-            
+        if winner_name == p1_name:
+            winner = 'p1'
+        else:
+            winner = 'p2'
+          
         battle_data = {}
         battle_data['p1_team'] = p1_team
         battle_data['p2_team'] = p2_team
