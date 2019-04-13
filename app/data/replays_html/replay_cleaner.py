@@ -9,7 +9,6 @@ lose_weight = 1
 
 directory = os.listdir()
 results = []
-pkmn_weights_dict = {}
 
 for replay_name in directory:
     if '.html' in replay_name:
@@ -58,32 +57,6 @@ for replay_name in directory:
         ind6 = data.find('|', data.find('player|p2')+8)
         p2_name = data[ind6+1:data.find('|', ind6+1)]
         
-        if p1_name == winner_name:
-            winner = 'p1'
-            for pkmn in p1_team:
-                if pkmn not in pkmn_weights_dict:
-                    pkmn_weights_dict[pkmn] = win_weight
-                else:
-                    pkmn_weights_dict[pkmn] += win_weight
-                    
-            for pkmn in p2_team:
-                if pkmn not in pkmn_weights_dict:
-                    pkmn_weights_dict[pkmn] = lose_weight
-                else:
-                    pkmn_weights_dict[pkmn] += lose_weight
-        else:
-            winner = 'p2'
-            for pkmn in p2_team:
-                if pkmn not in pkmn_weights_dict:
-                    pkmn_weights_dict[pkmn] = win_weight
-                else:
-                    pkmn_weights_dict[pkmn] += win_weight
-                    
-            for pkmn in p1_team:
-                if pkmn not in pkmn_weights_dict:
-                    pkmn_weights_dict[pkmn] = lose_weight
-                else:
-                    pkmn_weights_dict[pkmn] += lose_weight
             
         battle_data = {}
         battle_data['p1_team'] = p1_team
@@ -98,8 +71,7 @@ for replay_name in directory:
 with open('rp_file.json', 'w') as fout:
     json.dump(results, fout)
     
-with open('pkmn_weights.json', 'w') as fout1:
-    json.dump(pkmn_weights_dict, fout1)
+
     
 print("Finished extracting data")
             

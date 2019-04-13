@@ -28,6 +28,7 @@ UU = "UU"
 RUBL = "RUBL"
 RU = "RU"
 NUBL = "NUBL"
+NU = "NU"
 PUBL = "PUBL"
 PU = "PU"
 LC = "LC"
@@ -41,6 +42,7 @@ LEAGUERANKS = [
     RUBL,
     RU,
     NUBL,
+    NU,
     PUBL,   
     PU,
     LC,

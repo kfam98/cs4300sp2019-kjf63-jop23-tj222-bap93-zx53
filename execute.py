@@ -63,7 +63,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pStyle, 
         minCapRate, 
         pokedex,
-        branchFactor
+        branchFactor,
+        league
     )
 
     allPossibleTeams = trevor.fillRestOfTeam(
@@ -72,9 +73,9 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         gens, 
         pStyle,
         minCapRate, 
-        [],
         pokedex, 
-        branchFactor
+        branchFactor,
+        league
     )
 
     topTeams = team.scoreTeams(

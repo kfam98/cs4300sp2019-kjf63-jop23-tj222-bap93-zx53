@@ -34,7 +34,7 @@ def generateScore(pkmn, playstyle):
         
     
 
-def findCounters(current_team, uncountered_opponent_team, want_legendary, generations, playstyle, minimum_capture_rate, pkmn_dict, branch_factor):
+def findCounters(current_team, uncountered_opponent_team, want_legendary, generations, playstyle, minimum_capture_rate, pkmn_dict, branch_factor, tier):
     """ Updates the current_team with pokemon to counter each of the Pokemon in the
     uncountered_opponent_team.
     
@@ -47,6 +47,7 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
     minimum_capture_rate: The minimum capture rate wanted [float]
     pkmn_dict: Dictionary of all Pokemon instances
     branch_factor: the branching factor [int]
+    tier: The maximum tier the pokemon found should be
     
     Note: if no opponent team was specified, then uncountered_opponent_team should be empty.
     """
@@ -57,6 +58,11 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
     for pkmn in all_pokemon:
         if (pkmn not in current_team and all_pokemon[pkmn].gen in generations and
             all_pokemon[pkmn].is_legendary == want_legendary and all_pokemon[pkmn].capture_rate >= minimum_capture_rate):
+            
+            current_tier_index = LEAGUERANKS.index(tier)
+            poke_tier_index = LEAGUERANKS.index(all_pokemon[pkmn].tier)
+            
+            if poke_tier_index >= current_tier_index:
                 filtered_pkmn.append(all_pokemon[pkmn])
        
     possible_teams = [current_team]
@@ -97,7 +103,7 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
 
 
 if __name__ == '__main__':
-    print(findCounters(['Charizard'], ['Pikachu', 'Blastoise'], False, [1,2,3,4,5,6,7], BALANCED, 0, pokedex, BRANCH1))
+    print(findCounters(['Charizard'], ['Pikachu', 'Blastoise'], False, [1,2,3,4,5,6,7], BALANCED, 0, pokedex, BRANCH1, OU))
         
 
     
