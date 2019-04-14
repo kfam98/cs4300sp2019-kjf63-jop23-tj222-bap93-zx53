@@ -13734,5 +13734,118 @@
        "crafty-shield",
        "gear-up",
        "fleur-cannon"
+    ],
+    "Marshadow": [
+        "laser-focus",
+        "assurance",
+        "fire-punch",
+        "thunder-punch",
+        "ice-punch",
+        "drain-punch",
+        "counter",
+        "pursuit",
+        "shadow-sneak",
+        "force-palm",
+        "feint",
+        "rolling-kick",
+        "copycat",
+        "shadow-punch",
+        "role-play",
+        "jump-kick",
+        "psych-up",
+        "spectral-thief",
+        "close-combat",
+        "sucker-punch",
+        "endeavor"
+
+    ],
+
+    "Poipole": [
+        "dragon-pulse",
+        "peck",
+        "growl",
+        "helping-hand",
+        "acid",
+        "fury-attack",
+        "venoshock",
+        "charm",
+        "venom-drench",
+        "nasty-plot",
+        "poison-jab",
+        "toxic",
+        "fell-stinger"
+
+    ],
+
+    "Naganadel": [
+        "dragon-pulse",
+        "peck",
+        "growl",
+        "helping-hand",
+        "acid",
+        "fury-attack",
+        "venoshock",
+        "charm",
+        "venom-drench",
+        "nasty-plot",
+        "poison-jab",
+        "toxic",
+        "fell-stinger",
+        "air-cutter",
+        "air-slash"
+    ],
+
+
+    "Stakataka": [
+        "protect",
+        "tackle",
+        "rock-slide",
+        "stealth-rock",
+        "bide",
+        "take-down",
+        "rock-throw",
+        "autotomize",
+        "iron-defense",
+        "iron-head",
+        "rock-blast",
+        "wide-guard",
+        "double-edge"
+    ],
+
+
+    "Blacephalon": [
+        "ember",
+        "astonish",
+        "magic-coat",
+        "stored-power",
+        "flame-burst",
+        "night-shade",
+        "light-screen",
+        "calm-mind",
+        "fire-blast",
+        "shadow-ball",
+        "trick",
+        "mind-blown"
+    ],
+
+    "Zeraora": [
+        "scratch",
+        "spark",
+        "hone-claws",
+        "quick-attack",
+        "fury-swipes",
+        "volt-switch",
+        "snarl",
+        "fake-out",
+        "charge",
+        "thunder-punch",
+        "slash",
+        "wild-charge",
+        "quick-guard",
+        "plasma-fists",
+        "close-combat",
+        "discharge"
+
     ]
+
  }
