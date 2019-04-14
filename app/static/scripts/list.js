@@ -1,0 +1,42 @@
+var naturesLst = [
+  {'text': 'Naughty', 'id': 17},
+  {'text': 'Impish', 'id': 12},
+  {'text': 'Gentle', 'id': 9},
+  {'text': 'Mild', 'id': 8},
+  {'text': 'Brave', 'id': 21},
+  {'text': 'Adamant', 'id': 11},
+  {'text': 'Rash', 'id': 15},
+  {'text': 'Jolly', 'id': 16},
+  {'text': 'Calm', 'id': 4},
+  {'text': 'Quirky', 'id': 19},
+  {'text': 'Relaxed', 'id': 22},
+  {'text': 'Lonely', 'id': 6},
+  {'text': 'Bold', 'id': 2},
+  {'text': 'Naive', 'id': 20},
+  {'text': 'Bashful', 'id': 13},
+  {'text': 'Modest', 'id': 3},
+  {'text': 'Lax', 'id': 18},
+  {'text': 'Docile', 'id': 7},
+  {'text': 'Sassy', 'id': 24},
+  {'text': 'Careful', 'id': 14},
+  {'text': 'Timid', 'id': 5},
+  {'text': 'Hardy', 'id': 1},
+  {'text': 'Hasty', 'id': 10},
+  {'text': 'Quiet', 'id': 23},
+  {'text': 'Serious', 'id': 25}
+];
+
+var leaguesLst = [
+  {'text': 'UBER', 'id': 1},
+  {'text': 'NFE', 'id': 2},
+  {'text': 'RUBL', 'id': 3},
+  {'text': 'PUBL', 'id': 4},
+  {'text': 'RU', 'id': 5},
+  {'text': 'LC', 'id': 6},
+  {'text': 'PU', 'id': 7},
+  {'text': 'UU', 'id': 8},
+  {'text': 'NUBL', 'id': 9},
+  {'text': 'OU', 'id': 10},
+  {'text': 'UUBL', 'id': 11},
+  {'text': 'NU', 'id': 12}
+]
