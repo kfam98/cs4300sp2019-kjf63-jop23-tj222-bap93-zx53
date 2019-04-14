@@ -95,7 +95,7 @@ def generate_instances():
     
     result =  {}
     
-    with open("app/data/pokemon_cleaned.csv", newline = '') as csv_file:
+    with open("dataset/pokemon_cleaned.csv", newline = '') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter = ',')
         line_count = 0
         for row in csv_reader:
@@ -124,7 +124,7 @@ def generate_instances():
             line_count += 1
             
     # Need to get pokemon abilities from the main pokemon csv
-    with open("app/data/pokemon.csv", newline = '') as csv_file2:
+    with open("dataset/pokemon.csv", newline = '') as csv_file2:
         csv_reader = csv.reader(csv_file2, delimiter = ',')
         line_count = 0
         for row in csv_reader:
@@ -146,7 +146,7 @@ def generate_instances():
             line_count += 1
             
     
-    with open("app/data/pokemon_tiers.json", newline = '') as json_file:
+    with open("dataset/pokemon_tiers.json", newline = '') as json_file:
         tier_dict = json.load(json_file)
         
     for pkmn_name in result:
@@ -163,7 +163,7 @@ def generateTypeChart():
     
     result = {}
     
-    with open("app/data/chart.csv", newline = '') as csv_file:
+    with open("dataset/chart.csv", newline = '') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter = ',')
         line_count = 0
         for row in csv_reader:
@@ -180,7 +180,7 @@ def generateMoves():
         Pokemon, and its value is a string list of all moves which can be 
         learned by that Pokemon. """
 
-    with open("app/data/movedata.json", newline = '') as json_file: 
+    with open("dataset/movedata.json", newline = '') as json_file: 
         result = json.load(json_file)
     return result
 
@@ -188,7 +188,7 @@ def generateMoveTypes():
     """ Returns a dictionary where each key is a string identifying a specific
         move, and its value is the type of the move. """
 
-    with open("app/data/movetypedata.json", newline = '') as json_file: 
+    with open("dataset/movetypedata.json", newline = '') as json_file: 
         result = json.load(json_file)
     return result
     

@@ -51,21 +51,21 @@ LEAGUERANKS = [
 
 RANKSTOWINLOSEFILES = [
     UBER,
-    "./app/data/replays_html/rp_file_ou.json",
+    "./dataset/replays_html/rp_file_ou.json",
     UUBL,
-    "./app/data/replays_html/rp_file_uu.json",
+    "./dataset/replays_html/rp_file_uu.json",
     RUBL,
-    "./app/data/replays_html/rp_file_ru.json",
+    "./dataset/replays_html/rp_file_ru.json",
     NUBL,
-    "./app/data/replays_html/rp_file_nu.json",
+    "./dataset/replays_html/rp_file_nu.json",
     PUBL,   
-    "./app/data/replays_html/rp_file_pu.json",
-    "./app/data/replays_html/rp_file_lc.json",
-    "./app/data/replays_html/rp_file_nfe.json"
+    "./dataset/replays_html/rp_file_pu.json",
+    "./dataset/replays_html/rp_file_lc.json",
+    "./dataset/replays_html/rp_file_nfe.json"
 
 ]
 
-PATHTOMOVES = "./app/data/PokemonToMovesets.json"
+PATHTOMOVES = "./dataset/PokemonToMovesets.json"
 
 #Pokemon Types
 BUG = 'bug'
