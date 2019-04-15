@@ -481,11 +481,11 @@
         for (var i = 0; i < li_lst.length; i++) {
           var li = li_lst[i];
           if (li.className == "select2-choices") {
-            mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '+');
+            mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '6');
 
           }
         }
-        theirteam_str += this.children[1].innerText + "+" + mv+"_";
+        theirteam_str += this.children[1].innerText + "6" + mv+"_";
       });
       //console.log(theirteam_str);
         window.location.href = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str+"&theirteam="+theirteam_str;
