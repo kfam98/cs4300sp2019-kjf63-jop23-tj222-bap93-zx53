@@ -28,14 +28,15 @@
       <p style="font-size:10px;">© CS 4300 || 2019</p>
     </div>
 
-    <div class="site-description">SquadUp is a Pokemon team recommendation system. Given
-    the current members of your team and a variety of potential filter selections, SquadUp will
-    present recommendations on Pokemon to complete your team.</div>
+
   </div>
 
   <div class="filters-container">
-    <div class="text-description" style="width: 100%;text-align:left;">
-      <h1 style="margin-top:2%;">Choose Your Filters: </h1>
+    <div class="text-description" style="width: 100%;text-align:left;font-size:18px">SquadUp is a Pokemon team recommendation system. Given
+    the current members of your team and a variety of potential filter selections, SquadUp will
+    present recommendations on Pokemon to complete your team.</div>
+    <div class="text-description" style="padding-top: 2%;width: 100%;text-align:left;">
+      <h1>Choose Your Filters: </h1>
     </div>
 
     <!-- legendary filter -->
@@ -379,7 +380,9 @@
 
       $(document).on("click", ".remove-pokemon-button", function() {
         $(this).parent().parent().children('.add-pokemon-button').show();
-        $(this).parent().hide();
+        $(this).parent().attr('id', 'remove-card');
+        $('#remove-card').remove();
+
       });
 
       $(document).on("change", ".pokemon-select2", function() {
