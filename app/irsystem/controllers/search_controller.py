@@ -103,7 +103,7 @@ def results():
             moveset = []
             if len(new_lst) > 1:
                 for i in range(1, len(new_lst)):
-                    moveset.append(move[i])
+                    moveset.append(new_lst[i])
             theirteam_dict[new_lst[0]] = {'nature':None, 'moves':moveset}
     arguments['oppTeam'] = theirteam_dict
 
@@ -112,6 +112,8 @@ def results():
         arguments['league'] = league
     else:
         arguments['league'] = 'NFE'
+
+    print(arguments)
 
 
 
