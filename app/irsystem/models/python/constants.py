@@ -65,7 +65,7 @@ RANKSTOWINLOSEFILES = [
 
 ]
 
-PATHTOMOVES = "/dataset/PokemonToMovesets.json"
+PATHTOMOVES = "/dataset/PokemontoMovesets.json"
 
 #Pokemon Types
 BUG = 'bug'
