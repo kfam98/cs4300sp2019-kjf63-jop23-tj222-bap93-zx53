@@ -43,7 +43,7 @@ LEAGUERANKS = [
     RU,
     NUBL,
     NU,
-    PUBL,   
+    PUBL,
     PU,
     LC,
     NFE
@@ -51,21 +51,21 @@ LEAGUERANKS = [
 
 RANKSTOWINLOSEFILES = [
     UBER,
-    "./dataset/replays_html/rp_file_ou.json",
+    "/dataset/replays_html/rp_file_ou.json",
     UUBL,
-    "./dataset/replays_html/rp_file_uu.json",
+    "/dataset/replays_html/rp_file_uu.json",
     RUBL,
-    "./dataset/replays_html/rp_file_ru.json",
+    "/dataset/replays_html/rp_file_ru.json",
     NUBL,
-    "./dataset/replays_html/rp_file_nu.json",
-    PUBL,   
-    "./dataset/replays_html/rp_file_pu.json",
-    "./dataset/replays_html/rp_file_lc.json",
-    "./dataset/replays_html/rp_file_nfe.json"
+    "/dataset/replays_html/rp_file_nu.json",
+    PUBL,
+    "/dataset/replays_html/rp_file_pu.json",
+    "/dataset/replays_html/rp_file_lc.json",
+    "/dataset/replays_html/rp_file_nfe.json"
 
 ]
 
-PATHTOMOVES = "./dataset/PokemonToMovesets.json"
+PATHTOMOVES = "/dataset/PokemonToMovesets.json"
 
 #Pokemon Types
 BUG = 'bug'
@@ -95,7 +95,7 @@ PTYPES = [BUG, DARK, DRAGON, ELECTRIC, FAIRY, FIGHTING, FIRE, FLYING,
 WEAKNESS3 = .1
 WEAKNESS4 = .2
 WEAKNESS5 = .3
-WEAKNESS6 = .4 
+WEAKNESS6 = .4
 
 #Base Stats
 ATTACK = "attack"

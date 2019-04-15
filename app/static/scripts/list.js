@@ -28,15 +28,11 @@ var naturesLst = [
 
 var leaguesLst = [
   {'text': 'UBER', 'id': 1},
-  {'text': 'NFE', 'id': 2},
-  {'text': 'RUBL', 'id': 3},
-  {'text': 'PUBL', 'id': 4},
-  {'text': 'RU', 'id': 5},
-  {'text': 'LC', 'id': 6},
-  {'text': 'PU', 'id': 7},
-  {'text': 'UU', 'id': 8},
-  {'text': 'NUBL', 'id': 9},
-  {'text': 'OU', 'id': 10},
-  {'text': 'UUBL', 'id': 11},
-  {'text': 'NU', 'id': 12}
+  {'text': 'OU', 'id': 2},
+  {'text': 'UU', 'id': 3},
+  {'text': 'RU', 'id': 4},
+  {'text': 'NU', 'id': 5},
+  {'text': 'PU', 'id': 6},
+  {'text': 'LC', 'id': 7},
+  {'text': 'NFE', 'id': 8},
 ]

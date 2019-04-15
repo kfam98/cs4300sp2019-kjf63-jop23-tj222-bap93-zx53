@@ -1,7 +1,8 @@
-from constants import *
-import pokemon
+from .constants import *
+from . import pokemon
 import json
 import numpy as np
+import os
 
 count = 0
 
@@ -11,10 +12,11 @@ def loadBattleData(league):
 
     league - one of the 11 supported leagues
     """
+    path = os.path.dirname(os.path.realpath(__file__))
     fString = None
     try:
         idx = LEAGUERANKS.index(league)
-        fString = RANKSTOWINLOSEFILES[idx]
+        fString = path+RANKSTOWINLOSEFILES[idx]
     except:
         #No file associated with the leauge.
         return None
@@ -28,11 +30,12 @@ def loadBattleData(league):
 
 def teamToArray(team, pokedex):
     arr = np.zeros(TOTALPOKEMON)
+
     for name in team:
         if name == EMPTY:
             arr[0] += 1
         else:
-            arr[pokedex[name].pokedex_num]+=1  
+            arr[pokedex[name].pokedex_num]+=1
     return arr
 
 
@@ -40,7 +43,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league):
     """
     Returns NUMTEAMSRETURN number of teams from curTeams as 'top' teams based on social data.
 
-    curTeams - list of pokemon teams to consider 
+    curTeams - list of pokemon teams to consider
     oppTeam - team of pokemon representing opponent team
     pokedex - dictionary with pokemon names as keys to pokemon instances as values
     league - one of the 11 supported league types, telling us which information to look for similar opponents in
@@ -54,12 +57,12 @@ def scoreTeams(curTeams, oppTeam, pokedex, league):
     if len(oppTeam) < 6:
         for x in range(6-len(oppTeam)):
             oppTeam.append(EMPTY)
-    
+
     oppTeam = teamToArray(oppTeam, pokedex)
 
     #create dictionary from losers team to the team that beat them.
-    loserDict = {}  
-    sims = [] 
+    loserDict = {}
+    sims = []
     for d in battleData:
         if d["winner"] == "p1":
             winner = d["p1_team"]
@@ -76,7 +79,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league):
 
             sims.append((loser, np.dot(oppTeam, teamToArray(loser,pokedex)) ))
 
-    
+
     sims = sorted(sims, key = lambda x : x[1], reverse = True)
 
     cutoff = min(len(sims),NUMLOSINGTEAMS)

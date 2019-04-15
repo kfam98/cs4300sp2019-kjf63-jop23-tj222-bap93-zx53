@@ -1,5 +1,5 @@
-from constants import * 
-import pokemon
+from .constants import *
+from . import pokemon
 
 def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
     """
@@ -7,8 +7,8 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
 
     pObj - Pokemon Object - pokemon object of the pokemon to rank
     playstyle - String - string from constants that denotes he playstyle the player has chosen
-    currentTeamWeaknesses - dict<pType,numWeak> - pType type of pokemon and the corresponding 
-        number of pokemon weak to that specific type 
+    currentTeamWeaknesses - dict<pType,numWeak> - pType type of pokemon and the corresponding
+        number of pokemon weak to that specific type
     socialWeight - int - the social weight to consider when ranking the pokemon
     """
     #determine weakness multipliers for the pokemon
@@ -26,13 +26,13 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
         if currentTeamWeaknesses[weakness] + 1 == 6:
             weaknessMod  -= WEAKNESS6
 
-    
+
     return weaknessMod * (
-        pObj.attack * PLAYSTYLES[playstyle][ATTACK] + 
-        pObj.defense * PLAYSTYLES[playstyle][DEFENSE] + 
-        pObj.sp_attack * PLAYSTYLES[playstyle][SPATTACK] + 
-        pObj.sp_defense * PLAYSTYLES[playstyle][SPDEFENSE] + 
-        pObj.speed * PLAYSTYLES[playstyle][SPEED] + 
+        pObj.attack * PLAYSTYLES[playstyle][ATTACK] +
+        pObj.defense * PLAYSTYLES[playstyle][DEFENSE] +
+        pObj.sp_attack * PLAYSTYLES[playstyle][SPATTACK] +
+        pObj.sp_defense * PLAYSTYLES[playstyle][SPDEFENSE] +
+        pObj.speed * PLAYSTYLES[playstyle][SPEED] +
         pObj.hp * PLAYSTYLES[playstyle][HEALTH]
     )
 
@@ -74,7 +74,7 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
                 pObj = pDict[pokemon]
                 for pType in pObj.weaknesses:
                         teamWeaknesses[pType] += 1
-            
+
             toRank = []
             for pKey in pDict:
                 pObj = pDict[pKey]
@@ -92,7 +92,7 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
                 else:
                     toRank.append(pObj)
 
-            #if due to constraints, there is no pokemon that can go in then 
+            #if due to constraints, there is no pokemon that can go in then
             #fill the team with emptys and consider done.
             if len(toRank) == 0:
                 for x in range(6-len(team)):

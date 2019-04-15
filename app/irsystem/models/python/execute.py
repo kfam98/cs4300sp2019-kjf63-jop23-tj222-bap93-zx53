@@ -1,10 +1,12 @@
-import fillTeam as trevor
-import findCounters as jesse
-import checkCounters as sherry
-import sims as team
-import movesetsAndFormat as team2
-import pokemon
-from constants import *
+from . import fillTeam
+from . import findCounters
+from . import checkCounters
+from . import sims as team
+from . import movesetsAndFormat
+from . import pokemon
+from .constants import *
+
+import os
 
 ##Note - check for extremes like stupid high minimum capture rate or no gens allowed.
 
@@ -22,6 +24,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     league - string representing which is the highest league we allow
 
     """
+
     #Initialization, should only happen once in app but am putting it here now
     if pokedex == None:
         pokedex = pokemon.generate_instances()
@@ -47,33 +50,33 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         #for now simply dont worry about it
         return myTeam
 
-    uncounteredOpps = sherry.checkCounters(
-        currentTeamNames, 
-        currentMoves, 
-        oppTeamNames, 
+    uncounteredOpps = checkCounters.checkCounters(
+        currentTeamNames,
+        currentMoves,
+        oppTeamNames,
         pokedex,
         pokeMoves
     )
-    
-    possibleTeams = jesse.findCounters(
-        currentTeamNames, 
-        uncounteredOpps, 
-        allowLegends, 
+
+    possibleTeams = findCounters.findCounters(
+        currentTeamNames,
+        uncounteredOpps,
+        allowLegends,
         gens,
-        pStyle, 
-        minCapRate, 
+        pStyle,
+        minCapRate,
         pokedex,
         branchFactor,
         league
     )
 
-    allPossibleTeams = trevor.fillRestOfTeam(
-        possibleTeams, 
-        allowLegends, 
-        gens, 
+    allPossibleTeams = fillTeam.fillRestOfTeam(
+        possibleTeams,
+        allowLegends,
+        gens,
         pStyle,
-        minCapRate, 
-        pokedex, 
+        minCapRate,
+        pokedex,
         branchFactor,
         league
     )
@@ -85,11 +88,11 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         league,
     )
 
-    return team2.fillAndFormat(
+    return movesetsAndFormat.fillAndFormat(
         topTeams,
         myTeam
     )
-      
+
 
 def determineBranchFactor(curTeam):
     currentMems = len(curTeam)
@@ -107,7 +110,7 @@ def determineBranchFactor(curTeam):
         return BRANCH1
     else:
         return None
-        
+
 
 if __name__ == '__main__':
     r = generateResults(
@@ -122,4 +125,3 @@ if __name__ == '__main__':
     for team in r:
         print(team)
         print("--------------")
-

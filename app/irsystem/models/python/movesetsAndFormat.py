@@ -1,9 +1,10 @@
-import pokemon
+from . import pokemon
 import json
-from constants import *
-
+from .constants import *
+import os
 def loadMovesets():
-    with open(PATHTOMOVES, "r+") as f:
+    path = os.path.dirname(os.path.realpath(__file__))
+    with open(path+PATHTOMOVES, "r+") as f:
         return json.loads(f.readline())
 
 
@@ -39,11 +40,10 @@ def fillAndFormat(teams, currentTeamData):
                 for move in d[MOVES]:
                     if len(form[pokeman][MOVES]) < 4:
                         form[pokeman][MOVES].append(move)
-                
+
                 if form[pokeman][NATURE] == None:
                     form[pokeman][NATURE] = d[NATURE]
 
         toRet.append(form.copy())
 
     return toRet
-

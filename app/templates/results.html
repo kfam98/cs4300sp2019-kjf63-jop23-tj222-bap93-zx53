@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="/static/scripts/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"></script>
+  <script src="/static/scripts/activity.js" type="text/javascript"></script>
+  <script src="/static/scripts/list.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
+  <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.css" />
+  <link rel="stylesheet" type="text/css" href="/static/styles/index.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="/static/styles/results.css" media="all" />
+
+
+  <title>
+    SquadUp
+  </title>
+</head>
+
+<body>
+  <div class="title-container">
+    <img class="site-icon" src="/static/images/icon.png"/>
+    <div class="site-title"><span class="red">Squad</span><span class="black">Up</span></div>
+    <div class="site-description" style="margin-top:-2%;">
+      <p>A Pokemon Team Search Engine<p>
+      <p style="font-size:10px;">© CS 4300 || 2019</p>
+    </div>
+
+  </div>
+
+  {% if not results %}
+    <div class="site-error">
+      <div class="site-error-heading">
+        <h1>ERROR</h1></div>
+        Please go back and try again.
+        <div class="site-error-link"><a href="/"> << Back to Home </a></div>
+      </div>
+
+  {% else %}
+
+  <div class="site-description" style="width: 100%;text-align:left; margin-left:17%;">
+    <h1> RESULTS: </h1>
+    <p>We successfully generated 5 teams that best fit your desired filters.
+      Below are the teams with the first team, seen below, being the best.
+      Look through and see what we found for you.<p>
+  </div>
+
+  <div class="site-description" style="width: 100%;text-align:left; margin-left:17%;">
+    <h1> WHAT YOU SEE: </h1>
+    <p>In each Pokemon card, you see that it contains the Pokemon,
+      the recommended nature, and the recommended move sets.
+      Look through each team with the provided arrows.<p>
+  </div>
+
+  <div class="site-results generated-team " style="background-color: #332f34;">
+    <img id="left" class="arrows" src="/static/images/left-arrow.svg">
+    {% for team in results %}
+    <div id='team-title-{{ loop.index|string }}' class="your-team-header">Team {{ loop.index }}</div>
+
+
+    <div class="site-team" id='team-{{ loop.index|string }}'>
+      {% for name, info in team.items() %}
+
+        <div class="result-slot-container">
+          <div class="pokemon-card-form">
+
+
+          {% for p_name, img_src in imagedata.items() %}
+            {% if name == p_name %}
+            <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
+            {% endif %}
+          {% endfor %}
+
+          <div class="pokemon-card-name">{{ name }}</div>
+          <div class="pokemon-nature-label">{{info.nature}}</div>
+          <div class="pokemon-moveset-label">Recommended Moves</div>
+          <div class="pokemon-moves-label">
+            {% for move in info.moves %}
+              <div class='pokemon-move-label' id="move{{ loop.index }}">{{ move }}</div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+
+    </div>
+
+    {% endfor %}
+    <img id="right" class="arrows" src="/static/images/right-arrow.svg">
+  </div>
+
+  <div class="site-error-link" style="margin-left:45%; margin-top:5%;"><a href="/"> <<   Back to Home </a></div>
+
+
+  {% endif %}
+
+
+
+
+  <script>
+  var dataList = {};
+  $.getJSON("/static/data/pokemondata.json", function(json) {
+    for (var i = 0; i < json.length; i++) {
+      dataList[json[i].name] = json[i].imgSrc;
+    }
+  });
+
+  var curr_team = 1;
+  for (var i=2; i < 6; i++) {
+    $("#team-"+i).hide();
+    $("#team-title-"+i).hide();
+  }
+
+  $("#left").on("click", function() {
+    $("#team-"+curr_team).hide();
+    $("#team-title-"+curr_team).hide();
+
+    var new_team = curr_team - 1;
+    if (new_team == 0) {
+      new_team = 5;
+
+    }
+    curr_team = new_team;
+
+
+    $("#team-"+new_team).show();
+    $("#team-title-"+new_team).show();
+  });
+
+  $("#right").on("click", function() {
+    $("#team-"+curr_team).hide();
+    $("#team-title-"+curr_team).hide();
+
+    var new_team = curr_team + 1;
+    if (new_team == 6) {
+      new_team = 1;
+
+    }
+    curr_team = new_team;
+
+
+    $("#team-"+new_team).show();
+    $("#team-title-"+new_team).show();
+  });
+
+
+
+  </script>
+
+</body>
+
+</html>
