@@ -77,9 +77,13 @@
           <div class="pokemon-nature-label">{{info.nature}}</div>
           <div class="pokemon-moveset-label">Recommended Moves</div>
           <div class="pokemon-moves-label">
+          {% if info.moves %}
             {% for move in info.moves %}
               <div class='pokemon-move-label' id="move{{ loop.index }}">{{ move }}</div>
             {% endfor %}
+          {% else %}
+                <div class='pokemon-move-label'>No moves recommended</div>
+          {% endif %}
 
           </div>
         </div>
