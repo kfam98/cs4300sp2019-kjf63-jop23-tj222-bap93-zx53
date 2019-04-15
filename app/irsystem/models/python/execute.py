@@ -57,8 +57,6 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pokedex,
         pokeMoves
     )
-    
-    print ("Sherry returned " + str(uncounteredOpps))
 
     possibleTeams = findCounters.findCounters(
         currentTeamNames,
@@ -71,8 +69,6 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         branchFactor,
         league
     )
-    
-    print ("Jesse returned " + str(possibleTeams))
 
     allPossibleTeams = fillTeam.fillRestOfTeam(
         possibleTeams,
@@ -85,7 +81,6 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         league
     )
 
-    print ("Trevor sucks and returned " + str(allPossibleTeams))
     topTeams = team.scoreTeams(
         allPossibleTeams,
         oppTeamNames,
