@@ -53,6 +53,7 @@
       <div class="text-description" style= "text-align: left;">
         What generations do you want to include?
       </div>
+      <div id="generation-error" class='error-msg'></div>
       <div class="generation-filter-container">
         <span class='filter-generation-select2'>
           <input type='text' name='moveset' />
@@ -65,6 +66,7 @@
       <div class="text-description" style= "text-align: left;">
         Which playstyle do you prefer?
       </div>
+      <div id="playstyle-error" class='error-msg'></div>
         <div class="playstyle-filter-container">
           <span class='filter-playstyle-select2'>
             <input type='text' name='playstyle' style='width:100%' />
@@ -81,6 +83,7 @@
         This means that if you choose Uber, you want to consider all Uber leagues
         AND below.
       </div>
+      <div id="leagues-error" class='error-msg'></div>
       <div class="leagues-filter-container">
         <span class='filter-leagues-select2'>
           <input type='text' name='moveset' />
@@ -473,6 +476,7 @@
     });
     //console.log(myteam_str);
     var theirteam_str='';
+    var results_url;
     if (giveOppTeam) {
 
       $(".opponent-team-container > .team-slot-container >.pokemon-card-form").each(function() {
@@ -488,13 +492,45 @@
         theirteam_str += this.children[1].innerText + "6" + mv+"_";
       });
       //console.log(theirteam_str);
-        window.location.href = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str+"&theirteam="+theirteam_str;
+      results_url = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str+"&theirteam="+theirteam_str;
 
     } else {
-        window.location.href = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str;
+      console.log(generations);
+      console.log(league);
+      console.log(pstyle);
+      results_url = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str;
     }
     // console.log(generations);
     // console.log(caprate);
+    if (generations == '') {
+      $('#generation-error').html("Please enter a generation(s)");
+      $('#generation-error').css("display", "block");
+    } else {
+      $('#generation-error').html("");
+      $('#generation-error').css("display", "none");
+    }
+
+    if (league == '&nbsp;') {
+      $('#leagues-error').html("Please choose a league");
+      $('#leagues-error').css("display", "block");
+    } else {
+      $('#leagues-error').html("");
+      $('#leagues-error').css("display", "none");
+    }
+
+    if (pstyle == '&nbsp;')  {
+      $('#playstyle-error').html("Please choose a playstyle");
+      $('#playstyle-error').css("display", "block");
+    } else {
+      $('#playstyle-error').html("");
+      $('#playstyle-error').css("display", "none");
+    }
+
+    if ((generations != '') && (league != '&nbsp;') && (pstyle != '&nbsp;')) {
+      window.location.href = results_url;
+    } else {
+      alert("Missing fields. Check your filters!");
+    }
 
   });
 

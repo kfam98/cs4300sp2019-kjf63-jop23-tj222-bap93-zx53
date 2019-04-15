@@ -690,3 +690,17 @@ li.select2-search-choice {
   background: #e14749;
   cursor: pointer;
 }
+
+/* error messages */
+.error-msg {
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display:none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Play";
+  margin-top: 2%;
+  transition: 3s all;
+  background-color: #e14749;
+}
