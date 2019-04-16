@@ -101,7 +101,24 @@ def scoreTeams(curTeams, oppTeam, pokedex, league):
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
-    cutoff = min(len(results),NUMTEAMSRETURN)
-    results = results[:cutoff]
+    if len(results) < NUMTEAMSRETURN:
+        return [result[0] for result in results]
+    
+    else:
+        firstResult = results[0][0]
+        returnTeams = [firstResult]
+        returnSets = [set(firstResult)]
+        
+        i = 1
+        while(len(returnTeams) < NUMTEAMSRETURN and i < len(results)):
+            teamToConsider,teamToConsiderScore = results[i]
+            
+            if not (set(teamToConsider) in returnSets):
+                returnTeams.append(teamToConsider)
+                returnSets.append(set(teamToConsider))
+            
+            i+=1
 
-    return [result[0] for result in results]
+        return returnTeams
+
+    
