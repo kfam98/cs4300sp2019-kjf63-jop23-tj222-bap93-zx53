@@ -24,6 +24,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     league - string representing which is the highest league we allow
 
     """
+    
 
     #Initialization, should only happen once in app but am putting it here now
     if pokedex == None:
@@ -40,6 +41,9 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     oppTeamNames = []
     for p in oppTeam:
         oppTeamNames.append(p)
+        
+    if len(currentTeamNames) == 6:
+        return movesetsAndFormat.fillAndFormat([currentTeamNames],myTeam)
 
     ##May need to change inputs into the proper backend global vars, a translation
 

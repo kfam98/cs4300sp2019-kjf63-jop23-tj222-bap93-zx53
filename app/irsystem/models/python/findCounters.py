@@ -66,7 +66,6 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
                 filtered_pkmn.append(all_pokemon[pkmn])
 
     possible_teams = [current_team]
-    count = 0
     for target_name in uncountered_opponent_team:
 
 
@@ -90,11 +89,11 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
             best_counters = ranked_counters[:cutoff]
             # Generate possible teams with best counters
 
-            count += 1
             new_teams = []
             for team in possible_teams:
                 for counter in best_counters:
-                    new_teams.append(team + [counter.name])
+                    if counter.name not in team:
+                        new_teams.append(team + [counter.name])
 
             possible_teams = new_teams
 
