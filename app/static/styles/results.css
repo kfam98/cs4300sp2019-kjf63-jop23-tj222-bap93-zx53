@@ -45,6 +45,7 @@
   /* -webkit-text-stroke-color:#405fb0; */
   -webkit-text-stroke-color:black;
   -webkit-text-stroke-width: 1px;
+  font-family: '8-bit' !important;
 }
 
 .generated-team {

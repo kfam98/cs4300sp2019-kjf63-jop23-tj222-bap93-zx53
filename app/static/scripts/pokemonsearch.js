@@ -50,6 +50,8 @@ $.getJSON("/static/data/pokemondata.json", function(json) {
     );
     $card.append($movesetSelect);
     initializeMovesetSelect2($movesetSelect);
+
+
     return $card
   }
 
