@@ -1,9 +1,7 @@
 .site-error {
   /* font-size: 12px; */
   text-align: center;
-  font-family: "Play";
   margin-top: 3%;
-  color: white;
 }
 
 .site-error-heading {
@@ -21,6 +19,7 @@
 .site-error-link {
   margin-top: 3%;
   margin-bottom: 5%;
+  color:black;
 }
 
 .site-error-link:hover {
@@ -30,8 +29,22 @@
 
 
 .site-description {
-  width:78% !important;
+  width:80% !important;
   max-width: none;
+  margin-left: 10% !important;
+  margin-top: 5%;
+  text-align: left;
+}
+
+.site-description h1 {
+  font-size:36px;
+  text-transform: uppercase;
+  margin-top: 2%;
+  color: #fec92f;
+  -webkit-text-fill-color: #fec92f;
+  /* -webkit-text-stroke-color:#405fb0; */
+  -webkit-text-stroke-color:black;
+  -webkit-text-stroke-width: 1px;
 }
 
 .generated-team {
@@ -47,6 +60,12 @@
   margin-top: 10%;
 }
 
+.your-team-header {
+  width: 50%;
+}
+
+
+
 .result-slot-container {
   width: 50%;
   height: auto;
@@ -55,30 +74,25 @@
   flex: 1;
   margin: auto;
   border-radius: 10px;
-  margin-bottom: 1%;
+  margin-bottom: 5px;
   margin-right: 3%;
   margin-left: 25%;
   transition: 0.3s all;
 
 }
 
+.site-team {
+  /* margin-top: 5%; */
+  padding-bottom: 5%;
+}
+
 .pokemon-card-form {
   min-height: 110px;
+  -webkit-box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 3px 5px 1px  rgba(0,0,0,0.5);
 
-}
-.your-team-header {
-  width: 50%;
-  height: 60px;
-  font-family: "Play";
-  font-weight: bold;
-  color: white;
-  font-size: 36px;
-  line-height: 60px;
-  text-align: center;
-  margin: auto;
-  margin-top: 5%;
-  background-color:  #282429;
-  border-radius: 10px;
+
 }
 
 .pokemon-card-name {
@@ -86,8 +100,8 @@
   position: absolute;
   width: 150px;
   height: 100px;
-  font-family: "Play";
-  font-size: 20px;
+  /* font-family: "Play"; */
+  font-size: 14px;
   left: 20%;
   top: 40%;
   transform: translateY(-50%);
@@ -110,10 +124,10 @@
   position: absolute;
   width: auto;
   height:auto;
-  font-family: "Play";
-  font-size: 12px;
+  /* font-family: "Play"; */
+  font-size: 8px;
   left:20%;
-  top: 55%;
+  top: 48%;
   color:white;
   margin-top: 2%;
   text-transform: uppercase;
@@ -127,9 +141,9 @@
 
 .pokemon-moveset-label {
   /* position: absolute; */
-  font-family: "Play";
-  font-size: 16px;
-  left: 50%;
+  /* font-family: "Play"; */
+  font-size: 12px;
+  left: 46%;
   top: 20%;
   width: auto;
   transform: translateY(-30%);
@@ -137,9 +151,9 @@
 
 .pokemon-moves-label {
   /* position: absolute; */
-  font-family: "Play";
-  font-size: 16px;
-  left: 50%;
+  /* font-family: "Play"; */
+  font-size: 8px;
+  left: 46%;
   width: 100%;
   top: 25%;
   width: auto;
@@ -151,12 +165,14 @@
   position: absolute;
   width: auto;
   background-color:  #dfce3b;
-  font-family: "Play";
-  font-size: 12px;
-  left: 50%;
+  /* font-family: "Play"; */
+  font-size: 10px;
+  left: 45%;
   top: 36%;
   padding: 2px 10px;
   border-radius: 10px;
+  max-width: 110px;
+  word-wrap: break-word;
 }
 
 #move2 {
@@ -174,12 +190,15 @@
 .arrows {
   width: 5%;
   float: left;
+  font-size: 18px;
   position: absolute;
+
+
 }
 
 #left {
   top:50%;
-  left:1%;
+  left:3%;
 }
 
 #right {

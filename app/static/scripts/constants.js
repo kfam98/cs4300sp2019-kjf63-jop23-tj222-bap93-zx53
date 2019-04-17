@@ -35,4 +35,31 @@ var leaguesLst = [
   {'text': 'PU', 'id': 6},
   {'text': 'LC', 'id': 7},
   {'text': 'NFE', 'id': 8},
-]
+];
+
+var romanToNumbers = {
+  "I":1,
+  "II":2,
+  "III":3,
+  "IV":4,
+  "V":5,
+  "VI": 6,
+  "VII": 7
+
+};
+
+var pstyleLst = [
+  {id: 1, text:"Glass-Cannon"},
+  {id: 2, text:"Balanced"},
+  {id: 3, text:"Defensive"}
+];
+
+var genLst = [
+  {id: 1, text:"I"},
+  {id: 2, text:"II"},
+  {id: 3, text:"III"},
+  {id: 4, text:"IV"},
+  {id: 5, text:"V"},
+  {id: 6, text:"VI"},
+  {id: 7, text:"VII"}
+];

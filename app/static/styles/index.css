@@ -9,19 +9,36 @@
     src: url("../fonts/play.ttf");
 }
 
+@font-face {
+    font-family: "8-bit";
+    src: url("../fonts/8-bit.ttf");
+}
+
+@font-face {
+    font-family: "Retro";
+    src: url("../fonts/retro.ttf");
+}
+
+@font-face {
+    font-family: "Fipps";
+    src: url("../fonts/Fipps-Regular.otf");
+}
+
 /* links */
 a {
   text-decoration: none;
-  color:white;
+  color:black;
 }
 
 a:hover {
-  color:white;
+  color:black;
 }
 
 
 body {
-  background-color:  #332f34;
+  background-color: #f7f7f7;
+  font-family: "Retro";
+  color: black;
 }
 
 
@@ -44,20 +61,16 @@ ul.select2-choices:after {
 }
 
 li.select2-search-choice {
-  font-family: "Play";
+  font-family: "Fipps";
+  font-size: 10px;
 }
 
-/* title custom coloring */
-.red {
-  color: #e14749;
+.select2-dropdown-open {
+  font-family:'8-bit';
 }
 
-.black {
-  color: black;
-}
-
-.white {
-  color: white;
+.select2-arrow {
+  background-image: linear-gradient(to top, #fff 0%, #f7f7f7 60%) !important;
 }
 
 
@@ -67,47 +80,74 @@ li.select2-search-choice {
   padding-bottom: 1%;
 }
 
-.site-icon {
-  width: 10%;
+
+.site-icon  {
+  width:5%;
+  margin-left: -3%;
+  margin-right: -2%;
+  transition: 3s all;
+}
+.site-border {
+  width: 98%;
+  margin-bottom: 5%;
   /* margin: auto; */
   /* padding-top: 5%; */
-  margin-left: 45%;
+  /* margin-left: 45%; */
+  float: left;
+  background-size: contain;
+  height:15px;
+  margin-top: 3%;
+  background-repeat: repeat-x;
+  background-image: url('/static/images/graphic.png');
 
 }
 
 .site-title {
-  font-family: "Pokemon";
-  font-size: 56px;
+  font-family: "8-bit";
+  font-size: 72px;
   text-align: center;
   padding-top: 3%;
+  color: #fec92f;
+  -webkit-text-fill-color: #fec92f;
+  /* -webkit-text-stroke-color:#405fb0; */
+  -webkit-text-stroke-color:black;
+  -webkit-text-stroke-width: 5px;
 }
 
-.site-title .red {
-  color: rgb(139, 17, 17);
-  -webkit-text-fill-color: rgb(139, 17, 17);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
+.site-copyright {
+  font-size: 8px;
+  font-family: "Play";
+  text-align: right;
+  margin-right: 29%;
+  /* margin-top: -2%; */
 }
 
-.site-title .black {
-  color: black;
-  -webkit-text-fill-color: black;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-}
 
 .site-description {
-  font-family: "Play";
   font-size: 16px;
   padding-top: 1%;
-  color: white;
   width:38%;
   /* max-width: 800px; */
   text-align: center;
+
   margin: auto;
-  letter-spacing: .1em;
+  letter-spacing: .15em;
 }
 
+.site-first-description {
+  font-size:10px;
+  width:27%;
+  text-align: center;
+  margin-left:35%;
+  color:#f7f7f7;
+  background-color:#fc0d1b;
+  border: 6px solid black;
+  /* padding:2px 2px; */
+  border-radius: 10px;
+  font-family: 'Retro';
+  /* margin-top: 2%; */
+  /* margin-top: -1%; */
+}
 
 /* filters container css */
 .filters-container {
@@ -118,6 +158,7 @@ li.select2-search-choice {
   /* background-color:#333; */
   margin: auto;
   margin-bottom: 20px;
+
   border-radius: 10px;
   padding: 5% 5%;
   display: block;
@@ -125,45 +166,22 @@ li.select2-search-choice {
 
 
 .text-description {
-  font-family: "Play";
   /* font-size: 28px; */
-  color: white;
   text-align: center;
-  letter-spacing: .1em;
+  letter-spacing: .01em;
 }
 
 .text-description h1 {
   font-size:36px;
   text-transform: uppercase;
   margin-top: 2%;
-}
-
-
-.filters-title {
-  font-family: "Play";
-  font-size: 20px;
-  font-weight: bold;
-  width: 20%;
-  height: 55%;
-  margin-left: 42%;
-  text-align: center;
+  color: #fec92f;
+  -webkit-text-fill-color: #fec92f;
+  /* -webkit-text-stroke-color:#405fb0; */
+  -webkit-text-stroke-color:black;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-  box-sizing: border-box;
-  float: left;
-  text-transform: uppercase;
-  color: #E4A408;
-  background-color:#333;
-  border-radius: 10px;
 }
 
-.filters-all-container {
-  /* float: left; */
-  width: 100%;
-  display: flex;
-  margin-top: 3%;
-  margin-bottom: 5%;
-}
 
 
 /* generation filter css */
@@ -174,23 +192,6 @@ li.select2-search-choice {
   margin-top: 5%;
 
 }
-
-.generation-filter-title {
-  font-family: "Play";
-  font-size: 16px;
-  color: white;
-  width: 90%;
-  /* height: 30px; */
-  /* margin-top: 5%; */
-  /* line-height: 30px; */
-  float: left;
-  padding: 5px 15px;
-  box-sizing: border-box;
-  /* position: absolute; */
-  text-align: center;
-  border-radius: 10px;
-}
-
 
 .generation-filter-container {
   /* position: absolute; */
@@ -221,19 +222,6 @@ li.select2-search-choice {
 
 }
 
-.legendary-filter-title {
-  font-family: "Play";
-  font-size: 16px;
-  color: white;
-  width: 100%;
-  line-height: 30px;
-  box-sizing: border-box;
-  /* position: absolute; */
-  padding: 5px 15px;
-  text-align: left;
-  float: left;
-  border-radius: 10px;
-}
 
 .legendary-filter-container {
   /* position: absolute; */
@@ -274,7 +262,7 @@ li.select2-search-choice {
   display: block;
   width: 30%;
   /* top:20%; */
-  font-family: "Play";
+  /* font-family: "Play"; */
 }
 
 .select2-container .select2-choice {
@@ -290,27 +278,11 @@ li.select2-search-choice {
 
 }
 
-.leagues-filter-title {
-  font-family: "Play";
-  font-size: 16px;
-  color: white;
-  width: 100%;
-
-  float: left;
-  padding: 5px 15px;
-  box-sizing: border-box;
-  /* position: absolute; */
-  text-align: center;
-  border-radius: 10px;
-}
-
-
 .leagues-filter-container {
   /* position: absolute; */
   width: 10%;
   margin-top: 2%;
   height: 40px;
-  font-family: "Play";
   /* margin-left: 2%; */
   /* padding: 5px 10px; */
   text-align: left;
@@ -334,20 +306,6 @@ li.select2-search-choice {
 
 }
 
-.opponent-filter-title {
-  font-family: "Play";
-  font-size: 16px;
-  color: white;
-  float: left;
-  line-height: 30px;
-  background-color: #333;
-  box-sizing: border-box;
-  /* position: absolute; */
-  text-align: center;
-  width: 100%;
-  padding: 5px 10px;
-  border-radius: 10px;
-}
 
 .opponent-filter-container {
   /* position: absolute; */
@@ -360,17 +318,11 @@ li.select2-search-choice {
   border-radius: 10px;
 }
 
-
-#opponent-switch {
-  margin-left: 13%;
-  margin-top: 5px;
-}
-
-
 /* capturerate filter css */
 .capturerate-filter {
   /* display: flex; */
   width: 100%;
+  margin-top: 1%;
 
 }
 
@@ -380,7 +332,6 @@ li.select2-search-choice {
   width: 40%;
   display: flex;
   margin-top: 2%;
-  font-family: "Play";
   /* margin-left: 2%; */
   /* padding: 5px 10px; */
   text-align: left;
@@ -398,14 +349,14 @@ li.select2-search-choice {
 .your-team-header {
   width: 100%;
   height: 60px;
-  font-family: "Play";
   font-weight: bold;
   color: white;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 60px;
   text-align: center;
   margin: auto;
   margin-top: 5%;
+  font-family: "8-bit";
   background-color:  #282429;
   border-radius: 10px;
 
@@ -426,24 +377,26 @@ li.select2-search-choice {
   width: 100%;
   height: 60px;
     transition: 0.3s all;
-  font-family: "Play";
   font-weight: bold;
   color: white;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 60px;
   text-align: center;
   margin: auto;
   margin-top: 5%;
+  font-family: "8-bit";
   background-color:  #282429;
   border-radius: 10px;
 }
 
 .option {
   width: 40px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 10px;
   margin-left: 1%;
-  background-color: #e14749;
+  color:white;
+  font-size: 12px;
+  background-color: #fc0d1b;
 }
 
 .option:hover{
@@ -467,7 +420,7 @@ li.select2-search-choice {
 
 .team-slot-container {
   position: relative;
-  border: 2px dashed rgb(110, 110, 110);
+  border: 2px dashed rgba(110, 110, 110, 0.6);
   box-sizing: border-box;
   flex: 1;
   min-width: 40%;
@@ -491,7 +444,7 @@ li.select2-search-choice {
   display: inline-block;
   line-height: 50px;
   position: absolute;
-  font-family: "Play";
+  font-family: "Retro" !important;
 }
 
 .add-pokemon-button {
@@ -499,8 +452,8 @@ li.select2-search-choice {
   display: block;
   width: 100%;
   height: 80px;
-  font-family: "Play";
-  font-size: 18px;
+  font-size: 14px;
+  font-family: 'Fipps';
   color: rgba(110, 110, 110, 0.6);
   text-align: center;
   line-height: 80px;
@@ -512,12 +465,13 @@ li.select2-search-choice {
 }
 
 .add-pokemon-button:hover {
-  font-size: 22px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .pokemon-select2 {
   display: block;
-  width: 80%;
+  width: 82%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -551,23 +505,11 @@ li.select2-search-choice {
   width: 150px;
   height: 100px;
   line-height: 100px;
-  font-family: "Play";
+  font-family: "Retro";
   font-size: 20px;
   left: 25%;
   top: 35%;
   transform: translateY(-50%);
-}
-
-.pokemon-nature-label {
-  display: block;
-  position: absolute;
-  width: 50px;
-  height: 30px;
-  font-family: "Play";
-  font-size: 16px;
-  left: 230px;
-  top: 25%;
-  transform: translateY(-30%);
 }
 
 .nature-select2 {
@@ -594,8 +536,8 @@ li.select2-search-choice {
   position: absolute;
   width: 50px;
   height: 30px;
-  font-family: "Play";
-  font-size: 16px;
+  /* font-family: "Play"; */
+  font-size: 8px;
   left: 25%;
   top: 40%;
   transform: translateY(-30%);
@@ -626,7 +568,7 @@ li.select2-search-choice {
   height: 20px;
   right: 0px;
   top: 0px;
-  background-color:#e14749;
+  background-color:#fc0d1b;
   font-family: "Play";
   font-size: 16px;
   line-height: 16px;
@@ -638,12 +580,11 @@ li.select2-search-choice {
 
 .generate-recommendations-button {
   transition: 0.3s all;
-  width: 350px;
+  width: 40%;
   height: 60px;
-  background-color: rgb(139, 17, 17);
+  background-color: #fc0d1b;
   margin: auto;
   margin-bottom: 40px;
-  font-family: "Play";
   font-size: 20px;
   line-height: 60px;
   border-radius: 10px;
@@ -679,7 +620,7 @@ li.select2-search-choice {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #e14749;
+  background: #fc0d1b;
   cursor: pointer;
 }
 
@@ -687,7 +628,7 @@ li.select2-search-choice {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #e14749;
+  background: #fc0d1b;
   cursor: pointer;
 }
 
@@ -699,8 +640,54 @@ li.select2-search-choice {
   display:none;
   color: white;
   text-transform: uppercase;
-  font-family: "Play";
+  /* font-family: "Play"; */
   margin-top: 2%;
+  font-size: 10px;
   transition: 3s all;
-  background-color: #e14749;
+  background-color: #fc0d1b;
+}
+
+/* tooltip */
+
+.tooltip { /* Container for our tooltip */
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #282429;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    color: #fff;
+    /* font-family: 'Play'; */
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bolder;
+
+
+}
+
+.tooltip .tooltiptext { /* This is for the tooltip text */
+  visibility: hidden;
+  width: 500px;
+  background-color:gray;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;  /* This defines tooltip text position */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  font-size: 12px;
+  left: 50%;
+  margin-top: 10px;
+  font-weight: lighter;
+  font-family: 'Retro' !important;
+  margin-left: -250px; /* This makes the margin half of the width to the center */
+}
+
+.tooltip:hover .tooltiptext { /* Makes tooltip text visible when text is hovered on */
+   visibility: visible;
+   cursor: pointer;
+   /* opacity: .7; */
 }

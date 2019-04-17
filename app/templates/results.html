@@ -21,11 +21,13 @@
 
 <body>
   <div class="title-container">
-    <img class="site-icon" src="/static/images/icon.png"/>
-    <div class="site-title"><span class="red">Squad</span><span class="black">Up</span></div>
-    <div class="site-description" style="margin-top:-2%; ">
-      <p>A Pokemon Team Search Engine<p>
-      <p style="font-size:10px;">© CS 4300 || 2019</p>
+
+    <div class="site-title">Squad
+      <img class="site-icon" src='/static/images/icon3.png'/> Up</div>
+    <div class="site-copyright"><p>TM</p></div>
+    <div class="site-first-description">
+      <p> A Pokemon Team Search Engine<p>
+
     </div>
 
   </div>
@@ -40,22 +42,23 @@
 
   {% else %}
 
-  <div class="site-description" style="width: 80%;text-align:left; margin-left:12%;">
+  <div class="site-description" >
     <h1> RESULTS: </h1>
     <p>We successfully generated 5 teams that best fit your desired filters.
       Below are the teams with the first team, seen below, being the best.
       Look through and see what we found for you.<p>
   </div>
 
-  <div class="site-description" style="width: 80%;text-align:left; margin-left:12%;">
+  <div class="site-description">
     <h1> WHAT YOU SEE: </h1>
     <p>In each Pokemon card, you see that it contains the Pokemon,
       the recommended nature, and the recommended move sets.
       Look through each team with the provided arrows.<p>
   </div>
 
-  <div class="site-results generated-team " style="background-color: #332f34;">
-    <img id="left" class="arrows" src="/static/images/left-arrow.svg">
+  <div class="site-results generated-team " >
+    <div class="arrows" id="left"><<</div>
+    <!-- <img id="left" class="arrows" src="/static/images/left-arrow.svg"> -->
     {% for team in results %}
     <div id='team-title-{{ loop.index|string }}' class="your-team-header">Team {{ loop.index }}</div>
 
@@ -95,10 +98,11 @@
     </div>
 
     {% endfor %}
-    <img id="right" class="arrows" src="/static/images/right-arrow.svg">
+    <!-- <img id="right" class="arrows" src="/static/images/right-arrow.svg"> -->
+    <div class="arrows" id="right">>></div>
   </div>
 
-  <div class="site-error-link" style="margin-left:45%; margin-top:5%;"><a href="/"> <<   Back to Home </a></div>
+  <div class="site-error-link" style="margin-left:42%; margin-top:5%;"><a href="/"> <<   Back to Home </a></div>
 
 
   {% endif %}
