@@ -30,7 +30,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     if pokedex == None:
         pokedex = pokemon.generate_instances()
     if pokeMoves == None:
-        pokeMoves = pokemon.generateMoveTypes()
+        pokeMoves = pokemon.generateMoveData()
 
     currentTeamNames = []
     currentMoves = {}
