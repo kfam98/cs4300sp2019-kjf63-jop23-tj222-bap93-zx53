@@ -180,27 +180,27 @@ def generateTypeChart():
         return result
 
 
-def generateMoves():
+def generatePokemonMoves():
     """ Returns a dictionary where each key is a string identifying a specific
         Pokemon, and its value is a string list of all moves which can be
-        learned by that Pokemon. """
+        learned by that Pokemon through leveling up, breeding, or a machine. """
     path = os.path.dirname(os.path.realpath(__file__))
     with open(path+"/dataset/movedata.json", newline = '') as json_file:
         result = json.load(json_file)
     return result
 
-def generateMoveTypes():
+def generateMoveData():
     """ Returns a dictionary where each key is a string identifying a specific
         move, and its value is the type of the move. """
     path = os.path.dirname(os.path.realpath(__file__))
-    with open(path+"/dataset/movetypedata.json", newline = '') as json_file:
+    with open(path+"/dataset/allmove_data.json", newline = '') as json_file:
         result = json.load(json_file)
     return result
 
 # Global variable with type chart
 type_chart = generateTypeChart()
-pkmn_moves = generateMoves()
-move_types = generateMoveTypes()
+pkmn_moves = generatePokemonMoves()
+move_types = generateMoveData()
 
 if __name__ == "__main__":
     print(generate_instances())
