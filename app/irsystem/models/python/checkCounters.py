@@ -19,7 +19,7 @@ def getUserMoves(input):
     return moves
 
 
-def checkCounters(user_team, user_moves, opponent_team, all_pokemon, mvtypes):
+def checkCounters(user_team, user_moves, opponent_team, all_pokemon, mvdata):
     """
     Checks if any of the Pokemon on the user input team serve as counters to any
     of the Pokemon on the opponent team. A "counter" is defined as a Pokemon
@@ -32,7 +32,7 @@ def checkCounters(user_team, user_moves, opponent_team, all_pokemon, mvtypes):
         user_moves: List of all moves entered for Pokemon on user team
         opponent_team: List of string names of each Pokemon on opponent team
         all_pokemon: Dictionary of all instances of Pokemon objects
-        mvtypes: Dictionary of move names and their corresponding types
+        mvdata: Dictionary of move names and their corresponding information
 
     Returns:
         List of string names of uncountered Pokemon on opponent team. If all
@@ -62,7 +62,7 @@ def checkCounters(user_team, user_moves, opponent_team, all_pokemon, mvtypes):
 
                 # check if any user pokemon move types counter opponent type
                 moves = user_moves[team[j].name]
-                mvtypes = [mvtypes[mv] for mv in moves]
+                mvtypes = [mvdata[mv]["type"] for mv in moves]
                 movecounter = not set(opp_weak).isdisjoint(set(mvtypes))
 
                 # if four moves entered, only check if any counter
