@@ -7,6 +7,7 @@ from . import pokemon
 from .constants import *
 
 import os
+import math
 
 ##Note - check for extremes like stupid high minimum capture rate or no gens allowed.
 
@@ -54,6 +55,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         #for now simply dont worry about it
         return myTeam
 
+    desiredDistAway = math.ceil( (6-len(currentTeamNames))/2 )
+
     uncounteredOpps = checkCounters.checkCounters(
         currentTeamNames,
         currentMoves,
@@ -85,11 +88,12 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         league
     )
 
-    topTeams = team.scoreTeams(
+    topTeams, teamScores = team.scoreTeams(
         allPossibleTeams,
         oppTeamNames,
         pokedex,
         league,
+        minDistWanted
     )
 
     return movesetsAndFormat.fillAndFormat(

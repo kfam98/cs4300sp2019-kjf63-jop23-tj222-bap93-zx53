@@ -39,14 +39,15 @@ def teamToArray(team, pokedex):
     return arr
 
 
-def scoreTeams(curTeams, oppTeam, pokedex, league):
+def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     """
-    Returns NUMTEAMSRETURN number of teams from curTeams as 'top' teams based on social data.
+    Returns NUMTEAMSRETURN number of teams from curTeams as 'top' teams based on social data, along with a list of their scores.
 
     curTeams - list of pokemon teams to consider
     oppTeam - team of pokemon representing opponent team
     pokedex - dictionary with pokemon names as keys to pokemon instances as values
     league - one of the 11 supported league types, telling us which information to look for similar opponents in
+    minDistWanted - an integer denoting how far away we want the team to be in pokemon to be considered valid
     """
     battleData = loadBattleData(league)
 
@@ -105,20 +106,37 @@ def scoreTeams(curTeams, oppTeam, pokedex, league):
         return [result[0] for result in results]
     
     else:
-        firstResult = results[0][0]
+        firstResult, firstScore = results[0]
         returnTeams = [firstResult]
+        teamScores = [firstScore]
         returnSets = [set(firstResult)]
         
         i = 1
-        while(len(returnTeams) < NUMTEAMSRETURN and i < len(results)):
+        #Loops through results and adds teams with the proper edit distance away.
+        while(len(returnTeams) < NUMTEAMSRETURN and minDistWanted > 1):
             teamToConsider,teamToConsiderScore = results[i]
             
-            if not (set(teamToConsider) in returnSets):
-                returnTeams.append(teamToConsider)
-                returnSets.append(set(teamToConsider))
+            considerSet = set(teamToConsider)
+            if not (considerSet in returnSets):
+                add = True
+                ##checks the edit distance of teams is above wanted
+                for team in returnSets:
+                    if team.union(considerSet) < len(team)+minDistWanted:
+                        add = False
+
+                ##If indeed above wanted levels then add
+                if add:
+                    returnTeams.append(teamToConsider)
+                    returnSets.append(set(teamToConsider))
+                    teamScores.append(teamToConsiderScore)
             
             i+=1
 
-        return returnTeams
+            if i == len(team):
+                i = 1
+                minDistWanted -= 1 
+
+
+        return returnTeams,teamScores
 
     
