@@ -1,6 +1,8 @@
 #Returning/Incoming Dictionary keys
 MOVES = "moves"
 NATURE = "nature"
+ITEM = "item"
+ABILITY = "ability"
 
 #Branching factors
 BRANCH1 = 100
@@ -65,7 +67,7 @@ RANKSTOWINLOSEFILES = [
 
 ]
 
-PATHTOMOVES = "/dataset/PokemontoMovesets.json"
+PATHTOMOVES = "/dataset/PokemonToMovesetsAndNaturesAndItems.json"
 
 #Pokemon Types
 BUG = 'bug'

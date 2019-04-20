@@ -28,6 +28,8 @@ def fillAndFormat(teams, currentTeamData):
             form[pokeman] = {}
             form[pokeman][MOVES] = []
             form[pokeman][NATURE] = None
+            form[pokemon][ABILITY] = None
+            form[pokemon][ITEM] = None
 
             if not pokeman == EMPTY:
 
@@ -40,11 +42,17 @@ def fillAndFormat(teams, currentTeamData):
                 if len(movesDict[pokeman]) > 0:
                     d = movesDict[pokeman][0]
                     for move in d[MOVES]:
-                        if len(form[pokeman][MOVES]) < 4:
+                        if len(form[pokeman][MOVES]) < 4 and (not move in form[pokeman][MOVES]):
                             form[pokeman][MOVES].append(move)
 
                     if form[pokeman][NATURE] == None:
                         form[pokeman][NATURE] = d[NATURE]
+                    
+                    if form[pokemon][ABILITY] == None:
+                        form[pokemon][ABILITY] = d[ABILITY]
+                    
+                    if form[pokemon][ITEM] == None:
+                        form[pokemon][ITEM] = d[ITEM]
 
         toRet.append(form.copy())
 
