@@ -100,13 +100,15 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     for loser,_ in losers:
         for winner in loserDict[str(loser)]:
             winnersComp.append(winner)
+    
+    print("winners comp - "+str(len(winnersComp)))
 
     results = []
     for team in curTeams:
         t = teamToArray(team,pokedex)
         score = 0
         for winner in winnersComp:
-            score+= np.dot(t,winner)
+            score += np.dot(t,winner)
         results.append((team,score))
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
@@ -121,27 +123,27 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
         returnSets = [set(firstResult)]
         
         i = 1
+
         #Loops through results and adds teams with the proper edit distance away.
-        while(len(returnTeams) < NUMTEAMSRETURN and minDistWanted > 1):
+        while(len(returnTeams) < NUMTEAMSRETURN and minDistWanted > 0):
             teamToConsider,teamToConsiderScore = results[i]
             
             considerSet = set(teamToConsider)
-            if not (considerSet in returnSets):
-                add = True
-                ##checks the edit distance of teams is above wanted
-                for team in returnSets:
-                    if team.union(considerSet) < len(team)+minDistWanted:
-                        add = False
+            add = True
+            ##checks the edit distance of teams is above wanted
+            for team in returnSets:
+                if len(team.union(considerSet)) < len(team)+minDistWanted:
+                    add = False
 
-                ##If indeed above wanted levels then add
-                if add:
-                    returnTeams.append(teamToConsider)
-                    returnSets.append(set(teamToConsider))
-                    teamScores.append(teamToConsiderScore)
+            ##If indeed above wanted levels then add
+            if add:
+                returnTeams.append(teamToConsider)
+                returnSets.append(considerSet)
+                teamScores.append(teamToConsiderScore)
             
             i+=1
 
-            if i == len(team):
+            if i == len(returnSets):
                 i = 1
                 minDistWanted -= 1 
 
