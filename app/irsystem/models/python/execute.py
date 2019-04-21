@@ -88,12 +88,14 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         league
     )
 
+    print(desiredDistAway)
+
     topTeams, teamScores = team.scoreTeams(
         allPossibleTeams,
         oppTeamNames,
         pokedex,
         league,
-        minDistWanted
+        desiredDistAway
     )
 
     return movesetsAndFormat.fillAndFormat(
