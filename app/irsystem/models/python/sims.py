@@ -26,6 +26,7 @@ def loadBattleData(league):
             battleData = json.loads(f.readline())
         return battleData
     except Exception as e:
+        print(e)
         return None
 
 def teamToArray(team, pokedex):
@@ -52,8 +53,16 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     battleData = loadBattleData(league)
 
     if battleData == None:
+        #REALLY IMPORTANT ISSUE
         cutoff = min(len(curTeams),NUMTEAMSRETURN)
-        return curTeams[:cutoff]
+
+        teams = []
+        scores = []
+        for team in curTeams[:cutoff]:
+            teams.append(team)
+            scores.append(0)
+
+        return teams, scores
 
     if len(oppTeam) < 6:
         for x in range(6-len(oppTeam)):
@@ -103,7 +112,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
     if len(results) < NUMTEAMSRETURN:
-        return [result[0] for result in results]
+        return [result[0] for result in results], [result[1] for result in results]
     
     else:
         firstResult, firstScore = results[0]
@@ -135,7 +144,6 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
             if i == len(team):
                 i = 1
                 minDistWanted -= 1 
-
 
         return returnTeams,teamScores
 
