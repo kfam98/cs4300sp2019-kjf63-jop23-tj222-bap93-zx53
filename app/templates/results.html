@@ -75,7 +75,20 @@
           {% endfor %}
 
           <div class="pokemon-card-name">{{ name }}</div>
-          <div class="pokemon-card-type"></div>
+          <div class="types">
+          {% for p_name, types in typedata.items() %}
+            {% if name == p_name %}
+              {% for name, type in types.items() %}
+              {% if  name == 'type2' %}
+                <span class="type type2 {{type}}">{{ type }}</span>
+              {%  else %}
+                <span class="type {{type}}">{{ type }}</span>
+              {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+          </div>
+
           <div class="pokemon-nature-label">{{info.nature}}</div>
           <div class="pokemon-moveset-label">Recommended Moves</div>
           <div class="pokemon-moves-label">
@@ -113,14 +126,14 @@
 
 
   var dataList = {};
-  $.getJSON("/static/data/pokemondata2.json", function(json) {
-    for (var i = 0; i < json.length; i++) {
-      dataList[json[i].name]['imgSrc'] = json[i].imgSrc;
-      dataList[json[i].name]['type1'] = json[i].type1;
-      dataList[json[i].name]['type2'] = json[i].type2;
-
-    }
-  });
+  // $.getJSON("/static/data/pokemondata2.json", function(json) {
+  //   for (var i = 0; i < json.length; i++) {
+  //     dataList[json[i].name]['imgSrc'] = json[i].imgSrc;
+  //     dataList[json[i].name]['type1'] = json[i].type1;
+  //     dataList[json[i].name]['type2'] = json[i].type2;
+  //
+  //   }
+  // });
 
   var curr_team = 1;
   for (var i=2; i < 6; i++) {

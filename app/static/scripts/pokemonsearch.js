@@ -5,7 +5,7 @@ var curr_pokemon_moveset;
 var l_bool = false;
 var generations;
 var pstyle;
-var caprate = '.1';
+var caprate = '10';
 var myteam;
 var giveOppTeam = false;
 var theirteam;
@@ -336,6 +336,7 @@ $("#no_legend").on("click", function() {
 $(document).on('input', "#myRange", function() {
 $('#capture-rate').html( $(this).val() + "%");
 caprate = '' + $(this).val();
+console.log("caprate: " + caprate);
 });
 
 

@@ -31,6 +31,12 @@ path = path.replace("irsystem/controllers", "")
 with open(path+"static/data/imageslst.json") as json_file:
     image_data = json.load(json_file)
 
+type_data = {}
+path = os.path.dirname(os.path.realpath(__file__))
+path = path.replace("irsystem/controllers", "")
+with open(path+"static/data/typeslst.json") as json_file:
+    type_data = json.load(json_file)
+
 arguments = {}
 # arguments = {
 #     'myTeam': {'Charmander': {"moves":['ember'], "nature": None}},
@@ -129,4 +135,4 @@ def results():
     )
 
 
-    return render_template('results.html', imagedata=image_data, results=results)
+    return render_template('results.html', typedata=type_data, imagedata=image_data, results=results)
