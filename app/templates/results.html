@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="/static/scripts/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"></script>
-  <script src="/static/scripts/activity.js" type="text/javascript"></script>
   <script src="/static/scripts/constants.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
   <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.css" />
@@ -76,6 +75,7 @@
           {% endfor %}
 
           <div class="pokemon-card-name">{{ name }}</div>
+          <div class="pokemon-card-type"></div>
           <div class="pokemon-nature-label">{{info.nature}}</div>
           <div class="pokemon-moveset-label">Recommended Moves</div>
           <div class="pokemon-moves-label">
@@ -110,10 +110,15 @@
 
 
   <script>
+
+
   var dataList = {};
-  $.getJSON("/static/data/pokemondata.json", function(json) {
+  $.getJSON("/static/data/pokemondata2.json", function(json) {
     for (var i = 0; i < json.length; i++) {
-      dataList[json[i].name] = json[i].imgSrc;
+      dataList[json[i].name]['imgSrc'] = json[i].imgSrc;
+      dataList[json[i].name]['type1'] = json[i].type1;
+      dataList[json[i].name]['type2'] = json[i].type2;
+
     }
   });
 
@@ -165,7 +170,16 @@
     $('.site-icon').attr('src', '/static/images/icon3.png');
   });
 
+  function findImg(pokemonName) {
+    return dataList[pokemonName]['imgSrc'];
+  }
 
+  function findType1(pokemonName) {
+    return dataList[pokemonName]['type1'];
+  }
+  function findType2(pokemonName) {
+    return dataList[pokemonName]['type2'] == 'null' ? '': dataList[pokemonName]['type2'];
+  }
 
   </script>
 

@@ -88,7 +88,7 @@ li.select2-search-choice {
 
 
 .site-icon  {
-  width:5%;
+  width:4%;
   /* margin-left: -5%; */
   /* margin-right: -4%; */
   transition: 3s all;
@@ -111,7 +111,7 @@ li.select2-search-choice {
 .site-title {
   font-family: "Pixel";
 
-  font-size: 97px;
+  font-size: 85px;
   letter-spacing: .01;
   text-align: center;
   padding-top: 3%;
@@ -126,7 +126,7 @@ li.select2-search-choice {
   font-size: 8px;
   font-family: "Play";
   text-align: right;
-  margin-right: 28%;
+  margin-right: 32%;
   margin-top: -2%;
 }
 
@@ -144,16 +144,16 @@ li.select2-search-choice {
 
 .site-first-description {
   font-size:10px;
-  width:27%;
+  width:23%;
   text-align: center;
-  margin-left:35%;
+  margin-left:37.5%;
   color:#f7f7f7;
   background-color:#fc0d1b;
   border: 3px solid black;
   /* padding:2px 2px; */
   border-radius: 10px;
   font-family: 'Pixel';
-  /* margin-top: 2%; */
+  margin-top: 1%;
   /* margin-top: -1%; */
 }
 
@@ -523,6 +523,19 @@ li.select2-search-choice {
   -webkit-text-stroke-color:black;
   -webkit-text-stroke-width: 1px; */
   transform: translateY(-50%);
+}
+
+.pokemon-card-type {
+  line-height: 100px;
+  margin-left: 52%;
+}
+
+.type {
+  padding: 2% 3%;
+  border-radius: 5px;
+  font-size: 10px;
+  margin-left: 1%;
+
 }
 
 .nature-select2 {
