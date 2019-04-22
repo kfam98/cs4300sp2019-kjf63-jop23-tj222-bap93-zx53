@@ -355,7 +355,7 @@
   margin-top: 5px;
   font-weight: lighter;
   /* font-family: 'Retro' !important; */
-  margin-left: -50px; /* This makes the margin half of the width to the center */
+  margin-left: 10%l /* This makes the margin half of the width to the center */
 }
 
 .ptooltiptext {

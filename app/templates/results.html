@@ -70,14 +70,17 @@
 
           {% for p_name, img_src in imagedata.items() %}
             {% if name == p_name %}
-            <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
+            <span class="ptooltip">
+              <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
+              <span class="ptooltiptext"></span>
+            </span>
+
             {% endif %}
           {% endfor %}
 
           <div class="pokemon-card-name">
-            <span class="ptooltip">{{ name }}
-              <span class="ptooltiptext"></span>
-            </span>
+            {{ name }}
+
             </div>
           <div class="types">
           {% for p_name, types in typedata.items() %}
