@@ -8,21 +8,24 @@ def loadMovesets():
         return json.loads(f.readline())
 
 
-def fillAndFormat(teams, currentTeamData):
+def fillAndFormat(teams, currentTeamData, tScores):
     """
     Return properly formatted teams to push back to front end
 
     teams - List of teams to fill the movesets and natures for
     currentTeamData - dictionary that is the format of the initial input,
         pokemon key to dictionary with moves and nature for that pokemon
+    tScores - scores of the individual teams
     """
 
     movesDict = loadMovesets()
 
     toRet = []
 
-    for team in teams:
+    for i in range(len(teams)):
+        team = teams[i]
         form = {}
+        form[SCORE] = tScores[i]
         for pokeman in team:
             #initialize pokemans entry
             form[pokeman] = {}
@@ -55,5 +58,6 @@ def fillAndFormat(teams, currentTeamData):
                         form[pokeman][ITEM] = d[ITEM]
 
         toRet.append(form.copy())
+        print(form)
 
     return toRet

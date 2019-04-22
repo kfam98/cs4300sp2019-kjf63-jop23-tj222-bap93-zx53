@@ -101,7 +101,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
 
     return movesetsAndFormat.fillAndFormat(
         topTeams,
-        myTeam
+        myTeam,
+        teamScores
     )
 
 

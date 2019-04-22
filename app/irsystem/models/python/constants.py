@@ -1,3 +1,5 @@
+SCORE = "score"
+
 #Returning/Incoming Dictionary keys
 MOVES = "moves"
 NATURE = "nature"
