@@ -68,6 +68,8 @@ RANKSTOWINLOSEFILES = [
 ]
 
 PATHTOMOVES = "/dataset/PokemonToMovesetsAndNaturesAndItems.json"
+PATHTOSIMSCORES = "/dataset/pokemon_sims.json"
+PATHTOMLWEIGHTS = "/dataset/classWeights.json"
 
 #Pokemon Types
 BUG = 'bug'
