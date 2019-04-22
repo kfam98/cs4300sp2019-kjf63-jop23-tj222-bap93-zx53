@@ -87,7 +87,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         minCapRate,
         pokedex,
         branchFactor,
-        league
+        league,
         weights
     )
 
