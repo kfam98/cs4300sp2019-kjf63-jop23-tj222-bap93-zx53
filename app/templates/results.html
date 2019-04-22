@@ -89,7 +89,12 @@
           {% endfor %}
           </div>
 
-          <div class="pokemon-nature-label">{{info.nature}}</div>
+          <div class="pokemon-nature-label">
+            <span class="ntooltip">{{info.nature}}
+              <span class="ntooltiptext">
+              </span>
+            </span>
+          </div>
           <div class="pokemon-moveset-label">Recommended Moves</div>
           <div class="pokemon-moves-label">
           {% if info.moves %}
@@ -183,16 +188,25 @@
     $('.site-icon').attr('src', '/static/images/icon3.png');
   });
 
-  function findImg(pokemonName) {
-    return dataList[pokemonName]['imgSrc'];
-  }
+  $('.ntooltip').hover( function() {
+    var nature = "" + $(this).html().split(" ")[0].slice(0, -1);
 
-  function findType1(pokemonName) {
-    return dataList[pokemonName]['type1'];
-  }
-  function findType2(pokemonName) {
-    return dataList[pokemonName]['type2'] == 'null' ? '': dataList[pokemonName]['type2'];
-  }
+    if (nature.split('/').length > 1) {
+      var str = "↑ " + natureStats[nature[0]]['increase'] + " ↑ " + natureStats[nature[1]]['increase'] + "<br/>↓ " + natureStats[nature[0]]['decrease'] + " ↓ " + natureStats[nature[1]]['decrease'] ;
+    } else {
+      // var str = "Increases: " + natureStats[nature]['increase'] + "<br/>Decreases: " + natureStats[nature]['decrease'];
+      var str = "↑ " + natureStats[nature]['increase'] + "<br/>↓ " + natureStats[nature]['decrease'] ;
+      // $(this).children[0].attr('id', 'nature_focus');
+      // $('#nature_focus').html(str);
+    }
+    $($(this).children()[0]).html(str);
+
+
+
+
+  });
+
+
 
   </script>
 

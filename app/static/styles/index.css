@@ -526,14 +526,15 @@ li.select2-search-choice {
 }
 
 .pokemon-card-type {
-  line-height: 100px;
   margin-left: 52%;
+  padding-top: 8%;
+  font-size: 12px;
 }
 
+
 .type {
-  padding: 2% 3%;
+  padding: 3px 5px;
   border-radius: 5px;
-  font-size: 10px;
   margin-left: 1%;
 
 }

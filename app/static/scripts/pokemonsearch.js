@@ -53,7 +53,7 @@ $.getJSON("/static/data/pokemondata2.json", function(json) {
 
 
     var $card = $(
-      '<div class="pokemon-card-form"><img class="pokemon-card-img" alt="pokemon" src="' + imgSrc + '"><div class="pokemon-card-name"><span class="name">' + name + '</span><span class="type" style="background-color: ' + types[type1] + ';" >' + type1 + '</span><span class="type" style="background-color: ' + types[type2] + ';">' + type2 + '</span></div><div class="pokemon-nature-label"></div><div class="pokemon-moveset-label"></div><div class="remove-pokemon-button">&times;</div></div>'
+      '<div class="pokemon-card-form"><img class="pokemon-card-img" alt="pokemon" src="' + imgSrc + '"><div class="pokemon-card-name"><span class="name">' + name + '</div><div class="pokemon-card-type"></span><span class="type" style="background-color: ' + types[type1] + ';" >' + type1 + '</span><span class="type" style="background-color: ' + types[type2] + ';">' + type2 + '</span></div><div class="pokemon-nature-label"></div><div class="pokemon-moveset-label"></div><div class="remove-pokemon-button">&times;</div></div>'
     );
     // var $natureSelect = $(
     //   "<span class='nature-select2'><input type='text' placeholder='nature' name='nature' style='width:100px' /></span>"
