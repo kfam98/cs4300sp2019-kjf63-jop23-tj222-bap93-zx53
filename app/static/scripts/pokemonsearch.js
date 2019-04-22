@@ -17,39 +17,40 @@ var selectedLegendary = 0;
 
 $.getJSON("/static/data/pokemondata2.json", function(json) {
   for (var i = 0; i < json.length; i++) {
-    dataList.push({id: json[i].pokedex_number, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
+    dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary, pokedex_number: json[i].pokedex_number});
   }
+  console.log(dataList);
 
   function formatState(state) {
-    if (!state.id) {
+    if (!json[state.id].pokedex_number) {
       return state.text;
     }
     var $state = $(
-      '<span><img src="' + json[state.id-1].imgSrc + '" class="select-img" /> <span class="select-text">' + state.text + '</span></span>'
+      '<span><img src="' + json[state.id].imgSrc + '" class="select-img" /> <span class="select-text">' + state.text + '</span></span>'
     );
     return $state;
   };
 
-  function formatCard(pokedexNumber) {
-    var imgSrc = "";
-    var name = "";
-    var type1='';
-    var type2='';
-    for (var i = 0; i < json.length; i++) {
-      if (json[i].pokedex_number == pokedexNumber) {
-        imgSrc = json[i].imgSrc;
-        name = json[i].name;
-        curr_pokemon_moveset = json[i].moveset;
-        type1 = json[i].type1;
-        type2 = json[i].type2;
+  function formatCard(i) {
+    // var imgSrc = "";
+    // var name = "";
+    // var type1='';
+    // var type2='';
+    // for (var i = 0; i < json.length; i++) {
+      // if (json[i].pokedex_number == pokedexNumber) {
+    imgSrc = json[i].imgSrc;
+    name = json[i].name;
+    curr_pokemon_moveset = json[i].moveset;
+    type1 = json[i].type1;
+    type2 = json[i].type2;
 
 
-        if (type2 == null) {
-          type2 = '';
-        }
-
-      }
+    if (type2 == null) {
+      type2 = '';
     }
+
+      // }
+    // }
 
 
     var $card = $(
@@ -83,6 +84,7 @@ function getDataList() {
       text: pokemon.text
     }
   })
+  console.log(newDataList);
   return newDataList
   // console.log(filtered);
 }
