@@ -10,11 +10,14 @@ var myteam;
 var giveOppTeam = false;
 var theirteam;
 
+//for keeping filters
+var selectedGenerations = ['1','2','3','4','5','6','7'];
+var selectedLegendary = 0;
 
 
 $.getJSON("/static/data/pokemondata2.json", function(json) {
   for (var i = 0; i < json.length; i++) {
-    dataList.push({id: json[i].pokedex_number, text: json[i].name});
+    dataList.push({id: json[i].pokedex_number, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
   }
 
   function formatState(state) {
@@ -67,11 +70,28 @@ $.getJSON("/static/data/pokemondata2.json", function(json) {
     return $card
   }
 
+function getDataList() {
+  console.log(selectedGenerations);
+  var filtered =  dataList.filter(function(pokemon){
+                    // console.log(pokemon.generation);
+                    return (selectedGenerations.includes(""+pokemon.generation) && (pokemon.legendary <= selectedLegendary));
+                    // return pokemon.generation == 2;
+                  });
+  var newDataList = filtered.map((pokemon) => {
+    return {
+      id: pokemon.id,
+      text: pokemon.text
+    }
+  })
+  return newDataList
+  // console.log(filtered);
+}
+
   // init select 2
   function initializeSelect2(obj) {
     obj.select2({
-      data: dataList,
-
+      data: getDataList(),
+      placeholder: "Select a Pokemon",
       formatResult: formatState,
       formatSelection: formatState,
       escapeMarkup: function(m) { return m; },
@@ -157,7 +177,7 @@ $.getJSON("/static/data/pokemondata2.json", function(json) {
     // console.log($.trim($(this).text()));
     // $(this).parent().append(formatCard($.trim($(this).text())));
     $(this).parent().append(formatCard($(this).val()));
-    $(this).parent().children('.pokemon-select2').hide();
+    $(this).parent().children('.pokemon-select2').remove();
       // var $this = $(this);
       // $("#here").addClass('loading');
       // $("#here").empty();
@@ -169,6 +189,14 @@ $.getJSON("/static/data/pokemondata2.json", function(json) {
       //   $("#here").removeClass('loading');
       // });
       // return false;
+  });
+
+
+  $(document).ready(function() {
+    var newSelect = $("<span class='pokemon-select2'><input type='text' name='pokemon' style='width:250px' /></span>");
+    $("#initial-select-container").append(newSelect);
+    initializeSelect2(newSelect);
+    $("#initial-select-container").children('.add-pokemon-button').hide();
   });
 
 });
@@ -192,16 +220,19 @@ function initializeMovesetSelect2(obj) {
   });
   obj.select2({
     data: moveset,
+    placeholder: "Moveset (optional)",
     multiple: "multiple",
-    maximumSelectionSize: 4
+    maximumSelectionSize: 4,
+    allowClear: true
   });
+  $('.select2-search__field').css('width', '100%');
 }
 
 function initializeFilterGenerationSelect2(obj) {
   obj.select2({
     data: genLst,
     multiple: "multiple",
-  });
+  }).select2('val', [1,2,3,4,5,6,7]);
 }
 
 function initializeFilterLeagueSelect2(obj) {
@@ -216,7 +247,6 @@ function initializeFilterPlaystyleSelect2(obj) {
     data: pstyleLst,
   });
 }
-
 
 // var initialSelect = $("<span class='pokemon-select2'><input type='text' name='pokemon' style='width:250px' /></span>");
 // initializeSelect2(initialSelect);
@@ -243,6 +273,12 @@ $(".filter-leagues-select2").each(function() {
 });
 
 
+$(".filter-generation-select2").on("change", function (e) {
+  console.log($(".filter-generation-select2").select2("val"));
+  selectedGenerations = $(".filter-generation-select2").select2("val");
+  $('.pokemon-select2').siblings('.add-pokemon-button').show();
+  $('.pokemon-select2').remove();
+});
 
 ////////////////////
 //filters setting///
@@ -277,15 +313,24 @@ $("#yes_legend").on("click", function() {
 
   $("#yes_legend").css('background-color', '#fc0d1b');
   $("#no_legend").css('background-color', '#282429');
+  if (l_bool != true) {
+    $('.pokemon-select2').siblings('.add-pokemon-button').show();
+    $('.pokemon-select2').remove();
+  }
   l_bool = true;
+  selectedLegendary = 1;
 
 });
 
 $("#no_legend").on("click", function() {
-$("#no_legend").css('background-color', '#fc0d1b');
-$("#yes_legend").css('background-color', '#282429');
-l_bool = false;
-
+  $("#no_legend").css('background-color', '#fc0d1b');
+  $("#yes_legend").css('background-color', '#282429');
+  if (l_bool != false) {
+    $('.pokemon-select2').siblings('.add-pokemon-button').show();
+    $('.pokemon-select2').remove();
+  }
+  l_bool = false;
+  selectedLegendary = 0;
 });
 
 $(document).on('input', "#myRange", function() {

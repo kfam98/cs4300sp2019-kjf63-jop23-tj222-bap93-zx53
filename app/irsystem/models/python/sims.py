@@ -26,6 +26,7 @@ def loadBattleData(league):
             battleData = json.loads(f.readline())
         return battleData
     except Exception as e:
+        print(e)
         return None
 
 def teamToArray(team, pokedex):
@@ -39,20 +40,29 @@ def teamToArray(team, pokedex):
     return arr
 
 
-def scoreTeams(curTeams, oppTeam, pokedex, league):
+def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     """
-    Returns NUMTEAMSRETURN number of teams from curTeams as 'top' teams based on social data.
+    Returns NUMTEAMSRETURN number of teams from curTeams as 'top' teams based on social data, along with a list of their scores.
 
     curTeams - list of pokemon teams to consider
     oppTeam - team of pokemon representing opponent team
     pokedex - dictionary with pokemon names as keys to pokemon instances as values
     league - one of the 11 supported league types, telling us which information to look for similar opponents in
+    minDistWanted - an integer denoting how far away we want the team to be in pokemon to be considered valid
     """
     battleData = loadBattleData(league)
 
     if battleData == None:
+        #REALLY IMPORTANT ISSUE
         cutoff = min(len(curTeams),NUMTEAMSRETURN)
-        return curTeams[:cutoff]
+
+        teams = []
+        scores = []
+        for team in curTeams[:cutoff]:
+            teams.append(team)
+            scores.append(0)
+
+        return teams, scores
 
     if len(oppTeam) < 6:
         for x in range(6-len(oppTeam)):
@@ -90,35 +100,52 @@ def scoreTeams(curTeams, oppTeam, pokedex, league):
     for loser,_ in losers:
         for winner in loserDict[str(loser)]:
             winnersComp.append(winner)
+    
 
     results = []
     for team in curTeams:
         t = teamToArray(team,pokedex)
         score = 0
         for winner in winnersComp:
-            score+= np.dot(t,winner)
+            score += np.dot(t,winner)
         results.append((team,score))
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
     if len(results) < NUMTEAMSRETURN:
-        return [result[0] for result in results]
+        return [result[0] for result in results], [result[1] for result in results]
     
     else:
-        firstResult = results[0][0]
+        firstResult, firstScore = results[0]
         returnTeams = [firstResult]
+        teamScores = [firstScore]
         returnSets = [set(firstResult)]
         
         i = 1
-        while(len(returnTeams) < NUMTEAMSRETURN and i < len(results)):
+
+        #Loops through results and adds teams with the proper edit distance away.
+        while(len(returnTeams) < NUMTEAMSRETURN and minDistWanted > 0):
             teamToConsider,teamToConsiderScore = results[i]
             
-            if not (set(teamToConsider) in returnSets):
+            considerSet = set(teamToConsider)
+            add = True
+            ##checks the edit distance of teams is above wanted
+            for team in returnSets:
+                if len(team.union(considerSet)) < len(team)+minDistWanted:
+                    add = False
+
+            ##If indeed above wanted levels then add
+            if add:
                 returnTeams.append(teamToConsider)
-                returnSets.append(set(teamToConsider))
+                returnSets.append(considerSet)
+                teamScores.append(teamToConsiderScore)
             
             i+=1
 
-        return returnTeams
+            if i == len(returnSets):
+                i = 1
+                minDistWanted -= 1 
+
+        return returnTeams,teamScores
 
     

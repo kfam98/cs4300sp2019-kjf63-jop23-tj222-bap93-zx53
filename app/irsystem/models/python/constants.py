@@ -1,14 +1,16 @@
 #Returning/Incoming Dictionary keys
 MOVES = "moves"
 NATURE = "nature"
+ITEM = "item"
+ABILITY = "ability"
 
 #Branching factors
 BRANCH1 = 100
 BRANCH2 = 25
 BRANCH3 = 10
 BRANCH4 = 8
-BRANCH5 = 5
-BRANCH6 = 4
+BRANCH5 = 7
+BRANCH6 = 6
 
 #Total Number of Pokemon
 TOTALPOKEMON= 808
@@ -17,7 +19,7 @@ TOTALPOKEMON= 808
 EMPTY = "empty"
 
 #Number losing teams to consider on similarity, and number of teams to return to front end.
-NUMLOSINGTEAMS = 3
+NUMLOSINGTEAMS = 10
 NUMTEAMSRETURN = 5
 
 #Leagues
@@ -65,7 +67,7 @@ RANKSTOWINLOSEFILES = [
 
 ]
 
-PATHTOMOVES = "/dataset/PokemontoMovesets.json"
+PATHTOMOVES = "/dataset/PokemonToMovesetsAndNaturesAndItems.json"
 
 #Pokemon Types
 BUG = 'bug'

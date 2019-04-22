@@ -1,0 +1,102 @@
+{
+    "Hardy" : {
+        "increase": "Attack",
+        "decrease": "Attack"
+    },
+    "Lonely" : {
+        "increase": "Attack",
+        "decrease": "Defense"
+    },
+    "Brave" : {
+        "increase": "Attack",
+        "decrease": "Speed"
+    },
+    "Adamant" : {
+        "increase": "Attack",
+        "decrease": "Special Attack"
+    },
+    "Naughty" : {
+        "increase": "Attack",
+        "decrease": "Special Defense"
+    },
+    "Bold" : {
+        "increase": "Defense",
+        "decrease": "Attack"
+    },
+    "Docile" : {
+        "increase": "Defense",
+        "decrease": "Defense"
+    },
+    "Relaxed" : {
+        "increase": "Defense",
+        "decrease": "Speed"
+    },
+    "Impish" : {
+        "increase": "Defense",
+        "decrease": "Special Attack"
+    },
+    "Lax" : {
+        "increase": "Defense",
+        "decrease": "Special Defense"
+    },
+    "Timid" : {
+        "increase": "Speed",
+        "decrease": "Attack"
+    },
+    "Hasty" : {
+        "increase": "Speed",
+        "decrease": "Defense"
+    },
+    "Serious" : {
+        "increase": "Speed",
+        "decrease": "Speed"
+    },
+    "Jolly" : {
+        "increase": "Speed",
+        "decrease": "Special Attack"
+    },
+    "Naive" : {
+        "increase": "Speed",
+        "decrease": "Special Defense"
+    },
+    "Modest" : {
+        "increase": "Special Attack",
+        "decrease": "Attack"
+    }, 
+    "Mild" : {
+        "increase": "Special Attack",
+        "decrease": "Defense"
+    },
+    "Quiet" : {
+        "increase": "Special Attack",
+        "decrease": "Speed"
+    },
+    "Bashful" : {
+        "increase": "Special Attack",
+        "decrease": "Special Attack"
+    },
+    "Rash" : {
+        "increase": "Special Attack",
+        "decrease": "Special Defense"
+    },
+    "Calm" : {
+        "increase": "Special Defense",
+        "decrease": "Attack"
+    },
+    "Gentle" : {
+        "increase": "Special Defense",
+        "decrease": "Defense"
+    },
+    "Sassy" : {
+        "increase": "Special Defense",
+        "decrease": "Speed"
+    },
+    "Careful" : {
+        "increase": "Special Defense",
+        "decrease": "Special Attack"
+    },
+    "Quirky" : {
+        "increase": "Special Defense",
+        "decrease": "Special Defense"
+    }
+}
