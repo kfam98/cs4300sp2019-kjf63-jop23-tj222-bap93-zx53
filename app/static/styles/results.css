@@ -37,7 +37,7 @@
 }
 
 .site-description h1 {
-  font-size:36px;
+  font-size:30px;
   text-transform: uppercase;
   margin-top: 2%;
   color: #fec92f;
@@ -328,6 +328,44 @@
 }
 
 .ntooltip:hover .ntooltiptext { /* Makes tooltip text visible when text is hovered on */
+   visibility: visible;
+   cursor: pointer;
+   /* opacity: .7; */
+}
+
+
+/* pokemon tool tip */
+.ptooltip { /* Container for our tooltip */
+
+
+}
+
+.ptooltip .ptooltiptext { /* This is for the tooltip text */
+  visibility: hidden;
+  width: 100px;
+  background-color:#d3d3d3;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;  /* This defines tooltip text position */
+  position: absolute;
+  z-index: 1;
+  opacity: .8;
+  font-size: 8px;
+  margin-top: 5px;
+  font-weight: lighter;
+  /* font-family: 'Retro' !important; */
+  margin-left: -50px; /* This makes the margin half of the width to the center */
+}
+
+.ptooltiptext {
+  top: -5px;
+  bottom: auto;
+  right: 128%;
+}
+
+
+.ptooltip:hover .ptooltiptext { /* Makes tooltip text visible when text is hovered on */
    visibility: visible;
    cursor: pointer;
    /* opacity: .7; */

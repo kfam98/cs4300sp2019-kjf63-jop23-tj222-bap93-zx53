@@ -74,7 +74,11 @@
             {% endif %}
           {% endfor %}
 
-          <div class="pokemon-card-name">{{ name }}</div>
+          <div class="pokemon-card-name">
+            <span class="ptooltip">{{ name }}
+              <span class="ptooltiptext"></span>
+            </span>
+            </div>
           <div class="types">
           {% for p_name, types in typedata.items() %}
             {% if name == p_name %}
@@ -140,6 +144,12 @@
   //   }
   // });
 
+  //use to print stats about each pokemon
+  $.getJSON("/static/data/pokemon_info.json", function(json) {
+    dataList = json;
+    console.log(dataList);
+  });
+
   var curr_team = 1;
   for (var i=2; i < 6; i++) {
     $("#team-"+i).hide();
@@ -191,7 +201,8 @@
   $('.ntooltip').hover( function() {
     var nature = "" + $(this).html().split(" ")[0].slice(0, -1);
 
-    if (nature.split('/').length > 1) {
+    if (nature.split('/').length == 2) {
+      nature = nature.split('/');
       var str = "↑ " + natureStats[nature[0]]['increase'] + " ↑ " + natureStats[nature[1]]['increase'] + "<br/>↓ " + natureStats[nature[0]]['decrease'] + " ↓ " + natureStats[nature[1]]['decrease'] ;
     } else {
       // var str = "Increases: " + natureStats[nature]['increase'] + "<br/>Decreases: " + natureStats[nature]['decrease'];
