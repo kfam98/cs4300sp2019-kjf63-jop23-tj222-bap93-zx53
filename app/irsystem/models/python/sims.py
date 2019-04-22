@@ -101,7 +101,6 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
         for winner in loserDict[str(loser)]:
             winnersComp.append(winner)
     
-    print("winners comp - "+str(len(winnersComp)))
 
     results = []
     for team in curTeams:
