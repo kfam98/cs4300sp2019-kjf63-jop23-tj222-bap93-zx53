@@ -70,11 +70,18 @@
 
           {% for p_name, img_src in imagedata.items() %}
             {% if name == p_name %}
-            <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
+            <!-- <span class="ptooltip"> -->
+              <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
+              <!-- <span class="ptooltiptext"></span> -->
+            <!-- </span> -->
+
             {% endif %}
           {% endfor %}
 
-          <div class="pokemon-card-name">{{ name }}</div>
+          <div class="pokemon-card-name">
+            {{ name }}
+
+            </div>
           <div class="types">
           {% for p_name, types in typedata.items() %}
             {% if name == p_name %}
@@ -89,7 +96,12 @@
           {% endfor %}
           </div>
 
-          <div class="pokemon-nature-label">{{info.nature}}</div>
+          <div class="pokemon-nature-label">
+            <span class="ntooltip">{{info.nature}}
+              <span class="ntooltiptext">
+              </span>
+            </span>
+          </div>
           <div class="pokemon-moveset-label">Recommended Moves</div>
           <div class="pokemon-moves-label">
           {% if info.moves %}
@@ -134,6 +146,12 @@
   //
   //   }
   // });
+
+  //use to print stats about each pokemon
+  $.getJSON("/static/data/pokemon_info.json", function(json) {
+    dataList = json;
+    console.log(dataList);
+  });
 
   var curr_team = 1;
   for (var i=2; i < 6; i++) {
@@ -183,16 +201,26 @@
     $('.site-icon').attr('src', '/static/images/icon3.png');
   });
 
-  function findImg(pokemonName) {
-    return dataList[pokemonName]['imgSrc'];
-  }
+  $('.ntooltip').hover( function() {
+    var nature = "" + $(this).html().split(" ")[0].slice(0, -1);
 
-  function findType1(pokemonName) {
-    return dataList[pokemonName]['type1'];
-  }
-  function findType2(pokemonName) {
-    return dataList[pokemonName]['type2'] == 'null' ? '': dataList[pokemonName]['type2'];
-  }
+    if (nature.split('/').length == 2) {
+      nature = nature.split('/');
+      var str = "↑ " + natureStats[nature[0]]['increase'] + " ↑ " + natureStats[nature[1]]['increase'] + "<br/>↓ " + natureStats[nature[0]]['decrease'] + " ↓ " + natureStats[nature[1]]['decrease'] ;
+    } else {
+      // var str = "Increases: " + natureStats[nature]['increase'] + "<br/>Decreases: " + natureStats[nature]['decrease'];
+      var str = "↑ " + natureStats[nature]['increase'] + "<br/>↓ " + natureStats[nature]['decrease'] ;
+      // $(this).children[0].attr('id', 'nature_focus');
+      // $('#nature_focus').html(str);
+    }
+    $($(this).children()[0]).html(str);
+
+
+
+
+  });
+
+
 
   </script>
 

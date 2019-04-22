@@ -111,7 +111,7 @@ li.select2-search-choice {
 .site-title {
   font-family: "Pixel";
 
-  font-size: 85px;
+  font-size: 80px;
   letter-spacing: .01;
   text-align: center;
   padding-top: 3%;
@@ -198,7 +198,7 @@ li.select2-search-choice {
   /* display: flex; */
   width: 100%;
   float: left;
-  margin-top: 5%;
+  margin-top: 2%;
 
 }
 
@@ -226,7 +226,7 @@ li.select2-search-choice {
 /* legendary filter css */
 .legendary-filter {
   /* display: flex; */
-  width: 100%;
+  width: 30%;
   float: left;
 
 }
@@ -253,8 +253,10 @@ li.select2-search-choice {
 /* playstyle filter  */
 
 .playstyle-filter {
-  width: 100%;
-  margin-top: 10%;
+  width: 20%;
+  float: left;
+  margin-left: 5%;
+  margin-top: -1%;
 }
 
 
@@ -269,7 +271,7 @@ li.select2-search-choice {
 
 .filter-playstyle-select2 {
   display: block;
-  width: 30%;
+  width: 100%;
   /* top:20%; */
   /* font-family: "Play"; */
 }
@@ -283,13 +285,17 @@ li.select2-search-choice {
 /* league filter css */
 .leagues-filter {
   /* display: flex; */
-  width: 100%;
+  width: 40%;
+  float:left;
+  margin-left: 5%;
+  margin-top: -1.5%;
+
 
 }
 
 .leagues-filter-container {
   /* position: absolute; */
-  width: 10%;
+  width: 30%;
   /* margin-top: 2%; */
   height: 40px;
   /* margin-left: 2%; */
@@ -303,6 +309,7 @@ li.select2-search-choice {
 .filter-leagues-select2 {
   display: block;
   width: 100%;
+  margin-top: 1%;
   /* position: absolute; */
 }
 
@@ -332,7 +339,9 @@ li.select2-search-choice {
 .capturerate-filter {
   /* display: flex; */
   width: 100%;
+  float: left;
   margin-top: 1%;
+  /* margin-bottom: 2% */
 
 }
 
@@ -512,7 +521,7 @@ li.select2-search-choice {
 .pokemon-card-name {
   display: inline-block;
   position: absolute;
-  width: 150px;
+  width: auto;
   height: 100px;
   line-height: 100px;
   font-family: "Pixel";
@@ -526,14 +535,15 @@ li.select2-search-choice {
 }
 
 .pokemon-card-type {
-  line-height: 100px;
   margin-left: 52%;
+  padding-top: 8%;
+  font-size: 12px;
 }
 
+
 .type {
-  padding: 2% 3%;
+  padding: 3px 5px;
   border-radius: 5px;
-  font-size: 10px;
   margin-left: 1%;
 
 }
