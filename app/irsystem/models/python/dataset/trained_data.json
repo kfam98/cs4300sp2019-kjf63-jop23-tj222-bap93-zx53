@@ -1,0 +1,20 @@
+
+{
+"UBER": {"good":["Groudon", "Necrozma", "Gengar", "Yveltal", "Zygarde", "Xerneas", "Marshadow", "Arceus", "Salamence", "Kyogre", "Lunala", "Ferrothorn", "Magearna", "Ho-Oh", "Smeargle", "Scizor", "Giratina", "Toxapex", "Rayquaza", "Mewtwo"],
+  "bad":["Trubbish", "Snover", "Sandile", "Natu", "Hippopotas", "Deerling", "Craindos", "Axew", "Anorith", "Venipede", "Sandshrew", "Pumpkaboo", "Pancham", "Lileep", "Koffing", "Drilbur", "Dewpider", "Budew", "Zigzagoon", "Stunky", "Spinarak"]},
+"OU":{"good":["Greninja", "Heatran", "Landorus", "Magearna", "Alakazam", "Ferrothorn", "Mawile", "Tornadus", "Toxapex", "Celesteela", "Garchomp", "Kartana", "Latias", "Magnezone", "Medicham", "Rotom-Wash", "Tapu Bulu", "Tapu Koko", "Tapu Lele", "Tyranitar"],
+  "bad": ["Trubbish", "Snover", "Sandile", "Natu", "Hippopotas", "Deerling", "Craindos", "Axew", "Anorith", "Venipede", "Sandshrew", "Pumpkaboo", "Pancham", "Lileep", "Koffing", "Drilbur", "Dewpider", "Budew", "Zigzagoon", "Stunky", "Spinarak"]},
+"UU": {"good":["Latias", "Scizor", "Aerodactyl", "Altaria", "Hydreigon", "Krookodile", "Primarina", "Terrakion", "Blissey", "Celebi", "Cobalion", "Empoleon", "Sharpedo", "Slowbro", "Togekiss", "Amoonguss", "Bisharp", "Gligar", "Infernape", "Mamoswine"],
+  "bad":["Trubbish", "Snover", "Sandile", "Natu", "Hippopotas", "Deerling", "Craindos", "Axew", "Anorith", "Venipede", "Sandshrew", "Pumpkaboo", "Pancham", "Lileep", "Koffing", "Drilbur", "Dewpider", "Budew", "Zigzagoon", "Stunky", "Spinarak"]},
+"RU": {"good":["Blastoise", "Metagross", "Registeel", "Roserade", "Virizion", "Golisopod", "Ninetales", "Noivern", "Salazzle", "Shaymin", "Toxicroak", "Tyrantrum", "Barbaracle", "Bronzong", "Gardevoir", "Machamp", "Mandibuzz", "Milotic", "Raikou", "Slowbro"],
+  "bad": ["Trubbish", "Snover", "Sandile", "Natu", "Hippopotas", "Deerling", "Craindos", "Axew", "Anorith", "Venipede", "Sandshrew", "Pumpkaboo", "Pancham", "Lileep", "Koffing", "Drilbur", "Dewpider", "Budew", "Zigzagoon", "Stunky", "Spinarak"]},
+"NU": {"good":["Incineroar", "Vileplume", "Heliolisk", "Passimian", "Sneasel", "Xatu", "Rhydon", "Glalie", "Vaporeon", "Sceptile", "Steelix", "Exeggutor", "Dhelmise", "Pangoro", "Weezing", "Delphox", "Slowking", "Comfey", "Scrafty", "Sigilyph"],
+  "bad": ["Trubbish", "Snover", "Sandile", "Natu", "Hippopotas", "Deerling", "Craindos", "Axew", "Anorith", "Venipede", "Sandshrew", "Pumpkaboo", "Pancham", "Lileep", "Koffing", "Drilbur", "Dewpider", "Budew", "Zigzagoon", "Stunky", "Spinarak"]},
+"PU": {"good":["Froslass", "Lilligant", "Mesprit", "Guzzlord", "Skuntank", "Gurdurr", "Kangaskhan", "Oricorio", "Persian", "Regirock", "Sandslash", "Stoutland", "Aggron", "Aurorus", "Dodrio", "Eelektross", "Jellicent", "Lanturn", "Lycanroc", "Mudsdale"],
+  "bad": ["Trubbish", "Snover", "Sandile", "Natu", "Hippopotas", "Deerling", "Craindos", "Axew", "Anorith", "Venipede", "Sandshrew", "Pumpkaboo", "Pancham", "Lileep", "Koffing", "Drilbur", "Dewpider", "Budew", "Zigzagoon", "Stunky", "Spinarak"]},
+"LC": {"good":["Mienfoo", "Vullaby", "Abra", "Diglett", "Foongus", "Pawniard", "Gastly", "Onix", "Ponyta", "Spritzee", "Timburr", "Ferroseed", "Magnemite", "Mareanie", "Mudbray", "Snivy", "Tirtouga", "Bunnelby", "Carvanha", "Doduo"],
+  "bad": ["Trubbish", "Snover", "Sandile", "Natu", "Hippopotas", "Deerling", "Craindos", "Axew", "Anorith", "Venipede", "Sandshrew", "Pumpkaboo", "Pancham", "Lileep", "Koffing", "Drilbur", "Dewpider", "Budew", "Zigzagoon", "Stunky", "Spinarak"]},
+"NFE": {"good":["Monferno", "Dragonair", "Fletchinder", "Misdreavus", "Murkrow", "Pikachu", "Roselia", "Tangela", "Abra", "Clefairy", "Drilbur", "Ferroseed", "Honedge", "Lairon", "Munchlax", "Piloswine", "Porygon", "Quilava", "Quilladin", "Duosion"],
+  "bad": ["Bayleef", "Cascoon", "Dewott", "Flaaffy", "Floette", "Gloom", "Jigglypuff", "Kakuna", "Kirlia", "Luxio", "Marill", "Metapod", "Pidgeotto", "Pupitar", "Sealeo", "Shelgon", "Silcoon", "Skiploom", "Spewpa", "Tranquill", "Vanillish"]}
+
+}
