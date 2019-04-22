@@ -33,6 +33,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     if pokeMoves == None:
         pokeMoves = pokemon.generateMoveData()
 
+    weights = pokemon.pkmn_weights
+
     currentTeamNames = []
     currentMoves = {}
     for p in myTeam:
@@ -86,6 +88,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pokedex,
         branchFactor,
         league
+        weights
     )
 
     topTeams, teamScores = team.scoreTeams(

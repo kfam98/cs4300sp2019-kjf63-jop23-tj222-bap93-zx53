@@ -36,8 +36,24 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
         pObj.hp * PLAYSTYLES[playstyle][HEALTH]
     )
 
+def weightPokemon(pObj, weights, league):
+    """
+    Returns the weight for the given Pokemon in the specified league, as 
+    determined using linear regression. 
 
-def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptureRate, pokemonDictionary, branchFactor,league):
+    Inputs:
+        pObj: Pokemon object 
+        weights: Dictionary where leagues are mapped to dictionaries of Pokemon
+                 mapped to their numerical classification 
+        league: string name of input league
+    """
+    league_dict = weights[league]
+    if pObj.name in league_dict:
+        return 1+(league_dict[pObj.name] * 0.25)
+    else:
+        return 1
+
+def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptureRate, pokemonDictionary, branchFactor, league, weights):
     """
     Updates and returns the currentTeam variable to fill out to six pokemon
 
@@ -102,7 +118,7 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
             ## rankings - List<strin,score>
             rankings = []
             for pObj in toRank:
-                rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses)))
+                rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses) * weightPokemon(pObj,weights,league)))
 
             rankings = sorted(rankings, key = lambda x : x[1], reverse = True)
 
@@ -117,4 +133,6 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
     return finishedTeams
 
 if __name__ == '__main__':
-    fillRestOfTeam([['Lucario','Arcanine']], False, [1,2,3,4,5,6], BALANCED, 0, [], pokemon.generate_instances(), 5)
+    fillRestOfTeam([['Lucario','Arcanine']], False, [1,2,3,4,5,6], BALANCED, 0, [], pokemon.generate_instances(), 5, pokemon.pkmn_weights)
+
+print("hi")

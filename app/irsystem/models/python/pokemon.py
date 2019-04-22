@@ -197,19 +197,19 @@ def generateMoveData():
         result = json.load(json_file)
     return result
 
-def generateSummaries():
+def generateMLWeights():
     """ Returns a dictionary where each key is a string identifying a specific
         Pokemon, and its value is its string description from Smogon. """
     path = os.path.dirname(os.path.realpath(__file__))
-    with open(path+"/dataset/PokemonToSummaries.json", newline = '') as j_file:
-        result = json.load(j_file)
+    with open(path+"/dataset/classWeights.json", newline = '') as json_file:
+        result = json.load(json_file)
     return result
 
 # Global variable with type chart
 type_chart = generateTypeChart()
 pkmn_moves = generatePokemonMoves()
 move_types = generateMoveData()
-pkmn_summaries = generateSummaries() 
+pkmn_weights = generateMLWeights() 
 
 if __name__ == "__main__":
     print(generate_instances())
