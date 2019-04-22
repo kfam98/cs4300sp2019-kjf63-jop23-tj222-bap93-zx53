@@ -5,7 +5,7 @@ var curr_pokemon_moveset;
 var l_bool = false;
 var generations;
 var pstyle;
-var caprate = '.1';
+var caprate = '10';
 var myteam;
 var giveOppTeam = false;
 var theirteam;
@@ -15,7 +15,7 @@ var selectedGenerations = ['1','2','3','4','5','6','7'];
 var selectedLegendary = 0;
 
 
-$.getJSON("/static/data/pokemondata.json", function(json) {
+$.getJSON("/static/data/pokemondata2.json", function(json) {
   for (var i = 0; i < json.length; i++) {
     dataList.push({id: json[i].pokedex_number, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
   }
@@ -32,16 +32,28 @@ $.getJSON("/static/data/pokemondata.json", function(json) {
 
   function formatCard(pokedexNumber) {
     var imgSrc = "";
-    var name = ""
+    var name = "";
+    var type1='';
+    var type2='';
     for (var i = 0; i < json.length; i++) {
       if (json[i].pokedex_number == pokedexNumber) {
         imgSrc = json[i].imgSrc;
         name = json[i].name;
         curr_pokemon_moveset = json[i].moveset;
+        type1 = json[i].type1;
+        type2 = json[i].type2;
+
+
+        if (type2 == null) {
+          type2 = '';
+        }
+
       }
     }
+
+
     var $card = $(
-      '<div class="pokemon-card-form"><img class="pokemon-card-img" alt="pokemon" src="' + imgSrc + '"><div class="pokemon-card-name">' + name + '</div><div class="pokemon-nature-label"></div><div class="pokemon-moveset-label"></div><div class="remove-pokemon-button">&times;</div></div>'
+      '<div class="pokemon-card-form"><img class="pokemon-card-img" alt="pokemon" src="' + imgSrc + '"><div class="pokemon-card-name"><span class="name">' + name + '</span><span class="type" style="background-color: ' + types[type1] + ';" >' + type1 + '</span><span class="type" style="background-color: ' + types[type2] + ';">' + type2 + '</span></div><div class="pokemon-nature-label"></div><div class="pokemon-moveset-label"></div><div class="remove-pokemon-button">&times;</div></div>'
     );
     // var $natureSelect = $(
     //   "<span class='nature-select2'><input type='text' placeholder='nature' name='nature' style='width:100px' /></span>"
@@ -324,6 +336,7 @@ $("#no_legend").on("click", function() {
 $(document).on('input', "#myRange", function() {
 $('#capture-rate').html( $(this).val() + "%");
 caprate = '' + $(this).val();
+console.log("caprate: " + caprate);
 });
 
 
