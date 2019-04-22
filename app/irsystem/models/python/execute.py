@@ -99,6 +99,8 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         desiredDistAway
     )
 
+    print(teamScores)
+
     return movesetsAndFormat.fillAndFormat(
         topTeams,
         myTeam,

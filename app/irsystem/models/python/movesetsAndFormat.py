@@ -24,9 +24,10 @@ def fillAndFormat(teams, currentTeamData, tScores):
 
     for i in range(len(teams)):
         team = teams[i]
-        form = {}
-        form[SCORE] = tScores[i]
+        teamData = []
+        teamData.append(tScores[i])
         for pokeman in team:
+            form = {}
             #initialize pokemans entry
             form[pokeman] = {}
             form[pokeman][MOVES] = []
@@ -57,7 +58,12 @@ def fillAndFormat(teams, currentTeamData, tScores):
                     if form[pokeman][ITEM] == None:
                         form[pokeman][ITEM] = d[ITEM]
 
-        toRet.append(form.copy())
-        print(form)
+            teamData.append(form.copy())
+
+        toRet.append(teamData.copy())
+        
+        print(teamData)
+        print("")
+        print("")
 
     return toRet
