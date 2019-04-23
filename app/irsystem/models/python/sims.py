@@ -56,20 +56,6 @@ def loadSims():
 
     return data
 
-def getSimScore(p1, p2, similarities):
-    if p1 == EMPTY or p2 == EMPTY:
-        return 0
-
-    if p1 in similarities:
-        if p2 in similarities[p1]:
-            return similarities[p1][p2]
-
-    elif p2 in similarities:
-        if p1 in similarities[p2]:
-            return similaritiesp[p2][p1]
-    
-    return 0
-
 
 def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     """
@@ -132,7 +118,9 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
                 vals = wArr* tArr
                 score += np.amax(vals)
             
-        results.append((team, (score/topScore)))
+        score = (score/topScore) *100
+        score = round(score,1)
+        results.append((team, score))
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
