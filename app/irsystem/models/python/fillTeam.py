@@ -1,7 +1,7 @@
 from .constants import *
 from . import pokemon
 
-def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
+def rankPokemon(pObj, playstyle, currentTeamWeaknesses, weights, league):
     """
     returns a numerical ranking of the pokemon based off of its base stats
 
@@ -10,6 +10,9 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
     currentTeamWeaknesses - dict<pType,numWeak> - pType type of pokemon and the corresponding
         number of pokemon weak to that specific type
     socialWeight - int - the social weight to consider when ranking the pokemon
+    weights: Dictionary where leagues are mapped to dictionaries of Pokemon
+                 mapped to their numerical classification 
+    league: string name of input league
     """
     #determine weakness multipliers for the pokemon
     weaknessMod = 1
@@ -33,7 +36,8 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses):
         pObj.sp_attack * PLAYSTYLES[playstyle][SPATTACK] +
         pObj.sp_defense * PLAYSTYLES[playstyle][SPDEFENSE] +
         pObj.speed * PLAYSTYLES[playstyle][SPEED] +
-        pObj.hp * PLAYSTYLES[playstyle][HEALTH]
+        pObj.hp * PLAYSTYLES[playstyle][HEALTH] +
+        weightPokemon(pObj,weights,league)
     )
 
 def weightPokemon(pObj, weights, league):
@@ -49,9 +53,9 @@ def weightPokemon(pObj, weights, league):
     """
     league_dict = weights[league]
     if pObj.name in league_dict:
-        return 1+(league_dict[pObj.name] * 0.25)
+        return (league_dict[pObj.name] * 1.5)
     else:
-        return 1
+        return 0
 
 def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptureRate, pokemonDictionary, branchFactor, league, weights):
     """
@@ -118,7 +122,7 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
             ## rankings - List<strin,score>
             rankings = []
             for pObj in toRank:
-                rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses) * weightPokemon(pObj,weights,league)))
+                rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses, weights, league)))
 
             rankings = sorted(rankings, key = lambda x : x[1], reverse = True)
 
