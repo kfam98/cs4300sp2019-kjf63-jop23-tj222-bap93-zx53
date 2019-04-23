@@ -61,9 +61,5 @@ def fillAndFormat(teams, currentTeamData, tScores):
             teamData.append(form.copy())
 
         toRet.append(teamData.copy())
-        
-        print(teamData)
-        print("")
-        print("")
 
     return toRet

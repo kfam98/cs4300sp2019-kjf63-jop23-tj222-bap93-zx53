@@ -15,13 +15,13 @@ BRANCH5 = 5
 BRANCH6 = 4
 
 #Total Number of Pokemon
-TOTALPOKEMON= 808
+TOTALPOKEMON= 820
 
 #Empty pokemon, serves as an empty pokemon or empty spot in the team.
 EMPTY = "empty"
 
 #Number losing teams to consider on similarity, and number of teams to return to front end.
-NUMLOSINGTEAMS = 10
+NUMLOSINGTEAMS = 5
 NUMTEAMSRETURN = 5
 
 #Leagues
@@ -54,7 +54,7 @@ LEAGUERANKS = [
 ]
 
 RANKSTOWINLOSEFILES = [
-    UBER,
+    "/dataset/replays_html/rp_file_ou.json",
     "/dataset/replays_html/rp_file_ou.json",
     UUBL,
     "/dataset/replays_html/rp_file_uu.json",
@@ -70,7 +70,7 @@ RANKSTOWINLOSEFILES = [
 ]
 
 PATHTOMOVES = "/dataset/PokemonToMovesetsAndNaturesAndItems.json"
-PATHTOSIMSCORES = "/dataset/pokemon_sims.json"
+PATHTOSIMSCORES = "/dataset/updatedSims.json"
 PATHTOMLWEIGHTS = "/dataset/classWeights.json"
 
 #Pokemon Types

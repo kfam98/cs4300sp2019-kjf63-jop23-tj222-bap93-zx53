@@ -1,8 +1,15 @@
-from .constants import *
+from . import fillTeam
+from . import findCounters
+from . import checkCounters
+from . import sims as team
+from . import movesetsAndFormat
 from . import pokemon
+from .constants import *
+
+import os
 import json
 import numpy as np
-import os
+import time
 
 count = 0
 
@@ -39,6 +46,30 @@ def teamToArray(team, pokedex):
             arr[pokedex[name].pokedex_num]+=1
     return arr
 
+def loadSims():
+    path = os.path.dirname(os.path.realpath(__file__))
+    with open(path + PATHTOSIMSCORES, "r+") as f:
+        data = json.loads(f.readline())
+
+    for k in data:
+        data[k] = np.array(data[k])
+
+    return data
+
+def getSimScore(p1, p2, similarities):
+    if p1 == EMPTY or p2 == EMPTY:
+        return 0
+
+    if p1 in similarities:
+        if p2 in similarities[p1]:
+            return similarities[p1][p2]
+
+    elif p2 in similarities:
+        if p1 in similarities[p2]:
+            return similaritiesp[p2][p1]
+    
+    return 0
+
 
 def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     """
@@ -51,18 +82,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     minDistWanted - an integer denoting how far away we want the team to be in pokemon to be considered valid
     """
     battleData = loadBattleData(league)
-
-    if battleData == None:
-        #REALLY IMPORTANT ISSUE
-        cutoff = min(len(curTeams),NUMTEAMSRETURN)
-
-        teams = []
-        scores = []
-        for team in curTeams[:cutoff]:
-            teams.append(team)
-            scores.append(0)
-
-        return teams, scores
+    similarities = loadSims()
 
     if len(oppTeam) < 6:
         for x in range(6-len(oppTeam)):
@@ -101,14 +121,18 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
         for winner in loserDict[str(loser)]:
             winnersComp.append(winner)
     
-
+    topScore = len(winnersComp)*6 #pkmn team size
     results = []
     for team in curTeams:
-        t = teamToArray(team,pokedex)
         score = 0
         for winner in winnersComp:
-            score += np.dot(t,winner)
-        results.append((team,score))
+            wArr = np.array(winner)
+            for tPkmn in team:
+                tArr = similarities[tPkmn]
+                vals = wArr* tArr
+                score += np.amax(vals)
+            
+        results.append((team, (score/topScore)))
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
