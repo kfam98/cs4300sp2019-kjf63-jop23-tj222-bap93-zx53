@@ -356,16 +356,21 @@ $(document).on("click", ".generate-recommendations-button", function() {
 
   var myteam_str='';
   $(".your-team-container > .team-slot-container >.pokemon-card-form").each(function() {
-  li_lst = this.children[5].children;
+  li_lst = this.children[6].children[0].children;
+  // console.log(li_lst);
   mv = '';
   for (var i = 0; i < li_lst.length; i++) {
     var li = li_lst[i];
-    if (li.className == "select2-choices") {
-      mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '6');
+    if (li.className == "select2-search-choice") {
+      console.log(li.innerText);
+      mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '');
+      mv+='6';
+
 
     }
   }
   myteam_str += this.children[1].innerText + "6" + mv+"_";
+
   });
   //console.log(myteam_str);
   var theirteam_str='';
@@ -373,12 +378,14 @@ $(document).on("click", ".generate-recommendations-button", function() {
   if (giveOppTeam) {
 
   $(".opponent-team-container > .team-slot-container >.pokemon-card-form").each(function() {
-    li_lst = this.children[5].children;
+    li_lst = this.children[6].children[0].children;
+
     mv = '';
     for (var i = 0; i < li_lst.length; i++) {
       var li = li_lst[i];
-      if (li.className == "select2-choices") {
-        mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '6');
+      if (li.className == "select2-sesarch-choice") {
+        mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '');
+        mv+='6';
 
       }
     }
