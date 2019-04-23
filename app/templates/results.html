@@ -58,65 +58,68 @@
     <div class="arrows" id="left"><<</div>
     <!-- <img id="left" class="arrows" src="/static/images/left-arrow.svg"> -->
     {% for team in results %}
-    <div id='team-title-{{ loop.index|string }}' class="your-team-header">Team {{ loop.index }}</div>
+      <div id='team-title-{{ loop.index|string }}' class="your-team-header">Team {{ loop.index }} - {{ team[0] }}% Match</div>
+      <div class="site-team" id='team-{{ loop.index|string }}'>
+        {% for name in team %}
+          {% if loop.index > 1 %}
+            {% for name, info in name.items() %}
+            <div class="result-slot-container">
+              <div class="pokemon-card-form">
 
 
-    <div class="site-team" id='team-{{ loop.index|string }}'>
-      {% for name, info in team.items() %}
+              {% for p_name, img_src in imagedata.items() %}
+                {% if name == p_name %}
+                <!-- <span class="ptooltip"> -->
+                  <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
+                  <!-- <span class="ptooltiptext"></span> -->
+                <!-- </span> -->
 
-        <div class="result-slot-container">
-          <div class="pokemon-card-form">
-
-
-          {% for p_name, img_src in imagedata.items() %}
-            {% if name == p_name %}
-            <!-- <span class="ptooltip"> -->
-              <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
-              <!-- <span class="ptooltiptext"></span> -->
-            <!-- </span> -->
-
-            {% endif %}
-          {% endfor %}
-
-          <div class="pokemon-card-name">
-            {{ name }}
-
-            </div>
-          <div class="types">
-          {% for p_name, types in typedata.items() %}
-            {% if name == p_name %}
-              {% for name, type in types.items() %}
-              {% if  name == 'type2' %}
-                <span class="type type2 {{type}}">{{ type }}</span>
-              {%  else %}
-                <span class="type {{type}}">{{ type }}</span>
-              {% endif %}
+                {% endif %}
               {% endfor %}
-            {% endif %}
-          {% endfor %}
-          </div>
 
-          <div class="pokemon-nature-label">
-            <span class="ntooltip">{{info.nature}}
-              <span class="ntooltiptext">
-              </span>
-            </span>
+              <div class="pokemon-card-name">
+                {{ name }}
+
+                </div>
+              <div class="types">
+              {% for p_name, types in typedata.items() %}
+                {% if name == p_name %}
+                  {% for name, type in types.items() %}
+                  {% if  name == 'type2' %}
+                    <span class="type type2 {{type}}">{{ type }}</span>
+                  {%  else %}
+                    <span class="type {{type}}">{{ type }}</span>
+                  {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+              </div>
+
+              <div class="pokemon-nature-label">
+                <span class="ntooltip">{{info.nature}}
+                  <span class="ntooltiptext">
+                  </span>
+                </span>
+              </div>
+              <div class="pokemon-moveset-label">Recommended Moves</div>
+              <div class="pokemon-moves-label">
+              {% if info.moves %}
+                {% for move in info.moves %}
+                  <div class='pokemon-move-label' id="move{{ loop.index }}">{{ move }}</div>
+                {% endfor %}
+              {% else %}
+                    <div class='pokemon-move-label'>No moves recommended</div>
+              {% endif %}
+
+              </div>
+            </div>
           </div>
-          <div class="pokemon-moveset-label">Recommended Moves</div>
-          <div class="pokemon-moves-label">
-          {% if info.moves %}
-            {% for move in info.moves %}
-              <div class='pokemon-move-label' id="move{{ loop.index }}">{{ move }}</div>
             {% endfor %}
-          {% else %}
-                <div class='pokemon-move-label'>No moves recommended</div>
           {% endif %}
 
-          </div>
-        </div>
-      </div>
+        {% endfor %}
 
-    {% endfor %}
+
 
 
     </div>
@@ -203,17 +206,21 @@
 
   $('.ntooltip').hover( function() {
     var nature = "" + $(this).html().split(" ")[0].slice(0, -1);
-
-    if (nature.split('/').length == 2) {
-      nature = nature.split('/');
-      var str = "↑ " + natureStats[nature[0]]['increase'] + " ↑ " + natureStats[nature[1]]['increase'] + "<br/>↓ " + natureStats[nature[0]]['decrease'] + " ↓ " + natureStats[nature[1]]['decrease'] ;
+    if (nature != "none") {
+      if (nature.split('/').length == 2) {
+        nature = nature.split('/');
+        var str = "↑ " + natureStats[nature[0]]['increase'] + " ↑ " + natureStats[nature[1]]['increase'] + "<br/>↓ " + natureStats[nature[0]]['decrease'] + " ↓ " + natureStats[nature[1]]['decrease'] ;
+      } else {
+        // var str = "Increases: " + natureStats[nature]['increase'] + "<br/>Decreases: " + natureStats[nature]['decrease'];
+        var str = "↑ " + natureStats[nature]['increase'] + "<br/>↓ " + natureStats[nature]['decrease'] ;
+        // $(this).children[0].attr('id', 'nature_focus');
+        // $('#nature_focus').html(str);
+      }
+      $($(this).children()[0]).html(str);
     } else {
-      // var str = "Increases: " + natureStats[nature]['increase'] + "<br/>Decreases: " + natureStats[nature]['decrease'];
-      var str = "↑ " + natureStats[nature]['increase'] + "<br/>↓ " + natureStats[nature]['decrease'] ;
-      // $(this).children[0].attr('id', 'nature_focus');
-      // $('#nature_focus').html(str);
+      $($(this).children()[0]).css('background-color', "#fff");
     }
-    $($(this).children()[0]).html(str);
+
 
 
 
