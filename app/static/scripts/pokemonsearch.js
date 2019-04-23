@@ -15,11 +15,10 @@ var selectedGenerations = ['1','2','3','4','5','6','7'];
 var selectedLegendary = 0;
 
 
-$.getJSON("/static/data/pokemondata2.json", function(json) {
+$.when($.getJSON("/static/data/pokemondata2.json")).then( function(json) {
   for (var i = 0; i < json.length; i++) {
     dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary, pokedex_number: json[i].pokedex_number});
   }
-  console.log(dataList);
 
   function formatState(state) {
     if (!json[state.id].pokedex_number) {
@@ -84,7 +83,7 @@ function getDataList() {
       text: pokemon.text
     }
   })
-  console.log(newDataList);
+  // console.log(newDataList);
   return newDataList
   // console.log(filtered);
 }

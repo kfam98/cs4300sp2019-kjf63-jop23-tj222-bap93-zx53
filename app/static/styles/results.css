@@ -63,6 +63,7 @@
 
 .your-team-header {
   width: 50%;
+  font-family: 'Pixel';
 }
 
 
@@ -227,7 +228,7 @@
 
 }
 .type2 {
-  margin-left: -2%;
+  margin-left: -3%;
 }
 .normal {
   background-color: #A8A77A;
