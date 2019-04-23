@@ -114,10 +114,11 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
         for winner in winnersComp:
             wArr = np.array(winner)
             for tPkmn in team:
-                tArr = similarities[tPkmn]
-                vals = wArr* tArr
-                score += np.amax(vals)
-            
+                if tPkmn in similarities:
+                    tArr = similarities[tPkmn]
+                    vals = wArr* tArr
+                    score += np.amax(vals)
+                
         score = (score/topScore) *100
         score = round(score,1)
         results.append((team, score))
