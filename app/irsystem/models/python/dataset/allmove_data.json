@@ -306,7 +306,7 @@
         "type": "fire",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Charmander": "Machine",
             "Charmeleon": "Machine",
@@ -448,14 +448,15 @@
             "Heliolisk": "Tutor",
             "Hawlucha": "Tutor",
             "Goodra": "Tutor",
-            "Hoopa": "Tutor"
+            "Hoopa": "Tutor",
+            "Marshadow": "Level up"
         }
     },
     "Ice Punch": {
         "type": "ice",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [freeze]{mechanic:freeze} the target.",
+        "description": "Has a chance to freeze the target.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
@@ -611,14 +612,15 @@
             "Hoopa": "Tutor",
             "Crabominable": "Level up",
             "Stufful": "Egg",
-            "Buzzwole": "Level up"
+            "Buzzwole": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Thunder Punch": {
         "type": "electric",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Charmander": "Tutor",
             "Charmeleon": "Tutor",
@@ -790,7 +792,9 @@
             "Hoopa": "Tutor",
             "Stufful": "Egg",
             "Buzzwole": "Level up",
-            "Xurkitree": "Level up"
+            "Xurkitree": "Level up",
+            "Marshadow": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Scratch": {
@@ -804,7 +808,7 @@
             "Charizard": "Level up",
             "Sandshrew": "Level up",
             "Sandslash": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Nidoqueen": "Level up",
             "Paras": "Level up",
@@ -878,7 +882,8 @@
             "Torracat": "Level up",
             "Incineroar": "Level up",
             "Salandit": "Level up",
-            "Mimikyu": "Level up"
+            "Mimikyu": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Vice Grip": {
@@ -943,7 +948,7 @@
             "Zubat": "Machine",
             "Golbat": "Machine",
             "Venomoth": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Horsea": "Egg",
             "Scyther": "Egg",
             "Kabutops": "Machine",
@@ -1009,7 +1014,7 @@
             "Victreebel": "Machine",
             "Tentacool": "Machine",
             "Tentacruel": "Machine",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Doduo": "Level up",
             "Dodrio": "Level up",
             "Krabby": "Machine",
@@ -1215,10 +1220,10 @@
             "Raticate": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Oddish": "Machine",
@@ -1235,7 +1240,7 @@
             "Victreebel": "Machine",
             "Tentacool": "Machine",
             "Tentacruel": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Krabby": "Machine",
             "Kingler": "Machine",
             "Lickitung": "Machine",
@@ -1469,7 +1474,7 @@
         "type": "flying",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Inflicts regular damage and can hit Pok\u00e9mon in the air.",
+        "description": "Inflicts regular damage and can hit Pokemon in the air.",
         "pokemon": {
             "Butterfree": "Level up",
             "Pidgey": "Level up",
@@ -1477,7 +1482,7 @@
             "Pidgeot": "Level up",
             "Zubat": "Egg",
             "Venomoth": "Level up",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Articuno": "Level up",
             "Suicune": "Level up",
             "Lugia": "Level up",
@@ -1559,7 +1564,7 @@
         "type": "normal",
         "power": null,
         "accuracy": null,
-        "description": "Immediately ends wild battles.  Forces trainers to switch Pok\u00e9mon.",
+        "description": "Immediately ends wild battles.  Forces trainers to switch Pokemon.",
         "pokemon": {
             "Butterfree": "Level up",
             "Pidgey": "Level up",
@@ -1570,7 +1575,7 @@
             "Zubat": "Machine",
             "Golbat": "Machine",
             "Venomoth": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Aerodactyl": "Machine",
@@ -1627,7 +1632,7 @@
             "Fearow": "Machine",
             "Zubat": "Machine",
             "Golbat": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Aerodactyl": "Machine",
@@ -1854,7 +1859,7 @@
             "Chespin": "Level up",
             "Quilladin": "Level up",
             "Chesnaught": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Skiddo": "Level up",
             "Gogoat": "Level up",
@@ -1865,7 +1870,7 @@
         "type": "normal",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Ponyta": "Level up",
             "Rapidash": "Level up",
@@ -1918,10 +1923,10 @@
         "accuracy": 100.0,
         "description": "Hits twice in one turn.",
         "pokemon": {
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Nidoqueen": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Level up",
             "Growlithe": "Egg",
@@ -2101,19 +2106,21 @@
             "Sawsbuck": "Level up",
             "Mienfoo": "Level up",
             "Mienshao": "Level up",
-            "Pheromosa": "Level up"
+            "Pheromosa": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Rolling Kick": {
         "type": "fighting",
         "power": 60.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Machop": "Egg",
             "Hitmonlee": "Level up",
             "Hitmontop": "Level up",
-            "Elekid": "Egg"
+            "Elekid": "Egg",
+            "Marshadow": "Level up"
         }
     },
     "Sand Attack": {
@@ -2129,7 +2136,7 @@
             "Sandslash": "Level up",
             "Diglett": "Level up",
             "Dugtrio": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Eevee": "Level up",
             "Vaporeon": "Level up",
             "Jolteon": "Level up",
@@ -2212,7 +2219,7 @@
         "type": "normal",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -2231,10 +2238,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -2268,7 +2275,7 @@
             "Rapidash": "Machine",
             "Slowpoke": "Level up",
             "Slowbro": "Level up",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Seel": "Level up",
             "Dewgong": "Level up",
             "Gengar": "Machine",
@@ -2599,7 +2606,7 @@
         "accuracy": 100.0,
         "description": "Inflicts regular damage with no additional effect.",
         "pokemon": {
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Level up",
             "Rhyhorn": "Level up",
@@ -2627,10 +2634,10 @@
             "Beedrill": "Level up",
             "Spearow": "Level up",
             "Fearow": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Rapidash": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Doduo": "Level up",
             "Dodrio": "Level up",
             "Rhyhorn": "Level up",
@@ -2663,7 +2670,9 @@
             "Decidueye": "Level up",
             "Pikipek": "Level up",
             "Trumbeak": "Level up",
-            "Toucannon": "Level up"
+            "Toucannon": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Horn Drill": {
@@ -2674,7 +2683,7 @@
         "pokemon": {
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Machine",
             "Ponyta": "Machine",
@@ -2715,10 +2724,10 @@
             "Pidgeot": "Level up",
             "Rattata": "Level up",
             "Raticate": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Nidoqueen": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Level up",
             "Venonat": "Level up",
@@ -2895,7 +2904,7 @@
             "Scatterbug": "Level up",
             "Litleo": "Level up",
             "Pyroar": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Skiddo": "Level up",
             "Gogoat": "Level up",
@@ -2945,14 +2954,15 @@
             "Jangmo-o": "Level up",
             "Hakamo-o": "Level up",
             "Kommo-o": "Level up",
-            "Celesteela": "Level up"
+            "Celesteela": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Body Slam": {
         "type": "normal",
         "power": 85.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -2971,10 +2981,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Level up",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -3013,7 +3023,7 @@
             "Rapidash": "Machine",
             "Slowpoke": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -3335,10 +3345,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -3389,7 +3399,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Level up",
@@ -3560,7 +3570,8 @@
             "Passimian": "Level up",
             "Type: Null": "Level up",
             "Silvally": "Level up",
-            "Minior": "Level up"
+            "Minior": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Thrash": {
@@ -3671,10 +3682,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -3725,7 +3736,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -4049,7 +4060,8 @@
             "Type: Null": "Level up",
             "Silvally": "Level up",
             "Minior": "Level up",
-            "Celesteela": "Level up"
+            "Celesteela": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Tail Whip": {
@@ -4065,7 +4077,7 @@
             "Raticate": "Level up",
             "Pikachu": "Level up",
             "Raichu": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Nidoqueen": "Level up",
             "Vulpix": "Level up",
@@ -4143,17 +4155,17 @@
         "type": "poison",
         "power": 15.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [poison]{mechanic:poison} the target.",
+        "description": "Has a chance to poison the target.",
         "pokemon": {
             "Weedle": "Level up",
             "Ekans": "Level up",
             "Arbok": "Level up",
             "Sandshrew": "Level up",
             "Sandslash": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Nidoqueen": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Level up",
             "Tentacool": "Level up",
@@ -4184,7 +4196,7 @@
         "type": "bug",
         "power": 25.0,
         "accuracy": 100.0,
-        "description": "Hits twice in the same turn.  Has a $effect_chance% chance to poison the target.",
+        "description": "Hits twice in the same turn.  Has a chance to poison the target.",
         "pokemon": {
             "Beedrill": "Level up",
             "Shellder": "Egg",
@@ -4242,7 +4254,7 @@
             "Fearow": "Level up",
             "Ekans": "Level up",
             "Arbok": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Mankey": "Level up",
             "Primeape": "Level up",
@@ -4251,7 +4263,7 @@
             "Machop": "Level up",
             "Machoke": "Level up",
             "Machamp": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Shellder": "Level up",
             "Krabby": "Level up",
             "Kingler": "Level up",
@@ -4425,7 +4437,7 @@
         "type": "dark",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Charmander": "Egg",
             "Squirtle": "Level up",
@@ -4435,7 +4447,7 @@
             "Raticate": "Level up",
             "Ekans": "Level up",
             "Arbok": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Zubat": "Level up",
             "Golbat": "Level up",
@@ -4575,7 +4587,7 @@
             "Fearow": "Level up",
             "Pikachu": "Level up",
             "Raichu": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Clefairy": "Level up",
             "Diglett": "Level up",
@@ -4705,14 +4717,16 @@
             "Trumbeak": "Level up",
             "Toucannon": "Level up",
             "Oricorio": "Level up",
-            "Wishiwashi": "Level up"
+            "Wishiwashi": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Roar": {
         "type": "normal",
         "power": null,
         "accuracy": null,
-        "description": "Immediately ends wild battles.  Forces trainers to switch Pok\u00e9mon.",
+        "description": "Immediately ends wild battles.  Forces trainers to switch Pokemon.",
         "pokemon": {
             "Venusaur": "Machine",
             "Charizard": "Machine",
@@ -4939,8 +4953,8 @@
         "description": "Confuses the target.",
         "pokemon": {
             "Butterfree": "Level up",
-            "Nidoran\u2640": "Egg",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-F": "Egg",
+            "Nidoran-M": "Egg",
             "Zubat": "Level up",
             "Golbat": "Level up",
             "Venonat": "Level up",
@@ -5029,8 +5043,8 @@
         "description": "Disables the target's last used move for 1-8 turns.",
         "pokemon": {
             "Ekans": "Egg",
-            "Nidoran\u2640": "Egg",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-F": "Egg",
+            "Nidoran-M": "Egg",
             "Vulpix": "Egg",
             "Jigglypuff": "Level up",
             "Wigglytuff": "Level up",
@@ -5088,7 +5102,7 @@
         "type": "poison",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Ekans": "Level up",
             "Arbok": "Level up",
@@ -5111,14 +5125,16 @@
             "Shelmet": "Level up",
             "Skrelp": "Level up",
             "Dragalge": "Level up",
-            "Nihilego": "Level up"
+            "Nihilego": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Ember": {
         "type": "fire",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Charmander": "Level up",
             "Charmeleon": "Level up",
@@ -5174,14 +5190,15 @@
             "Incineroar": "Level up",
             "Salandit": "Level up",
             "Salazzle": "Level up",
-            "Turtonator": "Level up"
+            "Turtonator": "Level up",
+            "Blacephalon": "Level up"
         }
     },
     "Flamethrower": {
         "type": "fire",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Charmander": "Level up",
             "Charmeleon": "Level up",
@@ -5630,7 +5647,8 @@
             "Brionne": "Level up",
             "Primarina": "Level up",
             "Wishiwashi": "Level up",
-            "Tapu Fini": "Level up"
+            "Tapu Fini": "Level up",
+            "Rotom-Wash": "Level up"
         }
     },
     "Surf": {
@@ -5832,17 +5850,17 @@
         "type": "ice",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [freeze]{mechanic:freeze} the target.",
+        "description": "Has a chance to freeze the target.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
             "Blastoise": "Machine",
             "Rattata": "Machine",
             "Raticate": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -6085,17 +6103,17 @@
         "type": "ice",
         "power": 110.0,
         "accuracy": 70.0,
-        "description": "Has a $effect_chance% chance to freeze the target.",
+        "description": "Has a chance to freeze the target.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
             "Blastoise": "Machine",
             "Rattata": "Machine",
             "Raticate": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -6307,14 +6325,15 @@
             "Drampa": "Machine",
             "Tapu Fini": "Machine",
             "Lunala": "Machine",
-            "Pheromosa": "Machine"
+            "Pheromosa": "Machine",
+            "Rotom-Frost": "Level up"
         }
     },
     "Psybeam": {
         "type": "psychic",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Butterfree": "Level up",
             "Paras": "Egg",
@@ -6378,7 +6397,7 @@
         "type": "water",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Speed by one stage.",
+        "description": "Has a chance to lower the target's Speed by one stage.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
@@ -6485,7 +6504,7 @@
         "type": "ice",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Attack by one stage.",
+        "description": "Has a chance to lower the target's Attack by one stage.",
         "pokemon": {
             "Tentacool": "Egg",
             "Seel": "Level up",
@@ -6920,10 +6939,10 @@
         "pokemon": {
             "Spearow": "Level up",
             "Fearow": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Doduo": "Level up",
             "Dodrio": "Level up",
             "Seel": "Egg",
@@ -6970,7 +6989,9 @@
             "Toucannon": "Level up",
             "Oricorio": "Level up",
             "Mareanie": "Level up",
-            "Toxapex": "Level up"
+            "Toxapex": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Drill Peck": {
@@ -7215,10 +7236,10 @@
             "Raichu": "Tutor",
             "Sandshrew": "Egg",
             "Sandslash": "Tutor",
-            "Nidoran\u2640": "Egg",
+            "Nidoran-F": "Egg",
             "Nidorina": "Tutor",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-M": "Egg",
             "Nidorino": "Tutor",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -7382,7 +7403,8 @@
             "Mudsdale": "Level up",
             "Pyukumuku": "Level up",
             "Jangmo-o": "Egg",
-            "Buzzwole": "Level up"
+            "Buzzwole": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Seismic Toss": {
@@ -7544,10 +7566,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -8183,7 +8205,7 @@
             "Swadloon": "Level up",
             "Leavanny": "Level up",
             "Cottonee": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Skiddo": "Level up",
             "Gogoat": "Level up",
@@ -8430,7 +8452,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -8599,7 +8621,7 @@
             "Cherrim": "Level up",
             "Lilligant": "Level up",
             "Maractus": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Comfey": "Level up"
@@ -8759,7 +8781,7 @@
         "type": "electric",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Pikachu": "Level up",
             "Raichu": "Level up",
@@ -8777,6 +8799,11 @@
             "Magnezone": "Level up",
             "Electivire": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Emolga": "Level up",
             "Klink": "Level up",
             "Klang": "Level up",
@@ -8794,16 +8821,16 @@
         "type": "electric",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Rattata": "Machine",
             "Raticate": "Machine",
             "Pikachu": "Machine",
             "Raichu": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -9142,6 +9169,11 @@
             "Probopass": "Level up",
             "Froslass": "Machine",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Uxie": "Machine",
             "Mesprit": "Machine",
             "Azelf": "Machine",
@@ -9236,16 +9268,16 @@
         "type": "electric",
         "power": 110.0,
         "accuracy": 70.0,
-        "description": "Has a $effect_chance% chance to paralyze the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Rattata": "Machine",
             "Raticate": "Machine",
             "Pikachu": "Level up",
             "Raichu": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -9452,7 +9484,8 @@
             "Carbink": "Level up",
             "Diancie": "Level up",
             "Rockruff": "Level up",
-            "Lycanroc": "Level up"
+            "Lycanroc": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Earthquake": {
@@ -9781,10 +9814,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -10089,10 +10122,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -10143,7 +10176,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -10713,7 +10746,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -10842,18 +10875,21 @@
             "Celesteela": "Machine",
             "Kartana": "Machine",
             "Guzzlord": "Machine",
-            "Necrozma": "Machine"
+            "Necrozma": "Machine",
+            "Marshadow": "Machine",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Confusion": {
         "type": "psychic",
         "power": 50.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Squirtle": "Egg",
             "Butterfree": "Level up",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-M": "Egg",
             "Venonat": "Level up",
             "Venomoth": "Level up",
             "Psyduck": "Level up",
@@ -10926,7 +10962,7 @@
         "type": "psychic",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Butterfree": "Machine",
             "Clefairy": "Machine",
@@ -11094,7 +11130,7 @@
             "Braixen": "Level up",
             "Delphox": "Level up",
             "Vivillon": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Espurr": "Machine",
@@ -11233,7 +11269,7 @@
             "Growlithe": "Level up",
             "Ponyta": "Level up",
             "Rapidash": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Doduo": "Level up",
             "Dodrio": "Level up",
             "Krabby": "Egg",
@@ -11358,7 +11394,7 @@
             "Zubat": "Egg",
             "Ponyta": "Egg",
             "Rapidash": "Level up",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Doduo": "Egg",
             "Dodrio": "Level up",
             "Scyther": "Level up",
@@ -11454,7 +11490,8 @@
             "Sylveon": "Level up",
             "Lycanroc": "Level up",
             "Passimian": "Egg",
-            "Tapu Koko": "Level up"
+            "Tapu Koko": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Rage": {
@@ -11487,10 +11524,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -11541,7 +11578,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Level up",
             "Dodrio": "Level up",
             "Seel": "Machine",
@@ -11725,7 +11762,8 @@
             "Lampent": "Level up",
             "Golett": "Level up",
             "Golurk": "Level up",
-            "Lunala": "Level up"
+            "Lunala": "Level up",
+            "Blacephalon": "Level up"
         }
     },
     "Mimic": {
@@ -11758,10 +11796,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -11812,7 +11850,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -12264,10 +12302,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -12318,7 +12356,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -12702,6 +12740,11 @@
             "Dusknoir": "Machine",
             "Froslass": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Uxie": "Machine",
             "Mesprit": "Machine",
             "Azelf": "Machine",
@@ -12888,7 +12931,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -13017,7 +13060,8 @@
             "Kartana": "Machine",
             "Guzzlord": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine"
         }
     },
     "Recover": {
@@ -13266,6 +13310,11 @@
             "Dusknoir": "Level up",
             "Froslass": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Regigigas": "Level up",
             "Watchog": "Level up",
             "Solosis": "Egg",
@@ -13337,10 +13386,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Level up",
             "Sandslash": "Level up",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Level up",
@@ -13769,14 +13818,15 @@
             "Nihilego": "Machine",
             "Xurkitree": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Blacephalon": "Level up"
         }
     },
     "Haze": {
         "type": "ice",
         "power": null,
         "accuracy": null,
-        "description": "Resets all Pok\u00e9mon's stats, accuracy, and evasion.",
+        "description": "Resets all Pokemon's stats, accuracy, and evasion.",
         "pokemon": {
             "Squirtle": "Egg",
             "Ekans": "Level up",
@@ -13850,10 +13900,10 @@
             "Pidgeot": "Machine",
             "Pikachu": "Machine",
             "Raichu": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -13885,7 +13935,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Shellder": "Machine",
@@ -14086,8 +14136,8 @@
             "Raticate": "Level up",
             "Spearow": "Level up",
             "Fearow": "Level up",
-            "Nidoran\u2640": "Egg",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-F": "Egg",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Level up",
             "Mankey": "Level up",
@@ -14192,10 +14242,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -14246,7 +14296,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -14369,7 +14419,8 @@
             "Pyukumuku": "Level up",
             "Jangmo-o": "Level up",
             "Hakamo-o": "Level up",
-            "Kommo-o": "Level up"
+            "Kommo-o": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Metronome": {
@@ -14449,7 +14500,7 @@
             "Pidgeot": "Level up",
             "Spearow": "Level up",
             "Fearow": "Level up",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Doduo": "Egg",
             "Hoothoot": "Egg",
             "Togepi": "Egg",
@@ -14550,7 +14601,7 @@
         "type": "ghost",
         "power": 30.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Seel": "Egg",
             "Grimer": "Egg",
@@ -14589,7 +14640,7 @@
         "type": "poison",
         "power": 30.0,
         "accuracy": 70.0,
-        "description": "Has a $effect_chance% chance to [poison]{mechanic:poison} the target.",
+        "description": "Has a chance to poison the target.",
         "pokemon": {
             "Gastly": "Egg",
             "Koffing": "Level up",
@@ -14620,7 +14671,7 @@
         "type": "poison",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [poison]{mechanic:poison} the target.",
+        "description": "Has a chance to poison the target.",
         "pokemon": {
             "Bulbasaur": "Egg",
             "Grimer": "Level up",
@@ -14639,7 +14690,7 @@
         "type": "ground",
         "power": 65.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Cubone": "Level up",
             "Marowak": "Level up"
@@ -14649,7 +14700,7 @@
         "type": "fire",
         "power": 110.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Charmander": "Machine",
             "Charmeleon": "Machine",
@@ -14805,14 +14856,15 @@
             "Drampa": "Machine",
             "Solgaleo": "Machine",
             "Celesteela": "Machine",
-            "Guzzlord": "Machine"
+            "Guzzlord": "Machine",
+            "Blacephalon": "Level up"
         }
     },
     "Waterfall": {
         "type": "water",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
@@ -14986,7 +15038,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Level up",
             "Magneton": "Level up",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Shellder": "Machine",
@@ -15233,10 +15285,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -15270,7 +15322,7 @@
             "Rapidash": "Machine",
             "Slowpoke": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -15348,7 +15400,7 @@
         "type": "normal",
         "power": 10.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Speed by one stage.",
+        "description": "Has a chance to lower the target's Speed by one stage.",
         "pokemon": {
             "Tentacool": "Level up",
             "Tentacruel": "Level up",
@@ -15377,7 +15429,7 @@
         "description": "Raises the user's Special Defense by two stages.",
         "pokemon": {
             "Bulbasaur": "Egg",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-M": "Egg",
             "Meowth": "Egg",
             "Psyduck": "Level up",
             "Golduck": "Level up",
@@ -15522,7 +15574,7 @@
         "type": "psychic",
         "power": 100.0,
         "accuracy": 100.0,
-        "description": "Only works on sleeping Pok\u00e9mon.  Drains half the damage inflicted to heal the user.",
+        "description": "Only works on sleeping Pokemon.  Drains half the damage inflicted to heal the user.",
         "pokemon": {
             "Butterfree": "Tutor",
             "Clefairy": "Machine",
@@ -15798,14 +15850,14 @@
         "type": "flying",
         "power": 140.0,
         "accuracy": 90.0,
-        "description": "User charges for one turn before attacking.  Has a $effect_chance% chance to make the target flinch.",
+        "description": "User charges for one turn before attacking.  Has a chance to make the target flinch.",
         "pokemon": {
             "Pidgey": "Machine",
             "Pidgeotto": "Machine",
             "Pidgeot": "Machine",
             "Spearow": "Machine",
             "Fearow": "Machine",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Aerodactyl": "Machine",
@@ -15864,7 +15916,7 @@
         "type": "water",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Speed by one stage.",
+        "description": "Has a chance to lower the target's Speed by one stage.",
         "pokemon": {
             "Squirtle": "Level up",
             "Wartortle": "Level up",
@@ -15922,7 +15974,7 @@
         "type": "normal",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Kangaskhan": "Level up",
             "Ledyba": "Egg",
@@ -16232,7 +16284,7 @@
             "Quilladin": "Machine",
             "Chesnaught": "Machine",
             "Vivillon": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Furfrou": "Machine",
@@ -16502,7 +16554,7 @@
             "Rattata": "Egg",
             "Sandshrew": "Level up",
             "Sandslash": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Diglett": "Level up",
             "Dugtrio": "Level up",
@@ -16561,7 +16613,8 @@
             "Barbaracle": "Level up",
             "Litten": "Level up",
             "Torracat": "Level up",
-            "Incineroar": "Level up"
+            "Incineroar": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Bonemerang": {
@@ -16604,10 +16657,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -16658,7 +16711,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Level up",
@@ -17227,7 +17280,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -17358,7 +17411,7 @@
         "type": "rock",
         "power": 75.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Charmander": "Egg",
             "Charmeleon": "Tutor",
@@ -17672,14 +17725,15 @@
             "Buzzwole": "Machine",
             "Celesteela": "Machine",
             "Guzzlord": "Machine",
-            "Necrozma": "Machine"
+            "Necrozma": "Machine",
+            "Stakataka": "Level up"
         }
     },
     "Hyper Fang": {
         "type": "normal",
         "power": 80.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Rattata": "Level up",
             "Raticate": "Level up",
@@ -17721,7 +17775,7 @@
         "type": "normal",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn}, [freeze]{mechanic:freeze}, or [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to burn, freeze, or paralyze the target.",
         "pokemon": {
             "Spearow": "Egg",
             "Clefairy": "Machine",
@@ -17767,10 +17821,10 @@
             "Raticate": "Level up",
             "Sandshrew": "Tutor",
             "Sandslash": "Tutor",
-            "Nidoran\u2640": "Tutor",
+            "Nidoran-F": "Tutor",
             "Nidorina": "Tutor",
             "Nidoqueen": "Tutor",
-            "Nidoran\u2642": "Tutor",
+            "Nidoran-M": "Tutor",
             "Nidorino": "Tutor",
             "Nidoking": "Tutor",
             "Zubat": "Tutor",
@@ -17839,7 +17893,7 @@
             "Dugtrio": "Level up",
             "Meowth": "Level up",
             "Persian": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Scyther": "Level up",
             "Pinsir": "Level up",
             "Kabuto": "Level up",
@@ -17926,7 +17980,8 @@
             "Lurantis": "Level up",
             "Golisopod": "Level up",
             "Mimikyu": "Level up",
-            "Necrozma": "Level up"
+            "Necrozma": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Substitute": {
@@ -17959,10 +18014,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -18013,7 +18068,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -18397,6 +18452,11 @@
             "Dusknoir": "Machine",
             "Froslass": "Machine",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Uxie": "Machine",
             "Mesprit": "Machine",
             "Azelf": "Machine",
@@ -18583,7 +18643,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -18762,10 +18822,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Zubat": "Machine",
@@ -18796,7 +18856,7 @@
             "Victreebel": "Machine",
             "Tentacool": "Machine",
             "Tentacruel": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -19194,7 +19254,7 @@
         "type": "fire",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.  Lets frozen Pok\u00e9mon thaw themselves.",
+        "description": "Has a chance to burn the target.  Lets frozen Pokemon thaw themselves.",
         "pokemon": {
             "Rattata": "Egg",
             "Growlithe": "Level up",
@@ -19217,7 +19277,7 @@
         "type": "normal",
         "power": 50.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.",
+        "description": "Has a chance to make the target flinch.  Only works if the user is sleeping.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -19244,10 +19304,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -19298,7 +19358,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -19872,7 +19932,7 @@
             "Vivillon": "Tutor",
             "Litleo": "Tutor",
             "Pyroar": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Skiddo": "Tutor",
@@ -19955,10 +20015,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -20009,7 +20069,7 @@
             "Slowbro": "Level up",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -20256,7 +20316,7 @@
             "Paras": "Egg",
             "Meowth": "Egg",
             "Geodude": "Egg",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Doduo": "Egg",
             "Onix": "Egg",
             "Krabby": "Egg",
@@ -20566,7 +20626,7 @@
         "type": "ice",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [freeze]{mechanic:freeze} the target.",
+        "description": "Has a chance to freeze the target.",
         "pokemon": {
             "Jynx": "Level up",
             "Articuno": "Level up",
@@ -20622,10 +20682,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -20676,7 +20736,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -21247,7 +21307,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -21377,7 +21437,9 @@
             "Kartana": "Machine",
             "Guzzlord": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine",
+            "Stakataka": "Level up"
         }
     },
     "Mach Punch": {
@@ -21673,7 +21735,7 @@
         "type": "poison",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [poison]{mechanic:poison} the target.",
+        "description": "Has a chance to poison the target.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -21681,10 +21743,10 @@
             "Beedrill": "Machine",
             "Ekans": "Machine",
             "Arbok": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Zubat": "Machine",
@@ -21821,7 +21883,7 @@
         "type": "ground",
         "power": 20.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's accuracy by one stage.",
+        "description": "Has a chance to lower the target's accuracy by one stage.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -21843,10 +21905,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -21873,7 +21935,7 @@
             "Golem": "Machine",
             "Slowpoke": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Grimer": "Machine",
@@ -22215,7 +22277,7 @@
         "type": "water",
         "power": 65.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to lower the target's accuracy by one stage.",
+        "description": "Has a chance to lower the target's accuracy by one stage.",
         "pokemon": {
             "Horsea": "Egg",
             "Remoraid": "Egg",
@@ -22226,7 +22288,7 @@
         "type": "ground",
         "power": null,
         "accuracy": null,
-        "description": "Scatters Spikes, hurting opposing Pok\u00e9mon that switch in.",
+        "description": "Scatters Spikes, hurting opposing Pokemon that switch in.",
         "pokemon": {
             "Cloyster": "Level up",
             "Omanyte": "Egg",
@@ -22257,7 +22319,7 @@
         "type": "electric",
         "power": 120.0,
         "accuracy": 50.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Pikachu": "Machine",
             "Raichu": "Machine",
@@ -22367,7 +22429,7 @@
             "Machop": "Level up",
             "Machoke": "Level up",
             "Machamp": "Level up",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Hitmonlee": "Level up",
             "Kangaskhan": "Egg",
             "Lapras": "Egg",
@@ -22484,7 +22546,7 @@
         "type": "ice",
         "power": 55.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to lower the target's Speed by one stage.",
+        "description": "Has a chance to lower the target's Speed by one stage.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
@@ -22752,10 +22814,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -22773,7 +22835,7 @@
             "Machop": "Machine",
             "Machoke": "Machine",
             "Machamp": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Cubone": "Machine",
             "Marowak": "Machine",
             "Hitmonlee": "Machine",
@@ -23357,7 +23419,7 @@
             "Quilladin": "Tutor",
             "Chesnaught": "Tutor",
             "Vivillon": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Skiddo": "Tutor",
@@ -23406,10 +23468,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -23460,7 +23522,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -23899,7 +23961,7 @@
         "description": "Lowers the target's Attack by two stages.",
         "pokemon": {
             "Bulbasaur": "Egg",
-            "Nidoran\u2640": "Egg",
+            "Nidoran-F": "Egg",
             "Oddish": "Egg",
             "Meowth": "Egg",
             "Ponyta": "Egg",
@@ -23965,7 +24027,9 @@
             "Popplio": "Egg",
             "Bounsweet": "Egg",
             "Komala": "Egg",
-            "Mimikyu": "Level up"
+            "Mimikyu": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Rollout": {
@@ -24152,7 +24216,7 @@
             "Fearow": "Machine",
             "Paras": "Egg",
             "Parasect": "Machine",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Krabby": "Machine",
             "Kingler": "Machine",
             "Cubone": "Level up",
@@ -24258,10 +24322,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -24312,7 +24376,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -24882,7 +24946,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -25028,7 +25092,7 @@
         "type": "electric",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Pikachu": "Level up",
             "Magnemite": "Level up",
@@ -25061,7 +25125,8 @@
             "Vikavolt": "Level up",
             "Togedemaru": "Level up",
             "Tapu Koko": "Level up",
-            "Xurkitree": "Level up"
+            "Xurkitree": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Fury Cutter": {
@@ -25086,7 +25151,7 @@
             "Golduck": "Machine",
             "Golem": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Krabby": "Machine",
             "Kingler": "Machine",
             "Cubone": "Tutor",
@@ -25229,7 +25294,7 @@
         "type": "steel",
         "power": 70.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to raise the user's Defense by one stage.",
+        "description": "Has a chance to raise the user's Defense by one stage.",
         "pokemon": {
             "Charizard": "Machine",
             "Pidgey": "Egg",
@@ -25239,7 +25304,7 @@
             "Fearow": "Machine",
             "Zubat": "Machine",
             "Golbat": "Machine",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Scyther": "Machine",
@@ -25396,10 +25461,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -25448,7 +25513,7 @@
             "Rapidash": "Machine",
             "Slowpoke": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -25952,7 +26017,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -26090,10 +26155,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -26144,7 +26209,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -26714,7 +26779,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -26911,7 +26976,7 @@
             "Gothorita": "Tutor",
             "Gothitelle": "Tutor",
             "Meloetta": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Espurr": "Tutor",
@@ -26954,10 +27019,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -27008,7 +27073,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -27578,7 +27643,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -27707,7 +27772,8 @@
             "Kartana": "Machine",
             "Guzzlord": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine"
         }
     },
     "Present": {
@@ -27759,10 +27825,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -27813,7 +27879,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -28383,7 +28449,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -28512,7 +28578,8 @@
             "Kartana": "Machine",
             "Guzzlord": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine"
         }
     },
     "Safeguard": {
@@ -28705,7 +28772,7 @@
             "Braixen": "Machine",
             "Delphox": "Machine",
             "Vivillon": "Level up",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Espurr": "Machine",
@@ -28869,7 +28936,7 @@
         "type": "fire",
         "power": 100.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.  Lets frozen Pok\u00e9mon thaw themselves.",
+        "description": "Has a chance to burn the target.  Lets frozen Pokemon thaw themselves.",
         "pokemon": {
             "Entei": "Level up",
             "Ho-Oh": "Level up"
@@ -28908,7 +28975,7 @@
         "type": "fighting",
         "power": 100.0,
         "accuracy": 50.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Charmander": "Machine",
             "Charmeleon": "Machine",
@@ -29076,7 +29143,7 @@
         "type": "dragon",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Charmander": "Machine",
             "Charmeleon": "Machine",
@@ -29259,7 +29326,7 @@
         "type": "dark",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has double power against, and can hit, Pok\u00e9mon attempting to switch out.",
+        "description": "Has double power against, and can hit, Pokemon attempting to switch out.",
         "pokemon": {
             "Beedrill": "Level up",
             "Pidgey": "Egg",
@@ -29268,7 +29335,7 @@
             "Spearow": "Level up",
             "Fearow": "Level up",
             "Ekans": "Egg",
-            "Nidoran\u2640": "Egg",
+            "Nidoran-F": "Egg",
             "Zubat": "Egg",
             "Paras": "Egg",
             "Diglett": "Egg",
@@ -29359,7 +29426,8 @@
             "Crabrawler": "Level up",
             "Crabominable": "Level up",
             "Type: Null": "Level up",
-            "Silvally": "Level up"
+            "Silvally": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Rapid Spin": {
@@ -29484,7 +29552,7 @@
         "type": "steel",
         "power": 100.0,
         "accuracy": 75.0,
-        "description": "Has a $effect_chance% chance to lower the target's Defense by one stage.",
+        "description": "Has a chance to lower the target's Defense by one stage.",
         "pokemon": {
             "Charmander": "Machine",
             "Charmeleon": "Machine",
@@ -29500,10 +29568,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -29525,7 +29593,7 @@
             "Rapidash": "Machine",
             "Slowpoke": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Seel": "Egg",
             "Dewgong": "Tutor",
             "Onix": "Machine",
@@ -29771,7 +29839,7 @@
         "type": "steel",
         "power": 50.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to raise the user's Attack by one stage.",
+        "description": "Has a chance to raise the user's Attack by one stage.",
         "pokemon": {
             "Charmander": "Level up",
             "Charmeleon": "Level up",
@@ -29940,7 +30008,7 @@
             "Chespin": "Egg",
             "Quilladin": "Tutor",
             "Chesnaught": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Skiddo": "Level up",
@@ -30012,10 +30080,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -30066,7 +30134,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -30638,7 +30706,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -30767,7 +30835,8 @@
             "Kartana": "Machine",
             "Guzzlord": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine"
         }
     },
     "Cross Chop": {
@@ -30797,7 +30866,7 @@
         "type": "dragon",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Charizard": "Tutor",
             "Butterfree": "Tutor",
@@ -30809,7 +30878,7 @@
             "Zubat": "Tutor",
             "Golbat": "Tutor",
             "Venomoth": "Tutor",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Onix": "Tutor",
             "Horsea": "Level up",
             "Seadra": "Level up",
@@ -30901,10 +30970,10 @@
             "Arbok": "Machine",
             "Pikachu": "Machine",
             "Raichu": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -31352,7 +31421,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -31446,10 +31515,10 @@
             "Arbok": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -31493,7 +31562,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Grimer": "Machine",
@@ -31883,7 +31952,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -31962,14 +32031,14 @@
         "type": "dark",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Defense by one stage.",
+        "description": "Has a chance to lower the target's Defense by one stage.",
         "pokemon": {
             "Charmander": "Egg",
             "Rattata": "Level up",
             "Raticate": "Level up",
             "Ekans": "Egg",
             "Arbok": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Growlithe": "Egg",
             "Rhyhorn": "Egg",
@@ -32148,7 +32217,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Gastly": "Machine",
             "Haunter": "Machine",
             "Gengar": "Machine",
@@ -32378,7 +32447,8 @@
             "Tapu Bulu": "Machine",
             "Tapu Fini": "Machine",
             "Solgaleo": "Machine",
-            "Lunala": "Machine"
+            "Lunala": "Machine",
+            "Marshadow": "Level up"
         }
     },
     "Extreme Speed": {
@@ -32401,7 +32471,7 @@
         "type": "rock",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to raise all of the user's stats by one stage.",
+        "description": "Has a chance to raise all of the user's stats by one stage.",
         "pokemon": {
             "Charmander": "Egg",
             "Diglett": "Egg",
@@ -32531,7 +32601,7 @@
         "type": "ghost",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Butterfree": "Machine",
             "Rattata": "Machine",
@@ -32791,7 +32861,9 @@
             "Tapu Lele": "Machine",
             "Tapu Fini": "Machine",
             "Lunala": "Level up",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine",
+            "Blacephalon": "Level up"
         }
     },
     "Future Sight": {
@@ -32860,7 +32932,7 @@
         "type": "fighting",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Defense by one stage.",
+        "description": "Has a chance to lower the target's Defense by one stage.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -32878,10 +32950,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -33409,12 +33481,12 @@
         "type": "dark",
         "power": null,
         "accuracy": 100.0,
-        "description": "Hits once for every conscious Pok\u00e9mon the trainer has.",
+        "description": "Hits once for every conscious Pokemon the trainer has.",
         "pokemon": {
             "Charmander": "Egg",
             "Ekans": "Egg",
-            "Nidoran\u2640": "Egg",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-F": "Egg",
+            "Nidoran-M": "Egg",
             "Diglett": "Egg",
             "Mankey": "Egg",
             "Aipom": "Egg",
@@ -33473,14 +33545,15 @@
             "Meowstic": "Level up",
             "Litten": "Egg",
             "Salandit": "Egg",
-            "Togedemaru": "Egg"
+            "Togedemaru": "Egg",
+            "Zeraora": "Level up"
         }
     },
     "Uproar": {
         "type": "normal",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Forced to use this move for several turns.  Pok\u00e9mon cannot fall asleep in that time.",
+        "description": "Forced to use this move for several turns.  Pokemon cannot fall asleep in that time.",
         "pokemon": {
             "Pidgey": "Egg",
             "Pidgeotto": "Tutor",
@@ -33499,7 +33572,7 @@
             "Persian": "Tutor",
             "Mankey": "Tutor",
             "Primeape": "Tutor",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Doduo": "Level up",
             "Dodrio": "Level up",
             "Gastly": "Tutor",
@@ -33614,6 +33687,11 @@
             "Yanmega": "Level up",
             "Porygon-Z": "Tutor",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Azelf": "Level up",
             "Heatran": "Tutor",
             "Phione": "Tutor",
@@ -33808,7 +33886,7 @@
         "type": "fire",
         "power": 95.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Charmander": "Tutor",
             "Charmeleon": "Tutor",
@@ -33826,7 +33904,7 @@
             "Arcanine": "Tutor",
             "Ponyta": "Tutor",
             "Rapidash": "Tutor",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Magmar": "Tutor",
             "Flareon": "Tutor",
             "Aerodactyl": "Tutor",
@@ -34278,9 +34356,9 @@
         "accuracy": 100.0,
         "description": "Raises the target's Special Attack by one stage and confuses the target.",
         "pokemon": {
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Drowzee": "Egg",
             "Totodile": "Egg",
@@ -34474,10 +34552,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -34528,7 +34606,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -35098,7 +35176,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -35558,7 +35636,7 @@
             "Chesnaught": "Machine",
             "Bunnelby": "Machine",
             "Diggersby": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -35619,6 +35697,11 @@
             "Luxray": "Level up",
             "Pachirisu": "Egg",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Blitzle": "Level up",
             "Zebstrika": "Level up",
             "Emolga": "Level up",
@@ -35633,7 +35716,8 @@
             "Vikavolt": "Level up",
             "Togedemaru": "Level up",
             "Tapu Koko": "Level up",
-            "Xurkitree": "Level up"
+            "Xurkitree": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Taunt": {
@@ -35895,10 +35979,10 @@
         "pokemon": {
             "Pikachu": "Tutor",
             "Raichu": "Tutor",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Nidoqueen": "Tutor",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Tutor",
             "Clefairy": "Tutor",
@@ -35915,7 +35999,7 @@
             "Machop": "Tutor",
             "Machoke": "Tutor",
             "Machamp": "Tutor",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Hitmonlee": "Tutor",
             "Hitmonchan": "Tutor",
             "Chansey": "Egg",
@@ -36073,7 +36157,7 @@
             "Chesnaught": "Tutor",
             "Litleo": "Tutor",
             "Pyroar": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Pancham": "Tutor",
@@ -36097,7 +36181,9 @@
             "Wishiwashi": "Level up",
             "Comfey": "Level up",
             "Pyukumuku": "Level up",
-            "Magearna": "Level up"
+            "Magearna": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Trick": {
@@ -36180,6 +36266,11 @@
             "Dusknoir": "Tutor",
             "Froslass": "Tutor",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Uxie": "Tutor",
             "Mesprit": "Tutor",
             "Azelf": "Tutor",
@@ -36220,7 +36311,8 @@
             "Trevenant": "Tutor",
             "Pumpkaboo": "Level up",
             "Gourgeist": "Level up",
-            "Hoopa": "Level up"
+            "Hoopa": "Level up",
+            "Blacephalon": "Level up"
         }
     },
     "Role Play": {
@@ -36340,7 +36432,8 @@
             "Trevenant": "Tutor",
             "Pumpkaboo": "Tutor",
             "Gourgeist": "Tutor",
-            "Hoopa": "Tutor"
+            "Hoopa": "Tutor",
+            "Marshadow": "Level up"
         }
     },
     "Wish": {
@@ -36373,7 +36466,7 @@
             "Audino": "Egg",
             "Alomomola": "Level up",
             "Fennekin": "Egg",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Spritzee": "Egg",
@@ -36387,7 +36480,7 @@
         "type": "normal",
         "power": null,
         "accuracy": null,
-        "description": "Randomly selects and uses one of the trainer's other Pok\u00e9mon's moves.",
+        "description": "Randomly selects and uses one of the trainer's other Pokemon's moves.",
         "pokemon": {
             "Meowth": "Egg",
             "Drowzee": "Egg",
@@ -36722,7 +36815,7 @@
             "Fennekin": "Egg",
             "Braixen": "Tutor",
             "Delphox": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Espurr": "Tutor",
@@ -36739,7 +36832,8 @@
             "Pumpkaboo": "Tutor",
             "Gourgeist": "Tutor",
             "Hoopa": "Level up",
-            "Lunala": "Level up"
+            "Lunala": "Level up",
+            "Blacephalon": "Level up"
         }
     },
     "Recycle": {
@@ -36853,7 +36947,7 @@
             "Machop": "Level up",
             "Machoke": "Level up",
             "Machamp": "Level up",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Hitmonlee": "Level up",
             "Hitmonchan": "Level up",
             "Pinsir": "Level up",
@@ -37154,7 +37248,8 @@
             "Kartana": "Machine",
             "Guzzlord": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine"
         }
     },
     "Yawn": {
@@ -37251,7 +37346,7 @@
             "Victreebel": "Tutor",
             "Tentacool": "Egg",
             "Tentacruel": "Tutor",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Doduo": "Tutor",
             "Dodrio": "Tutor",
             "Gastly": "Tutor",
@@ -37543,7 +37638,7 @@
             "Vivillon": "Tutor",
             "Litleo": "Level up",
             "Pyroar": "Level up",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Pancham": "Tutor",
@@ -37559,7 +37654,8 @@
             "Xerneas": "Tutor",
             "Diancie": "Tutor",
             "Crabrawler": "Egg",
-            "Wishiwashi": "Level up"
+            "Wishiwashi": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Eruption": {
@@ -37934,7 +38030,7 @@
         "type": "normal",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to inflict a status effect which depends upon the terrain.",
+        "description": "Has a chance to inflict a status effect which depends upon the terrain.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -37960,10 +38056,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -38014,7 +38110,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -38584,7 +38680,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -38794,7 +38890,7 @@
             "Joltik": "Egg",
             "Stunfisk": "Level up",
             "Froakie": "Egg",
-            "Flab\u00e9b\u00e9": "Egg",
+            "Flabebe": "Egg",
             "Inkay": "Egg",
             "Skrelp": "Level up",
             "Dragalge": "Level up",
@@ -38817,7 +38913,7 @@
         "type": "psychic",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Latios": "Level up"
         }
@@ -38826,7 +38922,7 @@
         "type": "psychic",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Attack by one stage.",
+        "description": "Has a chance to lower the target's Special Attack by one stage.",
         "pokemon": {
             "Latias": "Level up"
         }
@@ -38841,7 +38937,7 @@
             "Pidgeotto": "Level up",
             "Pidgeot": "Level up",
             "Spearow": "Egg",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Hoothoot": "Egg",
             "Natu": "Egg",
             "Murkrow": "Egg",
@@ -38891,7 +38987,7 @@
         "type": "fire",
         "power": 85.0,
         "accuracy": 90.0,
-        "description": "Has an increased chance for a critical hit and a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has an increased chance for a critical hit and a chance to burn the target.",
         "pokemon": {
             "Hitmonlee": "Level up",
             "Blaziken": "Level up",
@@ -38978,7 +39074,7 @@
         "type": "grass",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Cacnea": "Level up",
             "Cacturne": "Level up",
@@ -39142,10 +39238,10 @@
         "type": "poison",
         "power": 50.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to badly poison the target.",
+        "description": "Has a chance to badly poison the target.",
         "pokemon": {
             "Ekans": "Egg",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Zubat": "Level up",
             "Golbat": "Level up",
@@ -39168,7 +39264,7 @@
         "type": "normal",
         "power": 75.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to lower the target's Defense by one stage.",
+        "description": "Has a chance to lower the target's Defense by one stage.",
         "pokemon": {
             "Sandshrew": "Egg",
             "Sandslash": "Level up",
@@ -39226,7 +39322,7 @@
         "type": "steel",
         "power": 90.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to raise the user's Attack by one stage.",
+        "description": "Has a chance to raise the user's Attack by one stage.",
         "pokemon": {
             "Clefairy": "Level up",
             "Metang": "Level up",
@@ -39238,7 +39334,7 @@
         "type": "ghost",
         "power": 30.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Spearow": "Egg",
             "Zubat": "Level up",
@@ -39287,6 +39383,11 @@
             "Dusknoir": "Level up",
             "Froslass": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Pansage": "Egg",
             "Pansear": "Egg",
             "Panpour": "Egg",
@@ -39324,7 +39425,8 @@
             "Mimikyu": "Level up",
             "Bruxish": "Level up",
             "Dhelmise": "Level up",
-            "Tapu Lele": "Level up"
+            "Tapu Lele": "Level up",
+            "Blacephalon": "Level up"
         }
     },
     "Weather Ball": {
@@ -39370,7 +39472,7 @@
             "Deerling": "Level up",
             "Sawsbuck": "Level up",
             "Vivillon": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Spritzee": "Level up",
@@ -39450,7 +39552,7 @@
             "Zubat": "Level up",
             "Golbat": "Level up",
             "Venomoth": "Tutor",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Doduo": "Tutor",
             "Dodrio": "Tutor",
             "Aerodactyl": "Tutor",
@@ -39517,7 +39619,8 @@
             "Noibat": "Level up",
             "Noivern": "Level up",
             "Oricorio": "Level up",
-            "Kartana": "Level up"
+            "Kartana": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Overheat": {
@@ -39603,7 +39706,8 @@
             "Toucannon": "Machine",
             "Salandit": "Machine",
             "Salazzle": "Machine",
-            "Turtonator": "Level up"
+            "Turtonator": "Level up",
+            "Rotom-Heat": "Level up"
         }
     },
     "Odor Sleuth": {
@@ -39660,7 +39764,7 @@
         "type": "rock",
         "power": 60.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to lower the target's Speed by one stage.",
+        "description": "Has a chance to lower the target's Speed by one stage.",
         "pokemon": {
             "Charmander": "Machine",
             "Charmeleon": "Machine",
@@ -39983,7 +40087,7 @@
         "type": "bug",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to raise all of the user's stats by one stage.",
+        "description": "Has a chance to raise all of the user's stats by one stage.",
         "pokemon": {
             "Butterfree": "Level up",
             "Beedrill": "Machine",
@@ -40202,7 +40306,7 @@
         "type": "bug",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Blastoise": "Tutor",
             "Butterfree": "Tutor",
@@ -40419,14 +40523,15 @@
             "Dusclops": "Level up",
             "Dusknoir": "Level up",
             "Golett": "Level up",
-            "Golurk": "Level up"
+            "Golurk": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Extrasensory": {
         "type": "psychic",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Vulpix": "Level up",
             "Exeggcute": "Level up",
@@ -40544,7 +40649,7 @@
         "type": "water",
         "power": 90.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to lower the target's accuracy by one stage.",
+        "description": "Has a chance to lower the target's accuracy by one stage.",
         "pokemon": {
             "Squirtle": "Egg",
             "Tentacool": "Egg",
@@ -40677,7 +40782,7 @@
             "Fearow": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
             "Zubat": "Machine",
@@ -40696,7 +40801,7 @@
             "Growlithe": "Machine",
             "Arcanine": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Cubone": "Machine",
@@ -41113,7 +41218,8 @@
             "Kommo-o": "Level up",
             "Celesteela": "Level up",
             "Necrozma": "Level up",
-            "Magearna": "Level up"
+            "Magearna": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Block": {
@@ -41425,7 +41531,8 @@
             "Hakamo-o": "Machine",
             "Kommo-o": "Machine",
             "Tapu Bulu": "Machine",
-            "Buzzwole": "Level up"
+            "Buzzwole": "Level up",
+            "Marshadow": "Machine"
         }
     },
     "Bounce": {
@@ -41540,7 +41647,7 @@
         "type": "ground",
         "power": 55.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to lower the target's Speed by one stage.",
+        "description": "Has a chance to lower the target's Speed by one stage.",
         "pokemon": {
             "Sandshrew": "Egg",
             "Poliwag": "Level up",
@@ -41584,11 +41691,11 @@
         "type": "poison",
         "power": 50.0,
         "accuracy": 100.0,
-        "description": "Has an increased chance for a critical hit and a $effect_chance% chance to poison the target.",
+        "description": "Has an increased chance for a critical hit and a chance to poison the target.",
         "pokemon": {
             "Ekans": "Egg",
-            "Nidoran\u2640": "Egg",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-F": "Egg",
+            "Nidoran-M": "Egg",
             "Gligar": "Egg",
             "Seviper": "Level up",
             "Skorupi": "Egg",
@@ -41625,7 +41732,7 @@
             "Primeape": "Tutor",
             "Growlithe": "Egg",
             "Arcanine": "Tutor",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Hitmonlee": "Tutor",
             "Hitmonchan": "Tutor",
             "Chansey": "Tutor",
@@ -41749,7 +41856,7 @@
             "Fennekin": "Tutor",
             "Braixen": "Tutor",
             "Delphox": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Pancham": "Tutor",
@@ -41772,7 +41879,7 @@
         "type": "electric",
         "power": 120.0,
         "accuracy": 100.0,
-        "description": "User takes 1/3 the damage inflicted in recoil.  Has a $effect_chance% chance to paralyze the target.",
+        "description": "User takes 1/3 the damage inflicted in recoil.  Has a chance to paralyze the target.",
         "pokemon": {}
     },
     "Magical Leaf": {
@@ -41810,7 +41917,7 @@
             "Pansage": "Egg",
             "Petilil": "Level up",
             "Virizion": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Bounsweet": "Level up",
@@ -42012,7 +42119,7 @@
             "Meloetta": "Machine",
             "Delphox": "Machine",
             "Vivillon": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Espurr": "Machine",
@@ -42050,7 +42157,9 @@
             "Xurkitree": "Machine",
             "Kartana": "Machine",
             "Necrozma": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Marshadow": "Machine",
+            "Blacephalon": "Level up"
         }
     },
     "Leaf Blade": {
@@ -42060,7 +42169,7 @@
         "description": "Has an increased chance for a critical hit.",
         "pokemon": {
             "Victreebel": "Level up",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Bellossom": "Level up",
             "Grovyle": "Level up",
             "Sceptile": "Level up",
@@ -42154,7 +42263,8 @@
             "Cinccino": "Level up",
             "Trumbeak": "Level up",
             "Toucannon": "Level up",
-            "Necrozma": "Level up"
+            "Necrozma": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Shock Wave": {
@@ -42167,10 +42277,10 @@
             "Raticate": "Machine",
             "Pikachu": "Machine",
             "Raichu": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -42320,6 +42430,11 @@
             "Probopass": "Machine",
             "Froslass": "Machine",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Uxie": "Machine",
             "Mesprit": "Machine",
             "Azelf": "Machine",
@@ -42406,15 +42521,15 @@
         "type": "water",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
             "Blastoise": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -42677,7 +42792,7 @@
             "Zubat": "Machine",
             "Golbat": "Machine",
             "Venomoth": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Scyther": "Machine",
@@ -43107,7 +43222,7 @@
         "type": "water",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has double power against Pok\u00e9mon that have less than half their max HP remaining.",
+        "description": "Has double power against Pokemon that have less than half their max HP remaining.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
@@ -43226,10 +43341,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -43280,7 +43395,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -43703,7 +43818,7 @@
             "Pikachu": "Level up",
             "Meowth": "Level up",
             "Persian": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Hitmonlee": "Level up",
             "Hitmonchan": "Level up",
             "Scyther": "Level up",
@@ -43748,7 +43863,8 @@
             "Goodra": "Level up",
             "Bounsweet": "Egg",
             "Passimian": "Egg",
-            "Pheromosa": "Level up"
+            "Pheromosa": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Pluck": {
@@ -43766,7 +43882,7 @@
             "Fearow": "Level up",
             "Zubat": "Machine",
             "Golbat": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Level up",
             "Articuno": "Machine",
@@ -43828,7 +43944,7 @@
         "type": "flying",
         "power": null,
         "accuracy": null,
-        "description": "For three turns, friendly Pok\u00e9mon have doubled Speed.",
+        "description": "For three turns, friendly Pokemon have doubled Speed.",
         "pokemon": {
             "Charizard": "Tutor",
             "Butterfree": "Level up",
@@ -43841,7 +43957,7 @@
             "Zubat": "Tutor",
             "Golbat": "Tutor",
             "Venomoth": "Tutor",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Scyther": "Tutor",
             "Aerodactyl": "Tutor",
             "Articuno": "Level up",
@@ -43941,7 +44057,7 @@
         "type": "normal",
         "power": null,
         "accuracy": null,
-        "description": "Raises one of a friendly Pok\u00e9mon's stats at random by two stages.",
+        "description": "Raises one of a friendly Pokemon's stats at random by two stages.",
         "pokemon": {
             "Tentacool": "Egg",
             "Doduo": "Level up",
@@ -43960,7 +44076,7 @@
         "type": "steel",
         "power": null,
         "accuracy": 100.0,
-        "description": "Strikes back at the last Pok\u00e9mon to hit the user this turn with 1.5\u00d7 the damage.",
+        "description": "Strikes back at the last Pokemon to hit the user this turn with 1.5 times the damage.",
         "pokemon": {
             "Rhyhorn": "Egg",
             "Sableye": "Egg",
@@ -43998,7 +44114,7 @@
             "Persian": "Machine",
             "Mankey": "Machine",
             "Primeape": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Scyther": "Machine",
             "Articuno": "Machine",
             "Zapdos": "Machine",
@@ -44170,7 +44286,9 @@
             "Mudbray": "Egg",
             "Passimian": "Level up",
             "Hakamo-o": "Level up",
-            "Kommo-o": "Level up"
+            "Kommo-o": "Level up",
+            "Marshadow": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Payback": {
@@ -44471,7 +44589,8 @@
             "Cubchoo": "Egg",
             "Pawniard": "Level up",
             "Bisharp": "Level up",
-            "Deino": "Egg"
+            "Deino": "Egg",
+            "Marshadow": "Level up"
         }
     },
     "Embargo": {
@@ -44915,7 +45034,7 @@
         "accuracy": null,
         "description": "Power increases when this move has less PP, up to a maximum of 200.",
         "pokemon": {
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Kangaskhan": "Egg",
             "Eevee": "Level up",
             "Slowking": "Level up",
@@ -45102,7 +45221,7 @@
             "Fennekin": "Level up",
             "Braixen": "Level up",
             "Delphox": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Comfey": "Egg",
@@ -45174,9 +45293,10 @@
             "Oshawott": "Egg",
             "Purrloin": "Egg",
             "Zorua": "Egg",
-            "Flab\u00e9b\u00e9": "Egg",
+            "Flabebe": "Egg",
             "Swirlix": "Egg",
-            "Mimikyu": "Level up"
+            "Mimikyu": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Power Swap": {
@@ -45278,7 +45398,7 @@
             "Wigglytuff": "Tutor",
             "Meowth": "Egg",
             "Persian": "Tutor",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Chansey": "Tutor",
             "Eevee": "Level up",
             "Vaporeon": "Level up",
@@ -45459,7 +45579,7 @@
             "Chespin": "Tutor",
             "Quilladin": "Tutor",
             "Chesnaught": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Skiddo": "Level up",
@@ -45479,7 +45599,7 @@
             "Rattata": "Level up",
             "Raticate": "Level up",
             "Ekans": "Egg",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-M": "Egg",
             "Nidorino": "Tutor",
             "Nidoking": "Tutor",
             "Diglett": "Level up",
@@ -45575,19 +45695,20 @@
             "Decidueye": "Level up",
             "Rockruff": "Egg",
             "Golisopod": "Level up",
-            "Komala": "Level up"
+            "Komala": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Toxic Spikes": {
         "type": "poison",
         "power": null,
         "accuracy": null,
-        "description": "Scatters poisoned spikes, poisoning opposing Pok\u00e9mon that switch in.",
+        "description": "Scatters poisoned spikes, poisoning opposing Pokemon that switch in.",
         "pokemon": {
             "Beedrill": "Level up",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Venonat": "Egg",
             "Tentacool": "Level up",
@@ -45766,7 +45887,7 @@
         "type": "fire",
         "power": 120.0,
         "accuracy": 100.0,
-        "description": "User takes 1/3 the damage inflicted in recoil.  Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "User takes 1/3 the damage inflicted in recoil.  Has a chance to burn the target.",
         "pokemon": {
             "Charmander": "Egg",
             "Charizard": "Level up",
@@ -45805,7 +45926,7 @@
         "type": "fighting",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Breloom": "Level up",
             "Makuhita": "Level up",
@@ -45817,7 +45938,8 @@
             "Timburr": "Egg",
             "Mienfoo": "Level up",
             "Mienshao": "Level up",
-            "Stufful": "Egg"
+            "Stufful": "Egg",
+            "Marshadow": "Level up"
         }
     },
     "Aura Sphere": {
@@ -45948,17 +46070,17 @@
         "type": "poison",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [poison]{mechanic:poison} the target.",
+        "description": "Has a chance to poison the target.",
         "pokemon": {
             "Beedrill": "Level up",
             "Ekans": "Machine",
             "Arbok": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Machine",
             "Mankey": "Machine",
@@ -45973,7 +46095,7 @@
             "Tentacool": "Level up",
             "Tentacruel": "Level up",
             "Rapidash": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Grimer": "Machine",
             "Muk": "Machine",
             "Cloyster": "Machine",
@@ -46089,14 +46211,16 @@
             "Nihilego": "Machine",
             "Buzzwole": "Machine",
             "Pheromosa": "Machine",
-            "Guzzlord": "Machine"
+            "Guzzlord": "Machine",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Dark Pulse": {
         "type": "dark",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Blastoise": "Machine",
             "Ekans": "Machine",
@@ -46244,7 +46368,7 @@
             "Meowth": "Level up",
             "Persian": "Level up",
             "Mankey": "Egg",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Scyther": "Level up",
             "Kabutops": "Level up",
             "Spinarak": "Egg",
@@ -46549,7 +46673,7 @@
             "Chespin": "Level up",
             "Quilladin": "Level up",
             "Chesnaught": "Level up",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Skiddo": "Level up",
@@ -46565,7 +46689,7 @@
         "type": "flying",
         "power": 75.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Charizard": "Level up",
             "Butterfree": "Level up",
@@ -46574,7 +46698,7 @@
             "Pidgeot": "Level up",
             "Zubat": "Level up",
             "Golbat": "Level up",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Scyther": "Level up",
             "Moltres": "Level up",
             "Hoothoot": "Level up",
@@ -46623,7 +46747,8 @@
             "Silvally": "Level up",
             "Lunala": "Level up",
             "Celesteela": "Level up",
-            "Kartana": "Level up"
+            "Kartana": "Level up",
+            "Rotom-Fan": "Level up"
         }
     },
     "X-Scissor": {
@@ -46728,7 +46853,7 @@
         "type": "bug",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Butterfree": "Level up",
             "Venomoth": "Level up",
@@ -46859,14 +46984,16 @@
             "Salandit": "Level up",
             "Salazzle": "Level up",
             "Turtonator": "Level up",
-            "Drampa": "Level up"
+            "Drampa": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Dragon Rush": {
         "type": "dragon",
         "power": 100.0,
         "accuracy": 75.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Charmander": "Egg",
             "Rhyhorn": "Egg",
@@ -47010,7 +47137,8 @@
             "Slurpuff": "Tutor",
             "Hawlucha": "Tutor",
             "Trevenant": "Tutor",
-            "Hoopa": "Tutor"
+            "Hoopa": "Tutor",
+            "Marshadow": "Level up"
         }
     },
     "Vacuum Wave": {
@@ -47054,7 +47182,7 @@
         "type": "fighting",
         "power": 120.0,
         "accuracy": 70.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Charizard": "Machine",
             "Blastoise": "Machine",
@@ -47243,7 +47371,7 @@
         "type": "grass",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -47393,7 +47521,7 @@
             "Quilladin": "Machine",
             "Chesnaught": "Machine",
             "Vivillon": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -47445,7 +47573,7 @@
         "pokemon": {
             "Pidgey": "Egg",
             "Zubat": "Egg",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Doduo": "Egg",
             "Murkrow": "Egg",
             "Skarmory": "Egg",
@@ -47474,7 +47602,7 @@
         "type": "ground",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Sandshrew": "Tutor",
             "Sandslash": "Tutor",
@@ -48112,7 +48240,9 @@
             "Litten": "Egg",
             "Salandit": "Level up",
             "Salazzle": "Level up",
-            "Oranguru": "Level up"
+            "Oranguru": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Bullet Punch": {
@@ -48245,10 +48375,10 @@
             "Charizard": "Level up",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Diglett": "Machine",
@@ -48398,7 +48528,7 @@
         "type": "electric",
         "power": 65.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to paralyze the target and a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to paralyze the target and a chance to make the target flinch.",
         "pokemon": {
             "Arbok": "Level up",
             "Arcanine": "Level up",
@@ -48443,7 +48573,7 @@
         "type": "ice",
         "power": 65.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to freeze the target and a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to freeze the target and a chance to make the target flinch.",
         "pokemon": {
             "Arbok": "Level up",
             "Rhyhorn": "Egg",
@@ -48491,7 +48621,7 @@
         "type": "fire",
         "power": 65.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target and a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to burn the target and a chance to make the target flinch.",
         "pokemon": {
             "Charmander": "Level up",
             "Charmeleon": "Level up",
@@ -48571,14 +48701,15 @@
             "Pumpkaboo": "Level up",
             "Gourgeist": "Level up",
             "Decidueye": "Level up",
-            "Mimikyu": "Level up"
+            "Mimikyu": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Mud Bomb": {
         "type": "ground",
         "power": 65.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to lower the target's accuracy by one stage.",
+        "description": "Has a chance to lower the target's accuracy by one stage.",
         "pokemon": {
             "Ekans": "Level up",
             "Arbok": "Level up",
@@ -48638,7 +48769,7 @@
         "type": "psychic",
         "power": 80.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Squirtle": "Tutor",
             "Wartortle": "Tutor",
@@ -48832,7 +48963,7 @@
         "type": "steel",
         "power": 65.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to lower the target's accuracy by one stage.",
+        "description": "Has a chance to lower the target's accuracy by one stage.",
         "pokemon": {
             "Magnemite": "Level up",
             "Magneton": "Level up",
@@ -48855,7 +48986,7 @@
         "type": "steel",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by one stage.",
+        "description": "Has a chance to lower the target's Special Defense by one stage.",
         "pokemon": {
             "Blastoise": "Level up",
             "Magnemite": "Machine",
@@ -48951,7 +49082,7 @@
         "type": "normal",
         "power": 90.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Venusaur": "Machine",
             "Blastoise": "Machine",
@@ -49082,7 +49213,7 @@
             "Zubat": "Machine",
             "Golbat": "Machine",
             "Venomoth": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Scyther": "Machine",
             "Aerodactyl": "Machine",
             "Articuno": "Machine",
@@ -49158,7 +49289,7 @@
         "type": "psychic",
         "power": null,
         "accuracy": null,
-        "description": "For five turns, slower Pok\u00e9mon will act before faster Pok\u00e9mon.",
+        "description": "For five turns, slower Pokemon will act before faster Pokemon.",
         "pokemon": {
             "Abra": "Machine",
             "Kadabra": "Machine",
@@ -49329,7 +49460,7 @@
         "type": "electric",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Pikachu": "Level up",
             "Magnemite": "Level up",
@@ -49362,6 +49493,11 @@
             "Porygon-Z": "Level up",
             "Probopass": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Blitzle": "Level up",
             "Zebstrika": "Level up",
             "Emolga": "Level up",
@@ -49379,14 +49515,15 @@
             "Charjabug": "Level up",
             "Togedemaru": "Level up",
             "Tapu Koko": "Level up",
-            "Xurkitree": "Level up"
+            "Xurkitree": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Lava Plume": {
         "type": "fire",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Magmar": "Level up",
             "Flareon": "Level up",
@@ -49440,7 +49577,8 @@
             "Decidueye": "Level up",
             "Fomantis": "Egg",
             "Steenee": "Level up",
-            "Tsareena": "Level up"
+            "Tsareena": "Level up",
+            "Rotom-Mow": "Level up"
         }
     },
     "Power Whip": {
@@ -49479,7 +49617,7 @@
         "type": "poison",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Has an increased chance for a critical hit and a $effect_chance% chance to poison the target.",
+        "description": "Has an increased chance for a critical hit and a chance to poison the target.",
         "pokemon": {
             "Paras": "Egg",
             "Parasect": "Level up",
@@ -49497,7 +49635,7 @@
         "type": "poison",
         "power": 120.0,
         "accuracy": 80.0,
-        "description": "Has a $effect_chance% chance to [poison]{mechanic:poison} the target.",
+        "description": "Has a chance to poison the target.",
         "pokemon": {
             "Ekans": "Level up",
             "Arbok": "Level up",
@@ -49565,7 +49703,7 @@
         "type": "steel",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Arcanine": "Tutor",
             "Golem": "Tutor",
@@ -49675,7 +49813,8 @@
             "Silvally": "Level up",
             "Solgaleo": "Level up",
             "Celesteela": "Level up",
-            "Magearna": "Level up"
+            "Magearna": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Magnet Bomb": {
@@ -49891,10 +50030,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Level up",
+            "Nidoran-F": "Level up",
             "Nidorina": "Level up",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Level up",
+            "Nidoran-M": "Level up",
             "Nidorino": "Level up",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -49943,7 +50082,7 @@
             "Rapidash": "Machine",
             "Slowpoke": "Machine",
             "Slowbro": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -50300,7 +50439,7 @@
             "Minccino": "Level up",
             "Gothita": "Egg",
             "Litwick": "Egg",
-            "Flab\u00e9b\u00e9": "Egg",
+            "Flabebe": "Egg",
             "Furfrou": "Egg",
             "Spritzee": "Egg",
             "Popplio": "Level up",
@@ -50316,7 +50455,7 @@
         "type": "rock",
         "power": null,
         "accuracy": null,
-        "description": "Causes damage when opposing Pok\u00e9mon switch in.",
+        "description": "Causes damage when opposing Pokemon switch in.",
         "pokemon": {
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
@@ -50463,7 +50602,8 @@
             "Lycanroc": "Level up",
             "Minior": "Level up",
             "Nihilego": "Level up",
-            "Necrozma": "Level up"
+            "Necrozma": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Grass Knot": {
@@ -50698,7 +50838,7 @@
             "Greninja": "Machine",
             "Bunnelby": "Machine",
             "Diggersby": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Level up",
             "Skiddo": "Machine",
@@ -50858,7 +50998,7 @@
         "type": "electric",
         "power": 50.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to raise the user's Special Attack by one stage.",
+        "description": "Has a chance to raise the user's Special Attack by one stage.",
         "pokemon": {
             "Rattata": "Machine",
             "Raticate": "Machine",
@@ -51126,7 +51266,7 @@
         "accuracy": 80.0,
         "description": "User receives 1/2 the damage inflicted in recoil.",
         "pokemon": {
-            "Nidoran\u2642": "Egg",
+            "Nidoran-M": "Egg",
             "Sudowoodo": "Level up",
             "Corsola": "Egg",
             "Phanpy": "Egg",
@@ -51238,7 +51378,7 @@
         "type": "grass",
         "power": 120.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Defense by two stages.",
+        "description": "Has a chance to lower the target's Special Defense by two stages.",
         "pokemon": {
             "Shaymin": "Level up"
         }
@@ -51247,7 +51387,7 @@
         "type": "ghost",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to raise all of the user's stats by one stage.",
+        "description": "Has a chance to raise all of the user's stats by one stage.",
         "pokemon": {
             "Charizard": "Tutor",
             "Butterfree": "Tutor",
@@ -51262,7 +51402,7 @@
             "Zubat": "Tutor",
             "Golbat": "Tutor",
             "Venomoth": "Tutor",
-            "Farfetch\u2019d": "Tutor",
+            "Farfetch'd": "Tutor",
             "Gastly": "Tutor",
             "Haunter": "Tutor",
             "Gengar": "Tutor",
@@ -51331,6 +51471,11 @@
             "Dusknoir": "Tutor",
             "Froslass": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Giratina": "Level up",
             "Darkrai": "Level up",
             "Arceus": "Tutor",
@@ -51363,10 +51508,10 @@
             "Charizard": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Paras": "Machine",
@@ -51513,14 +51658,15 @@
             "Trevenant": "Machine",
             "Noivern": "Machine",
             "Yveltal": "Machine",
-            "Mimikyu": "Level up"
+            "Mimikyu": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Wide Guard": {
         "type": "rock",
         "power": null,
         "accuracy": null,
-        "description": "Prevents any multi-target moves from hitting friendly Pok\u00e9mon this turn.",
+        "description": "Prevents any multi-target moves from hitting friendly Pokemon this turn.",
         "pokemon": {
             "Paras": "Egg",
             "Machamp": "Level up",
@@ -51562,7 +51708,8 @@
             "Solgaleo": "Level up",
             "Lunala": "Level up",
             "Celesteela": "Level up",
-            "Guzzlord": "Level up"
+            "Guzzlord": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Guard Split": {
@@ -51619,7 +51766,7 @@
         "type": "psychic",
         "power": null,
         "accuracy": null,
-        "description": "All Pok\u00e9mon's Defense and Special Defense are swapped for 5 turns.",
+        "description": "All Pokemon's Defense and Special Defense are swapped for 5 turns.",
         "pokemon": {
             "Clefairy": "Tutor",
             "Clefable": "Tutor",
@@ -51809,10 +51956,10 @@
             "Beedrill": "Machine",
             "Ekans": "Machine",
             "Arbok": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Zubat": "Machine",
@@ -51891,7 +52038,9 @@
             "Golisopod": "Machine",
             "Turtonator": "Machine",
             "Bruxish": "Machine",
-            "Nihilego": "Level up"
+            "Nihilego": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Autotomize": {
@@ -51920,7 +52069,8 @@
             "Hakamo-o": "Level up",
             "Kommo-o": "Level up",
             "Celesteela": "Level up",
-            "Necrozma": "Level up"
+            "Necrozma": "Level up",
+            "Stakataka": "Level up"
         }
     },
     "Rage Powder": {
@@ -52217,7 +52367,8 @@
             "Turtonator": "Machine",
             "Buzzwole": "Machine",
             "Celesteela": "Level up",
-            "Guzzlord": "Machine"
+            "Guzzlord": "Machine",
+            "Marshadow": "Machine"
         }
     },
     "Storm Throw": {
@@ -52235,7 +52386,7 @@
         "type": "fire",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Deals splash damage to Pok\u00e9mon next to the target.",
+        "description": "Deals splash damage to Pokemon next to the target.",
         "pokemon": {
             "Charmander": "Level up",
             "Charmeleon": "Level up",
@@ -52262,14 +52413,15 @@
             "Chandelure": "Level up",
             "Heatmor": "Level up",
             "Salandit": "Level up",
-            "Salazzle": "Level up"
+            "Salazzle": "Level up",
+            "Blacephalon": "Level up"
         }
     },
     "Sludge Wave": {
         "type": "poison",
         "power": 95.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [poison]{mechanic:poison} the target.",
+        "description": "Has a chance to poison the target.",
         "pokemon": {
             "Ekans": "Machine",
             "Arbok": "Machine",
@@ -52391,7 +52543,7 @@
         "type": "psychic",
         "power": 120.0,
         "accuracy": 100.0,
-        "description": "Hits any Pok\u00e9mon that shares a type with the user.",
+        "description": "Hits any Pokemon that shares a type with the user.",
         "pokemon": {
             "Psyduck": "Egg",
             "Drowzee": "Level up",
@@ -52441,6 +52593,11 @@
             "Magnezone": "Level up",
             "Electivire": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Emolga": "Level up",
             "Joltik": "Level up",
             "Galvantula": "Level up",
@@ -52827,7 +52984,7 @@
         "description": "Changes the target's ability to Simple.",
         "pokemon": {
             "Psyduck": "Egg",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Natu": "Egg",
             "Zigzagoon": "Egg",
             "Skitty": "Egg",
@@ -52940,7 +53097,7 @@
             "Amoonguss": "Tutor",
             "Elgyem": "Tutor",
             "Beheeyem": "Tutor",
-            "Flab\u00e9b\u00e9": "Tutor",
+            "Flabebe": "Tutor",
             "Floette": "Tutor",
             "Florges": "Tutor",
             "Honedge": "Tutor",
@@ -52988,10 +53145,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -53042,7 +53199,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -53612,7 +53769,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -53746,7 +53903,7 @@
         "type": "normal",
         "power": 40.0,
         "accuracy": 100.0,
-        "description": "Power increases by 100% for each consecutive use by any friendly Pok\u00e9mon, to a maximum of 200.",
+        "description": "Power increases by 100% for each consecutive use by any friendly Pokemon, to a maximum of 200.",
         "pokemon": {
             "Bulbasaur": "Machine",
             "Ivysaur": "Machine",
@@ -53758,10 +53915,10 @@
             "Fearow": "Machine",
             "Pikachu": "Machine",
             "Raichu": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -53915,7 +54072,7 @@
             "Greninja": "Machine",
             "Litleo": "Level up",
             "Pyroar": "Level up",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Pancham": "Machine",
@@ -53965,9 +54122,9 @@
         "description": "Ignores the target's stat modifiers.",
         "pokemon": {
             "Sandshrew": "Egg",
-            "Nidoran\u2640": "Egg",
+            "Nidoran-F": "Egg",
             "Nidoqueen": "Level up",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-M": "Egg",
             "Nidoking": "Level up",
             "Krabby": "Egg",
             "Cubone": "Egg",
@@ -54037,7 +54194,7 @@
         "type": "psychic",
         "power": 20.0,
         "accuracy": 100.0,
-        "description": "Power is higher the more the user's stats have been raised, to a maximum of 31\u00d7.",
+        "description": "Power is higher the more the user's stats have been raised, to a maximum of 31 times.",
         "pokemon": {
             "Clefairy": "Level up",
             "Eevee": "Egg",
@@ -54058,14 +54215,15 @@
             "Woobat": "Egg",
             "Sigilyph": "Egg",
             "Oranguru": "Level up",
-            "Necrozma": "Level up"
+            "Necrozma": "Level up",
+            "Blacephalon": "Level up"
         }
     },
     "Quick Guard": {
         "type": "fighting",
         "power": null,
         "accuracy": null,
-        "description": "Prevents any priority moves from hitting friendly Pok\u00e9mon this turn.",
+        "description": "Prevents any priority moves from hitting friendly Pokemon this turn.",
         "pokemon": {
             "Zubat": "Level up",
             "Golbat": "Level up",
@@ -54105,14 +54263,15 @@
             "Hawlucha": "Egg",
             "Lycanroc": "Level up",
             "Passimian": "Egg",
-            "Pheromosa": "Level up"
+            "Pheromosa": "Level up",
+            "Zeraora": "Level up"
         }
     },
     "Ally Switch": {
         "type": "psychic",
         "power": null,
         "accuracy": null,
-        "description": "User switches places with the friendly Pok\u00e9mon opposite it.",
+        "description": "User switches places with the friendly Pokemon opposite it.",
         "pokemon": {
             "Abra": "Machine",
             "Kadabra": "Level up",
@@ -54143,7 +54302,7 @@
         "type": "water",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Squirtle": "Machine",
             "Wartortle": "Machine",
@@ -54358,6 +54517,11 @@
             "Drifblim": "Level up",
             "Dusknoir": "Level up",
             "Rotom": "Level up",
+            "Rotom-Wash": "Level up",
+            "Rotom-Heat": "Level up",
+            "Rotom-Frost": "Level up",
+            "Rotom-Mow": "Level up",
+            "Rotom-Fan": "Level up",
             "Giratina": "Level up",
             "Yamask": "Level up",
             "Cofagrigus": "Level up",
@@ -54413,7 +54577,7 @@
         "type": "fighting",
         "power": 60.0,
         "accuracy": 90.0,
-        "description": "Ends wild battles.  Forces trainers to switch Pok\u00e9mon.",
+        "description": "Ends wild battles.  Forces trainers to switch Pokemon.",
         "pokemon": {
             "Poliwrath": "Level up",
             "Kangaskhan": "Egg",
@@ -54650,7 +54814,7 @@
             "Venomoth": "Machine",
             "Mankey": "Machine",
             "Primeape": "Machine",
-            "Farfetch\u2019d": "Level up",
+            "Farfetch'd": "Level up",
             "Mew": "Machine",
             "Ledyba": "Machine",
             "Ledian": "Machine",
@@ -54761,7 +54925,7 @@
         "type": "normal",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Has double power if a friendly Pok\u00e9mon fainted last turn.",
+        "description": "Has double power if a friendly Pokemon fainted last turn.",
         "pokemon": {
             "Rattata": "Machine",
             "Raticate": "Machine",
@@ -54778,7 +54942,7 @@
             "Machop": "Machine",
             "Machoke": "Machine",
             "Machamp": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Cubone": "Level up",
             "Marowak": "Level up",
             "Hitmonlee": "Machine",
@@ -54951,7 +55115,7 @@
             "Diglett": "Egg",
             "Mankey": "Level up",
             "Primeape": "Level up",
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Shuckle": "Egg",
             "Nincada": "Egg",
             "Zangoose": "Egg",
@@ -54999,7 +55163,7 @@
         "type": "fire",
         "power": 100.0,
         "accuracy": 50.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Charmander": "Level up",
             "Charmeleon": "Level up",
@@ -55024,7 +55188,7 @@
         "type": "water",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "With [Grass Pledge]{move:grass-pledge}, halves opposing Pok\u00e9mon's Speed for four turns.",
+        "description": "With Grass Pledge, halves opposing Pokemon's Speed for four turns.",
         "pokemon": {
             "Squirtle": "Tutor",
             "Wartortle": "Tutor",
@@ -55056,7 +55220,7 @@
         "type": "fire",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "With [Water Pledge]{move:water-pledge}, doubles the effect chance of friendly Pok\u00e9mon's moves for four turns.",
+        "description": "With Water Pledge, doubles the effect chance of friendly Pokemon's moves for four turns.",
         "pokemon": {
             "Charmander": "Tutor",
             "Charmeleon": "Tutor",
@@ -55088,7 +55252,7 @@
         "type": "grass",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "With [Fire Pledge]{move:fire-pledge}, damages opposing Pok\u00e9mon for 1/8 their max HP every turn for four turns.",
+        "description": "With Fire Pledge, damages opposing Pokemon for 1/8 their max HP every turn for four turns.",
         "pokemon": {
             "Bulbasaur": "Tutor",
             "Ivysaur": "Tutor",
@@ -55175,14 +55339,15 @@
             "Togedemaru": "Machine",
             "Tapu Koko": "Machine",
             "Xurkitree": "Machine",
-            "Magearna": "Machine"
+            "Magearna": "Machine",
+            "Zeraora": "Level up"
         }
     },
     "Struggle Bug": {
         "type": "bug",
         "power": 50.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Attack by one stage.",
+        "description": "Has a chance to lower the target's Special Attack by one stage.",
         "pokemon": {
             "Butterfree": "Machine",
             "Beedrill": "Machine",
@@ -55255,7 +55420,7 @@
         "type": "ground",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Speed by one stage.",
+        "description": "Has a chance to lower the target's Speed by one stage.",
         "pokemon": {
             "Venusaur": "Machine",
             "Charizard": "Machine",
@@ -55572,7 +55737,7 @@
         "type": "dragon",
         "power": 60.0,
         "accuracy": 90.0,
-        "description": "Ends wild battles.  Forces trainers to switch Pok\u00e9mon.",
+        "description": "Ends wild battles.  Forces trainers to switch Pokemon.",
         "pokemon": {
             "Charizard": "Machine",
             "Blastoise": "Machine",
@@ -55675,7 +55840,7 @@
             "Machop": "Machine",
             "Machoke": "Machine",
             "Machamp": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Hitmonlee": "Machine",
@@ -55897,7 +56062,8 @@
             "Tapu Bulu": "Machine",
             "Solgaleo": "Machine",
             "Lunala": "Machine",
-            "Buzzwole": "Machine"
+            "Buzzwole": "Machine",
+            "Marshadow": "Machine"
         }
     },
     "Electroweb": {
@@ -56058,7 +56224,8 @@
             "Togedemaru": "Level up",
             "Tapu Koko": "Level up",
             "Solgaleo": "Machine",
-            "Xurkitree": "Machine"
+            "Xurkitree": "Machine",
+            "Zeraora": "Level up"
         }
     },
     "Drill Run": {
@@ -56071,7 +56238,7 @@
             "Spearow": "Tutor",
             "Fearow": "Level up",
             "Nidoqueen": "Tutor",
-            "Nidoran\u2642": "Tutor",
+            "Nidoran-M": "Tutor",
             "Nidorino": "Tutor",
             "Nidoking": "Tutor",
             "Rapidash": "Tutor",
@@ -56153,7 +56320,7 @@
         "type": "psychic",
         "power": 60.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Jynx": "Level up",
             "Smoochum": "Level up",
@@ -56199,7 +56366,7 @@
         "type": "water",
         "power": 75.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to lower the target's Defense by one stage.",
+        "description": "Has a chance to lower the target's Defense by one stage.",
         "pokemon": {
             "Shellder": "Level up",
             "Corphish": "Level up",
@@ -56227,7 +56394,7 @@
         "type": "grass",
         "power": 65.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to lower the target's accuracy by one stage.",
+        "description": "Has a chance to lower the target's accuracy by one stage.",
         "pokemon": {
             "Victreebel": "Level up",
             "Shiftry": "Level up",
@@ -56242,7 +56409,7 @@
         "type": "bug",
         "power": 65.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Golem": "Level up",
             "Venipede": "Level up",
@@ -56275,7 +56442,7 @@
         "type": "dark",
         "power": 85.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to lower the target's accuracy by one stage.",
+        "description": "Has a chance to lower the target's accuracy by one stage.",
         "pokemon": {
             "Zorua": "Level up",
             "Zoroark": "Level up",
@@ -56308,7 +56475,7 @@
         "type": "flying",
         "power": 110.0,
         "accuracy": 70.0,
-        "description": "Has a $effect_chance% chance to confuse the target.",
+        "description": "Has a chance to confuse the target.",
         "pokemon": {
             "Pidgey": "Level up",
             "Pidgeotto": "Level up",
@@ -56360,7 +56527,7 @@
         "type": "fire",
         "power": 100.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Victini": "Level up"
         }
@@ -56378,7 +56545,7 @@
         "type": "normal",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to put the target to sleep.",
+        "description": "Has a chance to put the target to sleep.",
         "pokemon": {
             "Meloetta": "Tutor"
         }
@@ -56405,7 +56572,7 @@
         "type": "electric",
         "power": 130.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Zekrom": "Level up"
         }
@@ -56414,7 +56581,7 @@
         "type": "fire",
         "power": 130.0,
         "accuracy": 85.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Reshiram": "Level up"
         }
@@ -56423,7 +56590,7 @@
         "type": "fire",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to raise the user's Special Attack by one stage.",
+        "description": "Has a chance to raise the user's Special Attack by one stage.",
         "pokemon": {
             "Volcarona": "Level up"
         }
@@ -56432,21 +56599,21 @@
         "type": "ice",
         "power": 140.0,
         "accuracy": 90.0,
-        "description": "Requires a turn to charge before attacking.  Has a $effect_chance% chance to paralyze the target.",
+        "description": "Requires a turn to charge before attacking.  Has a chance to paralyze the target.",
         "pokemon": {}
     },
     "Ice Burn": {
         "type": "ice",
         "power": 140.0,
         "accuracy": 90.0,
-        "description": "Requires a turn to charge before attacking.  Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Requires a turn to charge before attacking.  Has a chance to burn the target.",
         "pokemon": {}
     },
     "Snarl": {
         "type": "dark",
         "power": 55.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Attack by one stage.",
+        "description": "Has a chance to lower the target's Special Attack by one stage.",
         "pokemon": {
             "Growlithe": "Machine",
             "Arcanine": "Machine",
@@ -56516,14 +56683,15 @@
             "Drampa": "Machine",
             "Tapu Bulu": "Machine",
             "Solgaleo": "Machine",
-            "Guzzlord": "Machine"
+            "Guzzlord": "Machine",
+            "Zeraora": "Level up"
         }
     },
     "Icicle Crash": {
         "type": "ice",
         "power": 85.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Cloyster": "Level up",
             "Sneasel": "Egg",
@@ -56542,7 +56710,7 @@
         "type": "fire",
         "power": 100.0,
         "accuracy": 100.0,
-        "description": "With [Fusion Bolt]{move:fusion-bolt}, inflicts double damage.",
+        "description": "With Fusion Bolt, inflicts double damage.",
         "pokemon": {
             "Reshiram": "Level up"
         }
@@ -56551,7 +56719,7 @@
         "type": "electric",
         "power": 100.0,
         "accuracy": 100.0,
-        "description": "With [Fusion Flare]{move:fusion-flare}, inflicts double damage.",
+        "description": "With Fusion Flare, inflicts double damage.",
         "pokemon": {
             "Zekrom": "Level up"
         }
@@ -56560,7 +56728,7 @@
         "type": "fighting",
         "power": 100.0,
         "accuracy": 95.0,
-        "description": "Deals both []{type:fighting} and []{type:flying}-type damage.",
+        "description": "Deals both fighting and flying-type damage.",
         "pokemon": {
             "Hawlucha": "Level up"
         }
@@ -56569,7 +56737,7 @@
         "type": "fighting",
         "power": null,
         "accuracy": null,
-        "description": "Protects all friendly Pok\u00e9mon from damaging moves.  Only works on the first turn after the user is sent out.",
+        "description": "Protects all friendly Pokemon from damaging moves.  Only works on the first turn after the user is sent out.",
         "pokemon": {
             "Throh": "Level up",
             "Greninja": "Level up"
@@ -56619,7 +56787,7 @@
         "type": "ground",
         "power": null,
         "accuracy": null,
-        "description": "Raises the Attack and Special Attack of all []{type:grass} Pok\u00e9mon in battle.",
+        "description": "Raises the Attack and Special Attack of all grass Pokemon in battle.",
         "pokemon": {
             "Sandshrew": "Egg",
             "Paras": "Egg",
@@ -56677,7 +56845,9 @@
             "Escavalier": "Level up",
             "Genesect": "Level up",
             "Togedemaru": "Level up",
-            "Buzzwole": "Level up"
+            "Buzzwole": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Phantom Force": {
@@ -56706,7 +56876,7 @@
         "type": "ghost",
         "power": null,
         "accuracy": 100.0,
-        "description": "Adds []{type:ghost} to the target's types.",
+        "description": "Adds ghost to the target's types.",
         "pokemon": {
             "Pumpkaboo": "Level up",
             "Gourgeist": "Level up"
@@ -56734,7 +56904,7 @@
         "type": "electric",
         "power": null,
         "accuracy": null,
-        "description": "Changes all []{type:normal} moves to []{type:electric} moves for the rest of the turn.",
+        "description": "Changes all normal moves to electric moves for the rest of the turn.",
         "pokemon": {
             "Chinchou": "Level up",
             "Lanturn": "Level up",
@@ -56758,11 +56928,11 @@
             "Dedenne": "Level up"
         }
     },
-    "Forest\u2019s Curse": {
+    "Forest's Curse": {
         "type": "grass",
         "power": null,
         "accuracy": 100.0,
-        "description": "Adds []{type:grass} to the target's types.",
+        "description": "Adds grass to the target's types.",
         "pokemon": {
             "Phantump": "Level up",
             "Trevenant": "Level up"
@@ -56785,7 +56955,7 @@
             "Cherrim": "Level up",
             "Lilligant": "Level up",
             "Maractus": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Lurantis": "Level up",
@@ -56796,7 +56966,7 @@
         "type": "ice",
         "power": 70.0,
         "accuracy": 100.0,
-        "description": "Super-effective against []{type:water}.",
+        "description": "Super-effective against water.",
         "pokemon": {
             "Lapras": "Egg",
             "Articuno": "Level up",
@@ -56894,7 +57064,7 @@
         "type": "fairy",
         "power": null,
         "accuracy": null,
-        "description": "Protects all friendly Pok\u00e9mon from non-damaging moves.",
+        "description": "Protects all friendly Pokemon from non-damaging moves.",
         "pokemon": {
             "Chimecho": "Egg",
             "Yamask": "Egg",
@@ -56906,7 +57076,7 @@
         "type": "fairy",
         "power": null,
         "accuracy": null,
-        "description": "Raises the Defense of all []{type:grass} Pok\u00e9mon in battle.",
+        "description": "Raises the Defense of all grass Pokemon in battle.",
         "pokemon": {
             "Sunflora": "Level up",
             "Cherubi": "Egg",
@@ -56918,7 +57088,7 @@
         "type": "grass",
         "power": null,
         "accuracy": null,
-        "description": "For five turns, heals all Pok\u00e9mon on the ground for 1/16 max HP each turn and strengthens their []{type:grass} moves to 1.5\u00d7 their power.",
+        "description": "For five turns, heals all Pokemon on the ground for 1/16 max HP each turn and strengthens their grass moves to 1.5 times their power.",
         "pokemon": {
             "Bulbasaur": "Egg",
             "Oddish": "Level up",
@@ -56938,7 +57108,7 @@
             "Snivy": "Egg",
             "Sewaddle": "Egg",
             "Maractus": "Egg",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Skiddo": "Egg",
@@ -56950,7 +57120,7 @@
         "type": "fairy",
         "power": null,
         "accuracy": null,
-        "description": "For five turns, protects all Pok\u00e9mon on the ground from major status ailments and confusion, and halves the power of incoming []{type:dragon} moves.",
+        "description": "For five turns, protects all Pokemon on the ground from major status ailments and confusion, and halves the power of incoming dragon moves.",
         "pokemon": {
             "Mr. Mime": "Level up",
             "Cleffa": "Egg",
@@ -56960,7 +57130,7 @@
             "Mawile": "Egg",
             "Audino": "Level up",
             "Cottonee": "Egg",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Meowstic": "Level up",
@@ -56978,7 +57148,7 @@
         "type": "electric",
         "power": null,
         "accuracy": null,
-        "description": "Changes the target's move's type to []{type:electric} if it hasn't moved yet this turn.",
+        "description": "Changes the target's move's type to electric if it hasn't moved yet this turn.",
         "pokemon": {
             "Helioptile": "Level up",
             "Heliolisk": "Level up"
@@ -56988,7 +57158,7 @@
         "type": "fairy",
         "power": 90.0,
         "accuracy": 90.0,
-        "description": "Has a $effect_chance% chance to lower the target's Attack by one stage.",
+        "description": "Has a chance to lower the target's Attack by one stage.",
         "pokemon": {
             "Wigglytuff": "Level up",
             "Persian": "Level up",
@@ -57040,7 +57210,7 @@
             "Jumpluff": "Level up",
             "Mawile": "Level up",
             "Cottonee": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Spritzee": "Level up",
             "Aromatisse": "Level up",
@@ -57056,7 +57226,7 @@
         "type": "fairy",
         "power": 95.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Attack by one stage.",
+        "description": "Has a chance to lower the target's Special Attack by one stage.",
         "pokemon": {
             "Clefairy": "Level up",
             "Oddish": "Level up",
@@ -57068,7 +57238,7 @@
             "Lunatone": "Level up",
             "Cresselia": "Level up",
             "Whimsicott": "Level up",
-            "Flab\u00e9b\u00e9": "Level up",
+            "Flabebe": "Level up",
             "Floette": "Level up",
             "Florges": "Level up",
             "Spritzee": "Level up",
@@ -57106,16 +57276,16 @@
         "type": "fairy",
         "power": null,
         "accuracy": null,
-        "description": "Prevents all Pok\u00e9mon from fleeing or switching out during the next turn.",
+        "description": "Prevents all Pokemon from fleeing or switching out during the next turn.",
         "pokemon": {
             "Klefki": "Level up"
         }
     },
-    "King\u2019s Shield": {
+    "King's Shield": {
         "type": "steel",
         "power": null,
         "accuracy": null,
-        "description": "Blocks damaging attacks and lowers attacking Pok\u00e9mon's Attack by two stages on contact.  Switches Aegislash to Shield Forme.",
+        "description": "Blocks damaging attacks and lowers attacking Pokemon's Attack by two stages on contact.  Switches Aegislash to Shield Forme.",
         "pokemon": {
             "Aegislash": "Level up"
         }
@@ -57180,10 +57350,10 @@
             "Raichu": "Machine",
             "Sandshrew": "Machine",
             "Sandslash": "Machine",
-            "Nidoran\u2640": "Machine",
+            "Nidoran-F": "Machine",
             "Nidorina": "Machine",
             "Nidoqueen": "Machine",
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Clefairy": "Machine",
@@ -57234,7 +57404,7 @@
             "Slowbro": "Machine",
             "Magnemite": "Machine",
             "Magneton": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Doduo": "Machine",
             "Dodrio": "Machine",
             "Seel": "Machine",
@@ -57804,7 +57974,7 @@
             "Vivillon": "Machine",
             "Litleo": "Machine",
             "Pyroar": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Skiddo": "Machine",
@@ -57940,7 +58110,7 @@
         "type": "rock",
         "power": 100.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to raise the user's Defense by two stages for each target hit.",
+        "description": "Has a chance to raise the user's Defense by two stages for each target hit.",
         "pokemon": {
             "Diancie": "Level up"
         }
@@ -57949,7 +58119,7 @@
         "type": "water",
         "power": 110.0,
         "accuracy": 95.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {
             "Volcanion": "Level up"
         }
@@ -57967,7 +58137,7 @@
         "type": "water",
         "power": 15.0,
         "accuracy": 100.0,
-        "description": "Hits 2\u20135 times.",
+        "description": "Hits 2-5 times.",
         "pokemon": {
             "Accelgor": "Level up",
             "Greninja": "Level up"
@@ -57977,7 +58147,7 @@
         "type": "fire",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Special Attack by one stage.",
+        "description": "Has a chance to lower the target's Special Attack by one stage.",
         "pokemon": {
             "Mismagius": "Level up",
             "Delphox": "Level up"
@@ -57987,7 +58157,7 @@
         "type": "grass",
         "power": null,
         "accuracy": null,
-        "description": "Blocks damaging attacks and damages attacking Pok\u00e9mon for 1/8 their max HP.",
+        "description": "Blocks damaging attacks and damages attacking Pokemon for 1/8 their max HP.",
         "pokemon": {
             "Cacturne": "Level up",
             "Pansage": "Egg",
@@ -58035,8 +58205,8 @@
         "accuracy": 100.0,
         "description": "Lowers the target's Attack, Special Attack, and Speed by one stage if it is poisoned.",
         "pokemon": {
-            "Nidoran\u2640": "Egg",
-            "Nidoran\u2642": "Egg",
+            "Nidoran-F": "Egg",
+            "Nidoran-M": "Egg",
             "Zubat": "Egg",
             "Muk": "Level up",
             "Koffing": "Egg",
@@ -58059,14 +58229,16 @@
             "Salandit": "Level up",
             "Salazzle": "Level up",
             "Pyukumuku": "Egg",
-            "Nihilego": "Level up"
+            "Nihilego": "Level up",
+            "Poipole": "Level up",
+            "Naganadel": "Level up"
         }
     },
     "Powder": {
         "type": "bug",
         "power": null,
         "accuracy": 100.0,
-        "description": "Explodes if the target uses a []{type:fire} move this turn, damaging it for 1/4 its max HP and preventing the move.",
+        "description": "Explodes if the target uses a fire move this turn, damaging it for 1/4 its max HP and preventing the move.",
         "pokemon": {
             "Vivillon": "Level up",
             "Cutiefly": "Egg"
@@ -58085,7 +58257,7 @@
         "type": "electric",
         "power": null,
         "accuracy": null,
-        "description": "Raises the Defense and Special Defense of all friendly Pok\u00e9mon with []{ability:plus} or []{ability:minus} by one stage.",
+        "description": "Raises the Defense and Special Defense of all friendly Pokemon with the Plus ability or the Minus ability by one stage.",
         "pokemon": {
             "Electrode": "Level up",
             "Zapdos": "Level up",
@@ -58106,7 +58278,7 @@
         "type": "electric",
         "power": null,
         "accuracy": null,
-        "description": "For five turns, prevents all Pok\u00e9mon on the ground from sleeping and strengthens their []{type:electric} moves to 1.5\u00d7 their power.",
+        "description": "For five turns, prevents all Pokemon on the ground from sleeping and strengthens their electric moves to 1.5 times their power.",
         "pokemon": {
             "Magneton": "Level up",
             "Pichu": "Egg",
@@ -58210,7 +58382,7 @@
             "Jellicent": "Machine",
             "Meloetta": "Machine",
             "Delphox": "Machine",
-            "Flab\u00e9b\u00e9": "Machine",
+            "Flabebe": "Machine",
             "Floette": "Machine",
             "Florges": "Machine",
             "Spritzee": "Machine",
@@ -58296,7 +58468,7 @@
         "type": "electric",
         "power": 20.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to paralyze the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {
             "Pikachu": "Level up",
             "Plusle": "Level up",
@@ -58653,7 +58825,7 @@
         "type": "ground",
         "power": 90.0,
         "accuracy": 100.0,
-        "description": "Grounds the target, and hits even Flying-type or levitating Pok\u00e9mon.",
+        "description": "Grounds the target, and hits even Flying-type or levitating Pokemon.",
         "pokemon": {}
     },
     "Thousand Waves": {
@@ -58663,7 +58835,7 @@
         "description": "Prevents the target from leaving battle.",
         "pokemon": {}
     },
-    "Land\u2019s Wrath": {
+    "Land's Wrath": {
         "type": "ground",
         "power": 90.0,
         "accuracy": 100.0,
@@ -58850,7 +59022,7 @@
         "type": "ground",
         "power": null,
         "accuracy": null,
-        "description": "Heals the user for \u00bd its max HP, or \u2154 during a sandstorm.",
+        "description": "Heals the user for 1/2 its max HP, or 2/3 during a sandstorm.",
         "pokemon": {
             "Sandygast": "Level up",
             "Palossand": "Level up"
@@ -58862,7 +59034,7 @@
         "accuracy": 100.0,
         "description": "Can only be used as the first move after the user enters battle.",
         "pokemon": {
-            "Farfetch\u2019d": "Egg",
+            "Farfetch'd": "Egg",
             "Golisopod": "Level up"
         }
     },
@@ -58870,7 +59042,7 @@
         "type": "poison",
         "power": null,
         "accuracy": null,
-        "description": "Grants the user protection for the rest of the turn and poisons any Pok\u00e9mon that tries to use a contact move on it.",
+        "description": "Grants the user protection for the rest of the turn and poisons any Pokemon that tries to use a contact move on it.",
         "pokemon": {
             "Toxapex": "Level up"
         }
@@ -58915,7 +59087,7 @@
         "type": "fairy",
         "power": null,
         "accuracy": null,
-        "description": "Heals the target for \u00bd its max HP, or \u2154 on Grassy Terrain.",
+        "description": "Heals the target for 1/2 its max HP, or 2/3 on Grassy Terrain.",
         "pokemon": {
             "Comfey": "Level up"
         }
@@ -59003,14 +59175,15 @@
         "pokemon": {
             "Mewtwo": "Level up",
             "Lucario": "Level up",
-            "Kartana": "Level up"
+            "Kartana": "Level up",
+            "Marshadow": "Level up"
         }
     },
     "Gear Up": {
         "type": "steel",
         "power": null,
         "accuracy": null,
-        "description": "Raises the Attack and Special Attack of all friendly Pok\u00e9mon with []{ability:plus} or []{ability:minus} by one stage.",
+        "description": "Raises the Attack and Special Attack of all friendly Pokemon with the Plus ability or the Minus ability by one stage.",
         "pokemon": {
             "Klinklang": "Level up",
             "Magearna": "Level up"
@@ -59048,7 +59221,7 @@
         "type": "psychic",
         "power": null,
         "accuracy": null,
-        "description": "Protects Pok\u00e9mon on the ground from priority moves and increases the power of their  Psychic moves by 50%.",
+        "description": "Protects Pokemon on the ground from priority moves and increases the power of their  Psychic moves by 50%.",
         "pokemon": {
             "Abra": "Egg",
             "Drowzee": "Egg",
@@ -59092,7 +59265,7 @@
         "type": "dark",
         "power": 20.0,
         "accuracy": 100.0,
-        "description": "Power is higher the more the user's stats have been raised, to a maximum of 31\u00d7.",
+        "description": "Power is higher the more the user's stats have been raised, to a maximum of 31 times.",
         "pokemon": {
             "Mankey": "Egg",
             "Piplup": "Egg",
@@ -59106,7 +59279,7 @@
         "type": "fire",
         "power": 130.0,
         "accuracy": 100.0,
-        "description": "Removes the user's []{type:fire} type after inflicting damage.",
+        "description": "Removes the user's fire type after inflicting damage.",
         "pokemon": {
             "Growlithe": "Egg",
             "Moltres": "Level up",
@@ -59133,7 +59306,7 @@
         "accuracy": null,
         "description": "Never misses.",
         "pokemon": {
-            "Nidoran\u2642": "Machine",
+            "Nidoran-M": "Machine",
             "Nidorino": "Machine",
             "Nidoking": "Machine",
             "Rapidash": "Machine",
@@ -59211,7 +59384,7 @@
         "type": "flying",
         "power": 100.0,
         "accuracy": 100.0,
-        "description": "Inflicts a burn on any Pok\u00e9mon that makes contact before the attack.",
+        "description": "Inflicts a burn on any Pokemon that makes contact before the attack.",
         "pokemon": {
             "Toucannon": "Level up"
         }
@@ -59244,7 +59417,7 @@
             "Beedrill": "Machine",
             "Ekans": "Machine",
             "Arbok": "Machine",
-            "Farfetch\u2019d": "Machine",
+            "Farfetch'd": "Machine",
             "Onix": "Machine",
             "Cubone": "Machine",
             "Marowak": "Machine",
@@ -59390,7 +59563,7 @@
         "type": "electric",
         "power": 175.0,
         "accuracy": null,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {}
     },
     "Pulverizing Pancake": {
@@ -59464,7 +59637,7 @@
         "type": "ghost",
         "power": 85.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Defense by one stage.",
+        "description": "Has a chance to lower the target's Defense by one stage.",
         "pokemon": {}
     },
     "Accelerock": {
@@ -59480,7 +59653,7 @@
         "type": "water",
         "power": 85.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to lower the target's Defense by one stage.",
+        "description": "Has a chance to lower the target's Defense by one stage.",
         "pokemon": {
             "Corsola": "Egg",
             "Tirtouga": "Egg",
@@ -59505,7 +59678,9 @@
         "power": 90.0,
         "accuracy": 100.0,
         "description": "Steals the target's stat increases, then inflicts damage.",
-        "pokemon": {}
+        "pokemon": {
+            "Marshadow": "Level up"
+        }
     },
     "Sunsteel Strike": {
         "type": "steel",
@@ -59536,7 +59711,7 @@
             "Minun": "Egg",
             "Bonsly": "Level up",
             "Patrat": "Egg",
-            "Flab\u00e9b\u00e9": "Egg",
+            "Flabebe": "Egg",
             "Dedenne": "Egg",
             "Wishiwashi": "Level up"
         }
@@ -59545,12 +59720,12 @@
         "type": "electric",
         "power": 80.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to make the target flinch.",
+        "description": "Has a chance to make the target flinch.",
         "pokemon": {
             "Togedemaru": "Level up"
         }
     },
-    "Nature\u2019s Madness": {
+    "Nature's Madness": {
         "type": "fairy",
         "power": null,
         "accuracy": 90.0,
@@ -59582,15 +59757,19 @@
         "type": "fire",
         "power": 150.0,
         "accuracy": 100.0,
-        "description": "XXX new effect for mind-blown",
-        "pokemon": {}
+        "description": "User receives 1/2 its HP in recoil.",
+        "pokemon": {
+            "Blacephalon": "Level up"
+        }
     },
     "Plasma Fists": {
         "type": "electric",
         "power": 100.0,
         "accuracy": 100.0,
         "description": "Inflicts regular damage with no additional effect.",
-        "pokemon": {}
+        "pokemon": {
+            "Zeraora": "Level up"
+        }
     },
     "Photon Geyser": {
         "type": "psychic",
@@ -59622,7 +59801,7 @@
         "description": "Cannot be disrupted by abilities.",
         "pokemon": {}
     },
-    "Let\u2019s Snuggle Forever": {
+    "Let's Snuggle Forever": {
         "type": "fairy",
         "power": 190.0,
         "accuracy": null,
@@ -59668,7 +59847,7 @@
         "type": "shadow",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [paralyze]{mechanic:paralysis} the target.",
+        "description": "Has a chance to paralyze the target.",
         "pokemon": {}
     },
     "Shadow Break": {
@@ -59682,7 +59861,7 @@
         "type": "shadow",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [freeze]{mechanic:freeze} the target.",
+        "description": "Has a chance to freeze the target.",
         "pokemon": {}
     },
     "Shadow End": {
@@ -59696,7 +59875,7 @@
         "type": "shadow",
         "power": 75.0,
         "accuracy": 100.0,
-        "description": "Has a $effect_chance% chance to [burn]{mechanic:burn} the target.",
+        "description": "Has a chance to burn the target.",
         "pokemon": {}
     },
     "Shadow Rave": {
@@ -59731,7 +59910,7 @@
         "type": "shadow",
         "power": null,
         "accuracy": 100.0,
-        "description": "Halves HP of all Pok\u00e9mon on the field.  Must recharge",
+        "description": "Halves HP of all Pokemon on the field.  Must recharge",
         "pokemon": {}
     },
     "Shadow Hold": {
@@ -59759,7 +59938,7 @@
         "type": "shadow",
         "power": null,
         "accuracy": null,
-        "description": "Removes [Light Screen]{move:light-screen}, [Reflect]{move:reflect}, and [Safeguard]{move:safeguard}.",
+        "description": "Removes Light Screen, Reflect, and Safeguard.",
         "pokemon": {}
     },
     "Shadow Sky": {
