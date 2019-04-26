@@ -170,7 +170,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
             
             i+=1
 
-            if i == len(returnSets):
+            if i >= len(results):
                 i = 1
                 minDistWanted -= 1 
 

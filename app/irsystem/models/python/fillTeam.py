@@ -1,6 +1,8 @@
 from .constants import *
 from . import pokemon
 
+from collections import deque
+
 def rankPokemon(pObj, playstyle, currentTeamWeaknesses, weights, league):
     """
     returns a numerical ranking of the pokemon based off of its base stats
@@ -92,9 +94,11 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
 
     finishedTeams = []
 
+    currentTeams = deque(currentTeams)
+
     while(len(currentTeams) > 0):
         #if the team is already full then simply return
-        team = currentTeams.pop(0)
+        team = currentTeams.pop()
 
         if len(team) >= 6:
             finishedTeams.append(team)
