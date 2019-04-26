@@ -108,20 +108,35 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
             winnersComp.append(winner)
     
     topScore = len(winnersComp)*6 #pkmn team size
+
     results = []
-    for team in curTeams:
-        score = 0
+    inverted_idx = {}
+
+    existsSet = []
+
+    for i in range(len(curTeams)):
+        team = curTeams[i]
+        results.append((team,0))
+        sTeam = set(team)
+        if not (sTeam in existsSet):
+            existsSet.append(sTeam)
+            for pkm in team:
+                if pkm != EMPTY:
+                    if pkm in inverted_idx:
+                        inverted_idx[pkm].append(i)
+                    else:
+                        inverted_idx[pkm] = [i]
+        
+    for pkm in inverted_idx:
         for winner in winnersComp:
             wArr = np.array(winner)
-            for tPkmn in team:
-                if tPkmn in similarities:
-                    tArr = similarities[tPkmn]
-                    vals = wArr* tArr
-                    score += np.amax(vals)
-                
-        score = (score/topScore) *100
-        score = round(score,1)
-        results.append((team, score))
+            tArr = similarities[pkm]
+
+            vals = wArr* tArr
+            score = np.amax(vals)
+
+            for i in inverted_idx[pkm]:
+                results[i] = (results[i][0],results[i][1]+(score/topScore))
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
@@ -131,7 +146,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     else:
         firstResult, firstScore = results[0]
         returnTeams = [firstResult]
-        teamScores = [firstScore]
+        teamScores = [round(firstScore*100,1)]
         returnSets = [set(firstResult)]
         
         i = 1
@@ -151,7 +166,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
             if add:
                 returnTeams.append(teamToConsider)
                 returnSets.append(considerSet)
-                teamScores.append(teamToConsiderScore)
+                teamScores.append(round(teamToConsiderScore*100,1))
             
             i+=1
 

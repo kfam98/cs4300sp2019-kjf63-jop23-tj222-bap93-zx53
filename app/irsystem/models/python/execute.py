@@ -8,6 +8,7 @@ from .constants import *
 
 import os
 import math
+import time
 
 ##Note - check for extremes like stupid high minimum capture rate or no gens allowed.
 
@@ -26,6 +27,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
 
     """
     
+    t = time.time()
 
     #Initialization, should only happen once in app but am putting it here now
     if pokedex == None:
@@ -59,6 +61,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
 
     desiredDistAway = math.ceil( (6-len(currentTeamNames))/2 )
 
+    t2 = time.time()
     uncounteredOpps = checkCounters.checkCounters(
         currentTeamNames,
         currentMoves,
@@ -66,7 +69,9 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pokedex,
         pokeMoves
     )
+    print("sherrytime : "+ str(time.time()-t2))
 
+    t3 = time.time()
     possibleTeams = findCounters.findCounters(
         currentTeamNames,
         uncounteredOpps,
@@ -78,7 +83,9 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         branchFactor,
         league
     )
+    print("JesseTime : "+ str(time.time()-t3))
 
+    t4 = time.time()
     allPossibleTeams = fillTeam.fillRestOfTeam(
         possibleTeams,
         allowLegends,
@@ -90,7 +97,9 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         league,
         weights
     )
+    print("FillTeams : "+ str(time.time()-t4))
 
+    t5 = time.time()
     topTeams, teamScores = team.scoreTeams(
         allPossibleTeams,
         oppTeamNames,
@@ -98,12 +107,19 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         league,
         desiredDistAway
     )
+    print("scores : "+ str(time.time()-t5))
 
-    return movesetsAndFormat.fillAndFormat(
+    t6 = time.time()
+    ans =  movesetsAndFormat.fillAndFormat(
         topTeams,
         myTeam,
         teamScores
     )
+    print("formats : "+ str(time.time()-t6))
+
+    print("time for backend: "+str(time.time()-t))
+
+    return ans
 
 
 def determineBranchFactor(curTeam):
