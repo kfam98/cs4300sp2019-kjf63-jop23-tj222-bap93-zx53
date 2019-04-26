@@ -42,17 +42,46 @@
 
   <div class="site-description" >
     <h1> RESULTS: </h1>
-    <p>We successfully generated 5 teams that best fit your desired filters.
+    <p>We successfully generated at least 5 teams that best fit your desired filters.
       Below are the teams with the first team, seen below, being the best.
-      Look through and see what we found for you.<p>
+      Look through and see what we found for you.
+
+      <br><br/>
+      In each Pokemon card, you see that it contains the Pokemon,
+        the recommended nature, and the recommended move sets.
+        Look through each team with the provided arrows. Hover over
+        a nature to see what it does to the Pokemon.
+        <p>
   </div>
 
-  <div class="site-description">
-    <h1> WHAT YOU SEE: </h1>
-    <p>In each Pokemon card, you see that it contains the Pokemon,
-      the recommended nature, and the recommended move sets.
-      Look through each team with the provided arrows.<p>
+  <div class="site-description" style="text-align:center;">
+    <h1 style="text-align:left;"> YOU PUT: </h1>
+    <p >  <i>Legendary:</i> {{ legendary }}  |
+       <i>League:</i> {{ league }} |
+         <i>Generations: </i>{{ generations }} |
+      <i>Minimum Capture Rate: </i>{{ capture_rate }}% |
+       <i>Playstyle: </i>{{playstyle }}
+      <p>
+        <!-- <br/>
+        {% if myteam %}
+          <p><i>Your Team: </i>
+          {% for name, info in myteam.items() %}
+            {{name}} : {{info.moves}} |
+          {% endfor %}
+        </P>
+
+        {% endif %}
+
+        {% if theirteam %}
+        <br/>
+        <p><i>Opponent Team: </i>
+        {% for name, info in theirteam.items() %}
+          {{name}} : {{info.moves}} |
+        {% endfor %}
+      </p>
+        {% endif %} -->
   </div>
+
 
   <div class="site-results generated-team " >
     <div class="arrows" id="left"><<</div>
@@ -206,7 +235,7 @@
 
   $('.ntooltip').hover( function() {
     var nature = "" + $(this).html().split(" ")[0].slice(0, -1);
-    if (nature != "none") {
+    if (nature != "None") {
       if (nature.split('/').length == 2) {
         nature = nature.split('/');
         var str = "↑ " + natureStats[nature[0]]['increase'] + " ↑ " + natureStats[nature[1]]['increase'] + "<br/>↓ " + natureStats[nature[0]]['decrease'] + " ↓ " + natureStats[nature[1]]['decrease'] ;

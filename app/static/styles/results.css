@@ -29,15 +29,15 @@
 
 
 .site-description {
-  width:80% !important;
+  width:70% !important;
   max-width: none;
-  margin-left: 10% !important;
+  margin-left: 15% !important;
   margin-top: 5%;
   text-align: left;
 }
 
 .site-description h1 {
-  font-size:30px;
+  font-size:28px;
   text-transform: uppercase;
   margin-top: 2%;
   color: #fec92f;
@@ -58,18 +58,18 @@
   border-radius: 10px;
   /* overflow-wrap: break-word; */
   display: block;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .your-team-header {
-  width: 50%;
+  width: 60%;
   font-family: 'Pixel';
 }
 
 
 
 .result-slot-container {
-  width: 50%;
+  width: 60%;
   height: auto;
   position: relative;
   box-sizing: border-box;
@@ -78,7 +78,7 @@
   border-radius: 10px;
   margin-bottom: 5px;
   margin-right: 3%;
-  margin-left: 25%;
+  margin-left: 20%;
   transition: 0.3s all;
 
 }
@@ -145,7 +145,7 @@
   /* position: absolute; */
   /* font-family: "Play"; */
   font-size: 12px;
-  left: 46%;
+  left: 42%;
   top: 20%;
   width: auto;
   transform: translateY(-30%);
@@ -155,7 +155,7 @@
   /* position: absolute; */
   /* font-family: "Play"; */
   font-size: 8px;
-  left: 46%;
+  left: 45%;
   width: 100%;
   top: 25%;
   width: auto;
@@ -169,16 +169,16 @@
   background-color:  #dfce3b;
   /* font-family: "Play"; */
   font-size: 10px;
-  left: 45%;
+  left: 42%;
   top: 36%;
   padding: 2px 10px;
   border-radius: 10px;
-  max-width: 110px;
+  max-width: 200px;
   word-wrap: break-word;
 }
 
 #move2 {
-  left: 73%;
+  left: 69%;
   top: 36%;
 }
 #move3 {
@@ -186,7 +186,7 @@
 }
 #move4 {
   top: 56%;
-  left: 73%;
+  left: 69%;
 }
 
 .arrows {
@@ -311,7 +311,7 @@
 .ntooltip .ntooltiptext { /* This is for the tooltip text */
   visibility: hidden;
   width: 100px;
-  background-color:#d3d3d3;
+  background-color:#484848;
   color: white;
   text-align: center;
   padding: 5px;

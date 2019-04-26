@@ -131,8 +131,20 @@ def results():
         arguments['gens'],
         arguments['pStyle'],
         arguments['minCapRate'],
-        league=arguments['league']
+        arguments['league']
     )
 
 
-    return render_template('results.html', typedata=type_data, imagedata=image_data, results=results)
+
+    return render_template('results.html',
+                           typedata=type_data,
+                           imagedata=image_data,
+                           results=results,
+                           legendary=legend,
+                           league=league,
+                           generations=arguments['gens'],
+                           capture_rate=caprate,
+                           playstyle=arguments['pStyle'],
+                           myteam=myteam_dict,
+                           theirteam=theirteam_dict
+                           )
