@@ -20,13 +20,13 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses, weights, league):
         if currentTeamWeaknesses[weakness] + 1 == 3:
             weaknessMod  -= WEAKNESS3
 
-        if currentTeamWeaknesses[weakness] + 1 == 4:
+        elif currentTeamWeaknesses[weakness] + 1 == 4:
             weaknessMod  -= WEAKNESS4
 
-        if currentTeamWeaknesses[weakness] + 1 == 5:
+        elif currentTeamWeaknesses[weakness] + 1 == 5:
             weaknessMod  -= WEAKNESS5
 
-        if currentTeamWeaknesses[weakness] + 1 == 6:
+        elif currentTeamWeaknesses[weakness] + 1 == 6:
             weaknessMod  -= WEAKNESS6
 
 
@@ -75,6 +75,21 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
 
     pDict = pokemonDictionary
 
+    #Pulls out which pokemon can be added to a team given user constraints
+    canAdd = []
+    for pkm in pDict:
+        pObj = pDict[pkm]
+        if pObj.is_legendary and (not wantLegendary):
+            pass
+        elif not pObj.gen in generations:
+            pass
+        elif pObj.capture_rate < minCaptureRate:
+            pass
+        elif not pObj.tier in LEAGUERANKS[LEAGUERANKS.index(league):]:
+            pass
+        else:
+            canAdd.append(pObj)
+
     finishedTeams = []
 
     while(len(currentTeams) > 0):
@@ -93,46 +108,32 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
                 #Build the team weakness.
                 pObj = pDict[pokemon]
                 for pType in pObj.weaknesses:
-                        teamWeaknesses[pType] += 1
-
-            toRank = []
-            for pKey in pDict:
-                pObj = pDict[pKey]
-                #if not in blacklist or on current team.
-                if (pObj.name in team):
-                    pass
-                elif pObj.is_legendary and (not wantLegendary):
-                    pass
-                elif not pObj.gen in generations:
-                    pass
-                elif pObj.capture_rate < minCaptureRate:
-                    pass
-                elif not pObj.tier in LEAGUERANKS[LEAGUERANKS.index(league):]:
-                    pass
-                else:
-                    toRank.append(pObj)
-
-            #if due to constraints, there is no pokemon that can go in then
-            #fill the team with emptys and consider done.
-            if len(toRank) == 0:
-                for x in range(6-len(team)):
-                    team.append(EMPTY)
-                finishedTeams.append(team)
+                        teamWeaknesses[pType] += 1      
 
             ## rankings - List<strin,score>
             rankings = []
-            for pObj in toRank:
-                rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses, weights, league)))
+            added = False
+            for pObj in canAdd:
+                if not pObj.name in team:
+                    added = True
+                    rankings.append((pObj.name,rankPokemon(pObj, playstyle, teamWeaknesses, weights, league)))
+            
+            #If we could not rank any pokemon because we cannot add any, fill with empty and move on.
+            if not added:
+                for x in range(6-len(team)):
+                    team.append(EMPTY)
+                finishedTeams.append(team)
+            
+            else:
+                rankings = sorted(rankings, key = lambda x : x[1], reverse = True)
 
-            rankings = sorted(rankings, key = lambda x : x[1], reverse = True)
+                #compensate for not having enough pokemon to meet branching factor
+                bFactor = min(len(rankings),branchFactor)
 
-            #compensate for not having enough pokemon to meet branching factor
-            bFactor = min(len(rankings),branchFactor)
-
-            for pName,_ in rankings[:bFactor]:
-                tmp = team[:]
-                tmp.append(pName)
-                currentTeams.append(tmp)
+                for pName,_ in rankings[:bFactor]:
+                    tmp = team[:]
+                    tmp.append(pName)
+                    currentTeams.append(tmp)
 
     return finishedTeams
 
