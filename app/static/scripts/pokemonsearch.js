@@ -172,237 +172,238 @@ function getDataList() {
   });
 
 
-  //selecting a pokemon --> formats pokemon card
-  $(document).on("change", ".pokemon-select2", function() {
-    console.log($(this).val());
-    // console.log($.trim($(this).text()));
-    // $(this).parent().append(formatCard($.trim($(this).text())));
-    $(this).parent().append(formatCard($(this).val()));
-    $(this).parent().children('.pokemon-select2').remove();
-      // var $this = $(this);
-      // $("#here").addClass('loading');
-      // $("#here").empty();
-      // // alert($this.val());
-      // $.getJSON($SCRIPT_ROOT + '/update_selected_location', {
-      //   id: $this.val()
-      // }, function(data) {
-      //   $("#here").html(data.result);
-      //   $("#here").removeClass('loading');
-      // });
-      // return false;
+    //selecting a pokemon --> formats pokemon card
+    $(document).on("change", ".pokemon-select2", function() {
+      console.log($(this).val());
+      // console.log($.trim($(this).text()));
+      // $(this).parent().append(formatCard($.trim($(this).text())));
+      $(this).parent().append(formatCard($(this).val()));
+      $(this).parent().children('.pokemon-select2').remove();
+        // var $this = $(this);
+        // $("#here").addClass('loading');
+        // $("#here").empty();
+        // // alert($this.val());
+        // $.getJSON($SCRIPT_ROOT + '/update_selected_location', {
+        //   id: $this.val()
+        // }, function(data) {
+        //   $("#here").html(data.result);
+        //   $("#here").removeClass('loading');
+        // });
+        // return false;
+    });
+
+
+    $(document).ready(function() {
+      var newSelect = $("<span class='pokemon-select2'><input type='text' name='pokemon' style='width:250px' /></span>");
+      $("#initial-select-container").append(newSelect);
+      initializeSelect2(newSelect);
+      $("#initial-select-container").children('.add-pokemon-button').hide();
+    });
+
+
+  //////////////////////////////
+  // initializers for filters//
+  //////////////////////////////
+  function initializeNatureSelect2(obj) {
+    obj.select2({
+      data: naturesLst,
+    });
+  }
+
+  function initializeMovesetSelect2(obj) {
+
+    var moveset = [];
+    var i = 1;
+    curr_pokemon_moveset.forEach( function(move) {
+      moveset.push({'id': i, 'text': move});
+      i++;
+    });
+    obj.select2({
+      data: moveset,
+      placeholder: "Moveset (optional)",
+      multiple: "multiple",
+      maximumSelectionSize: 4,
+      allowClear: true
+    });
+    $('.select2-search__field').css('width', '100%');
+  }
+
+  function initializeFilterGenerationSelect2(obj) {
+    obj.select2({
+      data: genLst,
+      multiple: "multiple",
+    }).select2('val', [1,2,3,4,5,6,7]);
+  }
+
+  function initializeFilterLeagueSelect2(obj) {
+    obj.select2({
+      data: leaguesLst,
+      // multiple: "multiple",
+    }).select2('val', '1');
+
+  }
+
+  function initializeFilterPlaystyleSelect2(obj) {
+    obj.select2({
+      data: pstyleLst,
+    });
+  }
+
+  // var initialSelect = $("<span class='pokemon-select2'><input type='text' name='pokemon' style='width:250px' /></span>");
+  // initializeSelect2(initialSelect);
+  // $('#initial-select-container').append(initialSelect);
+
+  $(".nature-select2").each(function() {
+    initializeNatureSelect2($(this));
+  });
+
+  $(".moveset-select2").each(function() {
+    initializeMovesetSelect2($(this));
+  });
+
+  $(".filter-generation-select2").each(function() {
+    initializeFilterGenerationSelect2($(this));
+  });
+
+  $(".filter-playstyle-select2").each(function() {
+    initializeFilterPlaystyleSelect2($(this));
+  });
+
+  $(".filter-leagues-select2").each(function() {
+    initializeFilterLeagueSelect2($(this));
   });
 
 
-  $(document).ready(function() {
-    var newSelect = $("<span class='pokemon-select2'><input type='text' name='pokemon' style='width:250px' /></span>");
-    $("#initial-select-container").append(newSelect);
-    initializeSelect2(newSelect);
-    $("#initial-select-container").children('.add-pokemon-button').hide();
+  $(".filter-generation-select2").on("change", function (e) {
+    console.log($(".filter-generation-select2").select2("val"));
+    selectedGenerations = $(".filter-generation-select2").select2("val");
+    $('.pokemon-select2').siblings('.add-pokemon-button').show();
+    $('.pokemon-select2').remove();
   });
 
-});
-
-//////////////////////////////
-// initializers for filters//
-//////////////////////////////
-function initializeNatureSelect2(obj) {
-  obj.select2({
-    data: naturesLst,
-  });
-}
-
-function initializeMovesetSelect2(obj) {
-
-  var moveset = [];
-  var i = 1;
-  curr_pokemon_moveset.forEach( function(move) {
-    moveset.push({'id': i, 'text': move});
-    i++;
-  });
-  obj.select2({
-    data: moveset,
-    placeholder: "Moveset (optional)",
-    multiple: "multiple",
-    maximumSelectionSize: 4,
-    allowClear: true
-  });
-  $('.select2-search__field').css('width', '100%');
-}
-
-function initializeFilterGenerationSelect2(obj) {
-  obj.select2({
-    data: genLst,
-    multiple: "multiple",
-  }).select2('val', [1,2,3,4,5,6,7]);
-}
-
-function initializeFilterLeagueSelect2(obj) {
-  obj.select2({
-    data: leaguesLst,
-    // multiple: "multiple",
-  });
-}
-
-function initializeFilterPlaystyleSelect2(obj) {
-  obj.select2({
-    data: pstyleLst,
-  });
-}
-
-// var initialSelect = $("<span class='pokemon-select2'><input type='text' name='pokemon' style='width:250px' /></span>");
-// initializeSelect2(initialSelect);
-// $('#initial-select-container').append(initialSelect);
-
-$(".nature-select2").each(function() {
-  initializeNatureSelect2($(this));
-});
-
-$(".moveset-select2").each(function() {
-  initializeMovesetSelect2($(this));
-});
-
-$(".filter-generation-select2").each(function() {
-  initializeFilterGenerationSelect2($(this));
-});
-
-$(".filter-playstyle-select2").each(function() {
-  initializeFilterPlaystyleSelect2($(this));
-});
-
-$(".filter-leagues-select2").each(function() {
-  initializeFilterLeagueSelect2($(this));
-});
-
-
-$(".filter-generation-select2").on("change", function (e) {
-  console.log($(".filter-generation-select2").select2("val"));
-  selectedGenerations = $(".filter-generation-select2").select2("val");
-  $('.pokemon-select2').siblings('.add-pokemon-button').show();
-  $('.pokemon-select2').remove();
-});
-
-////////////////////
-//filters setting///
-////////////////////
-$(".opponent-team-container").hide();
-$(".opponent-team-header").hide();
-$("#yes").css('background-color', '#282429');
-
-$("#yes").on("click", function() {
-
-    $(".opponent-team-container").show();
-    $(".opponent-team-header").show();
-    $("#yes").css('background-color', '#fc0d1b');
-    $("#no").css('background-color', '#282429');
-    giveOppTeam = true;
-
-  });
-
-$("#no").on("click", function() {
-
+  ////////////////////
+  //filters setting///
+  ////////////////////
   $(".opponent-team-container").hide();
   $(".opponent-team-header").hide();
-  $("#no").css('background-color', '#fc0d1b');
   $("#yes").css('background-color', '#282429');
-  giveOppTeam = false;
 
-});
+  $("#yes").on("click", function() {
 
-$("#yes_legend").css('background-color', '#282429');
+      $(".opponent-team-container").show();
+      $(".opponent-team-header").show();
+      $("#yes").css('background-color', '#fc0d1b');
+      $("#no").css('background-color', '#282429');
+      giveOppTeam = true;
 
-$("#yes_legend").on("click", function() {
+    });
 
-  $("#yes_legend").css('background-color', '#fc0d1b');
-  $("#no_legend").css('background-color', '#282429');
-  if (l_bool != true) {
-    $('.pokemon-select2').siblings('.add-pokemon-button').show();
-    $('.pokemon-select2').remove();
-  }
-  l_bool = true;
-  selectedLegendary = 1;
+  $("#no").on("click", function() {
 
-});
+    $(".opponent-team-container").hide();
+    $(".opponent-team-header").hide();
+    $("#no").css('background-color', '#fc0d1b');
+    $("#yes").css('background-color', '#282429');
+    giveOppTeam = false;
 
-$("#no_legend").on("click", function() {
-  $("#no_legend").css('background-color', '#fc0d1b');
+  });
+
   $("#yes_legend").css('background-color', '#282429');
-  if (l_bool != false) {
-    $('.pokemon-select2').siblings('.add-pokemon-button').show();
-    $('.pokemon-select2').remove();
-  }
-  l_bool = false;
-  selectedLegendary = 0;
-});
 
-$(document).on('input', "#myRange", function() {
-$('#capture-rate').html( $(this).val() + "%");
-caprate = '' + $(this).val();
-console.log("caprate: " + caprate);
-});
+  $("#yes_legend").on("click", function() {
 
-
-//CREATE THE GENERATION LINK
-//CHECK IF ANY REQUIRED THINGS R NULL!!!!!
-$(document).on("click", ".generate-recommendations-button", function() {
-  pstyle = $('#select2-chosen-4').html();
-  league = $('#select2-chosen-6').html();
-
-  var gens_str= '';
-  $(".select2-search-choice > div").each(function() {
-  gens_str+=(romanToNumbers[this.innerHTML])+"+";
-  });
-
-  generations = gens_str;
-
-  var myteam_str='';
-  $(".your-team-container > .team-slot-container >.pokemon-card-form").each(function() {
-  li_lst = this.children[6].children[0].children;
-  // console.log(li_lst);
-  mv = '';
-  for (var i = 0; i < li_lst.length; i++) {
-    var li = li_lst[i];
-    if (li.className == "select2-search-choice") {
-      console.log(li.innerText);
-      mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '');
-      mv+='6';
-
-
+    $("#yes_legend").css('background-color', '#fc0d1b');
+    $("#no_legend").css('background-color', '#282429');
+    if (l_bool != true) {
+      $('.pokemon-select2').siblings('.add-pokemon-button').show();
+      $('.pokemon-select2').remove();
     }
-  }
-  myteam_str += this.children[1].innerText + "6" + mv+"_";
+    l_bool = true;
+    selectedLegendary = 1;
 
   });
-  //console.log(myteam_str);
-  var theirteam_str='';
-  var results_url;
-  if (giveOppTeam) {
 
-  $(".opponent-team-container > .team-slot-container >.pokemon-card-form").each(function() {
+  $("#no_legend").on("click", function() {
+    $("#no_legend").css('background-color', '#fc0d1b');
+    $("#yes_legend").css('background-color', '#282429');
+    if (l_bool != false) {
+      $('.pokemon-select2').siblings('.add-pokemon-button').show();
+      $('.pokemon-select2').remove();
+    }
+    l_bool = false;
+    selectedLegendary = 0;
+  });
+
+  $(document).on('input', "#myRange", function() {
+  $('#capture-rate').html( $(this).val() + "%");
+  caprate = '' + $(this).val();
+  console.log("caprate: " + caprate);
+  });
+
+
+  //CREATE THE GENERATION LINK
+  //CHECK IF ANY REQUIRED THINGS R NULL!!!!!
+  $(document).on("click", ".generate-recommendations-button", function() {
+    pstyle = $('#select2-chosen-4').html();
+    league = $('#select2-chosen-6').html();
+
+    var gens_str= '';
+    $(".select2-search-choice > div").each(function() {
+    gens_str+=(romanToNumbers[this.innerHTML])+"+";
+    });
+
+    generations = gens_str;
+
+    var myteam_str='';
+    $(".your-team-container > .team-slot-container >.pokemon-card-form").each(function() {
     li_lst = this.children[6].children[0].children;
-
+    // console.log(li_lst);
     mv = '';
     for (var i = 0; i < li_lst.length; i++) {
       var li = li_lst[i];
-      if (li.className == "select2-sesarch-choice") {
+      if (li.className == "select2-search-choice") {
+        console.log(li.innerText);
         mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '');
         mv+='6';
 
+
       }
     }
-    theirteam_str += this.children[1].innerText + "6" + mv+"_";
-  });
+    myteam_str += this.children[1].innerText + "6" + mv+"_";
+
+    });
+    //console.log(myteam_str);
+    var theirteam_str='';
+    var results_url;
+    if (giveOppTeam) {
+
+    $(".opponent-team-container > .team-slot-container >.pokemon-card-form").each(function() {
+      li_lst = this.children[6].children[0].children;
+
+      mv = '';
+      for (var i = 0; i < li_lst.length; i++) {
+        var li = li_lst[i];
+        if (li.className == "select2-sesarch-choice") {
+          mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '');
+          mv+='6';
+
+        }
+      }
+      theirteam_str += this.children[1].innerText + "6" + mv+"_";
+    });
 
 
 
-  //console.log(theirteam_str);
-  results_url = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str+"&theirteam="+theirteam_str;
+    //console.log(theirteam_str);
+    results_url = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str+"&theirteam="+theirteam_str;
 
-  } else {
-  results_url = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str;
-  }
-  // console.log(generations);
-  // console.log(caprate);
+    } else {
+    results_url = '/results?legendary='+l_bool+"&league="+league+"&gens="+generations+"&pstyle="+pstyle+"&caprate="+caprate+"&myteam="+myteam_str;
+    }
+    // console.log(generations);
+    // console.log(caprate);
 
+});
 
   ///////////////////////////////////
   ///check if all inputs were enter//
