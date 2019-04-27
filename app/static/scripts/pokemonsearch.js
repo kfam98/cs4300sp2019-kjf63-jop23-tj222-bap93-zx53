@@ -71,13 +71,13 @@ $.when($.getJSON("/static/data/pokemondata2.json")).then( function(json) {
   }
 
 function getDataList() {
-
+  console.log(selectedGenerations);
   var filtered =  dataList.filter(function(pokemon){
                     // console.log(pokemon.generation);
-                    //return (selectedGenerations.includes(""+pokemon.generation) && (pokemon.legendary <= selectedLegendary));
-                    return pokemon.generation == 2;
+                    return (selectedGenerations.includes(""+pokemon.generation) && (pokemon.legendary <= selectedLegendary));
+                    // return pokemon.generation == 2;
                   });
-  console.log(filered);
+  console.log(filtered);
   var newDataList = filtered.map((pokemon) => {
     return {
       id: pokemon.id,
@@ -92,7 +92,7 @@ function getDataList() {
   // init select 2
   function initializeSelect2(obj) {
     obj.select2({
-      data: getDataList(),
+      data: dataList,
       placeholder: "Select a Pokemon",
       formatResult: formatState,
       formatSelection: formatState,
