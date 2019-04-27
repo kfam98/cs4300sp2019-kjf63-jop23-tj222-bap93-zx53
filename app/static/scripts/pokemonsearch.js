@@ -345,6 +345,9 @@ function getDataList() {
   //CHECK IF ANY REQUIRED THINGS R NULL!!!!!
   $(document).on("click", ".generate-recommendations-button", function() {
     pstyle = $('#select2-chosen-4').html();
+    if (pstyle == "Offensive") {
+      psytle = "Glass-Cannon";
+    }
     league = $('#select2-chosen-6').html();
 
     var gens_str= '';

@@ -49,7 +49,7 @@ var romanToNumbers = {
 };
 
 var pstyleLst = [
-  {id: 1, text:"Glass-Cannon"},
+  {id: 1, text:"Offensive"},
   {id: 2, text:"Balanced"},
   {id: 3, text:"Defensive"}
 ];

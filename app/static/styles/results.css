@@ -310,7 +310,7 @@
 
 .ntooltip .ntooltiptext { /* This is for the tooltip text */
   visibility: hidden;
-  width: 100px;
+  width: 120px;
   background-color:#484848;
   color: white;
   text-align: center;

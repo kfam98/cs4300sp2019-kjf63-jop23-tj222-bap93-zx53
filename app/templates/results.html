@@ -182,7 +182,7 @@
   //use to print stats about each pokemon
   $.getJSON("/static/data/pokemon_info.json", function(json) {
     dataList = json;
-    console.log(dataList);
+    //console.log(dataList);
   });
 
   var curr_team = 1;
@@ -238,7 +238,24 @@
     if (nature != "None") {
       if (nature.split('/').length == 2) {
         nature = nature.split('/');
-        var str = "↑ " + natureStats[nature[0]]['increase'] + " ↑ " + natureStats[nature[1]]['increase'] + "<br/>↓ " + natureStats[nature[0]]['decrease'] + " ↓ " + natureStats[nature[1]]['decrease'] ;
+        var str='';
+
+
+        for (var i = 0; i < 2; i++) {
+          if (!(str.includes(natureStats[nature[i]]['increase']))) {
+            str += '↑ ' + natureStats[nature[i]]['increase'];
+
+          } else {
+            str = str.replace('↑', '↑↑');
+          }
+
+          if (!(str.includes(natureStats[nature[i]]['decrease']))) {
+            str += '<br/> ↓ ' + natureStats[nature[i]]['decrease'];
+
+          } else {
+            str = str.replace('↓', '↓↓');
+          }
+        }
       } else {
         // var str = "Increases: " + natureStats[nature]['increase'] + "<br/>Decreases: " + natureStats[nature]['decrease'];
         var str = "↑ " + natureStats[nature]['increase'] + "<br/>↓ " + natureStats[nature]['decrease'] ;
