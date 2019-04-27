@@ -246,7 +246,7 @@ function getDataList() {
   function initializeFilterPlaystyleSelect2(obj) {
     obj.select2({
       data: pstyleLst,
-    });
+    }).select2('val', '2');
   }
 
   // var initialSelect = $("<span class='pokemon-select2'><input type='text' name='pokemon' style='width:250px' /></span>");
@@ -403,40 +403,40 @@ function getDataList() {
     // console.log(generations);
     // console.log(caprate);
 
-});
+    ///////////////////////////////////
+    ///check if all inputs were enter//
+    //////////////////////////////////
+    if (generations == '') {
+    $('#generation-error').html("Please enter a generation(s)");
+    $('#generation-error').css("display", "block");
+    } else {
+    $('#generation-error').html("");
+    $('#generation-error').css("display", "none");
+    }
 
-  ///////////////////////////////////
-  ///check if all inputs were enter//
-  //////////////////////////////////
-  if (generations == '') {
-  $('#generation-error').html("Please enter a generation(s)");
-  $('#generation-error').css("display", "block");
-  } else {
-  $('#generation-error').html("");
-  $('#generation-error').css("display", "none");
-  }
+    if (league == '&nbsp;') {
+    $('#leagues-error').html("Please choose a league");
+    $('#leagues-error').css("display", "block");
+    } else {
+    $('#leagues-error').html("");
+    $('#leagues-error').css("display", "none");
+    }
 
-  if (league == '&nbsp;') {
-  $('#leagues-error').html("Please choose a league");
-  $('#leagues-error').css("display", "block");
-  } else {
-  $('#leagues-error').html("");
-  $('#leagues-error').css("display", "none");
-  }
+    if (pstyle == '&nbsp;')  {
+    $('#playstyle-error').html("Please choose a playstyle");
+    $('#playstyle-error').css("display", "block");
+    } else {
+    $('#playstyle-error').html("");
+    $('#playstyle-error').css("display", "none");
+    }
 
-  if (pstyle == '&nbsp;')  {
-  $('#playstyle-error').html("Please choose a playstyle");
-  $('#playstyle-error').css("display", "block");
-  } else {
-  $('#playstyle-error').html("");
-  $('#playstyle-error').css("display", "none");
-  }
+    if ((generations != '') && (league != '&nbsp;') && (pstyle != '&nbsp;')) {
+    window.location.href = results_url;
+    } else {
+    alert("Missing fields. Check your filters!");
+    }
 
-  if ((generations != '') && (league != '&nbsp;') && (pstyle != '&nbsp;')) {
-  window.location.href = results_url;
-  } else {
-  alert("Missing fields. Check your filters!");
-  }
+  });
 
 });
 
