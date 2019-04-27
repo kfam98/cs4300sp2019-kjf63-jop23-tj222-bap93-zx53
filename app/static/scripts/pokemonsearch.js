@@ -14,7 +14,7 @@ var theirteam;
 var selectedGenerations = ['1','2','3','4','5','6','7'];
 var selectedLegendary = 0;
 
-$(window).on("load", function() {
+
 $.when($.getJSON("/static/data/pokemondata2.json")).then( function(json) {
   for (var i = 0; i < json.length; i++) {
     dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary, pokedex_number: json[i].pokedex_number});
@@ -77,7 +77,7 @@ function getDataList() {
                     return (selectedGenerations.includes(""+pokemon.generation) && (pokemon.legendary <= selectedLegendary));
                     // return pokemon.generation == 2;
                   });
-  console.log(filtered);
+  
   var newDataList = filtered.map((pokemon) => {
     return {
       id: pokemon.id,
@@ -92,7 +92,7 @@ function getDataList() {
   // init select 2
   function initializeSelect2(obj) {
     obj.select2({
-      data: dataList,
+      data: getDataList(),
       placeholder: "Select a Pokemon",
       formatResult: formatState,
       formatSelection: formatState,
@@ -441,8 +441,6 @@ function getDataList() {
     }
 
   });
-
-});
 
 });
 
