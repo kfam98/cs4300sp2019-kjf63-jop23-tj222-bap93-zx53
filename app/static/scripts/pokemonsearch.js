@@ -442,12 +442,13 @@ function getDataList() {
 
   });
 
-});
 
-$('.site-icon').hover( function() {
-  $('.site-icon').attr('src', '/static/images/icon4.png');
-});
+  $('.site-icon').hover( function() {
+    $('.site-icon').attr('src', '/static/images/icon4.png');
+  });
 
-$('.site-icon').mouseout( function() {
-  $('.site-icon').attr('src', '/static/images/icon3.png');
+  $('.site-icon').mouseout( function() {
+    $('.site-icon').attr('src', '/static/images/icon3.png');
+  });
+
 });
