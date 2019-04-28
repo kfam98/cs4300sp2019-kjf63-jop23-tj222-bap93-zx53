@@ -15,7 +15,7 @@ var selectedGenerations = ['1','2','3','4','5','6','7'];
 var selectedLegendary = 0;
 
 
-$.when($.getJSON("/static/data/pokemondata2.json")).then( function(json) {
+$.getJSON("/static/data/pokemondata.json", function(json) {
   for (var i = 0; i < json.length; i++) {
     dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary, pokedex_number: json[i].pokedex_number});
   }
@@ -77,7 +77,7 @@ function getDataList() {
                     return (selectedGenerations.includes(""+pokemon.generation) && (pokemon.legendary <= selectedLegendary));
                     // return pokemon.generation == 2;
                   });
-  
+
   var newDataList = filtered.map((pokemon) => {
     return {
       id: pokemon.id,
@@ -442,6 +442,54 @@ function getDataList() {
 
   });
 
+});
+
+$.getJSON("/static/data/allmove_data.json", function(json) {
+  $(document).on({
+      mouseenter: function () {
+        console.log("hover");
+        var x = event.clientX;
+        var y = event.clientY;
+        console.log(x);
+        console.log(y);
+        console.log($(window).width());
+        console.log($(window).height());
+        if (json[$(this).text()]) {
+          var moveData = json[$(this).text()];
+          if (moveData["power"]) {
+            $(".tooltip-move-power-value").html(parseInt(moveData["power"]));
+          }
+          else {
+            $(".tooltip-move-power-value").html("-");
+          }
+          if (moveData["accuracy"]) {
+            $(".tooltip-move-accuracy-value").html(parseInt(moveData["accuracy"]));
+          }
+          else {
+            $(".tooltip-move-accuracy-value").html("-");
+          }
+          $(".tooltip-move-description").html(moveData["description"]);
+          $(".tooltip-move-learned-method-value").html(moveData["pokemon"][$.trim($(this).closest(".pokemon-card-name"))])
+          if (x <= $(window).width()/2 && y <= $(window).height()/2) {
+            $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
+          }
+          else if (x <= $(window).width()/2 && y > $(window).height()/2) {
+            $(".pokemon-move-tooltip").css({bottom: y, left: x, position:'absolute'});
+          }
+          else if (x > $(window).width()/2 && y <= $(window).height()/2) {
+            $(".pokemon-move-tooltip").css({top: y, right: x, position:'absolute'});
+          }
+          else {
+            $(".pokemon-move-tooltip").css({bottom: y, right: x, position:'absolute'});
+          }
+          $(".pokemon-move-tooltip").show();
+        }
+      },
+      mouseleave: function () {
+        console.log("hover out");
+        $(".pokemon-move-tooltip").hide();
+      }
+  }, ".pokemon-move-label");
 });
 
 $('.site-icon').hover( function() {

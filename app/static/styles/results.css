@@ -1,3 +1,7 @@
+body {
+  position:relative;
+}
+
 .site-error {
   /* font-size: 12px; */
   text-align: center;
@@ -175,6 +179,66 @@
   border-radius: 10px;
   max-width: 200px;
   word-wrap: break-word;
+  cursor: pointer;
+}
+
+.pokemon-move-tooltip {
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 200px;
+  background-color: #484848;
+  opacity: 0.8;
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+}
+
+.tooltip-move-type {
+  display: inline-block;
+  height: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.tooltip-move-title {
+  display: inline-block;
+}
+
+.tooltip-move-power {
+  display: block;
+  margin: 10px 5px;
+}
+
+.tooltip-move-power-value {
+  display: inline-block;
+}
+
+.tooltip-move-accuracy {
+  display: block;
+  margin: 10px 5px;
+}
+
+.tooltip-move-accuracy-value {
+  display: inline-block;
+}
+
+.tooltip-move-description {
+  display: block;
+  height: 75px;
+  width: 280px;
+  margin: 10px 5px;
+  font-size: 14px;
+}
+
+.tooltip-move-learned-method {
+  display: block;
+  margin: 10px 5px;
+  font-size: 14px;
+  font-style: italic;
 }
 
 #move2 {
@@ -356,7 +420,7 @@
   margin-top: 5px;
   font-weight: lighter;
   /* font-family: 'Retro' !important; */
-  margin-left: 10%l /* This makes the margin half of the width to the center */
+  margin-left: 10% /* This makes the margin half of the width to the center */
 }
 
 .ptooltiptext {
