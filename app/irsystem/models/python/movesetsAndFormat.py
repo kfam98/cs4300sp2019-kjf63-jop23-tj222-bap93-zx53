@@ -24,18 +24,23 @@ def fillAndFormat(teams, currentTeamData, tScores):
 
     for i in range(len(teams)):
         team = teams[i]
+        sTeam = set(team)
+        if len(sTeam) == 1 and EMPTY in sTeam:
+            toRet.append([])
+            continue
         teamData = []
         teamData.append(tScores[i])
         for pokeman in team:
-            form = {}
-            #initialize pokemans entry
-            form[pokeman] = {}
-            form[pokeman][MOVES] = []
-            form[pokeman][NATURE] = None
-            form[pokeman][ABILITY] = None
-            form[pokeman][ITEM] = None
-
             if not pokeman == EMPTY:
+                form = {}
+                #initialize pokemans entry
+                form[pokeman] = {}
+                form[pokeman][MOVES] = []
+                form[pokeman][NATURE] = None
+                form[pokeman][ABILITY] = None
+                form[pokeman][ITEM] = None
+
+            
 
                 if pokeman in currentTeamData:
                     #add additional moves
@@ -58,8 +63,13 @@ def fillAndFormat(teams, currentTeamData, tScores):
                     if form[pokeman][ITEM] == None:
                         form[pokeman][ITEM] = d[ITEM]
 
-            teamData.append(form.copy())
+                teamData.append(form.copy())
 
         toRet.append(teamData.copy())
+
+    #If the team is empty 
+    if len(toRet) < NUMTEAMSRETURN:
+        for x in range((NUMTEAMSRETURN - len(toRet))):
+            toRet.append([])
 
     return toRet
