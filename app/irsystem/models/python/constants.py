@@ -113,7 +113,7 @@ HEALTH = "health"
 
 #Playstyles
 BALANCED  = "balanced"
-GLASS_CANNON = "glass-cannon"
+GLASS_CANNON = "offensive"
 DEFENSIVE = "defensive"
 
 #playstyles dictionary, used to find weights
