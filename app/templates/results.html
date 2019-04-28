@@ -191,6 +191,7 @@
   //   }
   // });
 
+  $(".pokemon-move-tooltip").hide();
   $.getJSON("/static/data/allmove_data.json", function(json) {
     $(document).on({
         mouseenter: function () {
@@ -224,7 +225,7 @@
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else if (x <= $(window).width()/2 && y > $(window).height()/2) {
-              y = y - 260 + $(document).scrollTop();
+              y = y - 240 + $(document).scrollTop();
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else if (x > $(window).width()/2 && y <= $(window).height()/2) {
@@ -233,7 +234,7 @@
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else {
-              y = y - 260 + $(document).scrollTop();
+              y = y - 240 + $(document).scrollTop();
               x -= 350;
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
