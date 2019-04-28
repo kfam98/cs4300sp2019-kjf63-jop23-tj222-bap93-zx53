@@ -444,54 +444,6 @@ function getDataList() {
 
 });
 
-$.getJSON("/static/data/allmove_data.json", function(json) {
-  $(document).on({
-      mouseenter: function () {
-        console.log("hover");
-        var x = event.clientX;
-        var y = event.clientY;
-        console.log(x);
-        console.log(y);
-        console.log($(window).width());
-        console.log($(window).height());
-        if (json[$(this).text()]) {
-          var moveData = json[$(this).text()];
-          if (moveData["power"]) {
-            $(".tooltip-move-power-value").html(parseInt(moveData["power"]));
-          }
-          else {
-            $(".tooltip-move-power-value").html("-");
-          }
-          if (moveData["accuracy"]) {
-            $(".tooltip-move-accuracy-value").html(parseInt(moveData["accuracy"]));
-          }
-          else {
-            $(".tooltip-move-accuracy-value").html("-");
-          }
-          $(".tooltip-move-description").html(moveData["description"]);
-          $(".tooltip-move-learned-method-value").html(moveData["pokemon"][$.trim($(this).closest(".pokemon-card-name"))])
-          if (x <= $(window).width()/2 && y <= $(window).height()/2) {
-            $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
-          }
-          else if (x <= $(window).width()/2 && y > $(window).height()/2) {
-            $(".pokemon-move-tooltip").css({bottom: y, left: x, position:'absolute'});
-          }
-          else if (x > $(window).width()/2 && y <= $(window).height()/2) {
-            $(".pokemon-move-tooltip").css({top: y, right: x, position:'absolute'});
-          }
-          else {
-            $(".pokemon-move-tooltip").css({bottom: y, right: x, position:'absolute'});
-          }
-          $(".pokemon-move-tooltip").show();
-        }
-      },
-      mouseleave: function () {
-        console.log("hover out");
-        $(".pokemon-move-tooltip").hide();
-      }
-  }, ".pokemon-move-label");
-});
-
 $('.site-icon').hover( function() {
   $('.site-icon').attr('src', '/static/images/icon4.png');
 });
