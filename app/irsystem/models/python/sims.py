@@ -10,6 +10,7 @@ import os
 import json
 import numpy as np
 import time
+import random
 
 count = 0
 
@@ -56,6 +57,25 @@ def loadSims():
 
     return data
 
+def determineWinner(entry):
+    if entry["winner"] == "p1":
+        winner = entry["p1_team"]
+        loser = entry["p2_team"]
+    else:
+        winner = entry["p2_team"]
+        loser = entry["p1_team"]
+    
+    return winner, loser
+
+
+def getSimPokemon(pokemon,sims):
+    if pokemon in sims:
+        return sims[pokemon]
+
+    for k in sims:
+        return np.zeros(len(sims[k]))
+    
+
 
 def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     """
@@ -70,36 +90,52 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     battleData = loadBattleData(league)
     similarities = loadSims()
 
-    if len(oppTeam) < 6:
-        for x in range(6-len(oppTeam)):
-            oppTeam.append(EMPTY)
+    
+    #If not given an opponent team then simply randomly choose losers from the dataset to compare to.
+    if len(oppTeam) == 0:
+        picks = set([])
+        while (len(picks) < NUMLOSINGTEAMS and (not len(picks) == len(battleData))):
+            picks.add(random.randint(0,len(battleData)-1))
 
-    oppTeam = teamToArray(oppTeam, pokedex)
+        losers = []
+        loserDict = {}
+        for i in picks:
+            entry = battleData[i]
+            winner,loser = determineWinner(entry)
+            print("winner - "+str(winner))
+            loserDict[str(loser)] = teamToArray(winner,pokedex)
+            losers.append( (loser,0) )
 
-    #create dictionary from losers team to the team that beat them.
-    loserDict = {}
-    sims = []
-    for d in battleData:
-        if d["winner"] == "p1":
-            winner = d["p1_team"]
-            loser = d["p2_team"]
-        else:
-            winner = d["p2_team"]
-            loser = d["p1_team"]
+    #Given opponent team then find similar teams
+    else:
+        oppTeam = [getSimPokemon(opp,similarities) for opp in oppTeam]
 
-        if str(loser) in loserDict:
-            loserDict[str(loser)].append(teamToArray(winner,pokedex))
-        else:
-            #new to dictonary
-            loserDict[str(loser)] = [teamToArray(winner,pokedex)]
+        #create dictionary from losers team to the team that beat them.
+        loserDict = {}
+        sims = []
+        for d in battleData:
+            winner, loser = determineWinner(d)
 
-            sims.append((loser, np.dot(oppTeam, teamToArray(loser,pokedex)) ))
+            wTeam = teamToArray(winner,pokedex)
+            lTeam = np.array(teamToArray(loser, pokedex))
+
+            score = 0
+            for oppNp in oppTeam:
+                score+= np.amax(lTeam*oppNp)       
+
+            if str(loser) in loserDict:
+                loserDict[str(loser)].append(wTeam)
+            else:
+                #new to dictonary
+                loserDict[str(loser)] = [wTeam]
+
+                sims.append((loser, score))
 
 
-    sims = sorted(sims, key = lambda x : x[1], reverse = True)
+        sims = sorted(sims, key = lambda x : x[1], reverse = True)
 
-    cutoff = min(len(sims),NUMLOSINGTEAMS)
-    losers = sims[:cutoff]
+        cutoff = min(len(sims),NUMLOSINGTEAMS)
+        losers = sims[:cutoff]
 
     #Gather winners to losing teams
     winnersComp = []
@@ -114,6 +150,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
 
     existsSet = []
 
+    #Creates inverted index for teams, while simoultaneously weeding out any teams that are exactly similar.
     for i in range(len(curTeams)):
         team = curTeams[i]
         results.append((team,0))
@@ -127,16 +164,23 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
                     else:
                         inverted_idx[pkm] = [i]
         
+    #Giving the similiarity scores to the winners based off of the inverted index.
     for pkm in inverted_idx:
         for winner in winnersComp:
             wArr = np.array(winner)
+            #tArr = getSimPokemon(pkm,similarities)
             tArr = similarities[pkm]
 
-            vals = wArr* tArr
+            print(similarities[pkm][:5])
+
+            vals = wArr * tArr
             score = np.amax(vals)
+
+            print("score for "+pkm+" is "+str(score))
 
             for i in inverted_idx[pkm]:
                 results[i] = (results[i][0],results[i][1]+(score/topScore))
+
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 

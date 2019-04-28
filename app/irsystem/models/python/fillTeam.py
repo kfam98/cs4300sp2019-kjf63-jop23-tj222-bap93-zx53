@@ -29,8 +29,7 @@ def rankPokemon(pObj, playstyle, currentTeamWeaknesses, weights, league):
             weaknessMod  -= WEAKNESS5
 
         elif currentTeamWeaknesses[weakness] + 1 == 6:
-            weaknessMod  -= WEAKNESS6
-
+            weaknessMod  -= WEAKNESS6   
 
     return weaknessMod * (
         pObj.attack * PLAYSTYLES[playstyle][ATTACK] +
@@ -91,7 +90,7 @@ def fillRestOfTeam(currentTeams, wantLegendary, generations, playstyle, minCaptu
             pass
         else:
             canAdd.append(pObj)
-
+        
     finishedTeams = []
 
     currentTeams = deque(currentTeams)
