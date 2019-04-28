@@ -13,6 +13,7 @@ socketio = SocketIO()
 app = Flask(__name__)
 app.config.from_object(os.environ["APP_SETTINGS"])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 
 # DB
 db = SQLAlchemy(app)
