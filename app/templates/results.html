@@ -203,6 +203,8 @@
           console.log($(window).height());
           if (json[$(this).text()]) {
             var moveData = json[$(this).text()];
+            $(".tooltip-move-title").html($(this).text());
+            $(".tooltip-move-type").html(moveData["type"]);
             if (moveData["power"]) {
               $(".tooltip-move-power-value").html(parseInt(moveData["power"]));
             }
@@ -221,7 +223,7 @@
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else if (x <= $(window).width()/2 && y > $(window).height()/2) {
-              y -= 200;
+              y = y - 200 - $(document).scrollTop();
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else if (x > $(window).width()/2 && y <= $(window).height()/2) {
@@ -229,7 +231,7 @@
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else {
-              y -= 200;
+              y = y - 200 - $(document).scrollTop();
               x -= 300;
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
