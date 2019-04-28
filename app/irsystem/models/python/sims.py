@@ -89,8 +89,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     """
     battleData = loadBattleData(league)
     similarities = loadSims()
-
-    
+  
     #If not given an opponent team then simply randomly choose losers from the dataset to compare to.
     if len(oppTeam) == 0:
         picks = set([])
@@ -103,7 +102,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
             entry = battleData[i]
             winner,loser = determineWinner(entry)
             print("winner - "+str(winner))
-            loserDict[str(loser)] = teamToArray(winner,pokedex)
+            loserDict[str(loser)] = [teamToArray(winner,pokedex)]
             losers.append( (loser,0) )
 
     #Given opponent team then find similar teams
@@ -170,17 +169,13 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
             wArr = np.array(winner)
             #tArr = getSimPokemon(pkm,similarities)
             tArr = similarities[pkm]
-
-            print(similarities[pkm][:5])
-
+            
             vals = wArr * tArr
-            score = np.amax(vals)
 
-            print("score for "+pkm+" is "+str(score))
+            score = np.amax(vals)
 
             for i in inverted_idx[pkm]:
                 results[i] = (results[i][0],results[i][1]+(score/topScore))
-
 
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
