@@ -101,7 +101,6 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
         for i in picks:
             entry = battleData[i]
             winner,loser = determineWinner(entry)
-            print("winner - "+str(winner))
             loserDict[str(loser)] = [teamToArray(winner,pokedex)]
             losers.append( (loser,0) )
 
