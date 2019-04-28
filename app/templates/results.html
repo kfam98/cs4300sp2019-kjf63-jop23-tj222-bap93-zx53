@@ -224,17 +224,17 @@
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else if (x <= $(window).width()/2 && y > $(window).height()/2) {
-              y = y + $(document).scrollTop();
+              y = y - 260 + $(document).scrollTop();
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else if (x > $(window).width()/2 && y <= $(window).height()/2) {
-              y = y - 200 + $(document).scrollTop();
-              x -= 310;
+              y = y + $(document).scrollTop();
+              x -= 350;
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             else {
-              y = y - 200 + $(document).scrollTop();
-              x -= 310;
+              y = y - 260 + $(document).scrollTop();
+              x -= 350;
               $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
             }
             $(".pokemon-move-tooltip").show();
