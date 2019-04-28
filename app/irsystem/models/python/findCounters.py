@@ -56,8 +56,6 @@ def findCounters(current_team, uncountered_opponent_team, want_legendary, genera
 
     filtered_pkmn = []
     for pkmn in all_pokemon:
-        if all_pokemon[pkmn].name == "Pheromosa":
-            print("Cap rate is " + str(all_pokemon[pkmn].capture_rate))
         if (pkmn not in current_team and all_pokemon[pkmn].gen in generations and
             all_pokemon[pkmn].is_legendary <= want_legendary and all_pokemon[pkmn].capture_rate >= minimum_capture_rate):
 
