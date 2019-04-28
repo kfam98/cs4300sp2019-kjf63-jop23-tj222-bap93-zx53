@@ -206,6 +206,7 @@
             var moveData = json[$(this).text()];
             $(".tooltip-move-title").html($(this).text());
             $(".tooltip-move-type").html(moveData["type"]);
+            $(".tooltip-move-type").removeClass().addClass("tooltip-move-type").addClass(moveData["type"]);
             if (moveData["power"]) {
               $(".tooltip-move-power-value").html(parseInt(moveData["power"]));
             }
