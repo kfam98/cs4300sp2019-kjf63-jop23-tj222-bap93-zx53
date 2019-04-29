@@ -14,9 +14,13 @@ var theirteam;
 var selectedGenerations = ['1','2','3','4','5','6','7'];
 var selectedLegendary = 0;
 
+var json;
 
-$.getJSON("/static/data/pokemondata5.json", function(json) {
+$.getJSON("/static/data/pokemondata5.json", function(json_1) {
 
+$.getJSON("/static/data/pokemondata4.json", function(json_2) {
+
+  json = json_2.concat(json_1);
 
   for (var i = 0; i < json.length; i++) {
     dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
@@ -453,4 +457,5 @@ function getDataList() {
     $('.site-icon').attr('src', '/static/images/icon3.png');
   });
 
+});
 });
