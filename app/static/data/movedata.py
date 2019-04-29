@@ -15,7 +15,7 @@ import json
 data_2 = []
 with open('pokemondata2.json') as json_file:
     data = json.load(json_file)
-    data = data[2*len(data)/3:]
+    data = data[ 2*len(data)/3:]
     for pokemon in data:
       p = {}
       p['imgSrc'] = pokemon['imgSrc']
@@ -32,7 +32,7 @@ with open('pokemondata2.json') as json_file:
       p['name'] = pokemon['name']
       p['legendary'] = pokemon['legendary']
       # p['hp'] = pokemon['hp']
-      p['pokedex_number'] = pokemon['pokedex_number']
+      # p['pokedex_number'] = pokemon['pokedex_number']
       data_2.append(p)
 
 
