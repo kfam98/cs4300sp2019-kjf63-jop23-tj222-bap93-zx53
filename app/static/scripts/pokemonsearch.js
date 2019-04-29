@@ -32,7 +32,7 @@ $.getJSON("/static/data/pokemondata3.json", function(json_3) {
   }
 
   function formatState(state) {
-    if (!json[state.id].pokedex_number) {
+    if (!json[state.id].name) {
       return state.text;
     }
     var $state = $(
