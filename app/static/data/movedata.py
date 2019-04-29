@@ -15,6 +15,7 @@ import json
 data_2 = []
 with open('pokemondata2.json') as json_file:
     data = json.load(json_file)
+    data = data[len(data)/2:]
     for pokemon in data:
       p = {}
       p['imgSrc'] = pokemon['imgSrc']
@@ -36,7 +37,7 @@ with open('pokemondata2.json') as json_file:
 
 
 
-with open('pokemondata3.json', 'w') as outfile:
+with open('pokemondata4.json', 'w') as outfile:
     json.dump(data_2, outfile)
 
 # with open('pokemondata2.json', 'w') as outfile:

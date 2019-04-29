@@ -19,11 +19,18 @@ var json;
 // var json = JSON.parse(pokemondata2);
 //$.post("/static/data/pokemondata3.json", function(json, status) {
 fetch("/static/data/pokemondata3.json")
-.then(function(response) {
+.then(function(response,
+) {
   return response.json();
 })
-.then(function(json) {
+.then(function(json_file) {
 
+  fetch("/static/data/pokemondata4.json")
+  .then(function(json_file,
+  ) {
+    return json_file.json();
+  })
+  .then(function(json) {
 
 
 
@@ -462,4 +469,6 @@ function getDataList() {
     $('.site-icon').attr('src', '/static/images/icon3.png');
   });
 
+
+});
 });
