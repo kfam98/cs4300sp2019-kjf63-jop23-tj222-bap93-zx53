@@ -32,7 +32,7 @@ with open('pokemondata2.json') as json_file:
       p['name'] = pokemon['name']
       p['legendary'] = pokemon['legendary']
       # p['hp'] = pokemon['hp']
-      # p['pokedex_number'] = pokemon['pokedex_number']
+      p['pokedex_number'] = pokemon['pokedex_number']
       data_2.append(p)
 
 

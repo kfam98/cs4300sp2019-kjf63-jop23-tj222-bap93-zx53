@@ -28,7 +28,7 @@ $.getJSON("/static/data/pokemondata3.json", function(json_3) {
   json = json_3.concat(json);
 
   for (var i = 0; i < json.length; i++) {
-    dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
+    dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary, pokedex_number: json[i].pokedex_number});
   }
 
   function formatState(state) {
