@@ -36,7 +36,10 @@ for key, value in traindata.items():
     for i in range(len(league_weights)):
         pkmn = list(summaries.keys())[i]
         wt = league_weights[i]
-        league_mappings[pkmn] = wt
+        if pkmn in traindata[key].keys():
+            league_mappings[pkmn] = traindata[key][pkmn]
+        else:
+            league_mappings[pkmn] = wt
     weights[key] = league_mappings
 
 with open('dataset/classWeights2.json','w') as outfile: 
