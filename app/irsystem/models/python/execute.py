@@ -48,7 +48,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         oppTeamNames.append(p)
         
     if len(currentTeamNames) == 6:
-        return movesetsAndFormat.fillAndFormat([currentTeamNames],myTeam)
+        return movesetsAndFormat.fillAndFormat([currentTeamNames],myTeam, [100.0])
 
     ##May need to change inputs into the proper backend global vars, a translation
 
