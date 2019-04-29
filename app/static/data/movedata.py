@@ -20,18 +20,18 @@ with open('pokemondata2.json') as json_file:
       p['imgSrc'] = pokemon['imgSrc']
       p['type1'] = pokemon['type1']
       p['type2'] = pokemon['type2']
-      p['speed'] = pokemon['speed']
-      p['sp_defense'] = pokemon['sp_defense']
+      # p['speed'] = pokemon['speed']
+      # p['sp_defense'] = pokemon['sp_defense']
       p['moveset'] = pokemon['moveset']
       p['generation'] = pokemon['generation']
 
-      p['defense'] = pokemon['defense']
-      p['attack'] = pokemon['attack']
-      p['sp_attack'] = pokemon['sp_attack']
+      # p['defense'] = pokemon['defense']
+      # p['attack'] = pokemon['attack']
+      # p['sp_attack'] = pokemon['sp_attack']
       p['name'] = pokemon['name']
       p['legendary'] = pokemon['legendary']
-      p['hp'] = pokemon['hp']
-      p['pokedex_number'] = pokemon['pokedex_number']
+      # p['hp'] = pokemon['hp']
+      # p['pokedex_number'] = pokemon['pokedex_number']
       data_2.append(p)
 
 
