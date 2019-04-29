@@ -83,7 +83,7 @@ body {
   margin-bottom: 5px;
   margin-right: 3%;
   margin-left: 20%;
-  transition: 0.3s all;
+  /* transition: 0.3s all; */
 
 }
 
@@ -119,7 +119,7 @@ body {
   position: absolute;
   height: 90px;
   width: 90px;
-
+  transition:.2s all;
   left: 2%;
   top: 50%;
   transform: translateY(-50%);
@@ -127,6 +127,9 @@ body {
 
 .pokemon-card-img:hover {
   cursor: pointer;
+  width: 100px;
+  transition:.2s all;
+  height: 100px;
 }
 
 .pokemon-nature-label {
@@ -144,10 +147,15 @@ body {
   padding: 3px 10px 3px 10px;
   background-color: #484848;
   border-radius: 5px;
+  transition: all .1s;
   cursor: pointer !important;
   transform: translateY(-30%);
 }
 
+.pokemon-nature-label:hover {
+  font-size: 9px;
+  transition: all .1s;
+}
 
 
 .pokemon-moveset-label {
@@ -187,6 +195,12 @@ body {
   cursor: pointer;
 }
 
+.pokemon-move-label:hover {
+  background-color:  #484848;
+  color:white;
+   transition: 0.3s all;
+}
+
 .pokemon-move-tooltip {
   color: white;
   position: absolute;
@@ -194,6 +208,7 @@ body {
   left: 0px;
   width: 300px;
   height: 200px;
+  /* transition: .5s all; */
   background-color: #484848;
   opacity: 1;
   display:none;
@@ -373,7 +388,7 @@ body {
 }
 
 /* natures tooltip */
-.ntooltip { /* Container for our tooltip */
+.ntooltiptext { /* Container for our tooltip */
 
 
 }
@@ -401,13 +416,15 @@ body {
 .ntooltip:hover .ntooltiptext { /* Makes tooltip text visible when text is hovered on */
    visibility: visible;
 
+
+
    /* opacity: .7; */
 }
 
 
 /* pokemon tool tip */
 .ptooltip { /* Container for our tooltip */
-
+/* transition: .5s all; */
 
 }
 
@@ -427,7 +444,7 @@ body {
 }
 
 .ptooltip .ptooltiptext { /* This is for the tooltip text */
-  visibility: hidden;
+
   width: 290px;
   background-color:white;
   border:2px solid #484848;
@@ -452,6 +469,7 @@ body {
   top: -5px;
   bottom: auto;
   right: 128%;
+  visibility: hidden;
 }
 
 .ptooltip span:before  {
@@ -471,7 +489,7 @@ body {
 }
 
 .ptooltip:hover .ptooltiptext { /* Makes tooltip text visible when text is hovered on */
-   visibility: visible;
+   visibility:visible;
    cursor: pointer;
 
    /* opacity: .7; */

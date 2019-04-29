@@ -119,7 +119,13 @@ li.select2-search-choice {
   -webkit-text-fill-color: #fec92f;
   /* -webkit-text-stroke-color:#405fb0; */
   -webkit-text-stroke-color:black;
+  transition: .5s all;
   -webkit-text-stroke-width: 5px;
+}
+
+.site-title:hover {
+  font-size: 83px;
+  transition: .5s all;
 }
 
 .site-copyright {
