@@ -15,7 +15,6 @@ var selectedGenerations = ['1','2','3','4','5','6','7'];
 var selectedLegendary = 0;
 
 
-var json;
 // var json = JSON.parse(pokemondata2);
 //$.post("/static/data/pokemondata3.json", function(json, status) {
 fetch("/static/data/pokemondata3.json")
@@ -30,13 +29,20 @@ fetch("/static/data/pokemondata3.json")
   ) {
     return json_file.json();
   })
-  .then(function(json) {
+  .then(function(json_file2) {
+
+    fetch("/static/data/pokemondata5.json")
+    .then(function(json_file2,
+    ) {
+      return json_file2.json();
+    })
+    .then(function(json) {
 
 
-
-  for (var i = 0; i < json.length; i++) {
-    dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
-  }
+  //
+  // for (var i = 0; i < json.length; i++) {
+  //   dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
+  // }
 
   function formatState(state) {
     if (!json[state.id].pokedex_number) {
@@ -470,5 +476,6 @@ function getDataList() {
   });
 
 
+});
 });
 });
