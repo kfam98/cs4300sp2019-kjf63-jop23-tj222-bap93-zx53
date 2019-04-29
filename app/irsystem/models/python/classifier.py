@@ -7,12 +7,8 @@ vectorizer = TfidfVectorizer(max_features=50)
 def generateClassifiers(traindata, summaries):
     classifiers = {}
     for league, obj in traindata.items():
-        X_train_gd = [summaries[pkmn] for pkmn in obj['good']]
-        y_train_gd = [1] * (len(X_train_gd))
-        X_train_bd = [summaries[pkmn] for pkmn in obj['bad']]
-        y_train_bd = [0] * (len(X_train_bd))
-        X_train = X_train_gd + X_train_bd
-        y_train = y_train_gd + y_train_bd
+        X_train = [summaries[pkmn] for pkmn, score in obj.items()]
+        y_train = [score for pkmn, score in obj.items()]
         vectors = vectorizer.fit_transform(X_train)
         clf = LinearRegression().fit(vectors, y_train)
         classifiers[league] = clf
@@ -43,5 +39,5 @@ for key, value in traindata.items():
         league_mappings[pkmn] = wt
     weights[key] = league_mappings
 
-with open('dataset/classWeights.json','w') as outfile: 
+with open('dataset/classWeights2.json','w') as outfile: 
     json.dump(weights, outfile)
