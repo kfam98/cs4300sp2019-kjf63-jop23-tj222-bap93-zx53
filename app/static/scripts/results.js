@@ -236,3 +236,37 @@
   $('.site-icon').mouseout( function() {
     $('.site-icon').attr('src', '/static/images/icon3.png');
   });
+
+  $.getJSON("/static/data/types_data.json", function(typesJson) {
+    var types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting',
+                  'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost',
+                  'dragon', 'dark', 'steel', 'fairy']
+    $(document).ready(function() {
+      function populateTypeTable() {
+        $(".pokemon-card-form:visible").each(function(pokemonIndex, obj) {
+          var pokemonName = $(this).find(".pokemon-card-name").html().trim();
+          var pokemonType1 = $(this).find(".type").eq(0).html().trim();
+          var pokemonType2 = $(this).find(".type").eq(1).html().trim();
+          $(".type-table-pokemon").eq(pokemonIndex).html(pokemonName);
+          types.forEach(function(type, typeIndex) {
+              var multiplier = typesJson[pokemonType1][type];
+              if (pokemonType2) {
+                multiplier *= typesJson[pokemonType2][type];
+                if (multiplier == 0) {
+                    multiplier = Math.max(typesJson[pokemonType1][type], typesJson[pokemonType2][type]);
+                }
+              }
+              $(".type-table-row").eq(pokemonIndex).find(".type-table-cell").eq(typeIndex).removeClass().addClass("type-table-cell").addClass("cell-" + (multiplier*100)).html(multiplier);
+          });
+        });
+      }
+
+      populateTypeTable();
+
+      $(document).on("click", ".arrows", function() {
+        populateTypeTable();
+      });
+
+    });
+
+  });
