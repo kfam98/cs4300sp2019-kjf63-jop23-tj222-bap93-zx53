@@ -12,32 +12,33 @@ import json
 #     data = json.load(json_file)
 #     old_pkmn = data
 
-data_2 = []
+data_2 = {}
 with open('pokemondata2.json') as json_file:
     data = json.load(json_file)
-    data = data[ 2*len(data)/3:]
     for pokemon in data:
-      p = {}
-      p['imgSrc'] = pokemon['imgSrc']
-      p['type1'] = pokemon['type1']
-      p['type2'] = pokemon['type2']
-      # p['speed'] = pokemon['speed']
-      # p['sp_defense'] = pokemon['sp_defense']
-      p['moveset'] = pokemon['moveset']
+      p={}
+      # p['imgSrc'] = pokemon['imgSrc']
+      # p['type1'] = pokemon['type1']
+      # p['type2'] = pokemon['type2']
+      p['speed'] = pokemon['speed']
+      p['sp_defense'] = pokemon['sp_defense']
+      # p['moveset'] = pokemon['moveset']
       p['generation'] = pokemon['generation']
 
-      # p['defense'] = pokemon['defense']
-      # p['attack'] = pokemon['attack']
-      # p['sp_attack'] = pokemon['sp_attack']
-      p['name'] = pokemon['name']
-      p['legendary'] = pokemon['legendary']
-      # p['hp'] = pokemon['hp']
+      p['defense'] = pokemon['defense']
+      p['attack'] = pokemon['attack']
+      p['sp_attack'] = pokemon['sp_attack']
+
+      # p['legendary'] = pokemon['legendary']
+      p['hp'] = pokemon['hp']
       # p['pokedex_number'] = pokemon['pokedex_number']
-      data_2.append(p)
+
+      data_2[ pokemon['name'] ] = p
 
 
 
-with open('pokemondata5.json', 'w') as outfile:
+
+with open('pokemon_stats.json', 'w') as outfile:
     json.dump(data_2, outfile)
 
 # with open('pokemondata2.json', 'w') as outfile:

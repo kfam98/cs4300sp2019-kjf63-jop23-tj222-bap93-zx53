@@ -119,11 +119,15 @@ body {
   position: absolute;
   height: 90px;
   width: 90px;
+
   left: 2%;
   top: 50%;
   transform: translateY(-50%);
 }
 
+.pokemon-card-img:hover {
+  cursor: pointer;
+}
 
 .pokemon-nature-label {
   display: block;
@@ -178,7 +182,7 @@ body {
   top: 36%;
   padding: 2px 10px;
   border-radius: 10px;
-  max-width: 200px;
+  max-width: 230px;
   word-wrap: break-word;
   cursor: pointer;
 }
@@ -200,10 +204,10 @@ body {
 
 .tooltip-move-type {
   display: inline-block;
-  height: 20px;
+  height: 15px;
   padding: 5px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .tooltip-move-title {
@@ -233,13 +237,13 @@ body {
   height: 75px;
   width: 280px;
   margin: 10px 5px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .tooltip-move-learned-method {
   display: block;
   margin: 10px 5px;
-  font-size: 14px;
+  font-size: 12px;
   font-style: italic;
 }
 
@@ -407,22 +411,41 @@ body {
 
 }
 
+.stats-name {
+  float: left;
+  margin-top: -1%;
+  padding-right: 1%;
+  padding-left: 2%;
+}
+.stats-bar {
+  /* width:200px; */
+  height:auto;
+  display: block;
+  /* margin-left: 1%; */
+  /* margin-top: 1.5%; */
+
+}
+
 .ptooltip .ptooltiptext { /* This is for the tooltip text */
   visibility: hidden;
-  width: 100px;
-  background-color:#d3d3d3;
-  color: white;
+  width: 290px;
+  background-color:white;
+  border:2px solid #484848;
+  color:black;
+  font-size: 12px !important;
   text-align: center;
+
   padding: 5px;
   border-radius: 5px;  /* This defines tooltip text position */
   position: absolute;
   z-index: 1;
-  opacity: .8;
+  /* opacity: .8; */
+  display: block;
   font-size: 8px;
-  margin-top: 5px;
-  font-weight: lighter;
+  margin-top: 1%;
+
   /* font-family: 'Retro' !important; */
-  margin-left: 10% /* This makes the margin half of the width to the center */
+  margin-right: -190px /* This makes the margin half of the width to the center */
 }
 
 .ptooltiptext {
@@ -431,9 +454,25 @@ body {
   right: 128%;
 }
 
+.ptooltip span:before  {
+    content:'';
+    display:block;
+
+    position:absolute;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right:8px solid black;
+    left: 100%;
+	   top: 45%;
+}
 
 .ptooltip:hover .ptooltiptext { /* Makes tooltip text visible when text is hovered on */
    visibility: visible;
    cursor: pointer;
+
    /* opacity: .7; */
 }

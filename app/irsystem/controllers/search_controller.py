@@ -135,7 +135,7 @@ def results():
     )
 
 
-
+    print(results)
     return render_template('results.html',
                            typedata=type_data,
                            imagedata=image_data,

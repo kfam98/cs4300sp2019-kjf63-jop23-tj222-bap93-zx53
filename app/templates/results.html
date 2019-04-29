@@ -9,7 +9,8 @@
   <script src="/static/scripts/constants.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
   <!-- <script src="/static/scripts/pokemonsearch.js" type="text/javascript"></script> -->
-  <link rel="shortcut icon" href="/static/images/icon3.png" type="image/x-icon"> 
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="shortcut icon" href="/static/images/icon3.png" type="image/x-icon">
   <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.css" />
   <link rel="stylesheet" type="text/css" href="/static/styles/index.css" media="all" />
   <link rel="stylesheet" type="text/css" href="/static/styles/results.css" media="all" />
@@ -65,7 +66,8 @@
         the recommended nature, and the recommended move sets.
         Look through each team with the provided arrows. Hover over
         a nature to see what it does to the Pokemon. Hover a move to see
-        more information about that move.
+        more information about that move. Hover over a Pokemon to see its
+        stats with its recommended nature(s).
         <p>
   </div>
 
@@ -102,6 +104,8 @@
     <div class="arrows" id="left"><<</div>
     <!-- <img id="left" class="arrows" src="/static/images/left-arrow.svg"> -->
     {% for team in results %}
+    {% if team %}
+
       <div id='team-title-{{ loop.index|string }}' class="your-team-header">Team {{ loop.index }} - {{ team[0] }}% Match</div>
       <div class="site-team" id='team-{{ loop.index|string }}'>
         {% for name in team %}
@@ -113,10 +117,10 @@
 
               {% for p_name, img_src in imagedata.items() %}
                 {% if name == p_name %}
-                <!-- <span class="ptooltip"> -->
+                <span class="ptooltip">
                   <img class="pokemon-card-img" alt="pokemon" src={{ img_src }}>
-                  <!-- <span class="ptooltiptext"></span> -->
-                <!-- </span> -->
+                  <span class="ptooltiptext"></span>
+                 </span>
 
                 {% endif %}
               {% endfor %}
@@ -158,8 +162,10 @@
               </div>
             </div>
           </div>
+
             {% endfor %}
           {% endif %}
+
 
         {% endfor %}
 
@@ -168,7 +174,15 @@
 
     </div>
 
+
+    {% else %}
+      <div id='team-title-{{ loop.index|string }}' class="your-team-header">No team matchings found.</div>
+    {% endif %}
     {% endfor %}
+
+
+
+
     <!-- <img id="right" class="arrows" src="/static/images/right-arrow.svg"> -->
     <div class="arrows" id="right">>></div>
   </div>
@@ -184,7 +198,7 @@
   <script>
 
 
-  var dataList = {};
+  var dataList = [];
   // $.getJSON("/static/data/pokemondata2.json", function(json) {
   //   for (var i = 0; i < json.length; i++) {
   //     dataList[json[i].name]['imgSrc'] = json[i].imgSrc;
@@ -253,9 +267,69 @@
   });
 
   //use to print stats about each pokemon
-  $.getJSON("/static/data/pokemon_info.json", function(json) {
-    dataList = json;
-    //console.log(dataList);
+  $.getJSON("/static/data/pokemon_stats.json", function(json) {
+
+    $('.ptooltip').hover( function() {
+      var name = $(this).parent().children()[1].innerText;
+
+      var stats = json[name];
+      var nature = $($(this).parent().children()[3]).children()[0].innerHTML.split(" ")[0].slice(0, -1);
+      console.log(nature);
+
+
+      var hp = stats['hp'];
+      var speed = stats['speed'];
+      var defense = stats['defense'];
+      var attack = stats['attack'];
+      var sp_attack = stats['sp_attack'];
+      var sp_defense = stats['sp_defense'];
+
+      var nature_mapping = {
+        'hp': hp,
+        'speed': speed,
+        'attack': attack,
+        'defense':defense,
+        'special attack': sp_attack,
+        'special defense': sp_defense,
+      }
+
+      if (nature != "None") {
+        if (nature.split('/').length == 2) {
+          nature = nature.split('/');
+          for (var i = 0; i < 2; i++) {
+            var increased = natureStats[nature[i]]['increase'];
+            var decreased = natureStats[nature[i]]['decrease'];
+
+            nature_mapping[increased] = nature_mapping[increased] + (nature_mapping[increased] * .10);
+            nature_mapping[decreased] = nature_mapping[decreased] - (nature_mapping[decreased] * .10);
+
+          }
+        } else {
+
+          var increased = natureStats[nature]['increase'].toLowerCase();
+          var decreased = natureStats[nature]['increase'].toLowerCase();
+
+          nature_mapping[increased] = nature_mapping[increased] + (nature_mapping[increased] * .10);
+          nature_mapping[decreased] = nature_mapping[decreased] - (nature_mapping[decreased] * .10);
+        }
+      }
+
+
+      var stats_scale = d3.scaleLinear()
+      .domain([0, 230])
+      .range([0,150]);
+      var str = '<span style="font-size:16px;">STATISTICS<br/> </span><span class="stats-name">HP: </span><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(hp)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (150 - Math.round(stats_scale(hp))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ hp +'</div><br/>' ;
+      str += '<span class="stats-name">ATTACK: </span><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(attack)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (150 - Math.round(stats_scale(attack))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ attack +'</div><br/>' ;
+      str += '<span class="stats-name">DEFENSE: </span><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(defense)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (150 - Math.round(stats_scale(defense))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ defense +'</div><br/>' ;
+      str += '<span class="stats-name">SPEED: </span><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(speed)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (150 - Math.round(stats_scale(speed))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ speed +'</div><br/>' ;
+      str += '<span class="stats-name">SP ATTACK: </span><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(sp_attack)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (150 - Math.round(stats_scale(sp_attack))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ sp_attack +'</div><br/>' ;
+      str += '<span class="stats-name">SP DEFENSE: </span><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(sp_defense)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (150 - Math.round(stats_scale(sp_defense))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ sp_defense+'</div>' ;
+
+      $($(this).children()[0]).html(str);
+      $($($(this).parent().children()[0]).children()[1]).html(str);
+
+    });
+
   });
 
   var curr_team = 1;
@@ -316,7 +390,12 @@
 
         for (var i = 0; i < 2; i++) {
           if (!(str.includes(natureStats[nature[i]]['increase']))) {
-            str += '↑ ' + natureStats[nature[i]]['increase'];
+            if ( i > 0) {
+              str += ' <br/>↑ ' + natureStats[nature[i]]['increase'];
+            } else {
+              str += ' ↑ ' + natureStats[nature[i]]['increase'];
+            }
+
 
           } else {
             str = str.replace('↑', '↑↑');
