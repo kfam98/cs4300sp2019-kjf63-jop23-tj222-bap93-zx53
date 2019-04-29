@@ -20,7 +20,12 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
 
 $.getJSON("/static/data/pokemondata4.json", function(json_2) {
 
+
+$.getJSON("/static/data/pokemondata3.json", function(json_3) {
+
   json = json_2.concat(json_1);
+
+  json = json_3.concat(json);
 
   for (var i = 0; i < json.length; i++) {
     dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
@@ -457,5 +462,6 @@ function getDataList() {
     $('.site-icon').attr('src', '/static/images/icon3.png');
   });
 
+});
 });
 });
