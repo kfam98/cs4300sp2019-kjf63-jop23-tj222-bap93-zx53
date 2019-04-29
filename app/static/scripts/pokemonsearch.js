@@ -15,7 +15,18 @@ var selectedGenerations = ['1','2','3','4','5','6','7'];
 var selectedLegendary = 0;
 
 
-$.getJSON("/static/data/pokemondata3.json", function(json) {
+var json;
+// var json = JSON.parse(pokemondata2);
+//$.post("/static/data/pokemondata3.json", function(json, status) {
+fetch("/static/data/pokemondata3.json")
+.then(function(response) {
+  return response.json();
+})
+.then(function(json) {
+
+
+
+
   for (var i = 0; i < json.length; i++) {
     dataList.push({id: i, text: json[i].name, generation: json[i].generation, legendary: json[i].legendary});
   }

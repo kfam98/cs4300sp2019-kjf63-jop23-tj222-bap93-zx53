@@ -49,9 +49,8 @@ arguments = {}
 # }
 
 
-@irsystem.route('/', methods=['GET'])
+@irsystem.route('/', methods=['GET', 'POST'])
 def search():
-    
     return render_template('index.html')
 
 @irsystem.route('/results', methods=['GET'])
