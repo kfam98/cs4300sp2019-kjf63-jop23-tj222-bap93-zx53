@@ -500,6 +500,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: row;
+  margin-bottom: 30px;
 }
 .type-table-left {
   flex: 1;
@@ -547,25 +548,25 @@ body {
   text-align: center;
   line-height: 30px;
 }
-.cell-0 {
+.type-table-attacking .cell-0, .type-table-defending .cell-0  {
   background-color: rgba(0, 0, 0, 0.9);
 }
-.cell-25 {
+.type-table-attacking .cell-25, .type-table-defending .cell-400 {
   background-color: rgba(162, 17, 17, 0.9);
 }
-.cell-50 {
+.type-table-attacking .cell-50, .type-table-defending .cell-200 {
   background-color: rgba(162, 17, 17, 0.75);
 }
-.cell-100 {
+.type-table-attacking .cell-100, .type-table-defending .cell-100 {
   background-color: rgba(141, 136, 143, 0.75);
 }
-.cell-150 {
+.type-table-attacking .cell-150 {
   background-color: rgba(60, 149, 52, 0.6);
 }
-.cell-200 {
+.type-table-attacking .cell-200, .type-table-defending .cell-50 {
   background-color: rgba(60, 149, 52, 0.75);
 }
-.cell-400 {
+.type-table-attacking .cell-400, .type-table-defending .cell-25 {
   background-color: rgba(60, 149, 52, 0.9);
 }
 .type-table-label-container {
