@@ -209,7 +209,20 @@
   // });
 
   // $(".pokemon-move-tooltip").hide();
-  $.getJSON("/static/data/allmove_data.json", function(json) {
+var json;
+  $.getJSON("/static/data/allmove_data1.json", function(json_1) {
+    $.getJSON("/static/data/allmove_data2.json", function(json_2) {
+      $.getJSON("/static/data/allmove_data3.json", function(json_3) {
+        $.getJSON("/static/data/allmove_data4.json", function(json_4) {
+          $.getJSON("/static/data/allmove_data5.json", function(json_5) {
+            $.getJSON("/static/data/allmove_data6.json", function(json_6) {
+
+              json = Object.assign({}, json_1, json_2);
+              json = Object.assign({}, json, json_3);
+              json = Object.assign({}, json, json_4);
+              json = Object.assign({}, json, json_5);
+              json = Object.assign({}, json, json_6);
+
     $(document).on({
         mouseenter: function () {
           console.log("hover");
@@ -264,6 +277,11 @@
           $(".pokemon-move-tooltip").hide();
         }
     }, ".pokemon-move-label");
+  });
+  });
+  });
+  });
+  });
   });
 
   //use to print stats about each pokemon

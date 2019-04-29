@@ -12,34 +12,41 @@ import json
 #     data = json.load(json_file)
 #     old_pkmn = data
 
-data_2 = {}
-with open('pokemondata2.json') as json_file:
+# data_2 = {}
+# with open('pokemondata2.json') as json_file:
+#     data = json.load(json_file)
+#     for pokemon in data:
+#       p={}
+#       # p['imgSrc'] = pokemon['imgSrc']
+#       # p['type1'] = pokemon['type1']
+#       # p['type2'] = pokemon['type2']
+#       p['speed'] = pokemon['speed']
+#       p['sp_defense'] = pokemon['sp_defense']
+#       # p['moveset'] = pokemon['moveset']
+#       p['generation'] = pokemon['generation']
+
+#       p['defense'] = pokemon['defense']
+#       p['attack'] = pokemon['attack']
+#       p['sp_attack'] = pokemon['sp_attack']
+
+#       # p['legendary'] = pokemon['legendary']
+#       p['hp'] = pokemon['hp']
+#       # p['pokedex_number'] = pokemon['pokedex_number']
+
+#       data_2[ pokemon['name'] ] = p
+
+outfile_data = {}
+with open('allmove_data.json') as json_file:
     data = json.load(json_file)
-    for pokemon in data:
-      p={}
-      # p['imgSrc'] = pokemon['imgSrc']
-      # p['type1'] = pokemon['type1']
-      # p['type2'] = pokemon['type2']
-      p['speed'] = pokemon['speed']
-      p['sp_defense'] = pokemon['sp_defense']
-      # p['moveset'] = pokemon['moveset']
-      p['generation'] = pokemon['generation']
 
-      p['defense'] = pokemon['defense']
-      p['attack'] = pokemon['attack']
-      p['sp_attack'] = pokemon['sp_attack']
+    length = len(data.keys())
 
-      # p['legendary'] = pokemon['legendary']
-      p['hp'] = pokemon['hp']
-      # p['pokedex_number'] = pokemon['pokedex_number']
-
-      data_2[ pokemon['name'] ] = p
+    for i in range(5*length/6, 6*length/6):
+      outfile_data[data.keys()[i]] = data[data.keys()[i]]
 
 
-
-
-with open('pokemon_stats.json', 'w') as outfile:
-    json.dump(data_2, outfile)
+with open('allmove_data6.json', 'w') as outfile:
+    json.dump(outfile_data, outfile)
 
 # with open('pokemondata2.json', 'w') as outfile:
 #     json.dump(new_pkmon, outfile)
