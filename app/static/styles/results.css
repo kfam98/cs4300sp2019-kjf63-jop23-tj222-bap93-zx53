@@ -425,9 +425,18 @@ body {
 /* pokemon tool tip */
 .ptooltip { /* Container for our tooltip */
 /* transition: .5s all; */
-
+  display: block;
 }
 
+.stats-names {
+  float: left;
+  width: 38%;
+}
+
+.stats-bars {
+  width: 62%;
+  float: left;
+}
 .stats-name {
   float: left;
   margin-top: -1%;
