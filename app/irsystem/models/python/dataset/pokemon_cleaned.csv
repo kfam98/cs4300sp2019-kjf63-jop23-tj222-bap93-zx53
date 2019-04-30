@@ -86,8 +86,8 @@ Doduo,85,190,45,35,84,35,35,75,normal,flying,1,0
 Dodrio,110,45,70,60,85,60,60,110,normal,flying,1,0
 Seel,45,190,55,65,86,45,70,45,water,,1,0
 Dewgong,70,75,80,90,87,70,95,70,water,ice,1,0
-Grimer,80,190,50,80,88,40,50,25,poison,poison,1,0
-Muk,105,75,75,105,89,65,100,50,poison,poison,1,0
+Grimer,80,190,50,80,88,40,50,25,poison,,1,0
+Muk,105,75,75,105,89,65,100,50,poison,,1,0
 Shellder,65,190,100,30,90,45,25,40,water,,1,0
 Cloyster,95,60,180,50,91,85,45,70,water,ice,1,0
 Gastly,35,190,30,30,92,100,35,80,ghost,poison,1,0
