@@ -51,15 +51,28 @@
 
 
       var stats_scale = d3.scaleLinear()
-      .domain([0, 200])
-      .range([0,130]);
+      .domain([0, 230])
+      .range([0,110]);
+
+
+      var gray1 = (110 - Math.round(stats_scale(hp))) > 0 ? (110 - Math.round(stats_scale(hp))): 0;
+      var gray2 = (110 - Math.round(stats_scale(attack)))  > 0 ? (110 - Math.round(stats_scale(attack))): 0;
+      var gray3 = (110 - Math.round(stats_scale(defense)))  > 0 ? (110 - Math.round(stats_scale(defense)))  : 0;
+      var gray4 = (110 - Math.round(stats_scale(speed)))  > 0 ? (110 - Math.round(stats_scale(speed)))  : 0;
+      var gray5 = (110 - Math.round(stats_scale(sp_attack))) > 0 ? (110 - Math.round(stats_scale(sp_attack))) : 0;
+      var gray6 =(110 - Math.round(stats_scale(sp_defense))) > 0 ? (110 - Math.round(stats_scale(sp_defense)))  : 0;
+
+  
+
+
+
       var str = '<div class="stats-names"> </span><span class="stats-name">HP: </span> <br/><span class="stats-name">ATTACK: </span><br/><span class="stats-name">DEFENSE: </span> <br/><span class="stats-name">SPEED: </span><br/><span class="stats-name">SP ATTACK: </span><br/><span class="stats-name">SP DEFENSE: </span></br></div>';
-      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(hp)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (130 - Math.round(stats_scale(hp))) + 'px";></div><span class="stats-name" style="padding-left:3%;"> '+ hp +'</div><br/>';
-      str += '<div class="stats-bars"><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(attack)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (130 - Math.round(stats_scale(attack))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ attack +'</div><br/>' ;
-      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(defense)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (130 - Math.round(stats_scale(defense))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ defense +'</div><br/>' ;
-      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(speed)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (130 - Math.round(stats_scale(speed))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ speed +'</div><br/>' ;
-      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(sp_attack)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (130 - Math.round(stats_scale(sp_attack))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ sp_attack +'</div><br/>' ;
-      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(sp_defense)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + (130 - Math.round(stats_scale(sp_defense))) + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ sp_defense+'</div> </div>' ;
+      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(hp)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + gray1 + 'px";></div><span class="stats-name" style="padding-left:3%;"> '+ hp +'</div><br/>';
+      str += '<div class="stats-bars"><div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(attack)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + gray2 + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ attack +'</div><br/>' ;
+      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(defense)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + gray3 + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ defense +'</div><br/>' ;
+      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(speed)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + gray4 + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ speed +'</div><br/>' ;
+      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(sp_attack)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + gray5 + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ sp_attack +'</div><br/>' ;
+      str += '<div class="stats-bar"> <div style="float:left;height:10px;background-color:#7AC74C;width:' + Math.round(stats_scale(sp_defense)) + 'px";></div><div class="stats-bar" style="float:left;height:10px;background-color:#d8d8d8;width:' + gray6 + 'px";></div><span class="stats-name" style="padding-left:3%;">  '+ sp_defense+'</div> </div>' ;
 
       $($(this).children()[0]).html(str);
       $($($(this).parent().children()[0]).children()[1]).html(str);

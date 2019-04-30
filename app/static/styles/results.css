@@ -430,11 +430,11 @@ body {
 
 .stats-names {
   float: left;
-  width: 36%;
+  width: 35%;
 }
 
 .stats-bars {
-  width: 64%;
+  width: 65%;
   float: left;
 }
 .stats-name {
