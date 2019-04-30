@@ -129,20 +129,20 @@ PLAYSTYLES = (
         HEALTH : 1,
     },
     DEFENSIVE : {
-        ATTACK : .8,
-        DEFENSE : 1.2,
-        SPDEFENSE : 1.2,
-        SPATTACK : .8,
-        SPEED : .8,
-        HEALTH : 1.2,
+        ATTACK : .1,
+        DEFENSE : 1.9,
+        SPDEFENSE : 1.9,
+        SPATTACK : .1,
+        SPEED : .1,
+        HEALTH : 1.9,
     },
     GLASS_CANNON : {
-        ATTACK : 1.2,
-        DEFENSE : .8,
-        SPDEFENSE : .8,
-        SPATTACK : 1.2,
-        SPEED : 1.2,
-        HEALTH : .8
+        ATTACK : 1.9,
+        DEFENSE : .1,
+        SPDEFENSE : .1,
+        SPATTACK : 1.9,
+        SPEED : 1.9,
+        HEALTH : .1
     }
 
 }
