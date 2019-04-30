@@ -183,7 +183,6 @@
 
                 $(document).on({
                     mouseenter: function () {
-                      // console.log("hover");
                       var x = event.clientX;
                       var y = event.clientY;
                       // console.log(x);
@@ -208,7 +207,7 @@
                           $(".tooltip-move-accuracy-value").html("-");
                         }
                         $(".tooltip-move-description").html(moveData["description"]);
-                        $(".tooltip-move-learned-method-value").html(moveData["pokemon"][$.trim($(this).closest(".pokemon-card-name"))])
+                        $(".tooltip-move-learned-method-value").html(moveData["pokemon"][$(this).parent().siblings(".pokemon-card-name").html().trim()])
                         if (x <= $(window).width()/2 && y <= $(window).height()/2) {
                           y = y + $(document).scrollTop();
                           $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
@@ -261,7 +260,8 @@
           var pokemonName = $(this).find(".pokemon-card-name").html().trim();
           var pokemonType1 = $(this).find(".type").eq(0).html().trim();
           var pokemonType2 = $(this).find(".type").eq(1).html().trim();
-          $(".type-table-pokemon").eq(pokemonIndex).html(pokemonName);
+          $(".type-table-attacking").find(".type-table-pokemon").eq(pokemonIndex).html(pokemonName);
+          $(".type-table-defending").find(".type-table-pokemon").eq(pokemonIndex).html(pokemonName);
           types.forEach(function(type, typeIndex) {
               var multiplier = typesJson[pokemonType1][type];
               if (pokemonType2) {
@@ -270,7 +270,12 @@
                     multiplier = Math.max(typesJson[pokemonType1][type], typesJson[pokemonType2][type]);
                 }
               }
-              $(".type-table-row").eq(pokemonIndex).find(".type-table-cell").eq(typeIndex).removeClass().addClass("type-table-cell").addClass("cell-" + (multiplier*100)).html(multiplier);
+              $(".type-table-attacking").find(".type-table-row").eq(pokemonIndex).find(".type-table-cell").eq(typeIndex).removeClass().addClass("type-table-cell").addClass("cell-" + (multiplier*100)).html(multiplier);
+              multiplier = typesJson[type][pokemonType1];
+              if (pokemonType2) {
+                multiplier *= typesJson[type][pokemonType2];
+              }
+              $(".type-table-defending").find(".type-table-row").eq(pokemonIndex).find(".type-table-cell").eq(typeIndex).removeClass().addClass("type-table-cell").addClass("cell-" + (multiplier*100)).html(multiplier);
           });
         });
       }
