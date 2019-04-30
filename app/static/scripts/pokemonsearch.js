@@ -52,7 +52,7 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
         type2 = json[i].type2;
 
         //if there is no second type, make empty string
-        if (type2 == null) {
+        if ((type2 == null) || (type2 == "null")) {
           type2 = '';
         }
 
