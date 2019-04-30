@@ -62,7 +62,7 @@
       var gray5 = (110 - Math.round(stats_scale(sp_attack))) > 0 ? (110 - Math.round(stats_scale(sp_attack))) : 0;
       var gray6 =(110 - Math.round(stats_scale(sp_defense))) > 0 ? (110 - Math.round(stats_scale(sp_defense)))  : 0;
 
-  
+
 
 
 
@@ -185,10 +185,6 @@
                     mouseenter: function () {
                       var x = event.clientX;
                       var y = event.clientY;
-                      // console.log(x);
-                      // console.log(y);
-                      // console.log($(window).width());
-                      // console.log($(window).height());
                       if (json[$(this).text()]) {
                         var moveData = json[$(this).text()];
                         $(".tooltip-move-title").html($(this).text());
@@ -230,7 +226,6 @@
                       }
                     },
                     mouseleave: function () {
-                      // console.log("hover out");
                       $(".pokemon-move-tooltip").hide();
                     }
                 }, ".pokemon-move-label");
