@@ -72,9 +72,7 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
     /* gets updated search reults depending on generation
     and legendaries filter */
     function getDataList() {
-      console.log(selectedGenerations);
       var filtered =  dataList.filter(function(pokemon){
-                        // console.log(pokemon.generation);
                         return (selectedGenerations.includes(""+pokemon.generation) && (pokemon.legendary <= selectedLegendary));
                         // return pokemon.generation == 2;
                       });
@@ -174,7 +172,6 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
 
         //selecting a pokemon --> formats pokemon card
         $(document).on("change", ".pokemon-select2", function() {
-          console.log($(this).val());
           $(this).parent().append(formatCard($(this).val()));
           $(this).parent().children('.pokemon-select2').remove();
         });
@@ -258,7 +255,6 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
 
 
       $(".filter-generation-select2").on("change", function (e) {
-        console.log($(".filter-generation-select2").select2("val"));
         selectedGenerations = $(".filter-generation-select2").select2("val");
         $('.pokemon-select2').siblings('.add-pokemon-button').show();
         $('.pokemon-select2').remove();
@@ -319,7 +315,6 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
       $(document).on('input', "#myRange", function() {
       $('#capture-rate').html( $(this).val() + "%");
       caprate = '' + $(this).val();
-      console.log("caprate: " + caprate);
       });
 
 
@@ -346,7 +341,6 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
         for (var i = 0; i < li_lst.length; i++) {
           var li = li_lst[i];
           if (li.className == "select2-search-choice") {
-            console.log(li.innerText);
             mv += li.innerText.replace(/(\r\n|\n|\r)/gm, '');
             mv+='6';
 
@@ -356,7 +350,6 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
         myteam_str += this.children[1].innerText + "6" + mv+"_";
 
         });
-        //console.log(myteam_str);
         var theirteam_str='';
         var results_url;
         if (giveOppTeam) {
@@ -416,7 +409,7 @@ $.getJSON("/static/data/pokemondata5.json", function(json_1) {
 
       });
 
-      //pokeball easter egg 
+      //pokeball easter egg
       $('.site-icon').hover( function() {
         $('.site-icon').attr('src', '/static/images/icon4.png');
       });
