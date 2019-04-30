@@ -686,11 +686,53 @@ body {
 .type-table-legend-color {
   width: 10px;
   height: 10px;
-  display: inline-block;  
+  display: inline-block;
 }
 
 .type-table-legend-text {
   font-size: 10px;
   display: inline-block;
   line-height: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .generated-team {
+    width: 90%;
+  }
+
+  .your-team-header {
+    width: 80%;
+  }
+
+  .result-slot-container {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .ptooltip .ptooltiptext {
+    margin-right: -700px;
+  }
+
+  .ptooltip span:before {
+    left: -3%;
+    transform: scaleX(1);
+  }
+
+  .type-table {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .generated-team {
+    width: 95%;
+  }
+
+  .type2 {
+    margin-left: -5%;
+  }
+
+  .ptooltip .ptooltiptext {
+    margin-right: -500px;
+  }
 }
