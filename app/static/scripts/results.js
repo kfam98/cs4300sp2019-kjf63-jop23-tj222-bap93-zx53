@@ -170,7 +170,6 @@
 
                 $(document).on({
                     mouseenter: function () {
-                      // console.log("hover");
                       var x = event.clientX;
                       var y = event.clientY;
                       // console.log(x);
@@ -195,7 +194,7 @@
                           $(".tooltip-move-accuracy-value").html("-");
                         }
                         $(".tooltip-move-description").html(moveData["description"]);
-                        $(".tooltip-move-learned-method-value").html(moveData["pokemon"][$.trim($(this).closest(".pokemon-card-name"))])
+                        $(".tooltip-move-learned-method-value").html(moveData["pokemon"][$(this).parent().siblings(".pokemon-card-name").html().trim()])
                         if (x <= $(window).width()/2 && y <= $(window).height()/2) {
                           y = y + $(document).scrollTop();
                           $(".pokemon-move-tooltip").css({top: y, left: x, position:'absolute'});
