@@ -111,10 +111,13 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     ans =  movesetsAndFormat.fillAndFormat(
         topTeams,
         myTeam,
-        teamScores
+        teamScores,
+        league
     )
 
-
+    for xyz in ans:
+        print(xyz)
+        print("")
 
     return ans
 

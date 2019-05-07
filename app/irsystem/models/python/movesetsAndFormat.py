@@ -2,13 +2,23 @@ from . import pokemon
 import json
 from .constants import *
 import os
+
 def loadMovesets():
     path = os.path.dirname(os.path.realpath(__file__))
     with open(path+PATHTOMOVES, "r+") as f:
         return json.loads(f.readline())
 
+def loadWinPercents(league):
+    path = os.path.dirname(os.path.realpath(__file__))
+    with open(path + PATHTOWINPERCENTS, "r+") as f:
+        data = json.loads(f.readline())
 
-def fillAndFormat(teams, currentTeamData, tScores):
+    if league in data:
+        return data[league]
+
+    return None
+
+def fillAndFormat(teams, currentTeamData, tScores, league):
     """
     Return properly formatted teams to push back to front end
 
@@ -16,9 +26,12 @@ def fillAndFormat(teams, currentTeamData, tScores):
     currentTeamData - dictionary that is the format of the initial input,
         pokemon key to dictionary with moves and nature for that pokemon
     tScores - scores of the individual teams
+    league - one of the 11 supported league types, telling us which information to look for similar opponents in
     """
 
     movesDict = loadMovesets()
+
+    winPercents = loadWinPercents(league)
 
     toRet = []
 
@@ -40,8 +53,6 @@ def fillAndFormat(teams, currentTeamData, tScores):
                 form[pokeman][ABILITY] = None
                 form[pokeman][ITEM] = None
 
-            
-
                 if pokeman in currentTeamData:
                     #add additional moves
                     for move in currentTeamData[pokeman][MOVES]:
@@ -62,6 +73,19 @@ def fillAndFormat(teams, currentTeamData, tScores):
                     
                     if form[pokeman][ITEM] == None:
                         form[pokeman][ITEM] = d[ITEM]
+                    
+                if pokeman in winPercents:
+                    form[pokeman][WINPERCENT] = round(100*((winPercents[pokeman][WINS] - (.5*winPercents[pokeman][TOTALMATCHES])) / winPercents[pokeman][TOTALMATCHES]),1)
+
+                    if winPercents[pokeman][TOTALMATCHES] < LOWCONFIDENCEBOUND:
+                        form[pokeman][CONFIDENCELEVEL] = OKAY
+                    elif winPercents[pokeman][TOTALMATCHES] < HIGHCONFIDENCEBOUND:
+                        form[pokeman][CONFIDENCELEVEL] = GOOD
+                    else:
+                        form[pokeman][CONFIDENCELEVEL] = GOOD
+                else:
+                    form[pokeman][WINPERCENT] = None
+                    form[pokeman][CONFIDENCELEVEL] = None
 
                 teamData.append(form.copy())
 

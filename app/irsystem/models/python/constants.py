@@ -5,6 +5,17 @@ MOVES = "moves"
 NATURE = "nature"
 ITEM = "item"
 ABILITY = "ability"
+WINPERCENT = "win_percent"
+CONFIDENCELEVEL = "confidence_level"
+OKAY = "Okay"
+GOOD = "Good"
+GREAT = "Great"
+
+LOWCONFIDENCEBOUND = 20
+HIGHCONFIDENCEBOUND = 100
+
+WINS = "WINS"
+TOTALMATCHES = "TOTALMATCHES"
 
 #Branching factors
 BRANCH1 = 100
@@ -72,6 +83,7 @@ RANKSTOWINLOSEFILES = [
 PATHTOMOVES = "/dataset/PokemonToMovesetsAndNaturesAndItems.json"
 PATHTOSIMSCORES = "/dataset/updatedSims.json"
 PATHTOMLWEIGHTS = "/dataset/classWeights.json"
+PATHTOWINPERCENTS = "/dataset/pythonwinPercents.json"
 
 #Pokemon Types
 BUG = 'bug'

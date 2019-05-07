@@ -88,7 +88,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     minDistWanted - an integer denoting how far away we want the team to be in pokemon to be considered valid
     """
     battleData = loadBattleData(league)
-    similarities = loadSims()
+    similarities = loadSims() 
   
     #If not given an opponent team then simply randomly choose losers from the dataset to compare to.
     if len(oppTeam) == 0:
