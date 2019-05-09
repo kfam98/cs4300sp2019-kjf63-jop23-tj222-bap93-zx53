@@ -80,6 +80,22 @@ RANKSTOWINLOSEFILES = [
 
 ]
 
+WINHTMLFILES = [
+    "/dataset/replays_html/html_ou.json",
+    "/dataset/replays_html/html_ou.json",
+    UUBL,
+    "/dataset/replays_html/html_uu.json",
+    RUBL,
+    "/dataset/replays_html/html_ru.json",
+    NUBL,
+    "/dataset/replays_html/html_nu.json",
+    PUBL,
+    "/dataset/replays_html/html_pu.json",
+    "/dataset/replays_html/html_lc.json",
+    "/dataset/replays_html/html_nfe.json"
+    
+]
+
 PATHTOMOVES = "/dataset/PokemonToMovesetsAndNaturesAndItems.json"
 PATHTOSIMSCORES = "/dataset/updatedSims.json"
 PATHTOMLWEIGHTS = "/dataset/classWeights.json"

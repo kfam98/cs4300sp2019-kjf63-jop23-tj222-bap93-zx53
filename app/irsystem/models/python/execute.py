@@ -8,6 +8,8 @@ from .constants import *
 
 import os
 import math
+import ast
+import json
 
 
 ##Note - check for extremes like stupid high minimum capture rate or no gens allowed.
@@ -33,6 +35,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         pokedex = pokemon.generate_instances()
     if pokeMoves == None:
         pokeMoves = pokemon.generateMoveData()
+        
 
     weights = pokemon.pkmn_weights
 

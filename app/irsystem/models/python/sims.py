@@ -26,7 +26,7 @@ def loadBattleData(league):
         idx = LEAGUERANKS.index(league)
         fString = path+RANKSTOWINLOSEFILES[idx]
     except:
-        #No file associated with the leauge.
+        #No file associated with the league.
         return None
 
     try:
