@@ -53,6 +53,8 @@ arguments = {}
 def search():
     return render_template('index.html')
 
+
+
 @irsystem.route('/results', methods=['GET'])
 def results():
     # if not arguments:
@@ -148,3 +150,7 @@ def results():
                            myteam=myteam_dict,
                            theirteam=theirteam_dict
                            )
+
+@irsystem.route('/replay', methods=['GET', 'POST'])
+def replay():
+    return render_template('replays_html/nfe/NFE-2015-06-20-aryboo-papasexy.html')

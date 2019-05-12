@@ -13,6 +13,11 @@
   <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.css" />
   <link rel="stylesheet" type="text/css" href="/static/styles/index.css" media="all" />
   <link rel="stylesheet" type="text/css" href="/static/styles/results.css" media="all" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <title>
     SquadUp
   </title>
@@ -55,17 +60,39 @@
   <div class="site-description" >
     <h1> RESULTS: </h1>
     <p>We successfully generated at most 5 teams that best fit your desired filters.
-      Below are the teams with the first team, seen below, being the best.
-      Look through and see what we found for you.
 
       <br><br/>
       In each Pokemon card, you see that it contains the Pokemon,
         the recommended nature, and the recommended move sets.
-        Look through each team with the provided arrows. Hover over
-        a nature to see what it does to the Pokemon. Hover over a move to see
-        more information about that move. Hover over a Pokemon to see its
-        stats with its recommended nature(s).
+        Look through each team with the provided arrows.
+
+        <br/><br/>
+         - Hover over a nature to see what it does to the Pokemon. <br/>
+         - Hover over a move to see more information about that move. <br/>
+         - Hover over a Pokemon to see its stats with its recommended nature(s). <br/>
+        <br/>
+      <span class="tooltip">  Confidence scores
+          <span class="tooltiptext">  Confidence scores are based on a 'okay, good, great'
+            scale to indicate how many battles we accounted for to get this answer, where okay is 0-20, good is 20-100 and great is >100.</span>
+        </span>
+        and
+        <span class="tooltip">  win percentages
+            <span class="tooltiptext">   Win percentages are the
+              adjusted rate of how often that Pokemon was used in a team and won, taking into
+              account randomness. They may be negative if the Pokemon wins less than random.</span>
+          </span>
+        are also included on the Pokemon card if we have battle data from replays.
+
+       <br/>
+
+        <br/>
+        Underneath the teams are type coverage tables indicating what each Pokemon is
+        strongest/weakest against based on the types of each Pokemon in the team.
+        Below the tables are replays found on Pokemon Showdown used by experienced players with
+        Pokemon we recommended in your generated results!
+
         <p>
+
   </div>
 
   <div class="site-description" style="text-align:center;">
@@ -139,8 +166,28 @@
               {% endif %}
 
               </div>
+                <!-- adding confidence scores here -->
+
+                <div class="confidence-score ">
+                  {% if  info.win_percent %}
+                    <span class="confidence-scale {{ info.confidence_level }}"> {{ info.confidence_level }} Amount of Data </span><br/>
+
+                  <i>{{ info.win_percent }}% WIN</i>
+
+                  {% else %}
+                    <!-- <span class="confidence-scale"> No battle Data </span> -->
+                  {% endif %}
+                </div>
+
+
+
             </div>
+
+
+
           </div>
+
+
             {% endfor %}
           {% endif %}
         {% endfor %}
@@ -153,6 +200,8 @@
     <div class="arrows" id="right">>></div>
   </div>
 
+  <h3 class="your-team-header" style="text-align:center;"> -- Type Coverage Tables -- </h3><br/>
+<br/>
   <div class="type-table type-table-attacking">
     <div class="type-table-left">
       <div class="type-table-header">
@@ -572,8 +621,32 @@
       </div>
     </div>
   </div>
+  <br/>
 
-  <div class="site-error-link" style="margin-left:42%; margin-top:5%;"><a href="/"> <<   Back to Home </a></div>
+  <h3 class="your-team-header" style="text-align:center;"> -- Suggested Replays -- </h3>
+  <div class="replay">
+    <div class="replay-lst">
+      <div class="replay-link">
+        <h6 style="color:white;text-align:center;">Replay 1 </h6><br/>
+      </div>
+      <h6 style="text-align:center;">Replay 2 </h6><br/>
+      <h6 style="text-align:center;">Replay 3 </h6><br/>
+      <h6 style="text-align:center;">Replay 4 </h6><br/>
+      <h6 style="text-align:center;">Replay 5 </h6><br/>
+      <!-- <a href="/replay">lol</a> -->
+
+    </div>
+    <div class="replay-frame">
+      <iframe src="/replay"></iframe>
+    </div>
+  </div>
+</br>
+
+  <br/><br/>
+  <p style="font-size:8px;text-align:center;">replay curtesy of <a style="text-decoration:underline" href="https://pokemonshowdown.com/">Pokemon Showdown</a></p>
+  <div class="site-error-link" style="margin-left:42%; margin-top:5%;">
+
+    <a href="/"> <<   Back to Home </a></div>
 
 
   {% endif %}
