@@ -87,11 +87,13 @@
   for (var i=2; i < 6; i++) {
     $("#team-"+i).hide();
     $("#team-title-"+i).hide();
+    $("#replay-team-"+i).hide();
   }
 
   $("#left").on("click", function() {
     $("#team-"+curr_team).hide();
     $("#team-title-"+curr_team).hide();
+    $("#replay-team-"+curr_team).hide();
 
     var new_team = curr_team - 1;
     if (new_team == 0) {
@@ -103,11 +105,13 @@
 
     $("#team-"+new_team).show();
     $("#team-title-"+new_team).show();
+    $("#replay-team-"+curr_team).show();
   });
 
   $("#right").on("click", function() {
     $("#team-"+curr_team).hide();
     $("#team-title-"+curr_team).hide();
+    $("#replay-team-"+curr_team).hide();
 
     var new_team = curr_team + 1;
     if (new_team == 6) {
@@ -117,6 +121,7 @@
     curr_team = new_team;
     $("#team-"+new_team).show();
     $("#team-title-"+new_team).show();
+    $("#replay-team-"+new_team).show();
   });
 
   //nature tooltip
@@ -283,4 +288,13 @@
 
     });
 
+  });
+
+
+  $('.replay-link').click( function() {
+    var id = $(this).html().split(" ")[17];
+    id = id.substring(0, id.length-1).substring(1, id.length);
+    console.log(id);
+    $("#iframe").attr('src', '/replay/'+id);
+    $("#replay-name").html('SHOWING: Replay #' + id);
   });

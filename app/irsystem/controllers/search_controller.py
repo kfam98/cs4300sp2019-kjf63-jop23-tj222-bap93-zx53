@@ -37,6 +37,12 @@ path = path.replace("irsystem/controllers", "")
 with open(path+"static/data/typeslst.json") as json_file:
     type_data = json.load(json_file)
 
+replay_data = {}
+path = os.path.dirname(os.path.realpath(__file__))
+path = path.replace("irsystem/controllers", "")
+with open(path+"static/data/reverse_replay_ids.json") as json_file:
+    replay_data = json.load(json_file)
+
 arguments = {}
 # arguments = {
 #     'myTeam': {'Charmander': {"moves":['ember'], "nature": None}},
@@ -151,6 +157,8 @@ def results():
                            theirteam=theirteam_dict
                            )
 
-@irsystem.route('/replay', methods=['GET', 'POST'])
-def replay():
-    return render_template('replays_html/nfe/NFE-2015-06-20-aryboo-papasexy.html')
+@irsystem.route('/replay/<id>', methods=['GET', 'POST'])
+def replay(id):
+    id_str = "" + id
+    html_folder = replay_data[id_str].split('-')[0].lower()
+    return render_template("replays_html/"+html_folder+ "/"+replay_data[id_str])

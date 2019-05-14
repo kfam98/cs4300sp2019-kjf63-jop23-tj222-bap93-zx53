@@ -88,6 +88,7 @@
         <br/>
         Underneath the teams are type coverage tables indicating what each Pokemon is
         strongest/weakest against based on the types of each Pokemon in the team.
+        <br/><br/>
         Below the tables are replays found on Pokemon Showdown used by experienced players with
         Pokemon we recommended in your generated results!
 
@@ -109,13 +110,15 @@
   <div class="site-results generated-team " >
     <div class="arrows" id="left"><<</div>
     <!-- <img id="left" class="arrows" src="/static/images/left-arrow.svg"> -->
+
+
     {% for team in results %}
-    {% if team %}
+      {% if team %}
 
       <div id='team-title-{{ loop.index|string }}' class="your-team-header">Team {{ loop.index }} - {{ team[0] }}% Match</div>
       <div class="site-team" id='team-{{ loop.index|string }}'>
         {% for name in team %}
-          {% if loop.index > 1 %}
+          {% if loop.index > 2 %}
             {% for name, info in name.items() %}
             <div class="result-slot-container">
               <div class="pokemon-card-form">
@@ -624,32 +627,45 @@
   <br/>
 
   <h3 class="your-team-header" style="text-align:center;"> -- Suggested Replays -- </h3>
-  <div class="replay">
-    <div class="replay-lst">
-      <div class="replay-link">
-        <h6 style="color:white;text-align:center;">Replay 1 </h6><br/>
+
+
+
+
+        <div class="replay">
+
+        <div class="replay-frame">
+          <iframe  id="iframe" src="/replay/{{results[0][1][0]}}"></iframe><br/>
+            <h4 style="width:90%;margin-left: 2%;padding:10px 20px;border-radius:10px;background-color:#dfce3b;" id="replay-name">SHOWING: Replay #{{results[0][1][0]}}</h4>
+            <p style="font-size:12px;">Click on a replay that we found for you below. Scroll in the replay itself to
+              see turns taken betweeen the two players and just more information about the battle. These replays include a Pokemon that was
+              suggested in the team.</p>
+          <p style="float:left;width:100%;font-size:8px;text-align:center;">replay curtesy of <a style="text-decoration:underline" href="https://pokemonshowdown.com/">Pokemon Showdown</a></p>
+        <br/><br/>
+        </div>
+        {% for team in results %}
+          <div class="replay-lst" id="replay-team-{{ loop.index|string }}">
+            {% if team %}
+
+              {% for replay in team[1] %}
+              <div class="replay-link">
+                Replay #{{ replay }}
+              </div>
+
+              {% endfor %}
+            {% endif %}
+          </div>
+      {% endfor %}
       </div>
-      <h6 style="text-align:center;">Replay 2 </h6><br/>
-      <h6 style="text-align:center;">Replay 3 </h6><br/>
-      <h6 style="text-align:center;">Replay 4 </h6><br/>
-      <h6 style="text-align:center;">Replay 5 </h6><br/>
-      <!-- <a href="/replay">lol</a> -->
 
-    </div>
-    <div class="replay-frame">
-      <iframe src="/replay"></iframe>
-    </div>
-  </div>
-</br>
+<br/>
 
-  <br/><br/>
-  <p style="font-size:8px;text-align:center;">replay curtesy of <a style="text-decoration:underline" href="https://pokemonshowdown.com/">Pokemon Showdown</a></p>
+
   <div class="site-error-link" style="margin-left:42%; margin-top:5%;">
 
-    <a href="/"> <<   Back to Home </a></div>
 
 
   {% endif %}
+  <a href="/"> <<   Back to Home </a></div>
 
 
   <script src="/static/scripts/results.js" type="text/javascript"></script>

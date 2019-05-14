@@ -797,21 +797,24 @@ body {
 
 .replay-lst {
   float: left;
-  border: 2px solid #9a9a9a;
-  border-right: none;
+  width: 60%;
+  text-align: center;
+  margin-left: 2%;
+
 }
 
 .replay {
-  display: block;
   width: 100%;
+  display: block;
   text-align: center;
   margin: 1% 20%;
   height:50vh;
 
+
 }
 .replay-frame {
-  width:50%;
-
+  width:65%;
+  margin-left: -2%;
   float: left;
 }
 
@@ -820,15 +823,24 @@ iframe {
   height:58vh;
 }
 
-.replay-lst {
-  float: left;
-  width: 9%;
-  height:58vh;
-}
 
 .replay-link {
+
   background-color:#9a9a9a;
-  padding-top:5%;
+  width: 20%;
+  border-radius: 10px;
+  padding: 5px 7px;
+  float: left;
+  font-size: 12px;
+  color:white;
+  margin: 2px 2px;
+}
+
+.replay-link:hover {
+  width: 21%;
+  cursor: pointer;
+  background-color: #484848;
+  transition: .1s all;
 }
 
 @media only screen and (max-width: 900px) {
