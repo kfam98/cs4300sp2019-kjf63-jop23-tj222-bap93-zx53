@@ -101,7 +101,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
     )
  
 
-    topTeams, teamScores = team.scoreTeams(
+    topTeams, teamScores, htmls = team.scoreTeams(
         allPossibleTeams,
         oppTeamNames,
         pokedex,
@@ -115,12 +115,9 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         topTeams,
         myTeam,
         teamScores,
-        league
+        league,
+        htmls
     )
-
-    for xyz in ans:
-        print(xyz)
-        print("")
 
     return ans
 

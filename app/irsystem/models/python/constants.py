@@ -96,6 +96,8 @@ WINHTMLFILES = [
     
 ]
 
+PATHTOREPLAYSOCKETS = "/dataset/replays_html/replay_ids.json"
+
 PATHTOMOVES = "/dataset/PokemonToMovesetsAndNaturesAndItems.json"
 PATHTOSIMSCORES = "/dataset/updatedSims.json"
 PATHTOMLWEIGHTS = "/dataset/classWeights.json"

@@ -8,6 +8,7 @@ def loadMovesets():
     with open(path+PATHTOMOVES, "r+") as f:
         return json.loads(f.readline())
 
+
 def loadWinPercents(league):
     path = os.path.dirname(os.path.realpath(__file__))
     with open(path + PATHTOWINPERCENTS, "r+") as f:
@@ -18,7 +19,14 @@ def loadWinPercents(league):
 
     return None
 
-def fillAndFormat(teams, currentTeamData, tScores, league):
+
+def loadHtmlToIds():
+    path = os.path.dirname(os.path.realpath(__file__))
+    
+    with open(path+PATHTOREPLAYSOCKETS, "r+") as f:
+        return json.loads(f.readline())
+
+def fillAndFormat(teams, currentTeamData, tScores, league, winnerHtmls):
     """
     Return properly formatted teams to push back to front end
 
@@ -27,11 +35,18 @@ def fillAndFormat(teams, currentTeamData, tScores, league):
         pokemon key to dictionary with moves and nature for that pokemon
     tScores - scores of the individual teams
     league - one of the 11 supported league types, telling us which information to look for similar opponents in
+    winnerHtmls - list of the file names associated with the winning teams.
     """
 
     movesDict = loadMovesets()
 
     winPercents = loadWinPercents(league)
+
+    htmlsToIds = loadHtmlToIds()
+
+    ids = []
+    for w in winnerHtmls:
+        ids.append(htmlsToIds[w])
 
     toRet = []
 
@@ -43,6 +58,7 @@ def fillAndFormat(teams, currentTeamData, tScores, league):
             continue
         teamData = []
         teamData.append(tScores[i])
+        teamData.append(ids)
         for pokeman in team:
             if not pokeman == EMPTY:
                 form = {}

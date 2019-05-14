@@ -16,7 +16,8 @@ count = 0
 
 def loadBattleData(league):
     """
-    Returns loaded data associated with the league levels, or none if associated with no league data.
+    Returns loaded data associated with the league levels, or none if associated with no league data 
+    and also returns the associated winhtml file.
 
     league - one of the 11 supported leagues
     """
@@ -27,15 +28,24 @@ def loadBattleData(league):
         fString = path+RANKSTOWINLOSEFILES[idx]
     except:
         #No file associated with the league.
-        return None
+        return None, None
 
     try:
         with open(fString, "r+") as f:
             battleData = json.loads(f.readline())
-        return battleData
     except Exception as e:
         print(e)
-        return None
+        return None, None
+    
+    fString = path+WINHTMLFILES[idx]
+
+    try:
+        with open(fString, "r+") as f:
+            htmlData = json.loads(f.readline())
+        return battleData, htmlData
+    except:
+        return battleData, None
+
 
 def teamToArray(team, pokedex):
     arr = np.zeros(TOTALPOKEMON)
@@ -87,7 +97,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     league - one of the 11 supported league types, telling us which information to look for similar opponents in
     minDistWanted - an integer denoting how far away we want the team to be in pokemon to be considered valid
     """
-    battleData = loadBattleData(league)
+    battleData, htmlData = loadBattleData(league)
     similarities = loadSims() 
   
     #If not given an opponent team then simply randomly choose losers from the dataset to compare to.
@@ -101,7 +111,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
         for i in picks:
             entry = battleData[i]
             winner,loser = determineWinner(entry)
-            loserDict[str(loser)] = [teamToArray(winner,pokedex)]
+            loserDict[str(loser)] = [winner]
             losers.append( (loser,0) )
 
     #Given opponent team then find similar teams
@@ -122,10 +132,10 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
                 score+= np.amax(lTeam*oppNp)       
 
             if str(loser) in loserDict:
-                loserDict[str(loser)].append(wTeam)
+                loserDict[str(loser)].append(winner)
             else:
                 #new to dictonary
-                loserDict[str(loser)] = [wTeam]
+                loserDict[str(loser)] = [winner]
 
                 sims.append((loser, score))
 
@@ -139,7 +149,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     winnersComp = []
     for loser,_ in losers:
         for winner in loserDict[str(loser)]:
-            winnersComp.append(winner)
+            winnersComp.append(teamToArray(winner,pokedex))
     
     topScore = len(winnersComp)*6 #pkmn team size
 
@@ -211,7 +221,13 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
             if i >= len(results):
                 i = 1
                 minDistWanted -= 1 
+        
+        winHtmls = []
+        if htmlData != None:
+            for team,_ in losers:
+                for winner in loserDict[str(team)]:
+                    winHtmls.extend(htmlData[str(sorted(winner))])
 
-        return returnTeams,teamScores
+        return returnTeams, teamScores, winHtmls
 
     
