@@ -281,9 +281,12 @@
       }
 
       populateTypeTable();
-      $('.replay-lst').find('.replay-link:visible:first').css('background-color','blue');
+      $('.replay-lst').find('.replay-link:visible:first').css('background-color','#dfce3b');
+
       $(document).on("click", ".arrows", function() {
         populateTypeTable();
+        $('.replay-lst').find('.replay-link:visible').css('background-color','#9a9a9a');
+        $('.replay-lst').find('.replay-link:visible:first').css('background-color','#dfce3b');
       });
 
     });
@@ -293,7 +296,7 @@
 
   $('.replay-link').click( function() {
     $('.replay-lst').find('.replay-link:visible').css('background-color','#9a9a9a');
-    $(this).css('background-color','blue');
+    $(this).css('background-color','#dfce3b');
     var id = $(this).html().split(" ")[17];
     id = id.substring(0, id.length-1).substring(1, id.length);
     console.log(id);
