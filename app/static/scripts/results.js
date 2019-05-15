@@ -281,7 +281,7 @@
       }
 
       populateTypeTable();
-
+      $('.replay-lst').find('.replay-link:visible:first').css('background-color','blue');
       $(document).on("click", ".arrows", function() {
         populateTypeTable();
       });
@@ -292,6 +292,8 @@
 
 
   $('.replay-link').click( function() {
+    $('.replay-lst').find('.replay-link:visible').css('background-color','#9a9a9a');
+    $(this).css('background-color','blue');
     var id = $(this).html().split(" ")[17];
     id = id.substring(0, id.length-1).substring(1, id.length);
     console.log(id);
