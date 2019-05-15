@@ -807,19 +807,19 @@ body {
   width: 100%;
   display: block;
   text-align: center;
-  margin: 1% 20%;
+  margin: .5% 20%;
   height:50vh;
 
 
 }
 .replay-frame {
   width:65%;
-  margin-left: -2%;
+  margin-left: -2.5%;
   float: left;
 }
 
 iframe {
-  width: 95%;
+  width: 92%;
   height:58vh;
 }
 
