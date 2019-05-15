@@ -287,9 +287,8 @@
         populateTypeTable();
         $('.replay-lst').find('.replay-link:visible').css('background-color','#9a9a9a');
         $('.replay-lst').find('.replay-link:visible:first').css('background-color','#dfce3b');
-        var id = $('.replay-lst').find('.replay-link:visible:first').eq(0).html().split(" ")[17];
+        var id = $('.replay-lst').find('.replay-link:visible:first').html().split(" ")[17];
         id = id.substring(0, id.length-1).substring(1, id.length);
-        console.log(id);
         $("#iframe").attr('src', '/replay/'+id);
         $("#replay-name").html('SHOWING: Replay #' + id);
       });
@@ -304,7 +303,7 @@
     $(this).css('background-color','#dfce3b');
     var id = $(this).html().split(" ")[17];
     id = id.substring(0, id.length-1).substring(1, id.length);
-    console.log(id);
+
     $("#iframe").attr('src', '/replay/'+id);
     $("#replay-name").html('SHOWING: Replay #' + id);
   });
