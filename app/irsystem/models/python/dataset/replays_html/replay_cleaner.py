@@ -9,6 +9,7 @@ lose_weight = 1
 
 directory = os.listdir()
 results = []
+html_data  = {}
 
 for replay_name in directory:
     if '.html' in replay_name:
@@ -59,21 +60,36 @@ for replay_name in directory:
         
         if winner_name == p1_name:
             winner = 'p1'
+            win_team = str(sorted(p1_team))
+            
         else:
             winner = 'p2'
+            win_team = str(sorted(p2_team))
+            
+        if win_team in html_data:
+            html_data[win_team].append(replay_name)
+        else:
+            html_data[win_team] = [replay_name]
+          
           
         battle_data = {}
         battle_data['p1_team'] = p1_team
         battle_data['p2_team'] = p2_team
         battle_data['winner'] = winner
         
+        
         results.append(battle_data)
+        
+    
         
         
             
     
 with open('rp_file.json', 'w') as fout:
     json.dump(results, fout)
+    
+with open('html.json', 'w') as fout1:
+    json.dump(html_data, fout1)
     
 
     
