@@ -189,9 +189,13 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
     results = sorted(results, key = lambda x : x[1], reverse = True)
 
     if len(results) < NUMTEAMSRETURN:
-        returnTeams = [result[0] for result in results]
-        teamScores = [result[1] for result in results]
-    
+        if len(results) == 0:
+            returnTeams = [[] for x in range(NUMTEAMSRETURN)]
+            teamScores = [0 for x in range(NUMTEAMSRETURN)]
+
+        else:
+            returnTeams = [result[0] for result in results]
+            teamScores = [result[1] for result in results]
     else:
         firstResult, firstScore = results[0]
         returnTeams = [firstResult]
@@ -228,6 +232,7 @@ def scoreTeams(curTeams, oppTeam, pokedex, league, minDistWanted):
         for team,_ in losers:
             for winner in loserDict[str(team)]:
                 winHtmls.extend(htmlData[str(sorted(winner))])
+    
 
     return returnTeams, teamScores, winHtmls
 

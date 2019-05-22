@@ -119,6 +119,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         htmls
     )
 
+    print(ans)
     return ans
 
 

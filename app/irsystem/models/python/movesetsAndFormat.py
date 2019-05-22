@@ -50,15 +50,17 @@ def fillAndFormat(teams, currentTeamData, tScores, league, winnerHtmls):
 
     toRet = []
 
+
+    print("len of teams" + str(len(teams)))
     for i in range(len(teams)):
         team = teams[i]
         sTeam = set(team)
-        if len(sTeam) == 1 and EMPTY in sTeam:
-            toRet.append([])
-            continue
         teamData = []
         teamData.append(tScores[i])
         teamData.append(ids)
+        if len(sTeam) == 1 and EMPTY in sTeam:
+            toRet.append(teamData)
+            continue
         for pokeman in team:
             if not pokeman == EMPTY:
                 form = {}
