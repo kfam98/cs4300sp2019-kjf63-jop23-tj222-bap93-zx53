@@ -60,10 +60,10 @@
   <div class="site-description" >
 
 
-    {% if not results[0] %}
+    {% if not results[0] or results[0][0] == 0 %}
     <h1 style="text-align:center;">ERROR</h1>
     <i><h3 style="text-transform:uppercase;background-color:#F7D02c;"> Couldn't find Pokemon that fit your filters to source your team.
-      Try different filters (not random ones)...</h3></i>
+      Try different filters, like lowering the capture rate (not random ones)...</h3></i>
     </div>
 
     {% else %}
