@@ -58,7 +58,17 @@
   {% else %}
 
   <div class="site-description" >
+
+
+    {% if not results[0] %}
+    <h1 style="text-align:center;">ERROR</h1>
+    <i><h3 style="text-transform:uppercase;background-color:#F7D02c;"> Couldn't find Pokemon that fit your filters to source your team.
+      Try different filters (not random ones)...</h3></i>
+    </div>
+
+    {% else %}
     <h1> RESULTS: </h1>
+
     <p>We successfully generated at most 5 teams that best fit your desired filters.
 
       <br><br/>
@@ -105,6 +115,8 @@
        <i>Playstyle: </i>{{playstyle }}
       <p>
   </div>
+
+
 
 
   <div class="site-results generated-team " >
@@ -659,12 +671,13 @@
 
 <br/>
 
-
+  {% endif %}
+  {% endif %}
   <div class="site-error-link" style="margin-left:42%; margin-top:5%;">
 
 
 
-  {% endif %}
+
   <a href="/"> <<   Back to Home </a></div>
 
 
