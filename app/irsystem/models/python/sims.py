@@ -14,6 +14,40 @@ import random
 
 count = 0
 
+def get_sim_winners(teamNames,league,pokedex):
+    """
+    Returns the top 5 most similar winners from our pokemon league data, given a single winning team.
+
+    myTeam - list of 6 pokemon names.
+    league - league to be considering
+    pokedex - dictionary with pokemon names as keys to pokemon instances as values
+    """
+    bData, wHtml = loadBattleData(league)
+    similarities = loadSims() 
+
+    results = []
+
+    myTeam = [getSimPokemon(pkm,similarities) for pkm in teamNames]
+    for d in bData:
+        winner, loser = determineWinner(d)
+
+        score = 0
+        for pkm in myTeam:
+                score+= np.amax(teamToArray(winner,pokedex)*pkm)
+
+        results.append((winner,score))
+
+    results = sorted(results, key = lambda x : x[1], reverse = True)
+    
+    cutoff = min(len(results),5)
+
+    htmls = []
+    for win,score in results[:cutoff]:
+        htmls.extend(wHtml[str(sorted(win))])
+
+    return htmls
+
+
 def loadBattleData(league):
     """
     Returns loaded data associated with the league levels, or none if associated with no league data 

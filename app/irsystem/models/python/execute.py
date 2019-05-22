@@ -12,6 +12,7 @@ import ast
 import json
 
 
+
 ##Note - check for extremes like stupid high minimum capture rate or no gens allowed.
 
 def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league = OU,pokedex = None,pokeMoves = None):
@@ -50,7 +51,7 @@ def generateResults(myTeam,oppTeam,allowLegends,gens,pStyle,minCapRate, league =
         oppTeamNames.append(p)
         
     if len(currentTeamNames) == 6:
-        return movesetsAndFormat.fillAndFormat([currentTeamNames],myTeam, [100.0])
+        return movesetsAndFormat.fillAndFormat([currentTeamNames],myTeam, [100.0],league,team.get_sim_winners(currentTeamNames,league,pokedex))
 
     ##May need to change inputs into the proper backend global vars, a translation
 
